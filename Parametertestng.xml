@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="classes" thread-count="5">
+	<parameter name="suite" value="suiteParameter" />
+	<test verbose="2" preserve-order="true" name="TestDebug">  
+		<parameter name="parameter1" value="parameter1" />
+		<parameter name="parameter2" value="123" />
+		<classes>
+			<class name="com.dbyl.tests.passParameter" />
+			<class name="com.dbyl.tests.TestngExample" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

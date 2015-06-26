@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+<Appenders>
+	<Console name="Console" target="SYSTEM_OUT">
+		<PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+	<File name="log" fileName="logs/test.log" append="false">
+		<PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
+	</File>
+</Appenders>    
+<Loggers>
+	<Logger name="com.dbyl.libarary.utils.Log" level="all">
+		<AppenderRef ref="Console"/>
+		<AppenderRef ref="log"/>
+    </Logger>
+	<Root level="trace">
+		<AppenderRef ref="Console"/>
+		<AppenderRef ref="log"/>
+    </Root>
+  </Loggers>
+</Configuration>

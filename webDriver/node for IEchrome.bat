@@ -1,0 +1,1 @@
+java -Dwebdriver.ie.driver="C:\Users\Young\workspace\Demo\webDriver\IEDriverServer.exe" -Dwebdriver.chrome.driver="C:\Users\Young\workspace\Demo\webDriver\chromedriver.exe" -jar selenium-server-standalone-2.46.0.jar -role node -hub http://192.168.1.107:4444/grid/register

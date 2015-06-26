@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<project name="Demo" default="run" basedir=".">
+	<echo  message="Start selenium Grid" />
+	<echo  message="import libs" />
+	<path id="run.classpath">
+		<fileset dir="${basedir}">
+			<include name="lib/poi/*.jar" />
+			<include name="lib/poi/lib/*.jar" />
+			<include name="lib/testng.jar" />
+			<include name="lib/sikuli-script.jar" />
+			<include name="lib/*.jar" />
+		</fileset>
+		<fileset dir="${basedir}/lib/selenium">
+			<include name="selenium-java-2.45.0.jar" />
+			<include name="libs/*.jar" />
+		</fileset>
+	</path>
+	<taskdef name="testng" classname="org.testng.TestNGAntTask" classpathref="run.classpath" />
+	<target name="clean">
+		<delete dir="build"/>
+	</target>
+	<target name="compile" depends="clean">
+		<echo message="mkdir"/>
+		<mkdir dir="build/classes"/>
+		<javac srcdir="src" destdir="build/classes" debug="on" encoding="UTF-8">
+			<classpath refid="run.classpath"/>
+		</javac>
+	</target>
+	<path id="runpath"> 
+		 <path refid="run.classpath"/> 
+		 <pathelement location="build/classes"/> 
+	   </path> 
+	<target name="run" depends="compile">
+		<testng  classpathref="runpath"  outputDir="test-output" 
+			haltonfailure="true"
+			useDefaultListeners="false"   
+			listeners="org.uncommons.reportng.HTMLReporter,org.testng.reporters.FailedReporter" >  
+			<xmlfileset dir="${basedir}" includes="testng.xml"/>
+			<jvmarg value="-Dfile.encoding=UTF-8" />
+			<sysproperty key="org.uncommons.reportng.title" value="AutoMation TestReport" /> 
+		</testng>
+		</target>
+		<target name="runTestng" depends="compile">
+		<testng  classpathref="runpath"  outputDir="test-output" 
+			haltonfailure="true"
+			useDefaultListeners="false"   
+			listeners="org.uncommons.reportng.HTMLReporter,org.testng.reporters.FailedReporter" >  
+			<xmlfileset dir="${basedir}" includes="Parametertestng.xml"/>
+			<jvmarg value="-Dfile.encoding=UTF-8" />
+			<sysproperty key="org.uncommons.reportng.title" value="AutoMation TestReport" /> 
+		</testng>
+	</target>
+</project>
