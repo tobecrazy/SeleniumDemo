@@ -87,12 +87,16 @@ public class DriverFactory {
 	public static WebDriver getFirefoxDriver() {
 		try {
 			WindowsUtils.tryToKillByName("firefox.exe");
+			p = getProperties();
+		 
 		} catch (Exception e) {
 			System.out.println("can not find firefox process");
 		}
-		if (p != null) {
+		
+		if (p!= null) {
 			fireBug = p.getProperty("fireBug");
 		}
+		
 		File file = new File(fireBug);
 		FirefoxProfile profile = new FirefoxProfile();
 		// profile.setPreference("network.proxy.type", 2);
@@ -122,7 +126,9 @@ public class DriverFactory {
 		} catch (IOException e3) {
 			e3.printStackTrace();
 		}
-
+		profile.setPreference("browser.download.folderList",2);
+        profile.setPreference("browser.download.dir", "C:\\selenium");
+        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "exe/zip");  
 		WebDriver driver = new FirefoxDriver(profile);
 		return driver;
 
