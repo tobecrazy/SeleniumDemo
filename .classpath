@@ -58,7 +58,8 @@
 	<classpathentry kind="lib" path="C:/Users/Young/workspace/Demo/lib/log4j-core-2.3.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Young/workspace/Demo/lib/log4j-core-2.3-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Young/workspace/Demo/lib/guice-3.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Young/workspace/Demo/lib/reportng-1.1.4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Young/workspace/Demo/lib/velocity-dep-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Young/workspace/Demo/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Young/workspace/Demo/lib/reportng-1.1.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
