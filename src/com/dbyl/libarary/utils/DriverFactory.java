@@ -88,15 +88,15 @@ public class DriverFactory {
 		try {
 			WindowsUtils.tryToKillByName("firefox.exe");
 			p = getProperties();
-		 
+
 		} catch (Exception e) {
 			System.out.println("can not find firefox process");
 		}
-		
-		if (p!= null) {
+
+		if (p != null) {
 			fireBug = p.getProperty("fireBug");
 		}
-		
+
 		File file = new File(fireBug);
 		FirefoxProfile profile = new FirefoxProfile();
 		// profile.setPreference("network.proxy.type", 2);
@@ -126,9 +126,10 @@ public class DriverFactory {
 		} catch (IOException e3) {
 			e3.printStackTrace();
 		}
-		profile.setPreference("browser.download.folderList",2);
-        profile.setPreference("browser.download.dir", "C:\\selenium");
-        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "exe/zip");  
+		profile.setPreference("browser.download.folderList", 2);
+		profile.setPreference("browser.download.dir", "C:\\selenium");
+		profile.setPreference("browser.helperApps.neverAsk.saveToDisk",
+				"application/octet-stream, application/vnd.ms-excel, text/csv, application/zip,application/exe");
 		WebDriver driver = new FirefoxDriver(profile);
 		return driver;
 
@@ -145,6 +146,7 @@ public class DriverFactory {
 
 	/**
 	 * This method will create RemoteWebdriver
+	 * 
 	 * @author Young
 	 * @param remoteBrowserBean
 	 * @return WebDriver

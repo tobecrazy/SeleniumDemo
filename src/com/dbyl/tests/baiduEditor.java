@@ -1,5 +1,8 @@
 package com.dbyl.tests;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -9,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.os.WindowsUtils;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.sikuli.script.Key;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
@@ -19,14 +23,17 @@ public class baiduEditor {
 	private WebDriver driver;
 
 	@Test(groups = { "baiduEditor" })
-	public void testJD() throws InterruptedException {
+	public void testJD() throws InterruptedException, Exception {
 		WindowsUtils.getProgramFilesPath();
 		driver = DriverFactory.getFirefoxDriver(); // DriverFactory.getRemoteDriver(new
 													// RemoteBrowserBean("chrome"));
-		driver.get("http://www.xiazaiba.com/download.php?softid=1735&softname=SecureCRT");
+		driver.get("http://music.baidu.com/pc/spec/download9117/BaiduMusic-12345617.exe");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		
+	 
+		
 		// login
 //		driver.findElement(By.cssSelector("div>input#loginemail")).sendKeys(
 //				"tobecrazy@yeah.net");
