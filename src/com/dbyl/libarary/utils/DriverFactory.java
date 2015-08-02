@@ -128,7 +128,8 @@ public class DriverFactory {
 		}
 		profile.setPreference("browser.download.folderList", 2);
 		profile.setPreference("browser.download.dir", "C:\\selenium");
-		profile.setPreference("browser.helperApps.neverAsk.saveToDisk",
+		profile.setPreference(
+				"browser.helperApps.neverAsk.saveToDisk",
 				"application/octet-stream, application/vnd.ms-excel, text/csv, application/zip,application/exe");
 		WebDriver driver = new FirefoxDriver(profile);
 		return driver;
@@ -136,11 +137,27 @@ public class DriverFactory {
 	}
 
 	public static WebDriver getIEDriver() {
+		try {
+			p = getProperties();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		if (p != null) {
 			IEDriverServer = p.getProperty("IEDriverServer");
 		}
 		System.setProperty("webdriver.ie.driver", IEDriverServer);
-		WebDriver driver = new InternetExplorerDriver();
+		String PROXY = "http://proxy:8083";
+		org.openqa.selenium.Proxy proxy = new org.openqa.selenium.Proxy();
+		proxy.setHttpProxy(PROXY)
+		     .setFtpProxy(PROXY)
+		     .setSslProxy(PROXY);
+ 
+
+		DesiredCapabilities ds = DesiredCapabilities.internetExplorer();
+		ds.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+		ds.setCapability("ignoreProtectedModeSettings", true);
+		ds.setCapability(CapabilityType.PROXY, proxy);
+		WebDriver driver = new InternetExplorerDriver(ds);
 		return driver;
 	}
 
