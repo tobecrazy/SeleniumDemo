@@ -31,7 +31,7 @@ public class TesseractTest {
 	public static void main(String[] args) throws IOException,
 			InterruptedException {
 
-		WebDriver driver = DriverFactory.getChromeDriver();
+		WebDriver driver = DriverFactory.getFirefoxDriver();
 		driver.get("http://flight.qunar.com/");
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
