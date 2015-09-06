@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="Demo" default="run" basedir=".">
+<project name="Demo" default="compile" basedir=".">
 	<echo  message="Start selenium Grid" />
 	<echo  message="import libs" />
 	<path id="run.classpath">

@@ -21,7 +21,7 @@ public class LoginPage extends BasePage {
 		driver.get("http://www.zhihu.com/#signin");
 	}
 
-	Locator loginEmailInputBox = new Locator("loginEmailInputBox");
+	Locator loginEmailInputBox = new Locator("loginEmailInputBox",30);
 
 	Locator loginPasswordInputBox = new Locator("loginPasswordInputBox");
 	Locator loginButton = new Locator("loginButton");
@@ -29,6 +29,7 @@ public class LoginPage extends BasePage {
 			"profile");
 
 	public void typeEmailInputBox(String email) throws Exception {
+		switchToLogin();
 		type(loginEmailInputBox, email);
 	}
 
@@ -50,5 +51,10 @@ public class LoginPage extends BasePage {
 				.pageLoadTimeout(30, TimeUnit.SECONDS);
 	}
 
+	public void switchToLogin() throws Exception
+	{
+		Locator registerButton=new Locator("//div[@class='title']/a[@href and text()='登录']");
+		click(registerButton);
+	}
 	
 }
