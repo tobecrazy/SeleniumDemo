@@ -20,7 +20,7 @@ public class RemoteBrowserBean {
 	public RemoteBrowserBean()
 	{
 		this.browserName="firefox";
-		this.version="38";
+		this.version="39.0.3";
 		this.platform=new String[]{"VISTA", "windows 7"};
 		this.hubURL="http://localhost:4444/wd/hub";
 		

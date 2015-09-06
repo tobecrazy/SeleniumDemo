@@ -12,7 +12,7 @@
 <body>
 <h1>Default test</h1>
 <p>
-  Test duration: 48.959s
+  Test duration: 269.289s
 </p>
 
 
@@ -20,46 +20,45 @@
   <table class="resultsTable">
     <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.dbyl.tests.JDaddress</td>
+        <td colspan="3" class="group">com.dbyl.tests.getAllData</td>
       </tr>
             
 <tr>
   <td class="method">
-                  testJD
+                  main
       </td>
   <td class="duration">
-    47.805s
+    242.174s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.UnhandledAlertException: Modal dialog present: <br/>
-Build info: version: &apos;2.45.0&apos;, revision: &apos;32a636c&apos;, time: &apos;2015-03-05 22:01:35&apos;<br/>
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: no such element<br/>
+&nbsp; (Session info: chrome=44.0.2403.107)<br/>
+&nbsp; (Driver info: chromedriver=2.16.333243 (0bfa1d3575fc1044244f21ddb82bf870944ef961),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)<br/>
+Command duration or timeout: 60.09 seconds<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;2.47.1&apos;, revision: &apos;411b314&apos;, time: &apos;2015-07-30 02:56:46&apos;<br/>
 System info: host: &apos;Young-PC&apos;, ip: &apos;192.168.91.1&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;<br/>
-*** Element info: {Using=xpath, value=//div[@id=&apos;store-selector&apos;]//div}<br/>
-Session ID: 29e5fa82-96c1-4133-bb57-5a2690f287cc<br/>
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver<br/>
-Capabilities [{platform=WINDOWS, javascriptEnabled=true, elementScrollBehavior=0, ignoreZoomSetting=false, enablePersistentHover=true, ie.ensureCleanSession=false, browserName=internet explorer, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss, version=8, pageLoadStrategy=normal, ie.usePerProcessProxy=false, cssSelectorsEnabled=true, ignoreProtectedModeSettings=true, requireWindowFocus=false, initialBrowserUrl=http://localhost:24157/, handlesAlerts=true, ie.forceCreateProcessApi=false, proxy={httpProxy=http://proxy:8083, ftpProxy=http://proxy:8083, sslProxy=http://proxy:8083, proxyType=manual}, nativeEvents=true, browserAttachTimeout=0, ie.browserCommandLineSwitches=, takesScreenshot=true}]</b></a><br />
+*** Element info: {Using=xpath, value=//a[@id=&apos;PageNavigator1_LnkBtnNext&apos; and not(@disabled)]}<br/>
+Session ID: 954087d0228084339b3ce228570ec1a0<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\Young\AppData\Local\Temp\scoped_dir3112_29012}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.107, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, hasTouchScreen=false, applicationCacheEnabled=false, takesScreenshot=true}]</b></a><br />
     <div class="stackTrace" id="exception-0">
               sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
               sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)<br />
               sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)<br />
               java.lang.reflect.Constructor.newInstance(Unknown Source)<br />
-              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)<br />
-              org.openqa.selenium.remote.ErrorHandler.createUnhandledAlertException(ErrorHandler.java:185)<br />
-              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:152)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)<br />
-              org.openqa.selenium.By$ByXPath.findElement(By.java:357)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)<br />
-              com.dbyl.tests.JDaddress$1.apply(JDaddress.java:66)<br />
-              com.dbyl.tests.JDaddress$1.apply(JDaddress.java:1)<br />
-              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)<br />
-              com.dbyl.tests.JDaddress.isElementPresent(JDaddress.java:63)<br />
-              com.dbyl.tests.JDaddress.testJD(JDaddress.java:31)<br />
+              org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br />
+              org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:445)<br />
+              org.openqa.selenium.By$ByXPath.findElement(By.java:358)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:340)<br />
+              com.dbyl.tests.getAllData.main(getAllData.java:86)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
               sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />

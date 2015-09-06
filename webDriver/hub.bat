@@ -1,1 +1,1 @@
-java -jar selenium-server-standalone-2.46.0.jar -role hub 
+java -jar selenium-server-standalone-2.47.1.jar -role hub 
