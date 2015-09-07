@@ -13,7 +13,7 @@ public class PageFactory {
 		Class<?> clazz = Class.forName(test);
 		Object obj = null;
 		try {
-		    Constructor constructor = clazz.getConstructor(WebDriver.class);
+		    Constructor<?> constructor = clazz.getConstructor(WebDriver.class);
 			obj = constructor.newInstance(d);
 			 
 
