@@ -3,6 +3,7 @@ package com.dbyl.libarary.utils;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Iterator;
 
 import org.dom4j.Attribute;
@@ -18,59 +19,57 @@ public class xmlUtils {
 	/**
 	 * @author Young
 	 * @param path
+	 * @param pageName
 	 * @return
-	 * @throws DocumentException 
+	 * @throws Exception 
 	 */
-	public static String[][] readXMLDocument(String path) throws DocumentException {
-		File file = new File("output.xml");
-		if (file.isFile()) {
-			System.out.println("file is exists " + file.getPath() + " "
-					+ file.exists());
+	public static HashMap<String, Locator> readXMLDocument(String path,
+			String pageName) throws Exception {
+		System.out.print(pageName);
+		HashMap<String, Locator> locatorMap = new HashMap<String, Locator>();
+		locatorMap.clear();
+		File file = new File(path);
+		if (!file.exists()) {
+			throw new IOException("Can't find "+path);
 		}
-
 		SAXReader reader = new SAXReader();
-
 		Document document = reader.read(file);
-
 		Element root = document.getRootElement();
 		for (Iterator<?> i = root.elementIterator(); i.hasNext();) {
 			Element page = (Element) i.next();
-			if (page.getName().equalsIgnoreCase("page")) {
-				System.out.println("page Info is:");
+			if (page.attribute(0).getValue().equalsIgnoreCase(pageName)) {
+				System.out.println("page Info is:" + pageName);
 				for (Iterator<?> l = page.elementIterator(); l.hasNext();) {
+					String type;
+					String timeOut = "3";
+					String value = null;
+					String LocatorName = null;
 					Element locator = (Element) l.next();
-					System.out.println(">>>>Locator Name " + locator.getName());
 					for (Iterator<?> j = locator.attributeIterator(); j
 							.hasNext();) {
 						Attribute attribute = (Attribute) j.next();
-						System.out.print("attribute name "
-								+ attribute.getName() + " ->"
-								+ attribute.getName());
-						System.out.println(" attribute value "
-								+ attribute.getValue());
+						if (attribute.getName().equals("type")) {
+							type = attribute.getValue();
+							System.out.println(">>>>type " + type);
+						} else if (attribute.getName().equals("timeOut")) {
+							timeOut = attribute.getValue();
+							System.out.println(">>>>timeOut " + timeOut);
+						} else {
+							value = attribute.getValue();
+							System.out.println(">>>>value " + value);
+						}
 
 					}
-
+					Locator temp = new Locator(value, Integer.parseInt(timeOut));
+					LocatorName = locator.getText();
+					System.out.println("locator Name is " + LocatorName);
+					locatorMap.put(LocatorName, temp);
 				}
 				continue;
 			}
 
-			//
-			// for (Iterator<?> j = page.attributeIterator(); j.hasNext();) {
-			// Attribute attribute = (Attribute) j.next();
-			// System.out.print("attribute name " + attribute.getName()
-			// + " ->" + attribute.getName());
-			// System.out.println(" attribute value " + attribute.getValue());
-			//
-			// }
-			// System.out.println("attribute value " + page.getText());
-			// // get path
-			// System.out.println("attribute name " + page.getName() + " ->"
-			// + page.getPath());
-
 		}
-
-		return null;
+		return locatorMap;
 
 	}
 

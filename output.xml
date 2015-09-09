@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map>
+  <!--locator of page map info-->
+  <page pageName="com.dbyl.libarary.pageAction.HomePage">
+    <!--Locator lists-->
+    <locator type="ByName" timeOut="3" value="\\div[@name]">HomeButton</locator>
+    <locator type="ById" timeOut="3" value="\\div[@id]">InputButton</locator>
+  </page>
+    <!--locator of page map info-->
+  <page pageName="com.dbyl.libarary.pageAction.LoginPage">
+    <!--Locator lists-->
+    <locator type="ByName" timeOut="3" value="\\div[@name]">loginButton</locator>
+    <locator type="ById" timeOut="3" value="\\div[@id]">InputButton</locator>
+  </page>
+</map>
