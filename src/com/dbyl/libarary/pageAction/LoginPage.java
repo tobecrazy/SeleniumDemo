@@ -16,7 +16,7 @@ public class LoginPage extends BasePage {
 		return driver;
 	}
 
-	public LoginPage(WebDriver driver) throws IOException {
+	public LoginPage(WebDriver driver) throws Exception {
 		super(driver);
 		driver.get("http://www.zhihu.com/#signin");
 	}

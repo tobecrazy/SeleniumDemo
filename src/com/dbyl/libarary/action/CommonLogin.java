@@ -5,6 +5,7 @@ import org.testng.Assert;
 
 import com.dbyl.libarary.pageAction.HomePage;
 import com.dbyl.libarary.pageAction.LoginPage;
+import com.dbyl.libarary.utils.PageFactory;
 
 public class CommonLogin {
 
@@ -24,7 +25,8 @@ public class CommonLogin {
 		loginPage.typePasswordInputBox(password);
 		loginPage.clickOnLoginButton();
 		Assert.assertTrue(loginPage.isPrestentProfile(), "login failed");
-		return new HomePage(getDriver());
+
+		return (HomePage) PageFactory.getPage(HomePage.class, getDriver());
 	}
 
 	public static HomePage login() throws Exception {

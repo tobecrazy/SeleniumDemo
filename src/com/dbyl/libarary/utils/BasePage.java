@@ -1,6 +1,7 @@
 package com.dbyl.libarary.utils;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -14,12 +15,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
 
 	protected WebDriver driver;
-	protected String[][] locatorMap;
+	// protected String[][] locatorMap;
+	HashMap<String, Locator> locatorMap;
+	String path = "C:/Users/Young/workspace/Demo/src/com/dbyl/libarary/pageAction/UILibrary.xml";
 	protected Log log = new Log(this.getClass());
 
-	protected BasePage(WebDriver driver) throws IOException {
+	protected BasePage(WebDriver driver) throws Exception {
 		this.driver = driver;
-		locatorMap = ReadExcelUtil.getLocatorMap();
+		log.debug(this.getClass().getCanonicalName());
+		// locatorMap = ReadExcelUtil.getLocatorMap();
+		locatorMap = xmlUtils.readXMLDocument(path,
+				this.getClass().getCanonicalName());
 	}
 
 	protected void type(Locator locator, String values) throws Exception {
@@ -199,16 +205,27 @@ public class BasePage {
 
 	}
 
+	/**
+	 * @author Young
+	 * 
+	 * @param locatorName
+	 * @return
+	 * @throws IOException
+	 */
 	public Locator getLocator(String locatorName) throws IOException {
 
 		Locator locator;
-		for (int i = 0; i < locatorMap.length; i++) {
-			if (locatorMap[i][0].endsWith(locatorName)) {
-				return locator = new Locator(locatorMap[i][1]);
-			}
+		// for (int i = 0; i < locatorMap.length; i++) {
+		// if (locatorMap[i][0].endsWith(locatorName)) {
+		// return locator = new Locator(locatorMap[i][1]);
+		// }
+		// }
+		// return locator = new Locator(locatorName);
+		locator = locatorMap.get(locatorName);
+		if (locator == null) {
+			locator = new Locator(locatorName);
 		}
-
-		return locator = new Locator(locatorName);
+		return locator;
 
 	}
 }

@@ -8,20 +8,22 @@ import java.util.Iterator;
 
 import org.dom4j.Attribute;
 import org.dom4j.Document;
-import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
+import com.dbyl.libarary.utils.Locator.ByType;
+
 public class xmlUtils {
+
 	/**
 	 * @author Young
 	 * @param path
 	 * @param pageName
 	 * @return
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	public static HashMap<String, Locator> readXMLDocument(String path,
 			String pageName) throws Exception {
@@ -30,7 +32,7 @@ public class xmlUtils {
 		locatorMap.clear();
 		File file = new File(path);
 		if (!file.exists()) {
-			throw new IOException("Can't find "+path);
+			throw new IOException("Can't find " + path);
 		}
 		SAXReader reader = new SAXReader();
 		Document document = reader.read(file);
@@ -40,10 +42,10 @@ public class xmlUtils {
 			if (page.attribute(0).getValue().equalsIgnoreCase(pageName)) {
 				System.out.println("page Info is:" + pageName);
 				for (Iterator<?> l = page.elementIterator(); l.hasNext();) {
-					String type;
+					String type = null;
 					String timeOut = "3";
 					String value = null;
-					String LocatorName = null;
+					String locatorName = null;
 					Element locator = (Element) l.next();
 					for (Iterator<?> j = locator.attributeIterator(); j
 							.hasNext();) {
@@ -60,10 +62,11 @@ public class xmlUtils {
 						}
 
 					}
-					Locator temp = new Locator(value, Integer.parseInt(timeOut));
-					LocatorName = locator.getText();
-					System.out.println("locator Name is " + LocatorName);
-					locatorMap.put(LocatorName, temp);
+					Locator temp = new Locator(value,
+							Integer.parseInt(timeOut), getByType(type));
+					locatorName = locator.getText();
+					System.out.println("locator Name is " + locatorName);
+					locatorMap.put(locatorName, temp);
 				}
 				continue;
 			}
@@ -71,6 +74,31 @@ public class xmlUtils {
 		}
 		return locatorMap;
 
+	}
+
+	/**
+	 * @param type
+	 */
+	public static ByType getByType(String type) {
+		ByType byType = ByType.xpath;
+		if (type == null || type.equalsIgnoreCase("xpath")) {
+			byType = ByType.xpath;
+		} else if (type.equalsIgnoreCase("id")) {
+			byType = ByType.id;
+		} else if (type.equalsIgnoreCase("linkText")) {
+			byType = ByType.linkText;
+		} else if (type.equalsIgnoreCase("name")) {
+			byType = ByType.name;
+		} else if (type.equalsIgnoreCase("className")) {
+			byType = ByType.className;
+		} else if (type.equalsIgnoreCase("cssSelector")) {
+			byType = ByType.cssSelector;
+		} else if (type.equalsIgnoreCase("partialLinkText")) {
+			byType = ByType.partialLinkText;
+		} else if (type.equalsIgnoreCase("tagName")) {
+			byType = ByType.tagName;
+		}
+		return byType;
 	}
 
 	/**

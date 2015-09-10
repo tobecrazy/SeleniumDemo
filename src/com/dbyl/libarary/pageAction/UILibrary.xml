@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <map>
-  <!--locator of page map info-->
-  <page pageName="com.dbyl.libarary.pageAction.HomePage">
-    <!--Locator lists-->
-    <locator type="ByName" timeOut="3" value="\\div[@name]">loginButton</locator>
-    <locator type="ById" timeOut="3" value="\\div[@id]">InputButton</locator>
-  </page>
+	<!--locator of page map info -->
+	<page pageName="com.dbyl.libarary.pageAction.HomePage">
+		<!--Locator lists -->
+		<locator type="ByXpath" timeOut="3" value="//div[@class='top-nav-profile']//img[@class='avatar']">profile</locator>
+	</page>
+	<!--locator of page map info -->
+	<page pageName="com.dbyl.libarary.pageAction.LoginPage">
+		<!--Locator lists -->
+		<locator type="" timeOut="3" value="//input[@name='account' and  not(@autocomplete)]">loginEmailInputBox</locator>
+		<locator type="ByXpath" timeOut="3" value="//button[@class='sign-button submit' and text()='登录']">loginButton</locator>
+		<locator type="ByXpath" timeOut="3" value="//div[@class='top-nav-profile']//img[@class='avatar']">profile</locator>
+		<locator type="ByXpath" timeOut="3" value="//input[@name='password' and @placeholder='密码']">loginPasswordInputBox</locator>
+	</page>
 </map>
