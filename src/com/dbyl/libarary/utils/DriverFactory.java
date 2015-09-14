@@ -7,17 +7,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.os.WindowsUtils;
@@ -37,10 +32,14 @@ public class DriverFactory {
 	private static Properties p = null;
 	private static String IEDriverServer;
 	private static String config = "C:\\Users\\Young\\workspace\\Demo\\config.properties";
+	public static WebDriver currentDriver = null;
+	static Log log = new Log(DriverFactory.class);
 
 	public static WebDriver getHtmlUnit() {
-		HtmlUnitDriver ht = new HtmlUnitDriver();
-		return ht;
+		HtmlUnitDriver driver = new HtmlUnitDriver();
+		log.info("Create HtmlUnitDrive ");
+		setCurrentDriver(driver);
+		return driver;
 	}
 
 	public static WebDriver getChromeDriver() {
@@ -53,7 +52,7 @@ public class DriverFactory {
 		if (p != null) {
 			chromedriver = p.getProperty("chromedriver");
 		}
-		System.out.print(chromedriver);
+		log.info(chromedriver);
 		System.setProperty("webdriver.chrome.driver", chromedriver);
 		// ChromeDriverService.Builder builder=new
 		// ChromeDriverService.Builder();
@@ -74,6 +73,7 @@ public class DriverFactory {
 				Arrays.asList("--start-maximized"));
 		options.addArguments("--test-type", "--start-maximized");
 		WebDriver driver = new ChromeDriver(options);
+		log.info("Create ChromeDrive ");
 		return driver;
 	}
 
@@ -90,7 +90,7 @@ public class DriverFactory {
 			p = getProperties();
 
 		} catch (Exception e) {
-			System.out.println("can not find firefox process");
+			log.error("can not find firefox process");
 		}
 
 		if (p != null) {
@@ -132,6 +132,8 @@ public class DriverFactory {
 				"browser.helperApps.neverAsk.saveToDisk",
 				"application/octet-stream, application/vnd.ms-excel, text/csv, application/zip,application/exe");
 		WebDriver driver = new FirefoxDriver(profile);
+		setCurrentDriver(driver);
+		log.info("Create FirefoxDriver ");
 		return driver;
 
 	}
@@ -148,16 +150,16 @@ public class DriverFactory {
 		System.setProperty("webdriver.ie.driver", IEDriverServer);
 		String PROXY = "http://proxy:8083";
 		org.openqa.selenium.Proxy proxy = new org.openqa.selenium.Proxy();
-		proxy.setHttpProxy(PROXY)
-		     .setFtpProxy(PROXY)
-		     .setSslProxy(PROXY);
- 
+		proxy.setHttpProxy(PROXY).setFtpProxy(PROXY).setSslProxy(PROXY);
 
 		DesiredCapabilities ds = DesiredCapabilities.internetExplorer();
-		ds.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+		ds.setCapability(
+				InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
+				true);
 		ds.setCapability("ignoreProtectedModeSettings", true);
 		ds.setCapability(CapabilityType.PROXY, proxy);
 		WebDriver driver = new InternetExplorerDriver(ds);
+		setCurrentDriver(driver);
 		return driver;
 	}
 
@@ -188,6 +190,16 @@ public class DriverFactory {
 		capability.setCapability(remoteBrowserBean.getPlatform()[0],
 				remoteBrowserBean.getPlatform()[1]);
 		driver.manage().window().maximize();
+		setCurrentDriver(driver);
 		return driver;
 	}
+
+	public static WebDriver getCurrentDriver() {
+		return currentDriver;
+	}
+
+	public static void setCurrentDriver(WebDriver currentDriver) {
+		DriverFactory.currentDriver = currentDriver;
+	}
+
 }
