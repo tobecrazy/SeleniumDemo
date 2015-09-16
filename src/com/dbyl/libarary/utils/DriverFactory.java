@@ -32,13 +32,11 @@ public class DriverFactory {
 	private static Properties p = null;
 	private static String IEDriverServer;
 	private static String config = "C:\\Users\\Young\\workspace\\Demo\\config.properties";
-	public static WebDriver currentDriver = null;
 	static Log log = new Log(DriverFactory.class);
 
 	public static WebDriver getHtmlUnit() {
 		HtmlUnitDriver driver = new HtmlUnitDriver();
 		log.info("Create HtmlUnitDrive ");
-		setCurrentDriver(driver);
 		return driver;
 	}
 
@@ -132,7 +130,6 @@ public class DriverFactory {
 				"browser.helperApps.neverAsk.saveToDisk",
 				"application/octet-stream, application/vnd.ms-excel, text/csv, application/zip,application/exe");
 		WebDriver driver = new FirefoxDriver(profile);
-		setCurrentDriver(driver);
 		log.info("Create FirefoxDriver ");
 		return driver;
 
@@ -159,7 +156,6 @@ public class DriverFactory {
 		ds.setCapability("ignoreProtectedModeSettings", true);
 		ds.setCapability(CapabilityType.PROXY, proxy);
 		WebDriver driver = new InternetExplorerDriver(ds);
-		setCurrentDriver(driver);
 		return driver;
 	}
 
@@ -190,16 +186,8 @@ public class DriverFactory {
 		capability.setCapability(remoteBrowserBean.getPlatform()[0],
 				remoteBrowserBean.getPlatform()[1]);
 		driver.manage().window().maximize();
-		setCurrentDriver(driver);
 		return driver;
 	}
 
-	public static WebDriver getCurrentDriver() {
-		return currentDriver;
-	}
-
-	public static void setCurrentDriver(WebDriver currentDriver) {
-		DriverFactory.currentDriver = currentDriver;
-	}
 
 }

@@ -12,7 +12,7 @@
 <body>
 <h1>Default test</h1>
 <p>
-  Test duration: 10.341s
+  Test duration: 24.241s
 </p>
 
 
@@ -20,35 +20,41 @@
   <table class="resultsTable">
     <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">com.dbyl.tests.Test</td>
+        <td colspan="3" class="group">com.dbyl.tests.loginTest</td>
       </tr>
             
 <tr>
   <td class="method">
-                  myTest
+                  loginByUerName
       </td>
   <td class="duration">
-    10.341s
+    21.507s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Timed out after 3 seconds waiting for com.dbyl.libarary.utils.BasePage$2@33581990<br/>
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Timed out after 3 seconds waiting for com.dbyl.libarary.utils.BasePage$2@1a811656<br/>
 Build info: version: &apos;2.47.1&apos;, revision: &apos;411b314&apos;, time: &apos;2015-07-30 02:56:46&apos;<br/>
 System info: host: &apos;Young-PC&apos;, ip: &apos;192.168.91.1&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;<br/>
-Session ID: fae9bbebfd5869f5db9722d52c7a93ac<br/>
+Session ID: 9a987d17b163988a51a88ddc4803d343<br/>
 Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\Young\AppData\Local\Temp\scoped_dir9020_31925}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.107, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, applicationCacheEnabled=false, takesScreenshot=true}]</b></a><br />
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\Young\AppData\Local\Temp\scoped_dir8700_12961}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.107, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, applicationCacheEnabled=false, takesScreenshot=true}]</b></a><br />
     <div class="stackTrace" id="exception-0">
               org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)<br />
               org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)<br />
               com.dbyl.libarary.utils.BasePage.findElement(BasePage.java:192)<br />
-              com.dbyl.libarary.utils.BasePage.click(BasePage.java:42)<br />
-              com.dbyl.libarary.pageAction.LoginPage.switchToLogin(LoginPage.java:57)<br />
-              com.dbyl.libarary.pageAction.LoginPage.typeEmailInputBox(LoginPage.java:32)<br />
-              com.dbyl.tests.Test.myTest(Test.java:29)<br />
+              com.dbyl.libarary.utils.BasePage$1.apply(BasePage.java:165)<br />
+              com.dbyl.libarary.utils.BasePage$1.apply(BasePage.java:1)<br />
+              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)<br />
+              com.dbyl.libarary.utils.BasePage.isElementPresent(BasePage.java:162)<br />
+              com.dbyl.libarary.utils.BasePage.isElementPresent(BasePage.java:181)<br />
+              com.dbyl.libarary.pageAction.LoginPage.isPrestentProfile(LoginPage.java:45)<br />
+              com.dbyl.libarary.action.CommonLogin.login(CommonLogin.java:27)<br />
+              com.dbyl.libarary.action.CommonLogin.login(CommonLogin.java:33)<br />
+              com.dbyl.libarary.action.ViewHomePage.viewMyProfile(ViewHomePage.java:26)<br />
+              com.dbyl.tests.loginTest.loginByUerName(loginTest.java:27)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
               sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
@@ -73,17 +79,17 @@ Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browser
               org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)<br />
               org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)<br />
               org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)<br />
-                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed<br/>
-from unknown error: web view not found<br/>
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: no such element<br/>
 &nbsp; (Session info: chrome=44.0.2403.107)<br/>
 &nbsp; (Driver info: chromedriver=2.13.307647 (5a7d0541ebc58e69994a6fb2ed930f45261f3c29),platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)<br/>
-Command duration or timeout: 0 milliseconds<br/>
+Command duration or timeout: 18 milliseconds<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
 Build info: version: &apos;2.47.1&apos;, revision: &apos;411b314&apos;, time: &apos;2015-07-30 02:56:46&apos;<br/>
 System info: host: &apos;Young-PC&apos;, ip: &apos;192.168.91.1&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_79&apos;<br/>
-*** Element info: {Using=xpath, value=//div[@class=&apos;title&apos;]/a[@href and text()=&apos;µÇÂ¼&apos;]}<br/>
-Session ID: fae9bbebfd5869f5db9722d52c7a93ac<br/>
+*** Element info: {Using=xpath, value=//div[@class=&apos;top-nav-profile&apos;]//img[@class=&apos;avatar&apos;]}<br/>
+Session ID: 9a987d17b163988a51a88ddc4803d343<br/>
 Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\Young\AppData\Local\Temp\scoped_dir9020_31925}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.107, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, applicationCacheEnabled=false, takesScreenshot=true}]</a><br />
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\Young\AppData\Local\Temp\scoped_dir8700_12961}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.107, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, applicationCacheEnabled=false, takesScreenshot=true}]</a><br />
         <div class="stackTrace" id="exception-1">
                       sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
                       sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)<br />
@@ -101,10 +107,16 @@ Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browser
                       com.dbyl.libarary.utils.BasePage$2.apply(BasePage.java:1)<br />
                       org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)<br />
                       com.dbyl.libarary.utils.BasePage.findElement(BasePage.java:192)<br />
-                      com.dbyl.libarary.utils.BasePage.click(BasePage.java:42)<br />
-                      com.dbyl.libarary.pageAction.LoginPage.switchToLogin(LoginPage.java:57)<br />
-                      com.dbyl.libarary.pageAction.LoginPage.typeEmailInputBox(LoginPage.java:32)<br />
-                      com.dbyl.tests.Test.myTest(Test.java:29)<br />
+                      com.dbyl.libarary.utils.BasePage$1.apply(BasePage.java:165)<br />
+                      com.dbyl.libarary.utils.BasePage$1.apply(BasePage.java:1)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)<br />
+                      com.dbyl.libarary.utils.BasePage.isElementPresent(BasePage.java:162)<br />
+                      com.dbyl.libarary.utils.BasePage.isElementPresent(BasePage.java:181)<br />
+                      com.dbyl.libarary.pageAction.LoginPage.isPrestentProfile(LoginPage.java:45)<br />
+                      com.dbyl.libarary.action.CommonLogin.login(CommonLogin.java:27)<br />
+                      com.dbyl.libarary.action.CommonLogin.login(CommonLogin.java:33)<br />
+                      com.dbyl.libarary.action.ViewHomePage.viewMyProfile(ViewHomePage.java:26)<br />
+                      com.dbyl.tests.loginTest.loginByUerName(loginTest.java:27)<br />
                       sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
                       sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
                       sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />

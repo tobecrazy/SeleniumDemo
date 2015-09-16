@@ -4,13 +4,16 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 
+import org.testng.annotations.Listeners;
+
 import com.dbyl.libarary.pageAction.HomePage;
 import com.dbyl.libarary.pageAction.LoginPage;
 import com.dbyl.libarary.utils.DriverFactory;
 import com.dbyl.libarary.utils.Locator;
 import com.dbyl.libarary.utils.PageFactory;
+import com.dbyl.libarary.utils.TestNGListener;
 import com.dbyl.libarary.utils.xmlUtils;
-
+@Listeners({ TestNGListener.class })
 public class Test {
 
 	@org.testng.annotations.Test
