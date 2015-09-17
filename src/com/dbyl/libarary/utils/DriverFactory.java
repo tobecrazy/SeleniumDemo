@@ -43,7 +43,7 @@ public class DriverFactory {
 	public static WebDriver getChromeDriver() {
 
 		try {
-			p = getProperties();
+			p = ConfigUtils.getProperties(config);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -75,17 +75,10 @@ public class DriverFactory {
 		return driver;
 	}
 
-	public static Properties getProperties() throws IOException {
-		Properties properties = new Properties();
-		FileInputStream inStream = new FileInputStream(new File(config));
-		properties.load(inStream);
-		return properties;
-	}
-
 	public static WebDriver getFirefoxDriver() {
 		try {
 			WindowsUtils.tryToKillByName("firefox.exe");
-			p = getProperties();
+			p = ConfigUtils.getProperties(config);
 
 		} catch (Exception e) {
 			log.error("can not find firefox process");
@@ -137,7 +130,7 @@ public class DriverFactory {
 
 	public static WebDriver getIEDriver() {
 		try {
-			p = getProperties();
+			p = ConfigUtils.getProperties(config);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -188,6 +181,5 @@ public class DriverFactory {
 		driver.manage().window().maximize();
 		return driver;
 	}
-
 
 }

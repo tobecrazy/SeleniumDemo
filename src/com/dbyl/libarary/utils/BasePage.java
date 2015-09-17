@@ -49,8 +49,47 @@ public class BasePage {
 		WebElement e = findElement(driver, locator);
 		log.info("type value is:  " + values);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].value=\""+values+"\"", e);
+		js.executeScript("arguments[0].value=\"" + values + "\"", e);
 
+	}
+
+	/**
+	 * @author Young
+	 * @param locator
+	 * @param text
+	 */
+	protected void setRichTextBox(Locator locator, String text) {
+		WebElement e = findElement(driver, locator);
+		log.info("type value is:  " + text);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].innerHTML = \"" + text + "\"", e);
+	}
+
+	/**
+	 * @author Young
+	 * @param locator
+	 * @param text
+	 * @return
+	 */
+	protected String getRichTextBox(Locator locator, String text) {
+		WebElement e = findElement(driver, locator);
+		log.info("type value is:  " + text);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String result = (String) js.executeScript(
+				"arguments[0].getInnerHTML()", e);
+		return result;
+	}
+
+	/**
+	 * @author Young
+	 * @param locator
+	 */
+	protected void scrollToElement(Locator locator) {
+		WebElement e = findElement(driver, locator);
+		log.info("scroll view element");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		// roll down and keep the element to the center of browser
+		js.executeScript("arguments[0].scrollIntoView(true);", e);
 	}
 
 	protected void click(Locator locator) throws Exception {
