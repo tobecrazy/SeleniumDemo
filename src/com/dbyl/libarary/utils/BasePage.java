@@ -89,7 +89,7 @@ public class BasePage {
 		log.info("scroll view element");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		// roll down and keep the element to the center of browser
-		js.executeScript("arguments[0].scrollIntoView(true);", e);
+		js.executeScript("arguments[0].scrollIntoViewIfNeeded(true);", e);
 	}
 
 	protected void click(Locator locator) throws Exception {
