@@ -30,7 +30,7 @@ public class LoginPage extends BasePage {
 
 	public void typeEmailInputBox(String email) throws Exception {
 		switchToLogin();
-		type(loginEmailInputBox, email);
+		typeQuick(loginEmailInputBox, email);
 	}
 
 	public void typePasswordInputBox(String password) throws Exception {

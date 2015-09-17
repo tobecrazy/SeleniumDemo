@@ -7,6 +7,7 @@ import java.util.HashMap;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -36,6 +37,20 @@ public class BasePage {
 		WebElement e = findElement(driver, locator);
 		log.info("type value is:  " + values);
 		e.sendKeys(values);
+	}
+
+	/**
+	 * @author Young
+	 * @param locator
+	 * @param values
+	 * @throws Exception
+	 */
+	protected void typeQuick(Locator locator, String values) throws Exception {
+		WebElement e = findElement(driver, locator);
+		log.info("type value is:  " + values);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value=\""+values+"\"", e);
+
 	}
 
 	protected void click(Locator locator) throws Exception {

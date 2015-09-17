@@ -25,10 +25,10 @@ import com.google.common.base.Predicate;
 public class qunar {
 
 	public static void main(String[] args) throws InterruptedException {
-		
-		RemoteBrowserBean remoteBrowserBean=new RemoteBrowserBean("chrome");
+
+		RemoteBrowserBean remoteBrowserBean = new RemoteBrowserBean("chrome");
 		WebDriver driver = DriverFactory.getRemoteDriver(remoteBrowserBean);
-		
+
 		driver.get("http://flight.qunar.com/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
@@ -54,15 +54,19 @@ public class qunar {
 				+ from_inpox.getLocation().getX() + "\n"
 				+ from_inpox.getLocation().getY() + "\n"
 				+ from_inpox.getSize().getWidth());
-		
+
 		from_inpox.clear();
-		from_inpox.sendKeys("BJ");
-		Thread.sleep(8000);
-		By bj = new By.ByXPath(
-				"//div[@class='qcbox-fixed js-suggestcontainer']//td[contains(text(),'北京')]");
-		if (isElementPresent(driver, bj, 20)) {
-			driver.findElement(bj).click();
-		}
+		// from_inpox.sendKeys("BJ");
+		// Thread.sleep(8000);
+		// By bj = new By.ByXPath(
+		// "//div[@class='qcbox-fixed js-suggestcontainer']//td[contains(text(),'北京')]");
+		// if (isElementPresent(driver, bj, 20)) {
+		// driver.findElement(bj).click();
+		// }
+
+		//inputbox is a WebElement
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value=\"北京\"", from_inpox);
 
 		to_inpox.clear();
 		to_inpox.sendKeys("SH");
