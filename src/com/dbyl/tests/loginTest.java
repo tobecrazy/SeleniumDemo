@@ -10,7 +10,7 @@ import com.dbyl.libarary.action.ViewHomePage;
 import com.dbyl.libarary.utils.DriverFactory;
 import com.dbyl.libarary.utils.TestNGListener;
 import com.dbyl.libarary.utils.UITest;
-//@Listeners({ TestNGListener.class })
+@Listeners({ TestNGListener.class })
 public class loginTest extends UITest {
 
 	WebDriver driver = DriverFactory.getChromeDriver();
