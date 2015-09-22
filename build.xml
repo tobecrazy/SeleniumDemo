@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <project name="Demo" default="compile" basedir=".">
+	<property name="bin" value="bin"/>
+	<property name="src" value="src" />
+	<property name="classes" value="bin/classes" />
 	<echo  message="Start selenium Grid" />
 	<echo  message="import libs" />
 	<path id="run.classpath">
@@ -49,5 +52,11 @@
 			<jvmarg value="-Dfile.encoding=UTF-8" />
 			<sysproperty key="org.uncommons.reportng.title" value="AutoMation TestReport" /> 
 		</testng>
+	</target>
+	
+	<target name="jar" depends="compile">
+		<jar basedir="${bin}" destfile="${jar-file-name}">
+			<zipfileset excludes="META-INF/*.SF"  />
+		</jar>
 	</target>
 </project>
