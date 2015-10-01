@@ -11,6 +11,8 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
@@ -31,6 +33,7 @@ public class DriverFactory {
 	private static String fireBug;
 	private static Properties p = null;
 	private static String IEDriverServer;
+	private static String EDGEDriver;
 	private static String config = "C:\\Users\\Young\\workspace\\Demo\\config.properties";
 	static Log log = new Log(DriverFactory.class);
 
@@ -179,6 +182,28 @@ public class DriverFactory {
 		capability.setCapability(remoteBrowserBean.getPlatform()[0],
 				remoteBrowserBean.getPlatform()[1]);
 		driver.manage().window().maximize();
+		return driver;
+	}
+
+	public static WebDriver getEDGEDriver() {
+		try {
+			p = ConfigUtils.getProperties(config);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		if (p != null) {
+			EDGEDriver = p.getProperty("EDGEDriver");
+		}
+		System.setProperty("webdriver.edge.driver", EDGEDriver);
+		String PROXY = "https://raw.githubusercontent.com/seveniruby/gfwlist2pac/master/test/proxy.pac";
+		org.openqa.selenium.Proxy proxy = new org.openqa.selenium.Proxy();
+		proxy.setHttpProxy(PROXY).setFtpProxy(PROXY).setSslProxy(PROXY);
+		DesiredCapabilities capabilities = DesiredCapabilities.edge();
+		EdgeOptions options = new EdgeOptions();
+		options.setPageLoadStrategy("normal");
+		capabilities.setCapability(EdgeOptions.CAPABILITY, options);
+		capabilities.setCapability(CapabilityType.PROXY, proxy);
+		WebDriver driver = new EdgeDriver(capabilities);
 		return driver;
 	}
 
