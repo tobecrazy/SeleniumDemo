@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" parallel="classes">
+  <parameter name="driverName" value="chrome"/>
+  <test name="TestDebug(failed)" parallel="classes">
+    <parameter name="driverName" value="chrome"/>
+    <classes>
+      <class name="com.dbyl.tests.UseCookieLogin">
+        <methods>
+          <include name="beforeRun"/>
+          <include name="afterTearDown"/>
+        </methods>
+      </class> <!-- com.dbyl.tests.UseCookieLogin -->
+      <class name="com.dbyl.tests.loginTest">
+        <methods>
+          <include name="stop"/>
+          <include name="loginByUerName"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- com.dbyl.tests.loginTest -->
+      <class name="com.dbyl.tests.MapTest">
+        <methods>
+          <include name="afterTest"/>
+          <include name="mapTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- com.dbyl.tests.MapTest -->
+      <class name="com.dbyl.tests.Case1">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- com.dbyl.tests.Case1 -->
+      <class name="com.dbyl.tests.JDaddress">
+        <methods>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.dbyl.tests.JDaddress -->
+    </classes>
+  </test> <!-- TestDebug(failed) -->
+</suite> <!-- Failed suite [Suite] -->
