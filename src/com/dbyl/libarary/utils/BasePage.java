@@ -22,13 +22,15 @@ public class BasePage {
 	protected WebDriver driver;
 	// protected String[][] locatorMap;
 	HashMap<String, Locator> locatorMap;
-	String path = "C:/Users/Young/workspace/Demo/src/com/dbyl/libarary/pageAction/UILibrary.xml";
+	String path ;
 	protected Log log = new Log(this.getClass());
 
 	protected BasePage(WebDriver driver) throws Exception {
 		this.driver = driver;
 		log.debug(this.getClass().getCanonicalName());
 		// locatorMap = ReadExcelUtil.getLocatorMap();
+		path="C:/Users/Young/workspace/Demo/src/com/dbyl/libarary/pageAction/"+this.getClass().getSimpleName()+".xml";
+		log.info(path);
 		locatorMap = xmlUtils.readXMLDocument(path, this.getClass()
 				.getCanonicalName());
 	}
