@@ -1,41 +1,36 @@
-2015-11-02 21:21:00.891 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.ConfigUtils: Get the config file: C:\Users\Young\workspace\Demo\config.properties
-2015-11-02 21:21:00.891 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: C:\Users\Young\workspace\Demo\webDriver\chromedriver.exe 
-2015-11-02 21:21:35.773 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
-2015-11-02 21:21:35.811 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Start
-2015-11-02 21:21:35.842 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Start WebDriver
-2015-11-02 21:21:35.842 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
-2015-11-02 21:21:35.858 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: com.dbyl.libarary.pageAction.LoginPage
-2015-11-02 21:21:35.858 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:/Users/Young/workspace/Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
-2015-11-02 21:21:54.000 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-11-02 21:21:54.039 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: click button
-2015-11-02 21:21:54.106 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-11-02 21:21:54.139 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: type value is:  seleniumcookies@126.com
-2015-11-02 21:21:54.194 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-11-02 21:21:54.245 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: type value is:  cookies123
-2015-11-02 21:21:54.358 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-11-02 21:21:54.389 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: click button
-2015-11-02 21:21:54.467 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-11-02 21:21:55.016 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-11-02 21:21:55.525 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-11-02 21:21:56.041 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-11-02 21:21:56.557 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-11-02 21:21:57.077 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-11-02 21:21:57.580 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-11-02 21:21:57.580 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestngRetryManager: running retry for  'loginByUerName' on class com.dbyl.libarary.utils.TestngRetryManager Retrying 1 times
-2015-11-02 21:21:57.595 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Skipped
-2015-11-02 21:21:59.382 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Stop WebDriver
-2015-11-02 21:22:02.621 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Start WebDriver
-2015-11-02 21:22:02.624 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
-2015-11-02 21:22:02.626 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: com.dbyl.libarary.pageAction.LoginPage
-2015-11-02 21:22:02.626 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:/Users/Young/workspace/Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
-2015-11-02 21:22:02.626 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestngRetryManager: running retry for  'loginByUerName' on class com.dbyl.libarary.utils.TestngRetryManager Retrying 2 times
-2015-11-02 21:22:02.626 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Skipped
-2015-11-02 21:22:02.642 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Stop WebDriver
-2015-11-02 21:22:02.642 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestngRetryManager: running retry for  'loginByUerName' on class com.dbyl.libarary.utils.TestngRetryManager Retrying 3 times
-2015-11-02 21:22:02.642 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Start WebDriver
-2015-11-02 21:22:02.642 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
-2015-11-02 21:22:02.642 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: com.dbyl.libarary.pageAction.LoginPage
-2015-11-02 21:22:02.642 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:/Users/Young/workspace/Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
-2015-11-02 21:22:02.642 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Failure
-2015-11-02 21:22:02.642 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Failure
-2015-11-02 21:22:02.642 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finish
+2015-11-15 12:44:33.166 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.ConfigUtils: Get the config file: C:\Users\Young\workspace\Demo\config.properties
+2015-11-15 12:44:33.168 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: C:\Users\Young\workspace\Demo\webDriver\chromedriver.exe 
+2015-11-15 12:44:44.271 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
+2015-11-15 12:44:44.311 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Start
+2015-11-15 12:44:44.330 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Start WebDriver
+2015-11-15 12:44:44.331 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
+2015-11-15 12:44:46.233 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: com.dbyl.libarary.pageAction.LoginPage
+2015-11-15 12:44:46.234 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo
+2015-11-15 12:44:46.234 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo\src\com\dbyl\libarary\pageAction\LoginPage.xml
+2015-11-15 12:45:40.227 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2015-11-15 12:45:40.762 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2015-11-15 12:45:41.297 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2015-11-15 12:45:41.818 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2015-11-15 12:45:42.337 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2015-11-15 12:45:42.858 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2015-11-15 12:45:43.393 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2015-11-15 12:45:43.414 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestngRetryManager: running retry for  'loginByUerName' on class com.dbyl.libarary.utils.TestngRetryManager Retrying 1 times
+2015-11-15 12:45:43.415 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Skipped
+2015-11-15 12:45:43.433 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Stop WebDriver
+2015-11-15 12:45:48.230 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Start WebDriver
+2015-11-15 12:45:48.231 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
+2015-11-15 12:45:48.233 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: com.dbyl.libarary.pageAction.LoginPage
+2015-11-15 12:45:48.235 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo
+2015-11-15 12:45:48.235 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo\src\com\dbyl\libarary\pageAction\LoginPage.xml
+2015-11-15 12:45:48.241 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestngRetryManager: running retry for  'loginByUerName' on class com.dbyl.libarary.utils.TestngRetryManager Retrying 2 times
+2015-11-15 12:45:48.242 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Skipped
+2015-11-15 12:45:48.247 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Stop WebDriver
+2015-11-15 12:45:48.248 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestngRetryManager: running retry for  'loginByUerName' on class com.dbyl.libarary.utils.TestngRetryManager Retrying 3 times
+2015-11-15 12:45:48.249 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Start WebDriver
+2015-11-15 12:45:48.249 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
+2015-11-15 12:45:48.252 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: com.dbyl.libarary.pageAction.LoginPage
+2015-11-15 12:45:48.252 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo
+2015-11-15 12:45:48.253 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo\src\com\dbyl\libarary\pageAction\LoginPage.xml
+2015-11-15 12:45:48.256 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Failure
+2015-11-15 12:45:48.257 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Failure
+2015-11-15 12:45:48.257 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finish

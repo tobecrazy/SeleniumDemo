@@ -1,15 +1,11 @@
 package com.dbyl.libarary.utils;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -18,18 +14,20 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
-
+	protected String basePath = System.getProperty("user.dir");
 	protected WebDriver driver;
 	// protected String[][] locatorMap;
 	HashMap<String, Locator> locatorMap;
-	String path ;
+	String path;
 	protected Log log = new Log(this.getClass());
 
 	protected BasePage(WebDriver driver) throws Exception {
 		this.driver = driver;
 		log.debug(this.getClass().getCanonicalName());
+		log.debug(System.getProperty("user.dir"));
 		// locatorMap = ReadExcelUtil.getLocatorMap();
-		path="C:/Users/Young/workspace/Demo/src/com/dbyl/libarary/pageAction/"+this.getClass().getSimpleName()+".xml";
+		path = basePath + "\\src\\com\\dbyl\\libarary\\pageAction\\"
+				+ this.getClass().getSimpleName() + ".xml";
 		log.info(path);
 		locatorMap = xmlUtils.readXMLDocument(path, this.getClass()
 				.getCanonicalName());
