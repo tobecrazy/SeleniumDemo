@@ -6,11 +6,10 @@ import java.lang.reflect.InvocationTargetException;
 import org.openqa.selenium.WebDriver;
 
 public class PageFactory {
-	static Log log=new Log(PageFactory.class);
 	public synchronized static Object getPage(Class<?> key,WebDriver d)
 			throws ClassNotFoundException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
 		String test = key.getCanonicalName();
-		log.info(test);
+		System.out.println(test);
 		Class<?> clazz = Class.forName(test);
 		Object obj = null;
 		try {
@@ -19,11 +18,11 @@ public class PageFactory {
 			 
 
 		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
-			log.error(e.getMessage());
 		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
-			log.error(e.getMessage());
 		}
 		return obj;
 

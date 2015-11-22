@@ -1,6 +1,7 @@
 package com.dbyl.libarary.utils;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -33,8 +34,7 @@ public class DriverFactory {
 	private static Properties p = null;
 	private static String IEDriverServer;
 	private static String EDGEDriver;
-	protected static String basePath = System.getProperty("user.dir");
-	private static String config = basePath+"\\config.properties";
+	private static String config = "C:\\Users\\Young\\workspace\\Demo\\config.properties";
 	static Log log = new Log(DriverFactory.class);
 
 	public static WebDriver getHtmlUnit() {
