@@ -5,6 +5,20 @@
   <test name="TestDebug(failed)" parallel="classes">
     <parameter name="driverName" value="chrome"/>
     <classes>
+      <class name="com.dbyl.tests.Case1">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- com.dbyl.tests.Case1 -->
+      <class name="com.dbyl.tests.loginTest">
+        <methods>
+          <include name="stop"/>
+          <include name="loginByUerName"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- com.dbyl.tests.loginTest -->
       <class name="com.dbyl.tests.JDaddress">
         <methods>
           <include name="tearDown"/>
@@ -23,20 +37,6 @@
           <include name="beforeTest"/>
         </methods>
       </class> <!-- com.dbyl.tests.MapTest -->
-      <class name="com.dbyl.tests.Case1">
-        <methods>
-          <include name="beforeClass"/>
-          <include name="afterMethod"/>
-          <include name="beforeMethod"/>
-        </methods>
-      </class> <!-- com.dbyl.tests.Case1 -->
-      <class name="com.dbyl.tests.loginTest">
-        <methods>
-          <include name="stop"/>
-          <include name="loginByUerName"/>
-          <include name="init"/>
-        </methods>
-      </class> <!-- com.dbyl.tests.loginTest -->
     </classes>
   </test> <!-- TestDebug(failed) -->
 </suite> <!-- Failed suite [Suite] -->
