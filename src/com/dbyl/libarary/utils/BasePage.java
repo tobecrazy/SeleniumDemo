@@ -22,17 +22,18 @@ public class BasePage {
 	protected WebDriver driver;
 	// protected String[][] locatorMap;
 	HashMap<String, Locator> locatorMap;
-	String path ;
+	String path;
 	protected Log log = new Log(this.getClass());
 
 	protected BasePage(WebDriver driver) throws Exception {
 		this.driver = driver;
 		log.debug(this.getClass().getCanonicalName());
+		System.out.println(System.getProperty("user.dir"));
 		// locatorMap = ReadExcelUtil.getLocatorMap();
-		path="C:/Users/Young/workspace/Demo/src/com/dbyl/libarary/pageAction/"+this.getClass().getSimpleName()+".xml";
+		path = System.getProperty("user.dir") + "/src/com/dbyl/libarary/pageAction/" + this.getClass().getSimpleName()
+				+ ".xml";
 		log.info(path);
-		locatorMap = xmlUtils.readXMLDocument(path, this.getClass()
-				.getCanonicalName());
+		locatorMap = xmlUtils.readXMLDocument(path, this.getClass().getCanonicalName());
 	}
 
 	protected void type(Locator locator, String values) throws Exception {
@@ -77,8 +78,7 @@ public class BasePage {
 		WebElement e = findElement(driver, locator);
 		log.info("type value is:  " + text);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		String result = (String) js.executeScript(
-				"arguments[0].getInnerHTML()", e);
+		String result = (String) js.executeScript("arguments[0].getInnerHTML()", e);
 		return result;
 	}
 
@@ -167,8 +167,7 @@ public class BasePage {
 	 * @return
 	 * @throws IOException
 	 */
-	public WebElement getElement(WebDriver driver, Locator locator)
-			throws IOException {
+	public WebElement getElement(WebDriver driver, Locator locator) throws IOException {
 		locator = getLocator(locator.getElement());
 		WebElement e;
 		switch (locator.getBy()) {
@@ -210,8 +209,7 @@ public class BasePage {
 		return e;
 	}
 
-	public boolean isElementPresent(WebDriver driver, Locator myLocator,
-			int timeOut) throws IOException {
+	public boolean isElementPresent(WebDriver driver, Locator myLocator, int timeOut) throws IOException {
 		final Locator locator = getLocator(myLocator.getElement());
 		boolean isPresent = false;
 		WebDriverWait wait = new WebDriverWait(driver, 60);
@@ -232,8 +230,7 @@ public class BasePage {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean isElementPresent(Locator locator, int timeOut)
-			throws IOException {
+	public boolean isElementPresent(Locator locator, int timeOut) throws IOException {
 		return isElementPresent(driver, locator, timeOut);
 	}
 
@@ -253,8 +250,7 @@ public class BasePage {
 							return getElement(driver, locator);
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
-							log.error("can't find element "
-									+ locator.getElement());
+							log.error("can't find element " + locator.getElement());
 							return null;
 						}
 

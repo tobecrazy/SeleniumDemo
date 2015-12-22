@@ -5,11 +5,13 @@
   <test name="TestDebug(failed)" parallel="classes">
     <parameter name="driverName" value="chrome"/>
     <classes>
-      <class name="com.dbyl.tests.JDaddress">
+      <class name="com.dbyl.tests.Case1">
         <methods>
-          <include name="tearDown"/>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- com.dbyl.tests.JDaddress -->
+      </class> <!-- com.dbyl.tests.Case1 -->
       <class name="com.dbyl.tests.UseCookieLogin">
         <methods>
           <include name="beforeRun"/>
@@ -23,13 +25,11 @@
           <include name="beforeTest"/>
         </methods>
       </class> <!-- com.dbyl.tests.MapTest -->
-      <class name="com.dbyl.tests.Case1">
+      <class name="com.dbyl.tests.JDaddress">
         <methods>
-          <include name="beforeClass"/>
-          <include name="afterMethod"/>
-          <include name="beforeMethod"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.dbyl.tests.Case1 -->
+      </class> <!-- com.dbyl.tests.JDaddress -->
       <class name="com.dbyl.tests.loginTest">
         <methods>
           <include name="stop"/>
