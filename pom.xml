@@ -4,13 +4,20 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>Demo</groupId>
 	<artifactId>Demo</artifactId>
-	<packaging>war</packaging>
+	<version>1.0</version> 
+	<packaging>jar</packaging>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 		</dependency>
+
+	<dependency>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant</artifactId>
+			<version>1.9.4</version>
+	</dependency>
 
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -45,11 +52,6 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

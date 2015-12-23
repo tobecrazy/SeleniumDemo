@@ -5,13 +5,6 @@
   <test name="TestDebug(failed)" parallel="classes">
     <parameter name="driverName" value="chrome"/>
     <classes>
-      <class name="com.dbyl.tests.MapTest">
-        <methods>
-          <include name="afterTest"/>
-          <include name="mapTest"/>
-          <include name="beforeTest"/>
-        </methods>
-      </class> <!-- com.dbyl.tests.MapTest -->
       <class name="com.dbyl.tests.loginTest">
         <methods>
           <include name="stop"/>
@@ -37,6 +30,13 @@
           <include name="afterTearDown"/>
         </methods>
       </class> <!-- com.dbyl.tests.UseCookieLogin -->
+      <class name="com.dbyl.tests.MapTest">
+        <methods>
+          <include name="afterTest"/>
+          <include name="mapTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- com.dbyl.tests.MapTest -->
     </classes>
   </test> <!-- TestDebug(failed) -->
 </suite> <!-- Failed suite [Suite] -->
