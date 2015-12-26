@@ -2,10 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>Demo</groupId>
+	<groupId>com.dbyl.library.utils</groupId>
 	<artifactId>Demo</artifactId>
-	<version>1.0</version> 
+	<version>1.0</version>
 	<packaging>jar</packaging>
+	<name>framework</name>
+	<description>This is web test framework base on Selenium webdriver</description>
+	<url>http://www.cnblogs.com/tobecrazy/</url>
+
+
+	<developers>
+		<developer>
+			<name>Young</name>
+		</developer>
+	</developers>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -13,11 +23,11 @@
 			<version>4.12</version>
 		</dependency>
 
-	<dependency>
+		<dependency>
 			<groupId>org.apache.ant</groupId>
 			<artifactId>ant</artifactId>
 			<version>1.9.4</version>
-	</dependency>
+		</dependency>
 
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -36,7 +46,7 @@
 			<artifactId>testng</artifactId>
 			<version>6.9.10</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
@@ -47,11 +57,23 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.4</version>
 		</dependency>
-		
-	</dependencies>	
+	</dependencies>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -63,16 +85,14 @@
 
 		</plugins>
 	</build>
+
+
 	<repositories>
 		<repository>
-			<id>spring-releases</id>
-			<url>https://repo.spring.io/libs-release</url>
+			<id>nexus-snapshot-repository</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
 		</repository>
 	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-releases</id>
-			<url>https://repo.spring.io/libs-release</url>
-		</pluginRepository>
-	</pluginRepositories>
+
+
 </project>
