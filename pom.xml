@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.dbyl.library.utils</groupId>
+	<groupId>com.dbyl</groupId>
 	<artifactId>framework</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
@@ -10,6 +10,10 @@
 	<description>This is web test framework base on Selenium webdriver</description>
 	<url>http://www.cnblogs.com/tobecrazy/</url>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
 
 	<developers>
 		<developer>

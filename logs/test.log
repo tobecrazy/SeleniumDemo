@@ -1,17 +1,42 @@
-2015-12-22 22:09:30.832 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Start
-2015-12-22 22:09:30.848 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
-2015-12-22 22:09:30.864 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.ConfigUtils: Get the config file: C:\Users\Young\workspace\Demo\config.properties
-2015-12-22 22:09:30.865 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: C:\Users\Young\workspace\Demo\webDriver\chromedriver.exe 
-2015-12-22 22:09:35.920 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
-2015-12-22 22:09:35.952 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: com.dbyl.libarary.pageAction.LoginPage
-2015-12-22 22:09:35.953 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
-2015-12-22 22:09:41.650 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-12-22 22:09:42.191 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-12-22 22:09:42.716 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-12-22 22:09:43.232 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-12-22 22:09:43.749 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-12-22 22:09:44.266 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-12-22 22:09:44.784 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2015-12-22 22:09:44.802 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Failure
-2015-12-22 22:09:44.803 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Failure
-2015-12-22 22:09:44.804 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finish
+2016-12-27 18:00:28.420 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.ConfigUtils: Get the config file: C:\Users\Young\workspace\Demo\config.properties
+2016-12-27 18:00:28.422 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: C:\Users\Young\workspace\Demo\webDriver\chromedriver.exe 
+2016-12-27 18:00:37.029 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
+2016-12-27 18:00:37.161 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Start
+2016-12-27 18:00:37.200 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
+2016-12-27 18:00:37.221 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.ConfigUtils: Get the config file: C:\Users\Young\workspace\Demo\config.properties
+2016-12-27 18:00:37.222 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: C:\Users\Young\workspace\Demo\webDriver\chromedriver.exe 
+2016-12-27 18:00:37.221 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Start WebDriver
+2016-12-27 18:00:37.225 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
+2016-12-27 18:00:37.226 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
+2016-12-27 18:00:37.239 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.ConfigUtils: Get the config file: C:\Users\Young\workspace\Demo\config.properties
+2016-12-27 18:00:37.246 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: com.dbyl.libarary.pageAction.LoginPage
+2016-12-27 18:00:37.247 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
+2016-12-27 18:00:37.257 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Success
+2016-12-27 18:00:37.297 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
+2016-12-27 18:00:37.307 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Failure
+2016-12-27 18:00:37.308 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Failure
+2016-12-27 18:00:39.259 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
+2016-12-27 18:00:39.270 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Skipped
+2016-12-27 18:01:37.541 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Failure
+2016-12-27 18:01:37.542 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Failure
+2016-12-27 18:01:39.357 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
+2016-12-27 18:01:39.360 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
+2016-12-27 18:01:39.370 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.ConfigUtils: Get the config file: C:\Users\Young\workspace\Demo\config.properties
+2016-12-27 18:01:39.371 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: C:\Users\Young\workspace\Demo\webDriver\chromedriver.exe 
+2016-12-27 18:01:41.442 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2016-12-27 18:01:42.503 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2016-12-27 18:01:43.038 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2016-12-27 18:01:43.874 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2016-12-27 18:01:44.398 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2016-12-27 18:01:44.928 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2016-12-27 18:01:44.952 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Failure
+2016-12-27 18:01:44.968 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: C:\Users\Young\workspace\Demo
+2016-12-27 18:01:45.442 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: save snapshot path is:C:\Users\Young\workspace\DemologinTest_2015_12_27_18_01_44.png
+2016-12-27 18:01:45.769 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: screen shot finished
+2016-12-27 18:01:45.792 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Stop WebDriver
+2016-12-27 18:01:49.636 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
+2016-12-27 18:02:04.999 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Failure
+2016-12-27 18:02:05.000 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Failure
+2016-12-27 18:02:06.451 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finish
+2016-12-27 18:02:06.451 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: PassedTests = addTest
+2016-12-27 18:02:06.452 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: failedTest = loginByUerName
