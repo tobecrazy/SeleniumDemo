@@ -8,7 +8,6 @@
 	<classpathentry kind="lib" path="lib/poi/lib/junit-4.12.jar"/>
 	<classpathentry kind="lib" path="lib/poi/lib/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="lib/poi/poi-3.13-20150929.jar"/>
-	<classpathentry kind="lib" path="lib/selenium/selenium-java-2.48.0.jar"/>
 	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="lib/guice-3.0.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-api-2.3.jar"/>
@@ -21,7 +20,6 @@
 	<classpathentry kind="lib" path="lib/selenium/libs/bsh-2.0b4.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/cglib-nodep-2.1_3.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/commons-codec-1.10.jar"/>
-	<classpathentry kind="lib" path="lib/selenium/libs/commons-collections-3.2.1.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/commons-el-1.0.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/commons-exec-1.3.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/commons-io-2.4.jar"/>
@@ -29,7 +27,6 @@
 	<classpathentry kind="lib" path="lib/selenium/libs/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/cssparser-0.9.16.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/gson-2.3.1.jar"/>
-	<classpathentry kind="lib" path="lib/selenium/libs/guava-18.0.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/hamcrest-core-1.3.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/hamcrest-library-1.3.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/htmlunit-2.18.jar"/>
@@ -60,12 +57,16 @@
 	<classpathentry kind="lib" path="lib/selenium/libs/phantomjsdriver-1.2.1.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/sac-1.3.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/serializer-2.7.2.jar"/>
-	<classpathentry kind="lib" path="lib/selenium/libs/testng-6.9.6.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/websocket-api-9.2.13.v20150730.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/websocket-client-9.2.13.v20150730.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/websocket-common-9.2.13.v20150730.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/xalan-2.7.2.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/xercesImpl-2.11.0.jar"/>
 	<classpathentry kind="lib" path="lib/selenium/libs/xml-apis-1.4.01.jar"/>
+	<classpathentry kind="lib" path="lib/selenium/selenium-java-2.49.0.jar"/>
+	<classpathentry kind="lib" path="lib/selenium/selenium-server-standalone-2.49.0.jar"/>
+	<classpathentry kind="lib" path="lib/selenium/libs/guava-19.0.jar"/>
+	<classpathentry kind="lib" path="lib/selenium/libs/commons-collections-3.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/selenium/libs/testng-6.9.9.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
