@@ -1,15 +1,11 @@
 package com.dbyl.libarary.utils;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -30,10 +26,12 @@ public class BasePage {
 		log.debug(this.getClass().getCanonicalName());
 		System.out.println(System.getProperty("user.dir"));
 		// locatorMap = ReadExcelUtil.getLocatorMap();
-		path = System.getProperty("user.dir") + "/src/com/dbyl/libarary/pageAction/" + this.getClass().getSimpleName()
-				+ ".xml";
+		path = System.getProperty("user.dir")
+				+ "/src/com/dbyl/libarary/pageAction/"
+				+ this.getClass().getSimpleName() + ".xml";
 		log.info(path);
-		locatorMap = xmlUtils.readXMLDocument(path, this.getClass().getCanonicalName());
+		locatorMap = xmlUtils.readXMLDocument(path, this.getClass()
+				.getCanonicalName());
 	}
 
 	protected void type(Locator locator, String values) throws Exception {
@@ -43,6 +41,8 @@ public class BasePage {
 	}
 
 	/**
+	 * This Method is for set value use javascript
+	 * 
 	 * @author Young
 	 * @param locator
 	 * @param values
@@ -78,7 +78,8 @@ public class BasePage {
 		WebElement e = findElement(driver, locator);
 		log.info("type value is:  " + text);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		String result = (String) js.executeScript("arguments[0].getInnerHTML()", e);
+		String result = (String) js.executeScript(
+				"arguments[0].getInnerHTML()", e);
 		return result;
 	}
 
@@ -167,7 +168,8 @@ public class BasePage {
 	 * @return
 	 * @throws IOException
 	 */
-	public WebElement getElement(WebDriver driver, Locator locator) throws IOException {
+	public WebElement getElement(WebDriver driver, Locator locator)
+			throws IOException {
 		locator = getLocator(locator.getElement());
 		WebElement e;
 		switch (locator.getBy()) {
@@ -209,7 +211,8 @@ public class BasePage {
 		return e;
 	}
 
-	public boolean isElementPresent(WebDriver driver, Locator myLocator, int timeOut) throws IOException {
+	public boolean isElementPresent(WebDriver driver, Locator myLocator,
+			int timeOut) throws IOException {
 		final Locator locator = getLocator(myLocator.getElement());
 		boolean isPresent = false;
 		WebDriverWait wait = new WebDriverWait(driver, 60);
@@ -230,7 +233,8 @@ public class BasePage {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean isElementPresent(Locator locator, int timeOut) throws IOException {
+	public boolean isElementPresent(Locator locator, int timeOut)
+			throws IOException {
 		return isElementPresent(driver, locator, timeOut);
 	}
 
@@ -250,7 +254,8 @@ public class BasePage {
 							return getElement(driver, locator);
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
-							log.error("can't find element " + locator.getElement());
+							log.error("can't find element "
+									+ locator.getElement());
 							return null;
 						}
 

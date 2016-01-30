@@ -27,11 +27,14 @@ public class xmlUtils {
 	 */
 	public static HashMap<String, Locator> readXMLDocument(String path,
 			String pageName) throws Exception {
-		System.out.print(pageName);
+
+		Log log = new Log(xmlUtils.class);
+		log.info(pageName);
 		HashMap<String, Locator> locatorMap = new HashMap<String, Locator>();
 		locatorMap.clear();
 		File file = new File(path);
 		if (!file.exists()) {
+			log.error("Can't find " + path);
 			throw new IOException("Can't find " + path);
 		}
 		SAXReader reader = new SAXReader();
@@ -40,7 +43,7 @@ public class xmlUtils {
 		for (Iterator<?> i = root.elementIterator(); i.hasNext();) {
 			Element page = (Element) i.next();
 			if (page.attribute(0).getValue().equalsIgnoreCase(pageName)) {
-				System.out.println("page Info is:" + pageName);
+				log.info("page Info is:" + pageName);
 				for (Iterator<?> l = page.elementIterator(); l.hasNext();) {
 					String type = null;
 					String timeOut = "3";
@@ -52,20 +55,20 @@ public class xmlUtils {
 						Attribute attribute = (Attribute) j.next();
 						if (attribute.getName().equals("type")) {
 							type = attribute.getValue();
-							System.out.println(">>>>type " + type);
+							log.info("get locator type " + type);
 						} else if (attribute.getName().equals("timeOut")) {
 							timeOut = attribute.getValue();
-							System.out.println(">>>>timeOut " + timeOut);
+							log.info("get locator timeOut " + timeOut);
 						} else {
 							value = attribute.getValue();
-							System.out.println(">>>>value " + value);
+							log.info("get locator value " + value);
 						}
 
 					}
 					Locator temp = new Locator(value,
 							Integer.parseInt(timeOut), getByType(type));
 					locatorName = locator.getText();
-					System.out.println("locator Name is " + locatorName);
+					log.info("locator Name is " + locatorName);
 					locatorMap.put(locatorName, temp);
 				}
 				continue;

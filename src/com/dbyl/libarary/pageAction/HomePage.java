@@ -10,7 +10,7 @@ import com.dbyl.libarary.utils.Locator;
 
 public class HomePage extends BasePage {
 	private Locator profile=new Locator("//div[@class='top-nav-profile']");
-	private Locator myMainPage= new Locator("//ul[@class='top-nav-dropdown']//li/a");
+	private Locator myMainPage= new Locator("myMainPage");
 	public HomePage(WebDriver driver) throws Exception {
 		super(driver);
 	}

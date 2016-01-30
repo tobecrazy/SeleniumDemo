@@ -30,7 +30,7 @@ public class CommonLogin {
 	}
 
 	public static HomePage login() throws Exception {
-		return CommonLogin.login("seleniumcookies@126.com", "cookies123");
+		return CommonLogin.login("13282774643", "appium123");
 	}
 
 	public static void setDriver(WebDriver driver) {
