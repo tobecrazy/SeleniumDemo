@@ -68,8 +68,9 @@
 	<classpathentry kind="lib" path="lib/selenium/libs/testng-6.9.9.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-api-2.3-sources.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-core-2.3-sources.jar"/>
-	<classpathentry kind="lib" path="lib/selenium/selenium-server-2.50.1-srcs.jar"/>
-	<classpathentry kind="lib" path="lib/selenium/selenium-server-2.50.1.jar"/>
-	<classpathentry kind="lib" path="lib/selenium/selenium-server-standalone-2.50.1.jar"/>
+	<classpathentry kind="lib" path="lib/selenium/selenium-java-2.52.0.jar"/>
+	<classpathentry kind="lib" path="lib/selenium/selenium-server-standalone-2.52.0.jar"/>
+	<classpathentry kind="lib" path="lib/jsoup-1.8.3-sources.jar"/>
+	<classpathentry kind="lib" path="lib/jsoup-1.8.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
