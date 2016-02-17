@@ -14,7 +14,7 @@
 			<include name="lib/*.jar" />
 		</fileset>
 		<fileset dir="${basedir}/lib/selenium">
-			<include name="selenium-java-2.48.0.jar" />
+			<include name="*.jar" />
 			<include name="libs/*.jar" />
 		</fileset>
 	</path>
