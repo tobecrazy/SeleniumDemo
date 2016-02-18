@@ -72,5 +72,7 @@
 	<classpathentry kind="lib" path="lib/selenium/selenium-server-standalone-2.52.0.jar"/>
 	<classpathentry kind="lib" path="lib/jsoup-1.8.3-sources.jar"/>
 	<classpathentry kind="lib" path="lib/jsoup-1.8.3.jar"/>
+	<classpathentry kind="lib" path="lib/email/javax.mail-1.5.5.jar"/>
+	<classpathentry kind="lib" path="lib/pdfbox-app-1.8.11.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
