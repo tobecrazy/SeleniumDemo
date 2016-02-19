@@ -29,6 +29,7 @@ public class LoginPage extends BasePage {
 			"profile");
 
 	public void typeEmailInputBox(String email) throws Exception {
+		open("http://www.zhihu.com");
 		switchToLogin();
 		type(loginEmailInputBox, email);
 	}

@@ -13,6 +13,7 @@ public class Test {
 
 	@org.testng.annotations.Test
 	public  void myTest() throws Exception {
+	
 		LoginPage h = null;
 		try {
 			h = (LoginPage) PageFactory.getPage(LoginPage.class,
@@ -26,6 +27,8 @@ public class Test {
 		}
 		h.typeEmailInputBox("TEst");
 		h.typePasswordInputBox("TTTTT");
+		
 	}
+
 
 }

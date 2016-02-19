@@ -3,6 +3,15 @@ package com.dbyl.libarary.utils;
 import java.io.IOException;
 import java.util.HashMap;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.http.HttpEntity;
+import org.apache.http.ParseException;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -24,7 +33,7 @@ public class BasePage {
 	protected BasePage(WebDriver driver) throws Exception {
 		this.driver = driver;
 		log.debug(this.getClass().getCanonicalName());
-		System.out.println(System.getProperty("user.dir"));
+		log.info(System.getProperty("user.dir"));
 		// locatorMap = ReadExcelUtil.getLocatorMap();
 		path = System.getProperty("user.dir")
 				+ "/src/com/dbyl/libarary/pageAction/"
@@ -288,6 +297,53 @@ public class BasePage {
 		}
 		return locator;
 
+	}
+	
+	public int open(String URL)
+	{
+		if(URL==null ||URL.equals(""))
+		{
+			log.error("invlid URL");
+			return -1;
+		}
+		int responseStatus = 200;
+	    CloseableHttpClient httpclient = HttpClients.createDefault();  
+	    try {  
+	            // 创建httpget.    
+	            HttpGet httpget = new HttpGet(URL);  
+	            log.info("executing request " + httpget.getURI());  
+	            // 执行get请求.    
+	            CloseableHttpResponse response = httpclient.execute(httpget);  
+	            try {  
+	                // 获取响应实体    
+	                HttpEntity entity = response.getEntity();  
+	                log.info("--------------------------------------");  
+	                // 打印响应状态    
+	                log.info(response.getStatusLine().toString());  
+	                if (entity != null) {  
+	                    // 打印响应内容长度    
+	                    log.info("Response content length: " + entity.getContentLength());  
+	                    // 打印响应内容    
+	                    log.info("Response content: " + EntityUtils.toString(entity));  
+	                }  
+	                log.info("------------------------------------");  
+	            } finally {  
+	                response.close();  
+	            }  
+	        } catch (ClientProtocolException e) {  
+	            e.printStackTrace();  
+	        } catch (ParseException e) {  
+	            e.printStackTrace();  
+	        } catch (IOException e) {  
+	            e.printStackTrace();  
+	        } finally {  
+	            try {  
+	                httpclient.close();  
+	            } catch (IOException e) {  
+	                e.printStackTrace();  
+	            }  
+	        }  
+	  	return responseStatus;
 	}
 
 }
