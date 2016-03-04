@@ -3,7 +3,7 @@ package com.dbyl.libarary.utils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class StringUtils {
+public class StringTools {
 	/**
 	 * This method is for judge the string null or not null
 	 * 

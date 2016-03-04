@@ -7,14 +7,14 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.dbyl.libarary.utils.StringUtils;
+import com.dbyl.libarary.utils.StringTools;
 
 public class Demo1
 {
 
     public static void main(String[] args) throws IOException
     {
-    	String a=StringUtils.getMatchGroup("http://www.baidu.com", "\\.(\\w{1,5})\\.",1);
+    	String a=StringTools.getMatchGroup("http://www.baidu.com", "\\.(\\w{1,5})\\.",1);
     	System.out.println("--->"+a);
         Document doc = Jsoup.connect("http://www.baidu.com").get();
         String title = doc.title();

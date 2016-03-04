@@ -1,5 +1,7 @@
 package com.dbyl.libarary.utils;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * This is for element library
  * 
@@ -67,4 +69,8 @@ public class Locator {
 		this.byType = byType;
 	}
 
+	public void setReplace(String rep, String rex)
+	{
+		StringTools.replaceAll(element, rex, rep);
+	}
 }

@@ -3,7 +3,6 @@ package com.dbyl.libarary.utils;
 import java.io.IOException;
 import java.util.HashMap;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.ParseException;
 import org.apache.http.client.ClientProtocolException;
