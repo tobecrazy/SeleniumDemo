@@ -14,7 +14,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.os.WindowsUtils;
 import org.openqa.selenium.remote.CapabilityType;
@@ -37,11 +36,11 @@ public class DriverFactory {
 			+ "\\config.properties";
 	static Log log = new Log(DriverFactory.class);
 
-	public static WebDriver getHtmlUnit() {
-		HtmlUnitDriver driver = new HtmlUnitDriver();
-		log.info("Create HtmlUnitDrive ");
-		return driver;
-	}
+//	public static WebDriver getHtmlUnit() {
+//		HtmlUnitDriver driver = new HtmlUnitDriver();
+//		log.info("Create HtmlUnitDrive ");
+//		return driver;
+//	}
 
 	public static WebDriver getChromeDriver() {
 

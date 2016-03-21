@@ -1,6 +1,5 @@
 package com.dbyl.libarary.utils;
 
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * This is for element library
