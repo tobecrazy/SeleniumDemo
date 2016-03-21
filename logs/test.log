@@ -1,39 +1,38 @@
-2016-03-21 23:21:23.052 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.ConfigUtils: Get the config file: C:\Users\Young\workspace\Demo\config.properties
-2016-03-21 23:21:23.054 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: chrome driver path is C:\Users\Young\workspace\Demo\webDriver\chromedriver.exe 
-2016-03-21 23:21:32.141 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
-2016-03-21 23:21:32.186 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Start
-2016-03-21 23:21:32.206 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Start WebDriver
-2016-03-21 23:21:32.208 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
-2016-03-21 23:21:32.223 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: com.dbyl.libarary.pageAction.LoginPage
-2016-03-21 23:21:32.223 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo
-2016-03-21 23:21:32.223 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
-2016-03-21 23:21:32.224 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: com.dbyl.libarary.pageAction.LoginPage
-2016-03-21 23:21:32.308 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: page Info is:com.dbyl.libarary.pageAction.LoginPage
-2016-03-21 23:21:32.308 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type 
-2016-03-21 23:21:32.308 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
-2016-03-21 23:21:32.309 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //input[@name='account' and  not(@autocomplete)]
-2016-03-21 23:21:32.311 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is loginEmailInputBox
-2016-03-21 23:21:32.311 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
-2016-03-21 23:21:32.311 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
-2016-03-21 23:21:32.312 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //button[@class='sign-button submit' and text()='µÇÂ¼']
-2016-03-21 23:21:32.312 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is loginButton
-2016-03-21 23:21:32.312 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
-2016-03-21 23:21:32.312 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
-2016-03-21 23:21:32.313 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //div[@class='top-nav-profile']//img[@class='Avatar']
-2016-03-21 23:21:32.313 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is profile
-2016-03-21 23:21:32.313 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
-2016-03-21 23:21:32.313 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
-2016-03-21 23:21:32.314 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //input[@name='password' and @placeholder='ÃÜÂë']
-2016-03-21 23:21:32.314 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is loginPasswordInputBox
-2016-03-21 23:21:32.314 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
-2016-03-21 23:21:32.315 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 30
-2016-03-21 23:21:32.315 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //div/a[.='µÇÂ¼']
-2016-03-21 23:21:32.315 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is clickToLoginButton
-2016-03-21 23:21:33.906 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: executing request http://www.zhihu.com
-2016-03-21 23:21:34.071 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: --------------------------------------
-2016-03-21 23:21:34.071 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: HTTP/1.1 200 OK
-2016-03-21 23:21:34.072 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: Response content length: -1
-2016-03-21 23:21:34.078 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: Response content: <!DOCTYPE html>
+2016-03-21 23:25:41.664 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.ConfigUtils: Get the config file: C:\Users\Young\workspace\Demo\config.properties
+2016-03-21 23:26:10.759 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: Create FirefoxDriver 
+2016-03-21 23:26:10.826 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Start
+2016-03-21 23:26:10.851 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Start WebDriver
+2016-03-21 23:26:10.853 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
+2016-03-21 23:26:10.905 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: com.dbyl.libarary.pageAction.LoginPage
+2016-03-21 23:26:10.905 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo
+2016-03-21 23:26:10.906 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
+2016-03-21 23:26:10.916 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: com.dbyl.libarary.pageAction.LoginPage
+2016-03-21 23:26:10.979 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: page Info is:com.dbyl.libarary.pageAction.LoginPage
+2016-03-21 23:26:10.980 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type 
+2016-03-21 23:26:10.980 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
+2016-03-21 23:26:10.981 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //input[@name='account' and  not(@autocomplete)]
+2016-03-21 23:26:10.983 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is loginEmailInputBox
+2016-03-21 23:26:10.986 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
+2016-03-21 23:26:10.987 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
+2016-03-21 23:26:10.987 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //button[@class='sign-button submit' and text()='µÇÂ¼']
+2016-03-21 23:26:10.988 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is loginButton
+2016-03-21 23:26:10.988 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
+2016-03-21 23:26:10.988 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
+2016-03-21 23:26:10.988 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //div[@class='top-nav-profile']//img[@class='Avatar']
+2016-03-21 23:26:10.989 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is profile
+2016-03-21 23:26:10.989 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
+2016-03-21 23:26:10.989 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
+2016-03-21 23:26:10.990 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //input[@name='password' and @placeholder='ÃÜÂë']
+2016-03-21 23:26:10.990 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is loginPasswordInputBox
+2016-03-21 23:26:10.990 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
+2016-03-21 23:26:10.991 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 30
+2016-03-21 23:26:10.991 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //div/a[.='µÇÂ¼']
+2016-03-21 23:26:10.992 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is clickToLoginButton
+2016-03-21 23:26:16.108 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: executing request http://www.zhihu.com
+2016-03-21 23:26:16.267 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: --------------------------------------
+2016-03-21 23:26:16.267 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: HTTP/1.1 200 OK
+2016-03-21 23:26:16.268 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: Response content length: -1
+2016-03-21 23:26:16.290 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: Response content: <!DOCTYPE html>
 <html lang="zh-CN" class="">
 <head>
 <meta charset="utf-8">
@@ -62,7 +61,7 @@
 <meta name="google-site-verification" content="FTeR0c8arOPKh8c5DYh_9uu98_zJbaWw53J-Sch9MTg" />
 <meta name="baidu-site-verification" content="KPFppAFoYF4Kkdv9" />
 <link rel="canonical" href="http://www.zhihu.com" />
-<meta id="znonce" name="znonce" content="612258552c084b5d9cbca4abd85aeb73">
+<meta id="znonce" name="znonce" content="e6873f3df2894c8e925ea7f01bf65849">
 <!--[if lt IE 9]>
 <script src="http://static.zhihu.com/static/components/respond/dest/respond.min.js"></script>
 <link href="http://static.zhihu.com/static/components/respond/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
@@ -95,7 +94,7 @@
 
 <div class="view view-signin">
 <form>
-<input type="hidden" name="_xsrf" value="67f6ea54ff6f1bdb6945db7d486d7899"/>
+<input type="hidden" name="_xsrf" value="74ae929cfd0609ed280faa930b94e54a"/>
 <div class="group-inputs">
 
 <div class="email input-wrapper">
@@ -131,7 +130,7 @@
 <div class="view view-signup selected">
 <form class="zu-side-login-box" action="/register/email" id="sign-form-1" autocomplete="off">
 <input type="password" hidden> 
-<input type="hidden" name="_xsrf" value="67f6ea54ff6f1bdb6945db7d486d7899"/>
+<input type="hidden" name="_xsrf" value="74ae929cfd0609ed280faa930b94e54a"/>
 <div class="group-inputs">
 
 <div class="name input-wrapper">
@@ -205,43 +204,103 @@
 <script type="text/json" class="json-inline" data-name="current_user">["","","","-1","",0,0]</script>
 <script type="text/json" class="json-inline" data-name="env">["zhihu.com","comet.zhihu.com",false,null]</script>
 
-<script type="text/json" class="json-inline" data-name="ga_vars">{"user_created":0,"now":1458573696000,"abtest_mask":"------------------------------","user_attr":[0,0,0,"-","-"],"user_hash":0}</script>
+<script type="text/json" class="json-inline" data-name="ga_vars">{"user_created":0,"now":1458573979000,"abtest_mask":"------------------------------","user_attr":[0,0,0,"-","-"],"user_hash":0}</script>
 <script src="http://static.zhihu.com/static/revved/-/js/vendor.ff76fbae.js"></script>
 <script src="http://static.zhihu.com/static/revved/-/js/closure/common.994774c9.js"></script>
 <script src="http://static.zhihu.com/static/revved/-/js/closure/page-index.4f087f26.js"></script>
 <meta name="entry" content="ZH.entrySignPage" data-module-id="page-index">
 
-<input type="hidden" name="_xsrf" value="67f6ea54ff6f1bdb6945db7d486d7899"/>
+<input type="hidden" name="_xsrf" value="74ae929cfd0609ed280faa930b94e54a"/>
 </body>
 </html>
-2016-03-21 23:21:34.081 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: ------------------------------------
-2016-03-21 23:21:34.092 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2016-03-21 23:21:34.295 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: click button
-2016-03-21 23:21:34.489 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2016-03-21 23:21:34.553 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: type value is:  13282774643
-2016-03-21 23:21:34.810 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2016-03-21 23:21:34.870 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: type value is:  appium123
-2016-03-21 23:21:35.049 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2016-03-21 23:21:35.093 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: click button
-2016-03-21 23:21:35.214 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2016-03-21 23:21:35.794 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2016-03-21 23:21:45.952 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.HomePage: com.dbyl.libarary.pageAction.HomePage
-2016-03-21 23:21:45.952 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.HomePage: C:\Users\Young\workspace\Demo
-2016-03-21 23:21:45.953 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.HomePage: C:\Users\Young\workspace\Demo/src/com/dbyl/libarary/pageAction/HomePage.xml
-2016-03-21 23:21:45.953 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: com.dbyl.libarary.pageAction.HomePage
-2016-03-21 23:21:45.956 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: page Info is:com.dbyl.libarary.pageAction.HomePage
-2016-03-21 23:21:45.956 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
-2016-03-21 23:21:45.957 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
-2016-03-21 23:21:45.957 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //div[@class='top-nav-profile']//img[@class='Avatar']
-2016-03-21 23:21:45.957 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is profile
-2016-03-21 23:21:45.958 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
-2016-03-21 23:21:45.958 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
-2016-03-21 23:21:45.958 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //li/a[contains(@href,'people')]
-2016-03-21 23:21:45.958 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is myMainPage
-2016-03-21 23:21:45.959 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.HomePage: find element By xpath
-2016-03-21 23:21:46.083 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.HomePage: find element By xpath
-2016-03-21 23:21:46.135 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.HomePage: click button
-2016-03-21 23:21:49.340 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Success
-2016-03-21 23:21:49.350 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Stop WebDriver
-2016-03-21 23:21:50.301 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finish
-2016-03-21 23:21:50.302 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: PassedTests = loginByUerName
+2016-03-21 23:26:16.294 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: ------------------------------------
+2016-03-21 23:26:16.390 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2016-03-21 23:26:16.942 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: click button
+2016-03-21 23:26:17.784 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2016-03-21 23:26:17.805 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: type value is:  13282774643
+2016-03-21 23:26:17.971 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2016-03-21 23:26:17.999 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: type value is:  appium123
+2016-03-21 23:26:18.647 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2016-03-21 23:26:18.693 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: click button
+2016-03-21 23:26:18.916 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2016-03-21 23:26:19.471 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2016-03-21 23:26:27.660 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.HomePage: com.dbyl.libarary.pageAction.HomePage
+2016-03-21 23:26:27.660 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.HomePage: C:\Users\Young\workspace\Demo
+2016-03-21 23:26:27.660 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.HomePage: C:\Users\Young\workspace\Demo/src/com/dbyl/libarary/pageAction/HomePage.xml
+2016-03-21 23:26:27.661 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: com.dbyl.libarary.pageAction.HomePage
+2016-03-21 23:26:27.663 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: page Info is:com.dbyl.libarary.pageAction.HomePage
+2016-03-21 23:26:27.663 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
+2016-03-21 23:26:27.663 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
+2016-03-21 23:26:27.664 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //div[@class='top-nav-profile']//img[@class='Avatar']
+2016-03-21 23:26:27.664 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is profile
+2016-03-21 23:26:27.664 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
+2016-03-21 23:26:27.664 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
+2016-03-21 23:26:27.665 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //li/a[contains(@href,'people')]
+2016-03-21 23:26:27.665 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is myMainPage
+2016-03-21 23:26:27.666 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.HomePage: find element By xpath
+2016-03-21 23:26:27.820 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.HomePage: find element By xpath
+2016-03-21 23:26:27.852 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.HomePage: click button
+2016-03-21 23:26:27.871 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestngRetryManager: running retry for  'loginByUerName' on class com.dbyl.libarary.utils.TestngRetryManager Retrying 1 times
+2016-03-21 23:26:27.872 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Skipped
+2016-03-21 23:26:27.890 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Stop WebDriver
+2016-03-21 23:26:29.251 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Start WebDriver
+2016-03-21 23:26:29.252 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
+2016-03-21 23:26:29.260 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: com.dbyl.libarary.pageAction.LoginPage
+2016-03-21 23:26:29.260 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo
+2016-03-21 23:26:29.261 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
+2016-03-21 23:26:29.261 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: com.dbyl.libarary.pageAction.LoginPage
+2016-03-21 23:26:29.276 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: page Info is:com.dbyl.libarary.pageAction.LoginPage
+2016-03-21 23:26:29.276 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type 
+2016-03-21 23:26:29.277 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
+2016-03-21 23:26:29.277 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //input[@name='account' and  not(@autocomplete)]
+2016-03-21 23:26:29.277 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is loginEmailInputBox
+2016-03-21 23:26:29.277 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
+2016-03-21 23:26:29.278 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
+2016-03-21 23:26:29.278 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //button[@class='sign-button submit' and text()='µÇÂ¼']
+2016-03-21 23:26:29.278 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is loginButton
+2016-03-21 23:26:29.278 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
+2016-03-21 23:26:29.279 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
+2016-03-21 23:26:29.279 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //div[@class='top-nav-profile']//img[@class='Avatar']
+2016-03-21 23:26:29.279 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is profile
+2016-03-21 23:26:29.279 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
+2016-03-21 23:26:29.279 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
+2016-03-21 23:26:29.280 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //input[@name='password' and @placeholder='ÃÜÂë']
+2016-03-21 23:26:29.280 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is loginPasswordInputBox
+2016-03-21 23:26:29.280 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
+2016-03-21 23:26:29.280 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 30
+2016-03-21 23:26:29.280 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //div/a[.='µÇÂ¼']
+2016-03-21 23:26:29.281 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is clickToLoginButton
+2016-03-21 23:26:29.282 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestngRetryManager: running retry for  'loginByUerName' on class com.dbyl.libarary.utils.TestngRetryManager Retrying 2 times
+2016-03-21 23:26:29.282 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Skipped
+2016-03-21 23:26:29.291 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Stop WebDriver
+2016-03-21 23:26:29.291 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestngRetryManager: running retry for  'loginByUerName' on class com.dbyl.libarary.utils.TestngRetryManager Retrying 3 times
+2016-03-21 23:26:29.292 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.loginTest: Start WebDriver
+2016-03-21 23:26:29.293 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finsh
+2016-03-21 23:26:29.298 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.libarary.pageAction.LoginPage: com.dbyl.libarary.pageAction.LoginPage
+2016-03-21 23:26:29.302 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo
+2016-03-21 23:26:29.302 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.pageAction.LoginPage: C:\Users\Young\workspace\Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
+2016-03-21 23:26:29.302 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: com.dbyl.libarary.pageAction.LoginPage
+2016-03-21 23:26:29.305 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: page Info is:com.dbyl.libarary.pageAction.LoginPage
+2016-03-21 23:26:29.305 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type 
+2016-03-21 23:26:29.305 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
+2016-03-21 23:26:29.305 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //input[@name='account' and  not(@autocomplete)]
+2016-03-21 23:26:29.306 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is loginEmailInputBox
+2016-03-21 23:26:29.306 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
+2016-03-21 23:26:29.306 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
+2016-03-21 23:26:29.306 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //button[@class='sign-button submit' and text()='µÇÂ¼']
+2016-03-21 23:26:29.307 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is loginButton
+2016-03-21 23:26:29.307 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
+2016-03-21 23:26:29.307 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
+2016-03-21 23:26:29.308 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //div[@class='top-nav-profile']//img[@class='Avatar']
+2016-03-21 23:26:29.308 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is profile
+2016-03-21 23:26:29.308 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
+2016-03-21 23:26:29.308 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 3
+2016-03-21 23:26:29.309 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //input[@name='password' and @placeholder='ÃÜÂë']
+2016-03-21 23:26:29.309 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is loginPasswordInputBox
+2016-03-21 23:26:29.309 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator type ByXpath
+2016-03-21 23:26:29.309 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator timeOut 30
+2016-03-21 23:26:29.310 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: get locator value //div/a[.='µÇÂ¼']
+2016-03-21 23:26:29.310 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: locator Name is clickToLoginButton
+2016-03-21 23:26:29.310 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Failure
+2016-03-21 23:26:29.311 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.TestNGListener: Test Failure
+2016-03-21 23:26:29.311 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.TestNGListener: Test Finish

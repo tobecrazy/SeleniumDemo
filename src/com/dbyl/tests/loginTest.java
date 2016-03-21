@@ -13,7 +13,7 @@ import com.dbyl.libarary.utils.UITest;
 @Listeners({ TestNGListener.class })
 public class loginTest extends UITest {
 
-	WebDriver driver = DriverFactory.getChromeDriver();
+	WebDriver driver = DriverFactory.getFirefoxDriver();
 
 	@BeforeMethod(alwaysRun = true)
 	public void init() {
