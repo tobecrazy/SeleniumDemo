@@ -1,3 +1,3 @@
-2016-03-24 22:03:31.210 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.ConfigUtils: Get the config file: C:\Users\Young\workspace\Demo\config.properties
-2016-03-24 22:03:31.217 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: chrome driver path is C:\Users\Young\workspace\Demo\webDriver\chromedriver.exe 
-2016-03-24 22:03:33.545 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
+2016-03-24 22:58:48.426 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.ConfigUtils: Get the config file: C:\Users\Young\workspace\Demo\config.properties
+2016-03-24 22:58:48.437 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: chrome driver path is C:\Users\Young\workspace\Demo\webDriver\chromedriver.exe 
+2016-03-24 22:58:50.615 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
