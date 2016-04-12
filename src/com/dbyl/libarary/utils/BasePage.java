@@ -283,19 +283,18 @@ public class BasePage {
 	 */
 	public Locator getLocator(String locatorName) throws IOException {
 
-		Locator locator;
+		Locator locator =  new Locator(locatorName);
 		// for (int i = 0; i < locatorMap.length; i++) {
 		// if (locatorMap[i][0].endsWith(locatorName)) {
 		// return locator = new Locator(locatorMap[i][1]);
 		// }
 		// }
 		// return locator = new Locator(locatorName);
-		locator = locatorMap.get(locatorName);
-		if (locator == null) {
-			locator = new Locator(locatorName);
+		if(locatorMap!=null)
+		{
+			locator = locatorMap.get(locatorName);
 		}
 		return locator;
-
 	}
 	
 	public int open(String URL)
@@ -343,6 +342,20 @@ public class BasePage {
 	            }  
 	        }  
 	  	return responseStatus;
+	}
+	/**
+	 * For DOM Event 
+	 * @author Young
+	 * @param locator
+	 * @param event
+	 * please refer to: http://www.w3school.com.cn/jsref/dom_obj_event.asp
+	 * 
+	 */
+	public void DOMEvent(Locator locator,String event)
+	{
+		JavascriptExecutor jse=((JavascriptExecutor)driver);
+		String js="var event;if (document.createEvent){event = document.createEvent(\"HTMLEvents\");event.initEvent(\""+event+"\", true, false);arguments[0].dispatchEvent(event);} else {arguments[0].fireEvent(\"on"+event+"\")}";
+		jse.executeScript(js, findElement(driver,locator)) ;
 	}
 
 }

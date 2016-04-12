@@ -35,7 +35,8 @@ public class xmlUtils {
 		File file = new File(path);
 		if (!file.exists()) {
 			log.error("Can't find " + path);
-			throw new IOException("Can't find " + path);
+			return locatorMap=null;
+			//throw new IOException("Can't find " + path);
 		}
 		SAXReader reader = new SAXReader();
 		Document document = reader.read(file);
