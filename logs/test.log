@@ -1,11 +1,11 @@
-2016-04-13 00:13:02.053 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.ConfigUtils: Get the config file: C:\Users\Young\workspace\Demo\config.properties
-2016-04-13 00:13:02.055 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: chrome driver path is C:\Users\Young\workspace\Demo\webDriver\chromedriver.exe 
-2016-04-13 00:13:04.406 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
-2016-04-13 00:13:04.407 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.tests.Case1: com.dbyl.tests.Case1
-2016-04-13 00:13:04.407 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.Case1: C:\Users\Young\workspace\Demo
-2016-04-13 00:13:04.408 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.Case1: C:\Users\Young\workspace\Demo/src/com/dbyl/libarary/pageAction/Case1.xml
-2016-04-13 00:13:04.409 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: com.dbyl.tests.Case1
-2016-04-13 00:13:04.410 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.xmlUtils: Can't find C:\Users\Young\workspace\Demo/src/com/dbyl/libarary/pageAction/Case1.xml
-2016-04-13 00:13:27.726 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.tests.Case1: find element By xpath
-2016-04-13 00:13:27.858 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.Case1: type value is:  abcde
-2016-04-13 00:13:37.947 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.tests.Case1: find element By xpath
+2016-07-17 10:51:01.249 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.ConfigUtils: Get the config file: C:\Users\Young\workspace\Demo\config.properties
+2016-07-17 10:51:01.251 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: chrome driver path is C:\Users\Young\workspace\Demo\webDriver\chromedriver.exe 
+2016-07-17 10:51:10.785 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
+2016-07-17 10:51:10.786 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.tests.Case1: com.dbyl.tests.Case1
+2016-07-17 10:51:10.786 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.Case1: C:\Users\Young\workspace\Demo
+2016-07-17 10:51:10.786 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.Case1: C:\Users\Young\workspace\Demo/src/com/dbyl/libarary/pageAction/Case1.xml
+2016-07-17 10:51:10.787 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.libarary.utils.xmlUtils: com.dbyl.tests.Case1
+2016-07-17 10:51:10.787 ERROR com.dbyl.libarary.utils.Log 41 error - com.dbyl.libarary.utils.xmlUtils: Can't find C:\Users\Young\workspace\Demo/src/com/dbyl/libarary/pageAction/Case1.xml
+2016-07-17 10:51:13.508 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.tests.Case1: find element By xpath
+2016-07-17 10:51:13.561 INFO  com.dbyl.libarary.utils.Log 25 info - com.dbyl.tests.Case1: type value is:  abcde
+2016-07-17 10:51:23.676 DEBUG com.dbyl.libarary.utils.Log 33 debug - com.dbyl.tests.Case1: find element By xpath
