@@ -19,7 +19,7 @@ public class CCBSoftPadDemo {
 	@Test(groups = { "edgeDriver" })
 	public void edgeDriver() throws InterruptedException {
 		WindowsUtils.getProgramFilesPath();
-		driver =DriverFactory.getChromeDriver();
+		driver =DriverFactory.getFirefoxDriver();
 		driver.get("https://ibsbjstar.ccb.com.cn/app/V5/CN/STY1/login.jsp");
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);

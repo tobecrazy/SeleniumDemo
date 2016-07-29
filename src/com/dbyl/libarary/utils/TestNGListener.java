@@ -35,10 +35,12 @@ public class TestNGListener extends TestListenerAdapter {
 	private void takeScreenShot(ITestResult tr) {
 		UITest b = (UITest) tr.getInstance();
 		WebDriver currentDirver = b.getDriver();
-		System.out.println(currentDirver.getTitle());
+		log.info(currentDirver.getTitle()+"\n");
+		log.error(tr.getThrowable().getMessage());
 		b.takeScreenShot();
 
 	}
+	
 
 	@Override
 	public void onTestSkipped(ITestResult tr) {

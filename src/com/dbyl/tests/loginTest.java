@@ -1,5 +1,6 @@
 package com.dbyl.tests;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -13,7 +14,7 @@ import com.dbyl.libarary.utils.UITest;
 @Listeners({ TestNGListener.class })
 public class loginTest extends UITest {
 
-	WebDriver driver = DriverFactory.getFirefoxDriver();
+	WebDriver driver = DriverFactory.getChromeDriver();
 
 	@BeforeMethod(alwaysRun = true)
 	public void init() {
@@ -25,6 +26,7 @@ public class loginTest extends UITest {
 	@Test(groups = "loginTest")
 	public void loginByUerName() throws Exception {
 		ViewHomePage.viewMyProfile();
+		Assert.fail("Failed test");
 	}
 
 	@AfterMethod(alwaysRun = true)
