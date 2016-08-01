@@ -2,10 +2,12 @@ package com.dbyl.tests;
 
 import java.lang.reflect.InvocationTargetException;
 
+import org.testng.Assert;
 import org.testng.annotations.Listeners;
 
 import com.dbyl.libarary.pageAction.LoginPage;
 import com.dbyl.libarary.utils.DriverFactory;
+import com.dbyl.libarary.utils.Locator;
 import com.dbyl.libarary.utils.PageFactory;
 import com.dbyl.libarary.utils.TestNGListener;
 @Listeners({ TestNGListener.class })
@@ -13,6 +15,7 @@ public class Test {
 
 	@org.testng.annotations.Test
 	public  void myTest() throws Exception {
+	
 	
 		LoginPage h = null;
 		try {
@@ -25,9 +28,11 @@ public class Test {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		h.typeEmailInputBox("TEst");
 		h.typePasswordInputBox("TTTTT");
-		
+		h.clickOnLoginButton();
+		h.isElementPresent(new Locator("//input"), 1);
 	}
 
 

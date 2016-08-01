@@ -28,6 +28,13 @@ public class TestNGListener extends TestListenerAdapter {
 	@Override
 	public void onTestFailure(ITestResult tr) {
 		log.error("Test Failure");
+		Throwable throwable=tr.getThrowable();
+		if(throwable!=null)
+		{
+			log.error(throwable.getMessage() );
+		}
+		log.error(tr.getTestName()+" \n"+tr.getStatus());
+		
 		super.onTestFailure(tr);
 		takeScreenShot(tr);
 	}
@@ -36,7 +43,7 @@ public class TestNGListener extends TestListenerAdapter {
 		UITest b = (UITest) tr.getInstance();
 		WebDriver currentDirver = b.getDriver();
 		log.info(currentDirver.getTitle()+"\n");
-		log.error(tr.getThrowable().getMessage());
+		
 		b.takeScreenShot();
 
 	}
