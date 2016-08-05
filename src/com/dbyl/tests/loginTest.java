@@ -13,12 +13,14 @@ import com.dbyl.libarary.utils.TestNGListener;
 import com.dbyl.libarary.utils.UITest;
 @Listeners({ TestNGListener.class })
 public class loginTest extends UITest {
+	WebDriver driver;
+	
 
-	WebDriver driver = DriverFactory.getChromeDriver();
 
 	@BeforeMethod(alwaysRun = true)
 	public void init() {
-
+		System.setProperty("webdriver.gecko.driver", "webDriver//geckodriver.exe");
+	    driver =DriverFactory.getFirefoxDriver();
 		super.init(driver);
 		ViewHomePage.setDriver(driver);
 	}
