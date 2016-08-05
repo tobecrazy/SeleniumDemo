@@ -21,6 +21,7 @@ public class getAlert {
 	@Test(groups = { "ChromeDriver" })
 	public void FireFoxDriver() throws InterruptedException {
 		WindowsUtils.getProgramFilesPath();
+		System.setProperty("webdriver.gecko.driver", "webDriver//geckodriver.exe");
 		driver =DriverFactory.getFirefoxDriver();
 		driver.get("file:///G:/html/index.html");
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);

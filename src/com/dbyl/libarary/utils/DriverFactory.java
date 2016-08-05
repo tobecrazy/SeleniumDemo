@@ -115,7 +115,7 @@ public class DriverFactory {
 			profile.setPreference("extensions.firebug.currentVersion", "2.0.4");
 			profile.setPreference("extensions.firebug.allPagesActivation",
 					"off");
-		} catch (IOException e3) {
+		} catch (Exception e3) {
 			e3.printStackTrace();
 		}
 		profile.setPreference("browser.download.folderList", 2);

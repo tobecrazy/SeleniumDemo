@@ -2,7 +2,6 @@ package com.dbyl.tests;
 
 import java.lang.reflect.InvocationTargetException;
 
-import org.testng.Assert;
 import org.testng.annotations.Listeners;
 
 import com.dbyl.libarary.pageAction.LoginPage;
