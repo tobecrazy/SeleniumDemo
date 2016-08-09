@@ -1,24 +1,16 @@
 package com.dbyl.tests;
 
 import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Reader;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -36,7 +28,7 @@ public class getAllData {
 	@Test(groups = "Test")
 	public void main() throws AWTException, IOException {
 
-		driver.get("http://221.15.37.142:8088/Public/Project/ProjectList.aspx");
+		driver.get("http://www.lhfdc.gov.cn/templets/lh/aspx/HPMS/ProjectList.aspx");
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		int i = 1;
 		while (true) {
