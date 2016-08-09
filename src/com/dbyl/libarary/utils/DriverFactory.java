@@ -33,8 +33,9 @@ public class DriverFactory {
 	private static String IEDriverServer;
 	private static String EDGEDriver;
 	private static String config = System.getProperty("user.dir")
-			+ "\\config.properties";
+			+ "/config.properties";
 	static Log log = new Log(DriverFactory.class);
+	private static String OSType = System.getProperty("os.name");
 
 //	public static WebDriver getHtmlUnit() {
 //		HtmlUnitDriver driver = new HtmlUnitDriver();
@@ -50,8 +51,17 @@ public class DriverFactory {
 			log.error(e.getMessage());
 		}
 		if (p != null) {
-			chromedriver = p.getProperty("chromedriver");
+			if (!OSType.contains("Mac"))
+			{
+				chromedriver = p.getProperty("chromedriver");
+			}
+			else
+			{
+				chromedriver = p.getProperty("MAC_chromedriver");
+			}
+			
 		}
+		
 		log.info("chrome driver path is "+chromedriver);
 		System.setProperty("webdriver.chrome.driver", chromedriver);
 		// ChromeDriverService.Builder builder=new

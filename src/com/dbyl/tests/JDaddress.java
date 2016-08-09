@@ -14,7 +14,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import com.dbyl.libarary.utils.DriverFactory;
-import com.dbyl.libarary.utils.RemoteBrowserBean;
 
 public class JDaddress {
 	private WebDriver driver;
@@ -22,7 +21,7 @@ public class JDaddress {
 	@Test(groups = { "JDaddress" })
 	public void testJD() throws InterruptedException {
 		WindowsUtils.getProgramFilesPath();
-		driver =DriverFactory.getEDGEDriver();  // DriverFactory.getRemoteDriver(new RemoteBrowserBean("chrome"));
+		driver =DriverFactory.getChromeDriver();  // DriverFactory.getRemoteDriver(new RemoteBrowserBean("chrome"));
 		driver.get("http://item.jd.com/1217499.html");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
