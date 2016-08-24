@@ -21,17 +21,19 @@ public class Test {
 			h = (LoginPage) PageFactory.getPage(LoginPage.class,
 					DriverFactory.getChromeDriver());
 		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		h.typeEmailInputBox("TEst");
 		h.typePasswordInputBox("TTTTT");
 		h.clickOnLoginButton();
-		h.isElementPresent(new Locator("//input"), 1);
+		boolean a= h.isElementPresent(new Locator("//input"), 1);
+		if(a)
+		{
+			System.out.print("11121231");
+		}
 	}
 
 

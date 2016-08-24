@@ -14,6 +14,7 @@ import org.apache.http.util.EntityUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -34,12 +35,10 @@ public class BasePage {
 		log.debug(this.getClass().getCanonicalName());
 		log.info(System.getProperty("user.dir"));
 		// locatorMap = ReadExcelUtil.getLocatorMap();
-		path = System.getProperty("user.dir")
-				+ "/src/com/dbyl/libarary/pageAction/"
-				+ this.getClass().getSimpleName() + ".xml";
+		path = System.getProperty("user.dir") + "/src/com/dbyl/libarary/pageAction/" + this.getClass().getSimpleName()
+				+ ".xml";
 		log.info(path);
-		locatorMap = xmlUtils.readXMLDocument(path, this.getClass()
-				.getCanonicalName());
+		locatorMap = xmlUtils.readXMLDocument(path, this.getClass().getCanonicalName());
 	}
 
 	protected void type(Locator locator, String values) throws Exception {
@@ -86,8 +85,7 @@ public class BasePage {
 		WebElement e = findElement(driver, locator);
 		log.info("type value is:  " + text);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		String result = (String) js.executeScript(
-				"arguments[0].getInnerHTML()", e);
+		String result = (String) js.executeScript("arguments[0].getInnerHTML()", e);
 		return result;
 	}
 
@@ -176,8 +174,7 @@ public class BasePage {
 	 * @return
 	 * @throws IOException
 	 */
-	public WebElement getElement(WebDriver driver, Locator locator)
-			throws IOException {
+	public WebElement getElement(WebDriver driver, Locator locator) throws IOException {
 		locator = getLocator(locator.getElement());
 		WebElement e;
 		switch (locator.getBy()) {
@@ -219,17 +216,32 @@ public class BasePage {
 		return e;
 	}
 
-	public boolean isElementPresent(WebDriver driver, Locator myLocator,
-			int timeOut) throws IOException {
+	/**
+	 * 
+	 * @param driver
+	 * @param myLocator
+	 * @param timeOut
+	 * @return
+	 * @throws IOException
+	 */
+	public boolean isElementPresent(WebDriver driver, Locator myLocator, int timeOut) throws IOException {
 		final Locator locator = getLocator(myLocator.getElement());
 		boolean isPresent = false;
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-		isPresent = wait.until(new ExpectedCondition<WebElement>() {
+		WebElement e = wait.until(new ExpectedCondition<WebElement>() {
 			@Override
 			public WebElement apply(WebDriver d) {
-				return findElement(d, locator);
+				try {
+					return findElement(d, locator);
+				} catch (NoSuchElementException e) {
+					return null;
+				}
 			}
-		}).isDisplayed();
+		});
+		if (e != null) {
+			isPresent = e.isDisplayed();
+		}
+
 		return isPresent;
 	}
 
@@ -241,8 +253,7 @@ public class BasePage {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean isElementPresent(Locator locator, int timeOut)
-			throws IOException {
+	public boolean isElementPresent(Locator locator, int timeOut) throws IOException {
 		return isElementPresent(driver, locator, timeOut);
 	}
 
@@ -261,9 +272,7 @@ public class BasePage {
 						try {
 							return getElement(driver, locator);
 						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							log.error("can't find element "
-									+ locator.getElement());
+							log.error("can't find element " + locator.getElement());
 							return null;
 						}
 
@@ -283,79 +292,80 @@ public class BasePage {
 	 */
 	public Locator getLocator(String locatorName) throws IOException {
 
-		Locator locator =  new Locator(locatorName);
+		Locator locator = new Locator(locatorName);
 		// for (int i = 0; i < locatorMap.length; i++) {
 		// if (locatorMap[i][0].endsWith(locatorName)) {
 		// return locator = new Locator(locatorMap[i][1]);
 		// }
 		// }
 		// return locator = new Locator(locatorName);
-		if(locatorMap!=null)
-		{
+		if (locatorMap != null) {
 			locator = locatorMap.get(locatorName);
 		}
 		return locator;
 	}
-	
-	public int open(String URL)
-	{
-		if(URL==null ||URL.equals(""))
-		{
+
+	public int open(String URL) {
+		if (URL == null || URL.equals("")) {
 			log.error("invlid URL");
 			return -1;
 		}
 		int responseStatus = 200;
-	    CloseableHttpClient httpclient = HttpClients.createDefault();  
-	    try {  
-	            // 创建httpget.    
-	            HttpGet httpget = new HttpGet(URL);  
-	            log.info("executing request " + httpget.getURI());  
-	            // 执行get请求.    
-	            CloseableHttpResponse response = httpclient.execute(httpget);  
-	            try {  
-	                // 获取响应实体    
-	                HttpEntity entity = response.getEntity();  
-	                log.info("--------------------------------------");  
-	                // 打印响应状态    
-	                log.info(response.getStatusLine().toString());  
-	                if (entity != null) {  
-	                    // 打印响应内容长度    
-	                    log.info("Response content length: " + entity.getContentLength());  
-	                    // 打印响应内容    
-	                    log.info("Response content: " + EntityUtils.toString(entity));  
-	                }  
-	                log.info("------------------------------------");  
-	            } finally {  
-	                response.close();  
-	            }  
-	        } catch (ClientProtocolException e) {  
-	            e.printStackTrace();  
-	        } catch (ParseException e) {  
-	            e.printStackTrace();  
-	        } catch (IOException e) {  
-	            e.printStackTrace();  
-	        } finally {  
-	            try {  
-	                httpclient.close();  
-	            } catch (IOException e) {  
-	                e.printStackTrace();  
-	            }  
-	        }  
-	  	return responseStatus;
+		CloseableHttpClient httpclient = HttpClients.createDefault();
+		try {
+			// 创建httpget.
+			HttpGet httpget = new HttpGet(URL);
+			log.info("executing request " + httpget.getURI());
+			// 执行get请求.
+			CloseableHttpResponse response = httpclient.execute(httpget);
+			try {
+				// 获取响应实体
+				HttpEntity entity = response.getEntity();
+				log.info("--------------------------------------");
+				// 打印响应状态
+				log.info(response.getStatusLine().toString());
+				if (entity != null) {
+					// 打印响应内容长度
+					log.info("Response content length: " + entity.getContentLength());
+					// 打印响应内容
+					log.info("Response content: " + EntityUtils.toString(entity));
+				}
+				log.info("------------------------------------");
+			} finally {
+				response.close();
+			}
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				httpclient.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return responseStatus;
 	}
+
 	/**
-	 * For DOM Event 
+	 * For DOM Event
+	 * 
 	 * @author Young
 	 * @param locator
 	 * @param event
-	 * please refer to: http://www.w3school.com.cn/jsref/dom_obj_event.asp
+	 *            please refer to:
+	 *            http://www.w3school.com.cn/jsref/dom_obj_event.asp
 	 * 
 	 */
-	public void DOMEvent(Locator locator,String event)
-	{
-		JavascriptExecutor jse=((JavascriptExecutor)driver);
-		String js="var event;if (document.createEvent){event = document.createEvent(\"HTMLEvents\");event.initEvent(\""+event+"\", true, false);arguments[0].dispatchEvent(event);} else {arguments[0].fireEvent(\"on"+event+"\")}";
-		jse.executeScript(js, findElement(driver,locator)) ;
+	public void DOMEvent(Locator locator, String event) {
+		JavascriptExecutor jse = ((JavascriptExecutor) driver);
+		String js = "var event;if (document.createEvent){event = document.createEvent(\"HTMLEvents\");event.initEvent(\""
+				+ event + "\", true, false);arguments[0].dispatchEvent(event);} else {arguments[0].fireEvent(\"on"
+				+ event + "\")}";
+		jse.executeScript(js, findElement(driver, locator));
 	}
 
 }
