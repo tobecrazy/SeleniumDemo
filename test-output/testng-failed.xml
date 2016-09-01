@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.dbyl.tests.getAllData">
+      <class name="com.dbyl.tests.getAlert">
         <methods>
-          <include name="beforeTest"/>
-          <include name="afterTest"/>
-          <include name="main"/>
+          <include name="FireFoxDriver"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.dbyl.tests.getAllData -->
+      </class> <!-- com.dbyl.tests.getAlert -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

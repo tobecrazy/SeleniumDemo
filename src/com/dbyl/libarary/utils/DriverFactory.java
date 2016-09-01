@@ -29,6 +29,7 @@ public class DriverFactory {
 
 	private static String chromedriver;
 	private static String fireBug;
+	private static String firefoxdriver;
 	private static Properties p = null;
 	private static String IEDriverServer;
 	private static String EDGEDriver;
@@ -98,8 +99,17 @@ public class DriverFactory {
 
 		if (p != null) {
 			fireBug = p.getProperty("fireBug");
+			if (!OSType.contains("Mac"))
+			{
+				firefoxdriver = p.getProperty("firefoxdriver");
+			}
+			else
+			{
+				firefoxdriver = p.getProperty("MAC_firefoxdriver");
+			}
+			
 		}
-
+		System.setProperty("webdriver.gecko.driver", firefoxdriver);
 		File file = new File(fireBug);
 		FirefoxProfile profile = new FirefoxProfile();
 		// profile.setPreference("network.proxy.type", 2);
@@ -128,8 +138,8 @@ public class DriverFactory {
 		} catch (Exception e3) {
 			e3.printStackTrace();
 		}
-		profile.setPreference("browser.download.folderList", 2);
-		profile.setPreference("browser.download.dir", "C:\\selenium");
+//		profile.setPreference("browser.download.folderList", 2);
+//		profile.setPreference("browser.download.dir", "C:\\selenium");
 		profile.setPreference(
 				"browser.helperApps.neverAsk.saveToDisk",
 				"application/octet-stream, application/vnd.ms-excel, text/csv, application/zip,application/exe");
