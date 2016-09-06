@@ -3,7 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/commons-codec-1.10.jar"/>
 	<classpathentry kind="lib" path="lib/poi/lib/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="lib/poi/poi-3.13-20150929.jar"/>
 	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
@@ -16,57 +15,43 @@
 	<classpathentry kind="lib" path="lib/email/javax.mail-1.5.5.jar"/>
 	<classpathentry kind="lib" path="lib/pdfbox-app-1.8.11.jar"/>
 	<classpathentry kind="lib" path="lib/email/commons-email-1.4.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/selenium-3.0.0-beta2-nodeps.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/ant-1.8.2.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/ant-launcher-1.8.2.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/aopalliance-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/bsh-2.0b4.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/cglib-nodep-3.2.4.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/commons-exec-1.3.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/commons-io-2.4.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/commons-lang3-3.4.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/cssparser-0.9.18.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/gson-2.3.1.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/guava-19.0.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/guice-4.0.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/hamcrest-core-1.3.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/hamcrest-library-1.3.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/htmlunit-2.21.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/htmlunit-core-js-2.17.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/htmlunit-driver-2.21.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/httpclient-4.5.2.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/httpcore-4.4.4.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/httpmime-4.5.2.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/javax.inject-1.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/javax.servlet-api-3.1.0.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/jcip-annotations-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/jcommander-1.48.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/jetty-continuation-repacked.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/jetty-http-repacked.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/jetty-io-9.2.13.v20150730.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/jetty-io-repacked.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/jetty-jmx-repacked.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/jetty-security-repacked.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/jetty-server-repacked.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/jetty-servlet-repacked.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/jetty-servlets-repacked.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/jetty-util-9.2.13.v20150730.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/jetty-util-repacked.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/jna-4.1.0.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/jna-platform-4.1.0.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/junit-4.12.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/neko-htmlunit-2.21.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/netty-3.5.7.Final.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/phantomjsdriver-1.2.1.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/sac-1.3.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/snakeyaml-1.15.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/websocket-api-9.2.15.v20160210.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/websocket-client-9.2.15.v20160210.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/websocket-common-9.2.15.v20160210.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/xalan-2.7.2.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/xercesImpl-2.11.0.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/xml-apis-1.4.01.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/selenium-server-3.0.0-beta2/lib/testng-6.9.9.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/selenium-3.0.0-beta3-nodeps.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/bundle-jars.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/cglib-nodep-3.2.4.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/cssparser-0.9.18.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/gson-2.3.1.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/guava-19.0.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/hamcrest-library-1.3.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/htmlunit-2.21.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/htmlunit-core-js-2.17.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/htmlunit-driver-2.21.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/httpclient-4.5.2.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/httpcore-4.4.4.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/httpmime-4.5.2.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/javax.servlet-api-3.1.0.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/jcip-annotations-1.0.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/jcommander-1.48.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/jetty-io-9.2.13.v20150730.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/jetty-util-9.2.13.v20150730.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/jna-platform-4.1.0.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/neko-htmlunit-2.21.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/netty-3.5.7.Final.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/phantomjsdriver-1.3.0.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/sac-1.3.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/snakeyaml-1.15.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/websocket-api-9.2.15.v20160210.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/websocket-client-9.2.15.v20160210.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/websocket-common-9.2.15.v20160210.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/xalan-2.7.2.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/xercesImpl-2.11.0.jar"/>
+	<classpathentry kind="lib" path="selenium-server-3.0.0-beta3/lib/xml-apis-1.4.01.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
