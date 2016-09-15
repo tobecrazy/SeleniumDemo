@@ -2,15 +2,15 @@
 <testng-results skipped="1" failed="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22696" started-at="2016-09-06T16:00:38Z" finished-at="2016-09-06T16:01:00Z">
+  <suite name="Default suite" duration-ms="22400" started-at="2016-09-15T08:03:07Z" finished-at="2016-09-15T08:03:29Z">
     <groups>
       <group name="loginTest">
-        <method signature="loginTest.loginByUerName()[pri:0, instance:com.dbyl.tests.loginTest@5026735c]" name="loginByUerName" class="com.dbyl.tests.loginTest"/>
+        <method signature="loginTest.loginByUerName()[pri:0, instance:main.java.com.dbyl.tests.loginTest@5026735c]" name="loginByUerName" class="main.java.com.dbyl.tests.loginTest"/>
       </group> <!-- loginTest -->
     </groups>
-    <test name="Default test" duration-ms="22696" started-at="2016-09-06T16:00:38Z" finished-at="2016-09-06T16:01:00Z">
-      <class name="com.dbyl.tests.loginTest">
-        <test-method status="FAIL" signature="init()[pri:0, instance:com.dbyl.tests.loginTest@5026735c]" name="init" is-config="true" duration-ms="0" started-at="2016-09-07T00:00:38Z" finished-at="2016-09-07T00:00:38Z">
+    <test name="Default test" duration-ms="22400" started-at="2016-09-15T08:03:07Z" finished-at="2016-09-15T08:03:29Z">
+      <class name="main.java.com.dbyl.tests.loginTest">
+        <test-method status="FAIL" signature="init()[pri:0, instance:main.java.com.dbyl.tests.loginTest@5026735c]" name="init" is-config="true" duration-ms="0" started-at="2016-09-15T16:03:07Z" finished-at="2016-09-15T16:03:07Z">
           <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
             <message>
               <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
@@ -31,8 +31,8 @@ Driver info: driver.version: FirefoxDriver
 	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:214)
 	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:210)
 	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:127)
-	at com.dbyl.libarary.utils.DriverFactory.getFirefoxDriver(DriverFactory.java:146)
-	at com.dbyl.tests.loginTest.init(loginTest.java:23)
+	at main.java.com.dbyl.libarary.utils.DriverFactory.getFirefoxDriver(DriverFactory.java:146)
+	at main.java.com.dbyl.tests.loginTest.init(loginTest.java:23)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -60,14 +60,14 @@ Driver info: driver.version: FirefoxDriver
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
-Caused by: org.openqa.selenium.WebDriverException: org.apache.http.conn.HttpHostConnectException: Connect to localhost:31814 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: errno: 61 (Connection refused), error: Connection refused (local port 65347 to address 0:0:0:0:0:0:0:1 (localhost), remote port 31814 to address 0:0:0:0:0:0:0:1 (localhost))
+Caused by: org.openqa.selenium.WebDriverException: org.apache.http.conn.HttpHostConnectException: Connect to localhost:37359 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: errno: 61 (Connection refused), error: Connection refused (local port 49400 to address 0:0:0:0:0:0:0:1 (localhost), remote port 37359 to address 0:0:0:0:0:0:0:1 (localhost))
 Build info: version: 'unknown', revision: 'c7b525d', time: '2016-09-01 14:54:42 -0700'
 System info: host: 'Youngs-MacBook-Pro.local', ip: '192.168.1.109', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.11.6', java.version: '1.8.0_92'
 Driver info: driver.version: FirefoxDriver
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:91)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:597)
 	... 36 more
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:31814 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: errno: 61 (Connection refused), error: Connection refused (local port 65347 to address 0:0:0:0:0:0:0:1 (localhost), remote port 31814 to address 0:0:0:0:0:0:0:1 (localhost))
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:37359 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: errno: 61 (Connection refused), error: Connection refused (local port 49400 to address 0:0:0:0:0:0:0:1 (localhost), remote port 37359 to address 0:0:0:0:0:0:0:1 (localhost))
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:158)
 	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
 	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
@@ -85,7 +85,7 @@ Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:3
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:141)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
 	... 37 more
-Caused by: java.net.ConnectException: errno: 61 (Connection refused), error: Connection refused (local port 65347 to address 0:0:0:0:0:0:0:1 (localhost), remote port 31814 to address 0:0:0:0:0:0:0:1 (localhost))
+Caused by: java.net.ConnectException: errno: 61 (Connection refused), error: Connection refused (local port 49400 to address 0:0:0:0:0:0:0:1 (localhost), remote port 37359 to address 0:0:0:0:0:0:0:1 (localhost))
 	at java.net.PlainSocketImpl.socketConnect(Native Method)
 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
@@ -101,19 +101,19 @@ Caused by: java.net.ConnectException: errno: 61 (Connection refused), error: Con
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="SKIP" signature="loginByUerName()[pri:0, instance:com.dbyl.tests.loginTest@5026735c]" name="loginByUerName" duration-ms="5" started-at="2016-09-07T00:01:00Z" finished-at="2016-09-07T00:01:00Z">
+        <test-method status="SKIP" signature="loginByUerName()[pri:0, instance:main.java.com.dbyl.tests.loginTest@5026735c]" name="loginByUerName" duration-ms="3" started-at="2016-09-15T16:03:29Z" finished-at="2016-09-15T16:03:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginByUerName -->
-        <test-method status="FAIL" signature="stop()[pri:0, instance:com.dbyl.tests.loginTest@5026735c]" name="stop" is-config="true" duration-ms="0" started-at="2016-09-07T00:01:00Z" finished-at="2016-09-07T00:01:00Z">
+        <test-method status="FAIL" signature="stop()[pri:0, instance:main.java.com.dbyl.tests.loginTest@5026735c]" name="stop" is-config="true" duration-ms="0" started-at="2016-09-15T16:03:29Z" finished-at="2016-09-15T16:03:29Z">
           <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[while trying to invoke the method org.openqa.selenium.WebDriver.quit() of a null object loaded from field com.dbyl.libarary.utils.UITest.driver of an object loaded from local variable 'this']]>
+              <![CDATA[while trying to invoke the method org.openqa.selenium.WebDriver.quit() of a null object loaded from field main.java.com.dbyl.libarary.utils.UITest.driver of an object loaded from local variable 'this']]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: while trying to invoke the method org.openqa.selenium.WebDriver.quit() of a null object loaded from field com.dbyl.libarary.utils.UITest.driver of an object loaded from local variable 'this'
-	at com.dbyl.libarary.utils.UITest.stop(UITest.java:49)
-	at com.dbyl.tests.loginTest.stop(loginTest.java:36)
+              <![CDATA[java.lang.NullPointerException: while trying to invoke the method org.openqa.selenium.WebDriver.quit() of a null object loaded from field main.java.com.dbyl.libarary.utils.UITest.driver of an object loaded from local variable 'this'
+	at main.java.com.dbyl.libarary.utils.UITest.stop(UITest.java:49)
+	at main.java.com.dbyl.tests.loginTest.stop(loginTest.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -147,7 +147,7 @@ Caused by: java.net.ConnectException: errno: 61 (Connection refused), error: Con
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stop -->
-      </class> <!-- com.dbyl.tests.loginTest -->
+      </class> <!-- main.java.com.dbyl.tests.loginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map>
+	<!--locator of page map info -->
+	<page pageName="com.dbyl.libarary.pageAction.HomePage">
+		<!--Locator lists -->
+		<locator type="ByXpath" timeOut="3" value="//div[@class='top-nav-profile']//img[@class='Avatar']">profile</locator>
+		<locator type="ByXpath" timeOut="3" value="//li/a[contains(@href,'people')]">myMainPage</locator>
+	</page>
+</map>
