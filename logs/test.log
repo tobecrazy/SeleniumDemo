@@ -9,3 +9,12 @@
 2016-09-15 16:03:30.526 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.pageAction.LoginPage: /Volumes/Transcend/Document/workspace/Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
 2016-09-15 16:03:30.527 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.xmlUtils: main.java.com.dbyl.libarary.pageAction.LoginPage
 2016-09-15 16:03:30.527 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.xmlUtils: Can't find /Volumes/Transcend/Document/workspace/Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
+2016-09-15 16:08:30.940 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: Test Failure
+2016-09-15 16:08:30.942 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: while trying to invoke the method main.java.com.dbyl.libarary.pageAction.LoginPage.typeEmailInputBox(java.lang.String) of a null object loaded from local variable 'h'
+2016-09-15 16:08:30.942 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: null 
+2
+2016-09-15 16:08:30.944 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: Test Failure
+2016-09-15 16:08:30.947 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: Cannot cast class main.java.com.dbyl.tests.Test to class main.java.com.dbyl.libarary.utils.UITest
+2016-09-15 16:08:30.947 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: null 
+2
+2016-09-15 16:08:30.948 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: Test Finish
