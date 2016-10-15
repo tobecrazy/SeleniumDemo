@@ -1,1 +1,1 @@
-java -Dwebdriver.ie.driver="IEDriverServer.exe" -Dwebdriver.chrome.driver="chromedriver.exe" -jar selenium-server-standalone-2.53.1.jar -role node -hub http://192.168.1.115:4444/grid/register/
+java -Dwebdriver.ie.driver="IEDriverServer.exe" -Dwebdriver.chrome.driver="chromedriver.exe" -jar selenium-server-standalone-3.0.0.jar  -role node -hub http://192.168.1.115:4444/grid/register/

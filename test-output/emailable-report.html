@@ -1,14 +1,49 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>TestNG Report</title><style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}</style></head><body><table><tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr><tr><th colspan="7">Default suite</th></tr><tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">1,226</td><td></td><td></td></tr></table><table><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">main.java.com.dbyl.tests.MailTest</td><td><a href="#m0">TestSendEmail</a></td><td rowspan="1">1473927411180</td><td rowspan="1">1195</td></tr></tbody></table><h2>Default test</h2><h3 id="m0">main.java.com.dbyl.tests.MailTest#TestSendEmail</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">javax.mail.AuthenticationFailedException: 535 Error: authentication failed
-
-	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:914)
-	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:825)
-	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:730)
-	at javax.mail.Service.connect(Service.java:366)
-	at javax.mail.Service.connect(Service.java:246)
-	at javax.mail.Service.connect(Service.java:267)
-	at main.java.com.dbyl.tests.MailTest.sendMail(MailTest.java:41)
-	at main.java.com.dbyl.tests.MailTest.TestSendEmail(MailTest.java:48)
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>TestNG Report</title><style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}</style></head><body><table><tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr><tr><th colspan="7">Default suite</th></tr><tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">36,385</td><td></td><td></td></tr></table><table><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">main.java.com.dbyl.tests.getAlert</td><td><a href="#m0">tearDown</a></td><td rowspan="1">1476520614707</td><td rowspan="1">0</td></tr><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">main.java.com.dbyl.tests.getAlert</td><td><a href="#m1">FireFoxDriver</a></td><td rowspan="1">1476520578360</td><td rowspan="1">36330</td></tr></tbody></table><h2>Default test</h2><h3 id="m0">main.java.com.dbyl.tests.getAlert#tearDown</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: while trying to invoke the method org.openqa.selenium.WebDriver.quit() of a null object loaded from field main.java.com.dbyl.tests.getAlert.driver of an object loaded from local variable &apos;this&apos;
+	at main.java.com.dbyl.tests.getAlert.tearDown(getAlert.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:216)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:143)
+	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:217)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:115)
+	at org.testng.TestRunner.privateRun(TestRunner.java:746)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1264)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1189)
+	at org.testng.TestNG.runSuites(TestNG.java:1104)
+	at org.testng.TestNG.run(TestNG.java:1076)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m1">main.java.com.dbyl.tests.getAlert#FireFoxDriver</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.WebDriverException: Unable to convert: Capabilities [{marionette=true, firefoxOptions=org.openqa.selenium.firefox.FirefoxOptions@61edc883, browserName=firefox, moz:firefoxOptions=org.openqa.selenium.firefox.FirefoxOptions@61edc883, version=, platform=ANY}]
+Build info: version: &apos;unknown&apos;, revision: &apos;350cf60&apos;, time: &apos;2016-10-13 10:46:00 -0700&apos;
+System info: host: &apos;Youngs-MacBook-Pro.local&apos;, ip: &apos;192.168.1.106&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.6&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: driver.version: FirefoxDriver
+	at org.openqa.selenium.remote.BeanToJsonConverter.convert(BeanToJsonConverter.java:69)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:54)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:141)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:241)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:128)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:259)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:247)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:242)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:238)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:131)
+	at main.java.com.dbyl.libarary.utils.DriverFactory.getFirefoxDriver(DriverFactory.java:146)
+	at main.java.com.dbyl.tests.getAlert.FireFoxDriver(getAlert.java:24)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -34,4 +69,44 @@
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+Caused by: org.openqa.selenium.WebDriverException: Unable to convert: Capabilities [{marionette=true, firefoxOptions=org.openqa.selenium.firefox.FirefoxOptions@61edc883, browserName=firefox, moz:firefoxOptions=org.openqa.selenium.firefox.FirefoxOptions@61edc883, version=, platform=ANY}]
+Build info: version: &apos;unknown&apos;, revision: &apos;350cf60&apos;, time: &apos;2016-10-13 10:46:00 -0700&apos;
+System info: host: &apos;Youngs-MacBook-Pro.local&apos;, ip: &apos;192.168.1.106&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.6&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: driver.version: FirefoxDriver
+	at org.openqa.selenium.remote.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:88)
+	at org.openqa.selenium.remote.BeanToJsonConverter.convert(BeanToJsonConverter.java:66)
+	... 38 more
+Caused by: org.openqa.selenium.WebDriverException: java.lang.reflect.InvocationTargetException
+Build info: version: &apos;unknown&apos;, revision: &apos;350cf60&apos;, time: &apos;2016-10-13 10:46:00 -0700&apos;
+System info: host: &apos;Youngs-MacBook-Pro.local&apos;, ip: &apos;192.168.1.106&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.6&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: driver.version: FirefoxDriver
+	at org.openqa.selenium.remote.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:232)
+	at org.openqa.selenium.remote.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:143)
+	at org.openqa.selenium.remote.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:189)
+	at org.openqa.selenium.remote.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:86)
+	... 39 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.remote.BeanToJsonConverter.convertObject(BeanToJsonConverter.java:218)
+	... 42 more
+Caused by: org.openqa.selenium.firefox.UnableToCreateProfileException: java.io.FileNotFoundException: webDriver\firebug-2.0.17.xpi (No such file or directory)
+Build info: version: &apos;unknown&apos;, revision: &apos;350cf60&apos;, time: &apos;2016-10-13 10:46:00 -0700&apos;
+System info: host: &apos;Youngs-MacBook-Pro.local&apos;, ip: &apos;192.168.1.106&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.6&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: driver.version: FirefoxDriver
+	at org.openqa.selenium.firefox.FirefoxProfile.layoutOnDisk(FirefoxProfile.java:426)
+	at org.openqa.selenium.firefox.FirefoxProfile.toJson(FirefoxProfile.java:386)
+	at org.openqa.selenium.firefox.FirefoxOptions.toJson(FirefoxOptions.java:172)
+	... 47 more
+Caused by: java.io.FileNotFoundException: webDriver\firebug-2.0.17.xpi (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)
+	at org.openqa.selenium.firefox.internal.FileExtension.obtainRootDirectory(FileExtension.java:79)
+	at org.openqa.selenium.firefox.internal.FileExtension.writeTo(FileExtension.java:59)
+	at org.openqa.selenium.firefox.FirefoxProfile.installExtensions(FirefoxProfile.java:442)
+	at org.openqa.selenium.firefox.FirefoxProfile.layoutOnDisk(FirefoxProfile.java:420)
+	... 49 more
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p></body></html>

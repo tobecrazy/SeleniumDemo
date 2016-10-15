@@ -1,20 +1,3 @@
-2016-09-15 16:03:27.502 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: Test Start
-2016-09-15 16:03:27.521 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: Test Finsh
-2016-09-15 16:03:27.534 INFO  main.java.com.dbyl.libarary.utils.Log 2016-09-15 16:03:29.950 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: Test Finsh
-2016-09-15 16:03:29.955 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: Test Skipped
-2016-09-15 16:03:29.959 INFO  2016-09-15 16:03:30.523 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
-2016-09-15 16:03:30.524 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.PageFactory: page name is main.java.com.dbyl.libarary.pageAction.LoginPage
-2016-09-15 16:03:30.525 DEBUG main.java.com.dbyl.libarary.utils.Log 33 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: main.java.com.dbyl.libarary.pageAction.LoginPage
-2016-09-15 16:03:30.526 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.pageAction.LoginPage: /Volumes/Transcend/Document/workspace/Demo
-2016-09-15 16:03:30.526 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.pageAction.LoginPage: /Volumes/Transcend/Document/workspace/Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
-2016-09-15 16:03:30.527 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.xmlUtils: main.java.com.dbyl.libarary.pageAction.LoginPage
-2016-09-15 16:03:30.527 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.xmlUtils: Can't find /Volumes/Transcend/Document/workspace/Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
-2016-09-15 16:08:30.940 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: Test Failure
-2016-09-15 16:08:30.942 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: while trying to invoke the method main.java.com.dbyl.libarary.pageAction.LoginPage.typeEmailInputBox(java.lang.String) of a null object loaded from local variable 'h'
-2016-09-15 16:08:30.942 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: null 
-2
-2016-09-15 16:08:30.944 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: Test Failure
-2016-09-15 16:08:30.947 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: Cannot cast class main.java.com.dbyl.tests.Test to class main.java.com.dbyl.libarary.utils.UITest
-2016-09-15 16:08:30.947 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: null 
-2
-2016-09-15 16:08:30.948 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: Test Finish
+2016-10-15 16:42:58.111 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.ConfigUtils: Get the config file: /Volumes/Transcend/Document/workspace/Demo/config.properties
+2016-10-15 16:42:58.113 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.DriverFactory: firefox geckodriver path is webDriver/geckodriver
+2016-10-15 16:44:25.174 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.DriverFactory: Create FirefoxDriver 

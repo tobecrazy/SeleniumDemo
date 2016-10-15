@@ -14,14 +14,14 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import main.java.com.dbyl.libarary.utils.DriverFactory;
-import main.java.com.dbyl.libarary.utils.RemoteBrowserBean;
 
 public class qunar {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		RemoteBrowserBean remoteBrowserBean = new RemoteBrowserBean("chrome");
-		WebDriver driver = DriverFactory.getRemoteDriver(remoteBrowserBean);
+//		RemoteBrowserBean remoteBrowserBean = new RemoteBrowserBean("chrome");
+//		WebDriver driver = DriverFactory.getRemoteDriver(remoteBrowserBean);
+		WebDriver driver=DriverFactory.getChromeDriver();
 
 		driver.get("http://flight.qunar.com/");
 		driver.manage().window().maximize();

@@ -33,16 +33,15 @@ public class DriverFactory {
 	private static Properties p = null;
 	private static String IEDriverServer;
 	private static String EDGEDriver;
-	private static String config = System.getProperty("user.dir")
-			+ "/config.properties";
+	private static String config = System.getProperty("user.dir") + "/config.properties";
 	static Log log = new Log(DriverFactory.class);
 	private static String OSType = System.getProperty("os.name");
 
-//	public static WebDriver getHtmlUnit() {
-//		HtmlUnitDriver driver = new HtmlUnitDriver();
-//		log.info("Create HtmlUnitDrive ");
-//		return driver;
-//	}
+	// public static WebDriver getHtmlUnit() {
+	// HtmlUnitDriver driver = new HtmlUnitDriver();
+	// log.info("Create HtmlUnitDrive ");
+	// return driver;
+	// }
 
 	public static WebDriver getChromeDriver() {
 
@@ -52,18 +51,15 @@ public class DriverFactory {
 			log.error(e.getMessage());
 		}
 		if (p != null) {
-			if (!OSType.contains("Mac"))
-			{
+			if (!OSType.contains("Mac")) {
 				chromedriver = p.getProperty("chromedriver");
-			}
-			else
-			{
+			} else {
 				chromedriver = p.getProperty("MAC_chromedriver");
 			}
-			
+
 		}
-		
-		log.info("chrome driver path is "+chromedriver);
+
+		log.info("chrome driver path is " + chromedriver);
 		System.setProperty("webdriver.chrome.driver", chromedriver);
 		// ChromeDriverService.Builder builder=new
 		// ChromeDriverService.Builder();
@@ -80,8 +76,7 @@ public class DriverFactory {
 		ChromeOptions options = new ChromeOptions();
 		// options.addExtensions(new File(""));
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-		capabilities.setCapability("chrome.switches",
-				Arrays.asList("--start-maximized"));
+		capabilities.setCapability("chrome.switches", Arrays.asList("--start-maximized"));
 		options.addArguments("--test-type", "--start-maximized");
 		WebDriver driver = new ChromeDriver(options);
 		log.info("Create ChromeDrive ");
@@ -99,16 +94,14 @@ public class DriverFactory {
 
 		if (p != null) {
 			fireBug = p.getProperty("fireBug");
-			if (!OSType.contains("Mac"))
-			{
+			if (!OSType.contains("Mac")) {
 				firefoxdriver = p.getProperty("firefoxdriver");
-			}
-			else
-			{
+			} else {
 				firefoxdriver = p.getProperty("MAC_firefoxdriver");
 			}
-			
+
 		}
+		log.info("firefox geckodriver path is " + firefoxdriver);
 		System.setProperty("webdriver.gecko.driver", firefoxdriver);
 		File file = new File(fireBug);
 		FirefoxProfile profile = new FirefoxProfile();
@@ -132,16 +125,14 @@ public class DriverFactory {
 
 		try {
 			profile.addExtension(file);
-			profile.setPreference("extensions.firebug.currentVersion", "2.0.4");
-			profile.setPreference("extensions.firebug.allPagesActivation",
-					"off");
+			profile.setPreference("extensions.firebug.currentVersion", "2.0.17");
+			profile.setPreference("extensions.firebug.allPagesActivation", "off");
 		} catch (Exception e3) {
 			e3.printStackTrace();
 		}
-//		profile.setPreference("browser.download.folderList", 2);
-//		profile.setPreference("browser.download.dir", "C:\\selenium");
-		profile.setPreference(
-				"browser.helperApps.neverAsk.saveToDisk",
+		// profile.setPreference("browser.download.folderList", 2);
+		// profile.setPreference("browser.download.dir", "C:\\selenium");
+		profile.setPreference("browser.helperApps.neverAsk.saveToDisk",
 				"application/octet-stream, application/vnd.ms-excel, text/csv, application/zip,application/exe");
 		WebDriver driver = new FirefoxDriver(profile);
 		log.info("Create FirefoxDriver ");
@@ -164,9 +155,7 @@ public class DriverFactory {
 		proxy.setHttpProxy(PROXY).setFtpProxy(PROXY).setSslProxy(PROXY);
 
 		DesiredCapabilities ds = DesiredCapabilities.internetExplorer();
-		ds.setCapability(
-				InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
-				true);
+		ds.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 		ds.setCapability("ignoreProtectedModeSettings", true);
 		ds.setCapability(CapabilityType.PROXY, proxy);
 		WebDriver driver = new InternetExplorerDriver(ds);
@@ -190,15 +179,13 @@ public class DriverFactory {
 
 		WebDriver driver = null;
 		try {
-			driver = new RemoteWebDriver(
-					new URL(remoteBrowserBean.getHubURL()), capability);
+			driver = new RemoteWebDriver(new URL(remoteBrowserBean.getHubURL()), capability);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
 		capability.setBrowserName(remoteBrowserBean.getBrowserName());
 		capability.setVersion(remoteBrowserBean.getVersion());
-		capability.setCapability(remoteBrowserBean.getPlatform()[0],
-				remoteBrowserBean.getPlatform()[1]);
+		capability.setCapability(remoteBrowserBean.getPlatform()[0], remoteBrowserBean.getPlatform()[1]);
 		driver.manage().window().maximize();
 		return driver;
 	}
