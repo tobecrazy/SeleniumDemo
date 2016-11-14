@@ -76,6 +76,7 @@ public class BasePage {
 	}
 
 	/**
+	 * fix get richText value
 	 * @author Young
 	 * @param locator
 	 * @param text
@@ -85,7 +86,7 @@ public class BasePage {
 		WebElement e = findElement(driver, locator);
 		log.info("type value is:  " + text);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		String result = (String) js.executeScript("arguments[0].getInnerHTML()", e);
+		String result = (String) js.executeScript("var result=arguments[0].innerHTML;return result ", e);
 		return result;
 	}
 
