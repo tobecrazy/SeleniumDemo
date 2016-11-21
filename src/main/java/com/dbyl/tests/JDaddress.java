@@ -22,7 +22,7 @@ public class JDaddress {
 	public void testJD() throws InterruptedException {
 		WindowsUtils.getProgramFilesPath();
 		driver =DriverFactory.getChromeDriver();  // DriverFactory.getRemoteDriver(new RemoteBrowserBean("chrome"));
-		driver.get("http://item.jd.com/1217499.html");
+		driver.get("https://item.jd.com/3335215.html");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
@@ -30,28 +30,18 @@ public class JDaddress {
 		isElementPresent(driver, "//div[@id='store-selector']//div");
 
 		Actions actions = new Actions(driver);
-		actions.clickAndHold(
-				driver.findElement(By.xpath("//div[@id='store-selector']//div")))
-				.perform();
+		actions.clickAndHold(driver.findElement(By.xpath("//div[@id='store-selector']//div"))).perform();
 		// 选择
-		driver.findElement(
-				By.xpath("//div[@id=\"JD-stock\"]/div[@class=\"mt\"]//li[1]/a"))
-				.click();
+		driver.findElement(By.xpath("//div[@id=\"JD-stock\"]/div[@class=\"mt\"]//li[1]/a")).click();
 		driver.findElement(By.linkText("上海")).click();
-		driver.findElement(
-				By.xpath("//div[@id=\"JD-stock\"]/div[@class=\"mt\"]//li[2]/a"))
-				.click();
-		driver.findElement(By.linkText("长宁区")).click();
-		driver.findElement(
-				By.xpath("//div[@id=\"JD-stock\"]/div[@class=\"mt\"]//li[3]/a"))
-				.click();
-		driver.findElement(By.linkText("中环外环之间")).click();
-
-		Assert.assertTrue(
-				driver.findElement(
-						By.xpath("//div[@id='store-selector']//div[@title]"))
-						.getText().equals("上海长宁区中环外环之间"),
-				"can't fond key words");
+		driver.findElement(By.xpath("//div[@id=\"JD-stock\"]/div[@class=\"mt\"]//li[2]/a")).click();
+		driver.findElement(By.linkText("浦东新区")).click();
+		driver.findElement(By.xpath("//div[@id=\"JD-stock\"]/div[@class=\"mt\"]//li[3]/a")).click();
+		driver.findElement(By.linkText("张江镇")).click();
+		Thread.sleep(3000);
+		WebElement addBar = driver.findElement(By.xpath("//div[@id='store-selector']//div[@title]"));
+		System.out.println(addBar.getText());
+		Assert.assertTrue(addBar.getText().equals("上海浦东新区张江镇"), "can't fond key words");
 
 	}
 

@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -14,6 +13,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import main.java.com.dbyl.libarary.utils.DriverFactory;
 
 public class QQmailLoginTest {
 	public WebDriver driver;
@@ -25,11 +26,7 @@ public class QQmailLoginTest {
 
 	@BeforeClass
 	public void initDriver() {
-		// System.setProperty("webdriver.gecko.driver",
-		// "/Users/young/Downloads/selenium/geckodriver");
-		// driver = new FirefoxDriver();
-		System.setProperty("webdriver.chrome.driver", "/Users/young/Downloads/chromedriver");
-		driver = new ChromeDriver();
+		driver =DriverFactory.getChromeDriver();
 	}
 
 	@Test(dataProvider = "getDatas")
