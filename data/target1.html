@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Table test by Young target1</title>
+</head>
+<body>
+ <h1>This Page is for selenium test target1 </h1>
+ <a id="target2" href="target2.html" onClick="return popup(this, 'target2')" >target2</a>
+ <SCRIPT TYPE="text/javascript">
+<!--
+function popup(mylink, windowname)
+{
+if (! window.focus)return true;
+var href;
+if (typeof(mylink) == 'string')
+   href=mylink;
+else
+   href=mylink.href;
+window.open(href, windowname, "top=120,left=240,width=500,height=400");
+return false;
+}
+//-->
+</SCRIPT>
+  
+ </body>
+</html>

@@ -21,8 +21,10 @@ public class getAlert {
 	@Test(groups = { "ChromeDriver" })
 	public void FireFoxDriver() throws InterruptedException {
 		WindowsUtils.getProgramFilesPath();
-		driver =DriverFactory.getFirefoxDriver();
-		driver.get("http://www.baidu.com");
+		driver =DriverFactory.getChromeDriver();
+		String path=System.getProperty("user.dir");
+		System.out.print("file://"+path+"/data/index.html");
+		driver.get("file://"+path+"/data/index.html");
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
