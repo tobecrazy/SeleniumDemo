@@ -10,12 +10,13 @@
 			<include name="lib/poi/*.jar" />
 			<include name="lib/poi/lib/*.jar" />
 			<include name="lib/testng.jar" />
+			<include name="lib/email/*.jar" />
 			<include name="lib/sikuli-script.jar" />
 			<include name="lib/*.jar" />
 		</fileset>
-		<fileset dir="${basedir}/lib/selenium">
+		<fileset dir="${basedir}/lib/selenium-server-3.0.0">
 			<include name="*.jar" />
-			<include name="libs/*.jar" />
+			<include name="lib/*.jar" />
 		</fileset>
 	</path>
 	<taskdef name="testng" classname="org.testng.TestNGAntTask" classpathref="run.classpath" />
