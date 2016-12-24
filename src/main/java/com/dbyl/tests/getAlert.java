@@ -21,40 +21,39 @@ public class getAlert {
 	@Test(groups = { "ChromeDriver" })
 	public void FireFoxDriver() throws InterruptedException {
 		WindowsUtils.getProgramFilesPath();
-		driver =DriverFactory.getChromeDriver();
-		String path=System.getProperty("user.dir");
-		System.out.print("file://"+path+"/data/index.html");
-		driver.get("file://"+path+"/data/index.html");
+		driver = DriverFactory.getFirefoxDriver();
+		String path = System.getProperty("user.dir");
+		System.out.print("file://" + path + "/data/index.html");
+		driver.get("file://" + path + "/data/index.html");
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		WebElement target1=driver.findElement(By.xpath("//a[@id='target1']"));
-		String currentWindow=driver.getWindowHandle();
+		WebElement target1 = driver.findElement(By.xpath("//a[@id='target1']"));
+		String currentWindow = driver.getWindowHandle();
 		String target1Window = null;
 		target1.click();
 		Set<String> windows = driver.getWindowHandles();
-		for(String window:windows)
-		{
-			 if(!currentWindow.equals(window))
-			 {
-				 target1Window=window;
-				 driver.switchTo().window(window);
-			 }
+		for (String window : windows) {
+			if (!currentWindow.equals(window)) {
+				target1Window = window;
+				driver.switchTo().window(window);
+			}
 		}
 		WebElement target2 = driver.findElement(By.id("target2"));
 		target2.click();
-		
-		 windows = driver.getWindowHandles();
-			for(String window:windows)
-			{
-				 if(!currentWindow.equals(window)&& !target1Window.equals(window) )
-				 {
-					 driver.switchTo().window(window);
-				 }
+
+		windows = driver.getWindowHandles();
+		for (String window : windows) {
+			if (!currentWindow.equals(window) && !target1Window.equals(window)) {
+				driver.switchTo().window(window);
 			}
-	Alert  alert=driver.switchTo().alert();
-	System.out.println(alert.getText());
-	alert.accept();
+		}
+		driver.navigate().refresh();
+		Alert alert = driver.switchTo().alert();
+		System.out.println(alert.getText());
+		alert.accept();
+		alert = driver.switchTo().alert();
+		String browserAlertMsg = alert.getText();  
 
 	}
 

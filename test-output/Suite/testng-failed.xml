@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" parallel="classes">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
   <parameter name="driverName" value="chrome"/>
   <test name="TestDebug(failed)" parallel="classes">
     <parameter name="driverName" value="chrome"/>
     <classes>
-      <class name="main.java.com.dbyl.tests.MapTest">
-        <methods>
-          <include name="afterTest"/>
-          <include name="beforeTest"/>
-          <include name="mapTest"/>
-        </methods>
-      </class> <!-- main.java.com.dbyl.tests.MapTest -->
       <class name="main.java.com.dbyl.tests.UseCookieLogin">
         <methods>
           <include name="beforeRun"/>
@@ -21,8 +14,6 @@
       <class name="main.java.com.dbyl.tests.loginTest">
         <methods>
           <include name="init"/>
-          <include name="loginByUerName"/>
-          <include name="stop"/>
         </methods>
       </class> <!-- main.java.com.dbyl.tests.loginTest -->
       <class name="main.java.com.dbyl.tests.JDaddress">
@@ -30,6 +21,13 @@
           <include name="tearDown"/>
         </methods>
       </class> <!-- main.java.com.dbyl.tests.JDaddress -->
+      <class name="main.java.com.dbyl.tests.MapTest">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="mapTest"/>
+        </methods>
+      </class> <!-- main.java.com.dbyl.tests.MapTest -->
     </classes>
   </test> <!-- TestDebug(failed) -->
 </suite> <!-- Failed suite [Suite] -->

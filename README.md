@@ -1,7 +1,7 @@
 # Demo
 Selenium automation test framework
 
-Use Selenium 3.x  + testng + Ant + Jenkins
+Use Selenium 3.x  + testng + Ant + Jenkins + Maven 
 
 Use Page object model
 

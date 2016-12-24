@@ -30,6 +30,6 @@ public class EventTest extends BasePage {
 		WebDriver driver=DriverFactory.getChromeDriver();
 		EventTest c=new EventTest(driver) ;
 		c.setValue("abcde");
-		Assert.fail("Test Failed");
+		   
 	}
 }
