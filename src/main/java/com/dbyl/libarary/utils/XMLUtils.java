@@ -16,7 +16,7 @@ import org.dom4j.io.XMLWriter;
 
 import main.java.com.dbyl.libarary.utils.Locator.ByType;
 
-public class xmlUtils {
+public class XMLUtils {
 
 	/**
 	 * @author Young
@@ -28,7 +28,7 @@ public class xmlUtils {
 	public static HashMap<String, Locator> readXMLDocument(String path,
 			String pageName) throws Exception {
 
-		Log log = new Log(xmlUtils.class);
+		Log log = new Log(XMLUtils.class);
 		log.info(pageName);
 		HashMap<String, Locator> locatorMap = new HashMap<String, Locator>();
 		locatorMap.clear();

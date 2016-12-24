@@ -38,7 +38,7 @@ public class BasePage {
 		path = System.getProperty("user.dir") + "/src/com/dbyl/libarary/pageAction/" + this.getClass().getSimpleName()
 				+ ".xml";
 		log.info(path);
-		locatorMap = xmlUtils.readXMLDocument(path, this.getClass().getCanonicalName());
+		locatorMap = XMLUtils.readXMLDocument(path, this.getClass().getCanonicalName());
 	}
 
 	protected void type(Locator locator, String values) throws Exception {
