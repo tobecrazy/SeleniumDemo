@@ -22,6 +22,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 public class BasePage {
 
 	protected WebDriver driver;
@@ -77,6 +78,7 @@ public class BasePage {
 
 	/**
 	 * fix get richText value
+	 * 
 	 * @author Young
 	 * @param locator
 	 * @param text
@@ -369,4 +371,15 @@ public class BasePage {
 		jse.executeScript(js, findElement(driver, locator));
 	}
 
+	/**
+	 * for get Text
+	 * 
+	 * @author young
+	 * @param locator
+	 * @return
+	 */
+	public String getText(Locator locator) {
+		WebElement e = findElement(driver, locator);
+		return e.getText();
+	}
 }

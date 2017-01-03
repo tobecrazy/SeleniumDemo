@@ -176,17 +176,23 @@ public class DriverFactory {
 		} else if (remoteBrowserBean.getBrowserName().contains("chrome")) {
 			capability = DesiredCapabilities.chrome();
 		}
+		else 
+		{
+			capability=DesiredCapabilities.internetExplorer();
+		}
 
 		WebDriver driver = null;
-		try {
-			driver = new RemoteWebDriver(new URL(remoteBrowserBean.getHubURL()), capability);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
+
 		capability.setBrowserName(remoteBrowserBean.getBrowserName());
 		capability.setVersion(remoteBrowserBean.getVersion());
 		capability.setCapability(remoteBrowserBean.getPlatform()[0], remoteBrowserBean.getPlatform()[1]);
-		driver.manage().window().maximize();
+
+		try {
+			driver = new RemoteWebDriver(new URL(remoteBrowserBean.getHubURL()), capability);
+			driver.manage().window().maximize();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
 		return driver;
 	}
 

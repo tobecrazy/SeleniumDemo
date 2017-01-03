@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="main.java.com.dbyl.tests.getAlert">
+      <class name="main.java.com.dbyl.tests.baiduEditor">
         <methods>
+          <include name="testJD"/>
           <include name="tearDown"/>
-          <include name="FireFoxDriver"/>
         </methods>
-      </class> <!-- main.java.com.dbyl.tests.getAlert -->
+      </class> <!-- main.java.com.dbyl.tests.baiduEditor -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
