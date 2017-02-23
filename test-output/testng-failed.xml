@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="main.java.com.dbyl.tests.baiduEditor">
+      <class name="main.java.com.dbyl.tests.getAllData">
         <methods>
-          <include name="testJD"/>
-          <include name="tearDown"/>
+          <include name="afterTest"/>
+          <include name="main"/>
+          <include name="beforeTest"/>
         </methods>
-      </class> <!-- main.java.com.dbyl.tests.baiduEditor -->
+      </class> <!-- main.java.com.dbyl.tests.getAllData -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

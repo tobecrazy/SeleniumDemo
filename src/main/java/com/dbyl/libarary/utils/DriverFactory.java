@@ -85,8 +85,8 @@ public class DriverFactory {
 
 	public static WebDriver getFirefoxDriver() {
 		try {
-			WindowsUtils.tryToKillByName("firefox");
 			p = ConfigUtils.getProperties(config);
+			WindowsUtils.killByName("firefox");
 
 		} catch (Exception e) {
 			log.error("can not find firefox process");
@@ -175,10 +175,8 @@ public class DriverFactory {
 			capability = DesiredCapabilities.firefox();
 		} else if (remoteBrowserBean.getBrowserName().contains("chrome")) {
 			capability = DesiredCapabilities.chrome();
-		}
-		else 
-		{
-			capability=DesiredCapabilities.internetExplorer();
+		} else {
+			capability = DesiredCapabilities.internetExplorer();
 		}
 
 		WebDriver driver = null;
