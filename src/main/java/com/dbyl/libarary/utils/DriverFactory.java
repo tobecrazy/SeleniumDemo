@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.os.WindowsUtils;
@@ -36,6 +37,7 @@ public class DriverFactory {
 	private static String config = System.getProperty("user.dir") + "/config.properties";
 	static Log log = new Log(DriverFactory.class);
 	private static String OSType = System.getProperty("os.name");
+	private static String currentDir = System.getProperty("user.dir");
 
 	// public static WebDriver getHtmlUnit() {
 	// HtmlUnitDriver driver = new HtmlUnitDriver();
@@ -101,10 +103,12 @@ public class DriverFactory {
 			}
 
 		}
+		firefoxdriver = currentDir + "/" + firefoxdriver;
 		log.info("firefox geckodriver path is " + firefoxdriver);
 		System.setProperty("webdriver.gecko.driver", firefoxdriver);
 		File file = new File(fireBug);
 		FirefoxProfile profile = new FirefoxProfile();
+
 		// profile.setPreference("network.proxy.type", 2);
 		// profile.setPreference("network.proxy.autoconfig_url",
 		// profile.setPreference("network.proxy.no_proxies_on", "localhost");
@@ -134,7 +138,9 @@ public class DriverFactory {
 		// profile.setPreference("browser.download.dir", "C:\\selenium");
 		profile.setPreference("browser.helperApps.neverAsk.saveToDisk",
 				"application/octet-stream, application/vnd.ms-excel, text/csv, application/zip,application/exe");
-		WebDriver driver = new FirefoxDriver(profile);
+		DesiredCapabilities caps = new FirefoxOptions().setProfile(profile).addTo(DesiredCapabilities.firefox());
+		WebDriver driver = new FirefoxDriver(caps);
+
 		log.info("Create FirefoxDriver ");
 		return driver;
 

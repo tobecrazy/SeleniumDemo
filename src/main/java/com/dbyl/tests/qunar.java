@@ -21,7 +21,7 @@ public class qunar {
 
 //		RemoteBrowserBean remoteBrowserBean = new RemoteBrowserBean("chrome");
 //		WebDriver driver = DriverFactory.getRemoteDriver(remoteBrowserBean);
-		WebDriver driver=DriverFactory.getChromeDriver();
+		WebDriver driver=DriverFactory.getFirefoxDriver();
 
 		driver.get("http://flight.qunar.com/");
 		driver.manage().window().maximize();

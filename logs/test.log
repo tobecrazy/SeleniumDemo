@@ -1,3 +1,3 @@
-2017-02-23 20:58:01.462 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.ConfigUtils: Get the config file: /Volumes/Transcend/Document/workspace/Demo/config.properties
-2017-02-23 20:58:01.467 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.DriverFactory: chrome driver path is webDriver/chromedriver
-2017-02-23 20:58:03.270 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
+2017-03-12 10:17:46.407 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.ConfigUtils: Get the config file: /Volumes/Transcend/Document/workspace/Demo/config.properties
+2017-03-12 10:17:51.520 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.DriverFactory: can not find firefox process
+2017-03-12 10:17:59.027 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.DriverFactory: firefox geckodriver path is /Volumes/Transcend/Document/workspace/Demo/webDriver/geckodriver
