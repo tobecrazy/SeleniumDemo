@@ -1,3 +1,30 @@
-2017-03-12 10:17:46.407 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.ConfigUtils: Get the config file: /Volumes/Transcend/Document/workspace/Demo/config.properties
-2017-03-12 10:17:51.520 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.DriverFactory: can not find firefox process
-2017-03-12 10:17:59.027 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.DriverFactory: firefox geckodriver path is /Volumes/Transcend/Document/workspace/Demo/webDriver/geckodriver
+2017-03-21 23:35:42.725 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ----------------Test Group-------------
+2017-03-21 23:35:42.727 DEBUG main.java.com.dbyl.libarary.utils.Log 33 debug - main.java.com.dbyl.libarary.utils.TestNGListener: The Test Group 1
+2017-03-21 23:35:42.728 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ---------------------------------------
+2017-03-21 23:35:42.728 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ----------------Test Group-------------
+2017-03-21 23:35:42.729 DEBUG main.java.com.dbyl.libarary.utils.Log 33 debug - main.java.com.dbyl.libarary.utils.TestNGListener: TestngExample
+2017-03-21 23:35:42.729 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ---------------------------------------
+2017-03-21 23:35:42.729 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ----------------Test Group-------------
+2017-03-21 23:35:42.729 DEBUG main.java.com.dbyl.libarary.utils.Log 33 debug - main.java.com.dbyl.libarary.utils.TestNGListener: The Test Group 2
+2017-03-21 23:35:42.730 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ---------------------------------------
+2017-03-21 23:35:42.730 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ----------------Test Group-------------
+2017-03-21 23:35:42.731 DEBUG main.java.com.dbyl.libarary.utils.Log 33 debug - main.java.com.dbyl.libarary.utils.TestNGListener: TestngExample
+2017-03-21 23:35:42.731 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ---------------------------------------
+2017-03-21 23:35:42.731 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ----------------Test Start-------------
+2017-03-21 23:35:42.732 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ---------------------------------------
+2017-03-21 23:35:42.732 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ----------------2017-03-21 23:35:42-------------
+2017-03-21 23:35:42.732 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ---------------------------------------
+2017-03-21 23:35:42.755 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ---------------On Test Start-------------
+2017-03-21 23:35:42.768 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: Test Failure
+2017-03-21 23:35:42.769 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: null
+2017-03-21 23:35:42.770 ERROR main.java.com.dbyl.libarary.utils.Log 41 error - main.java.com.dbyl.libarary.utils.TestNGListener: null 
+2
+2017-03-21 23:35:45.783 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ---------------On Test Start-------------
+2017-03-21 23:35:45.786 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: Test Success
+2017-03-21 23:35:48.809 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: PassedTests = testExample2
+2017-03-21 23:35:48.809 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: failedTest = testExample1
+2017-03-21 23:35:48.810 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: Test Finish
+2017-03-21 23:35:48.810 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ----------------Test Finish-------------
+2017-03-21 23:35:48.810 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ---------------------------------------
+2017-03-21 23:35:48.811 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ----------------2017-03-21 23:35:42-------------
+2017-03-21 23:35:48.811 INFO  main.java.com.dbyl.libarary.utils.Log 25 info - main.java.com.dbyl.libarary.utils.TestNGListener: ---------------------------------------
