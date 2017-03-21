@@ -1,5 +1,7 @@
 package main.java.com.dbyl.tests;
 
+import main.java.com.dbyl.libarary.utils.AnnotationDemo;
+
 @AnnotationDemo(className = Long.class, name = "Class")
 public class AnnotationUsage {
 	@AnnotationDemo(className = Long.class, name = "variable", id = 123)

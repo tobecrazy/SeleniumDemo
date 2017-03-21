@@ -3,6 +3,8 @@ package main.java.com.dbyl.tests;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
+import main.java.com.dbyl.libarary.utils.AnnotationDemo;
+
 public class AnnoTest {
 
 	public static void main(String[] args) throws ClassNotFoundException {
