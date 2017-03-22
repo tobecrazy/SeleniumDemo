@@ -1,6 +1,7 @@
 package main.java.com.dbyl.tests;
 
 import org.junit.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -29,19 +30,28 @@ public class TestngExample {
 				+ a);
 	}
 
-	@Test(groups = {"TestngExample" ,"The Test Group 1"})
+	@Test(groups = {"TestngExample" ,"The Test Group 1"},priority=3)
 	public void testExample1() {
 		a = 3;
 		System.out.println("This is Test  method1 .The Value of a is: " + a);
 		Assert.fail();
 	}
 
-	@Test(groups = {"TestngExample","The Test Group 2"})
+	@Test(groups = {"TestngExample","The Test Group 2"},priority=2)
 	public void testExample2() {
 		a = 4;
 		System.out.println("This is Test  method2 .The Value of a is: " + a);
 	}
 
+	/**
+	 * This test will skip
+	 */
+	@Test(priority=1)
+	public void skipTest()
+	{
+		  throw new SkipException("skip the test");
+	}
+	
 	@AfterClass
 	public void afterClass() {
 		a = 5;
@@ -49,7 +59,7 @@ public class TestngExample {
 
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public void afterMethod() throws InterruptedException
 	{
 		a = 6;

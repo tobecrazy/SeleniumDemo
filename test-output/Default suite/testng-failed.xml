@@ -8,6 +8,7 @@
           <include name="afterMethod"/>
           <include name="testExample1"/>
           <include name="afterClass"/>
+          <include name="skipTest"/>
           <include name="beforeMethod"/>
           <include name="beforeClass"/>
         </methods>
