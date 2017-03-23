@@ -33,7 +33,8 @@ public class loginTest extends UITest {
 
 	@AfterMethod(alwaysRun = true)
 	public void stop() {
-		super.stop();
+		DriverFactory.getInstance().getDriver().quit();
+//		super.stop();
 	}
 
 }

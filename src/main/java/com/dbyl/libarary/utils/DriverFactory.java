@@ -7,6 +7,7 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.Properties;
 
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -38,6 +39,8 @@ public class DriverFactory {
 	static Log log = new Log(DriverFactory.class);
 	private static String OSType = System.getProperty("os.name");
 	private static String currentDir = System.getProperty("user.dir");
+	static WebDriver driver = null;
+	public static DriverFactory driverfactory;
 
 	// public static WebDriver getHtmlUnit() {
 	// HtmlUnitDriver driver = new HtmlUnitDriver();
@@ -45,7 +48,11 @@ public class DriverFactory {
 	// return driver;
 	// }
 
-	public static WebDriver getChromeDriver() {
+	/**
+	 * @author young
+	 * @return
+	 */
+	public synchronized static WebDriver getChromeDriver() {
 
 		try {
 			p = ConfigUtils.getProperties(config);
@@ -80,12 +87,16 @@ public class DriverFactory {
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		capabilities.setCapability("chrome.switches", Arrays.asList("--start-maximized"));
 		options.addArguments("--test-type", "--start-maximized");
-		WebDriver driver = new ChromeDriver(options);
+		driver = new ChromeDriver(options);
 		log.info("Create ChromeDrive ");
 		return driver;
 	}
 
-	public static WebDriver getFirefoxDriver() {
+	/**
+	 * @author young
+	 * @return
+	 */
+	public synchronized static WebDriver getFirefoxDriver() {
 		try {
 			p = ConfigUtils.getProperties(config);
 			WindowsUtils.killByName("firefox");
@@ -139,14 +150,18 @@ public class DriverFactory {
 		profile.setPreference("browser.helperApps.neverAsk.saveToDisk",
 				"application/octet-stream, application/vnd.ms-excel, text/csv, application/zip,application/exe");
 		DesiredCapabilities caps = new FirefoxOptions().setProfile(profile).addTo(DesiredCapabilities.firefox());
-		WebDriver driver = new FirefoxDriver(caps);
+		driver = new FirefoxDriver(caps);
 
 		log.info("Create FirefoxDriver ");
 		return driver;
 
 	}
 
-	public static WebDriver getIEDriver() {
+	/**
+	 * @author young
+	 * @return
+	 */
+	public synchronized static WebDriver getIEDriver() {
 		try {
 			p = ConfigUtils.getProperties(config);
 		} catch (IOException e) {
@@ -164,7 +179,7 @@ public class DriverFactory {
 		ds.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 		ds.setCapability("ignoreProtectedModeSettings", true);
 		ds.setCapability(CapabilityType.PROXY, proxy);
-		WebDriver driver = new InternetExplorerDriver(ds);
+		driver = new InternetExplorerDriver(ds);
 		return driver;
 	}
 
@@ -175,7 +190,7 @@ public class DriverFactory {
 	 * @param remoteBrowserBean
 	 * @return WebDriver
 	 */
-	public static WebDriver getRemoteDriver(RemoteBrowserBean remoteBrowserBean) {
+	public synchronized static WebDriver getRemoteDriver(RemoteBrowserBean remoteBrowserBean) {
 		DesiredCapabilities capability = null;
 		if (remoteBrowserBean.getBrowserName().contains("firefox")) {
 			capability = DesiredCapabilities.firefox();
@@ -184,8 +199,6 @@ public class DriverFactory {
 		} else {
 			capability = DesiredCapabilities.internetExplorer();
 		}
-
-		WebDriver driver = null;
 
 		capability.setBrowserName(remoteBrowserBean.getBrowserName());
 		capability.setVersion(remoteBrowserBean.getVersion());
@@ -200,7 +213,11 @@ public class DriverFactory {
 		return driver;
 	}
 
-	public static WebDriver getEDGEDriver() {
+	/**
+	 * @author young
+	 * @return
+	 */
+	public synchronized static WebDriver getEDGEDriver() {
 		try {
 			p = ConfigUtils.getProperties(config);
 		} catch (IOException e) {
@@ -211,15 +228,35 @@ public class DriverFactory {
 		}
 		System.setProperty("webdriver.edge.driver", EDGEDriver);
 		String PROXY = "https://raw.githubusercontent.com/seveniruby/gfwlist2pac/master/test/proxy.pac";
-		org.openqa.selenium.Proxy proxy = new org.openqa.selenium.Proxy();
+		Proxy proxy = new org.openqa.selenium.Proxy();
 		proxy.setHttpProxy(PROXY).setFtpProxy(PROXY).setSslProxy(PROXY);
 		DesiredCapabilities capabilities = DesiredCapabilities.edge();
 		EdgeOptions options = new EdgeOptions();
 		options.setPageLoadStrategy("normal");
 		capabilities.setCapability(EdgeOptions.CAPABILITY, options);
 		capabilities.setCapability(CapabilityType.PROXY, proxy);
-		WebDriver driver = new EdgeDriver(capabilities);
+		driver = new EdgeDriver(capabilities);
 		return driver;
 	}
 
+	/**
+	 * @author young
+	 * @return
+	 */
+	public static DriverFactory getInstance() {
+		if (driverfactory == null) {
+			synchronized (DriverFactory.class) {
+				driverfactory = new DriverFactory();
+			}
+		}
+		return driverfactory;
+	}
+
+	public DriverFactory() {
+
+	}
+
+	public WebDriver getDriver() {
+		return driver;
+	}
 }
