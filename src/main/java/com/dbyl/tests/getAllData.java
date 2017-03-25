@@ -22,7 +22,7 @@ public class getAllData {
 
 	@BeforeClass
 	public void beforeTest() {
-		driver = DriverFactory.getChromeDriver();
+		driver = DriverFactory.getInstance().getChromeDriver();
 	}
 
 	@Test(groups = "Test")

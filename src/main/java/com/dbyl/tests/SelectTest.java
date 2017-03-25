@@ -23,7 +23,7 @@ public class SelectTest {
 
 	@Test(groups = "loginTest")
 	public void runTest() throws Exception {
-		WebDriver driver = DriverFactory.getFirefoxDriver();
+		WebDriver driver = DriverFactory.getInstance().getFirefoxDriver();
 		driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
 		driver.get("http://css3menu.com/");
 		WebElement menu = driver.findElement(By.xpath("//span[.='How to Use']"));

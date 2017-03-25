@@ -26,7 +26,7 @@ public class UseCookieLogin {
 
 	@BeforeClass(alwaysRun = true)
 	public void beforeRun() {
-		driver = DriverFactory.getChromeDriver();
+		driver = DriverFactory.getInstance().getChromeDriver();
 	}
 
 	@Test(alwaysRun = true, groups = "useCookies")

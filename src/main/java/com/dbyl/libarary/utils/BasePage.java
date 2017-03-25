@@ -22,7 +22,6 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 public class BasePage {
 
 	protected WebDriver driver;
@@ -173,12 +172,16 @@ public class BasePage {
 	 * 
 	 * @author Young
 	 * @param driver
-	 * @param locator
+	 * @param sourcelocator
 	 * @return
 	 * @throws IOException
 	 */
-	public WebElement getElement(WebDriver driver, Locator locator) throws IOException {
-		locator = getLocator(locator.getElement());
+	public WebElement getElement(WebDriver driver, Locator sourceLocator) throws IOException {
+		Locator locator = getLocator(sourceLocator.getElement());
+		// this code fix can't get locator from page XML issue
+		if (locator == null) {
+			locator = new Locator(sourceLocator.getElement(), sourceLocator.getWaitSec(), sourceLocator.getBy());
+		}
 		WebElement e;
 		switch (locator.getBy()) {
 		case xpath:
@@ -267,28 +270,33 @@ public class BasePage {
 	 * @return
 	 */
 	public WebElement findElement(WebDriver driver, final Locator locator) {
-		WebElement element = (new WebDriverWait(driver, locator.getWaitSec()))
-				.until(new ExpectedCondition<WebElement>() {
+		int timeOut = 60;
+		try {
+			timeOut = locator.getWaitSec();
+		} catch (NullPointerException e) {
+			log.error("can't get Default time out " + locator.getElement());
+		}
 
-					@Override
-					public WebElement apply(WebDriver driver) {
-						try {
-							return getElement(driver, locator);
-						} catch (IOException e) {
-							log.error("can't find element " + locator.getElement());
-							return null;
-						}
+		WebElement element = (new WebDriverWait(driver, timeOut)).until(new ExpectedCondition<WebElement>() {
 
-					}
+			@Override
+			public WebElement apply(WebDriver driver) {
+				try {
+					return getElement(driver, locator);
+				} catch (IOException e) {
+					log.error("can't find element " + locator.getElement());
+					return null;
+				}
 
-				});
+			}
+
+		});
 		return element;
 
 	}
 
 	/**
-	 * @author Young
-	 * 
+	 * @author young
 	 * @param locatorName
 	 * @return
 	 * @throws IOException
@@ -304,8 +312,11 @@ public class BasePage {
 		// return locator = new Locator(locatorName);
 		if (locatorMap != null) {
 			locator = locatorMap.get(locatorName);
+			return locator;
+		} else {
+			return null;
 		}
-		return locator;
+
 	}
 
 	public int open(String URL) {

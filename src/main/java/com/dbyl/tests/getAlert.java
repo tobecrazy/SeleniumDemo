@@ -21,7 +21,7 @@ public class getAlert {
 	@Test(groups = { "ChromeDriver" })
 	public void FireFoxDriver() throws InterruptedException {
 		WindowsUtils.getProgramFilesPath();
-		driver = DriverFactory.getFirefoxDriver();
+		driver = DriverFactory.getInstance().getFirefoxDriver();
 		String path = System.getProperty("user.dir");
 		System.out.print("file://" + path + "/data/index.html");
 		driver.get("file://" + path + "/data/index.html");

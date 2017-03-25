@@ -21,7 +21,7 @@ public class JDaddress {
 	@Test(groups = { "JDaddress" })
 	public void testJD() throws InterruptedException {
 		WindowsUtils.getProgramFilesPath();
-		driver =DriverFactory.getChromeDriver();  // DriverFactory.getRemoteDriver(new RemoteBrowserBean("chrome"));
+		driver =DriverFactory.getInstance().getChromeDriver();  // DriverFactory.getRemoteDriver(new RemoteBrowserBean("chrome"));
 		driver.get("https://item.jd.com/3335215.html");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);

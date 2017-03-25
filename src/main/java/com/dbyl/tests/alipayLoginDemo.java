@@ -19,7 +19,7 @@ public class alipayLoginDemo {
 	@Test(groups = { "edgeDriver" })
 	public void edgeDriver() throws InterruptedException {
 		WindowsUtils.getProgramFilesPath();
-		driver =DriverFactory.getChromeDriver();
+		driver =DriverFactory.getInstance().getChromeDriver();
 		driver.get("https://www.alipay.com/i/indexNew.htm");
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);

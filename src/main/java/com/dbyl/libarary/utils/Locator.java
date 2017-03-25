@@ -1,6 +1,5 @@
 package main.java.com.dbyl.libarary.utils;
 
-
 /**
  * This is for element library
  * 
@@ -10,7 +9,8 @@ package main.java.com.dbyl.libarary.utils;
 public class Locator {
 	private String element;
 
-	private int waitSec;
+	// default is 5 sec
+	private int waitSec = 5;
 
 	/**
 	 * create a enum variable for By
@@ -68,8 +68,7 @@ public class Locator {
 		this.byType = byType;
 	}
 
-	public void setReplace(String rep, String rex)
-	{
+	public void setReplace(String rep, String rex) {
 		StringTools.replaceAll(element, rex, rep);
 	}
 }

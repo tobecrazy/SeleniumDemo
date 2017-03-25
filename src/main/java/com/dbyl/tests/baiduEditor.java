@@ -22,7 +22,7 @@ public class baiduEditor {
 	public void testJD() throws InterruptedException, Exception {
 		WindowsUtils.getProgramFilesPath();
 		RemoteBrowserBean remoteBrowserBean = new RemoteBrowserBean("chrome", "http://localhost:4444/wd/hub");
-		driver =  DriverFactory.getRemoteDriver(remoteBrowserBean);
+		driver =  DriverFactory.getInstance().getRemoteDriver(remoteBrowserBean);
 		driver.get("http://www.w3school.com.cn/tiy/t.asp?f=html5_form_autocomplete");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);

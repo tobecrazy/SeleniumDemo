@@ -26,7 +26,7 @@ public class TesseractTest {
 	public static void main(String[] args) throws IOException,
 			InterruptedException {
 
-		WebDriver driver = DriverFactory.getChromeDriver();
+		WebDriver driver = DriverFactory.getInstance().getChromeDriver();
 		driver.get("file:///C:/Users/Young/Desktop/validation.html");
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		WebElement element = driver.findElement(By.xpath("//img"));

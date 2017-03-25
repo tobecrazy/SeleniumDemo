@@ -3,6 +3,11 @@ package main.java.com.dbyl.libarary.utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * @version 1.0
+ * @author young
+ *
+ */
 public class Log {
 	private final Class<?> clazz;
 	private Logger logger;
@@ -11,7 +16,7 @@ public class Log {
 	 * 
 	 * @param clazz
 	 */
-	Log(Class<?> clazz) {
+	public Log(Class<?> clazz) {
 		this.clazz = clazz;
 		this.logger = LogManager.getLogger(this.clazz);
 	}

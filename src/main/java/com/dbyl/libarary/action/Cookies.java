@@ -20,7 +20,7 @@ public class Cookies {
 	public static void addCookies() {
 
 		
-		WebDriver driver = DriverFactory.getChromeDriver();
+		WebDriver driver = DriverFactory.getInstance().getChromeDriver();
 		driver.get("http://www.zhihu.com/#signin");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 

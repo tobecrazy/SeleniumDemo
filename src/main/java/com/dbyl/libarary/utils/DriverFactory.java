@@ -52,7 +52,7 @@ public class DriverFactory {
 	 * @author young
 	 * @return
 	 */
-	public synchronized static WebDriver getChromeDriver() {
+	public synchronized WebDriver getChromeDriver() {
 
 		try {
 			p = ConfigUtils.getProperties(config);
@@ -96,7 +96,7 @@ public class DriverFactory {
 	 * @author young
 	 * @return
 	 */
-	public synchronized static WebDriver getFirefoxDriver() {
+	public synchronized WebDriver getFirefoxDriver() {
 		try {
 			p = ConfigUtils.getProperties(config);
 			WindowsUtils.killByName("firefox");
@@ -161,7 +161,7 @@ public class DriverFactory {
 	 * @author young
 	 * @return
 	 */
-	public synchronized static WebDriver getIEDriver() {
+	public synchronized WebDriver getIEDriver() {
 		try {
 			p = ConfigUtils.getProperties(config);
 		} catch (IOException e) {
@@ -190,7 +190,7 @@ public class DriverFactory {
 	 * @param remoteBrowserBean
 	 * @return WebDriver
 	 */
-	public synchronized static WebDriver getRemoteDriver(RemoteBrowserBean remoteBrowserBean) {
+	public synchronized WebDriver getRemoteDriver(RemoteBrowserBean remoteBrowserBean) {
 		DesiredCapabilities capability = null;
 		if (remoteBrowserBean.getBrowserName().contains("firefox")) {
 			capability = DesiredCapabilities.firefox();
@@ -217,7 +217,7 @@ public class DriverFactory {
 	 * @author young
 	 * @return
 	 */
-	public synchronized static WebDriver getEDGEDriver() {
+	public synchronized WebDriver getEDGEDriver() {
 		try {
 			p = ConfigUtils.getProperties(config);
 		} catch (IOException e) {

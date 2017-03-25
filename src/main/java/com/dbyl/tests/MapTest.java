@@ -24,7 +24,7 @@ public class MapTest {
 	@BeforeClass(alwaysRun=true)
 	public void beforeTest()
 	{
-		driver = DriverFactory.getRemoteDriver(new RemoteBrowserBean("chrome"));
+		driver = DriverFactory.getInstance().getRemoteDriver(new RemoteBrowserBean("chrome"));
 	}
 	@Test(groups = "MapTest")
 	public void mapTest() throws FindFailed {

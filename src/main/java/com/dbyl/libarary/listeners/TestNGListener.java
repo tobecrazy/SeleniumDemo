@@ -1,4 +1,4 @@
-package main.java.com.dbyl.libarary.utils;
+package main.java.com.dbyl.libarary.listeners;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -13,6 +13,10 @@ import org.testng.ITestContext;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
+
+import main.java.com.dbyl.libarary.utils.DriverFactory;
+import main.java.com.dbyl.libarary.utils.Log;
+import main.java.com.dbyl.libarary.utils.UITest;
 
 /**
  * 
@@ -43,8 +47,9 @@ public class TestNGListener extends TestListenerAdapter {
 	}
 
 	private void takeScreenShot(ITestResult tr) {
+
 		UITest b = (UITest) tr.getInstance();
-		WebDriver currentDirver = b.getDriver();
+		WebDriver currentDirver = DriverFactory.getInstance().getDriver();
 		log.info(currentDirver.getTitle() + "\n");
 
 		b.takeScreenShot();

@@ -21,8 +21,8 @@ public class CommonLogin {
 			throws Exception {
 		loginPage = new LoginPage(getDriver());
 		loginPage.waitForPageLoad();
-		loginPage.typeEmailInputBox(email);
-		loginPage.typePasswordInputBox(password);
+		loginPage.typeUserName(email);
+		loginPage.typePassword(password);
 		loginPage.clickOnLoginButton();
 		Assert.assertTrue(loginPage.isPrestentProfile(), "login failed");
 

@@ -1,4 +1,4 @@
-package main.java.com.dbyl.libarary.utils;
+package main.java.com.dbyl.libarary.listeners;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,6 +10,8 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
+
+import main.java.com.dbyl.libarary.utils.Log;
 
 /**
  * 

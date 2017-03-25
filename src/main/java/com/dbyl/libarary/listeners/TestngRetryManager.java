@@ -1,8 +1,10 @@
-package main.java.com.dbyl.libarary.utils;
+package main.java.com.dbyl.libarary.listeners;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 import org.testng.Reporter;
+
+import main.java.com.dbyl.libarary.utils.Log;
 
 public class TestngRetryManager implements IRetryAnalyzer {
 	Log log = new Log(TestngRetryManager.class);

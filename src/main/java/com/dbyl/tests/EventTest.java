@@ -26,7 +26,7 @@ public class EventTest extends BasePage {
 	@Test(groups = "loginTest")
 	public  void runTest( ) throws Exception
 	{
-		WebDriver driver=DriverFactory.getFirefoxDriver();
+		WebDriver driver=DriverFactory.getInstance().getFirefoxDriver();
 		EventTest c=new EventTest(driver) ;
 		c.setValue("abcde");
 		   

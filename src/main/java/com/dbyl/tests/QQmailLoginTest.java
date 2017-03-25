@@ -26,7 +26,7 @@ public class QQmailLoginTest {
 
 	@BeforeClass
 	public void initDriver() {
-		driver =DriverFactory.getChromeDriver();
+		driver =DriverFactory.getInstance().getChromeDriver();
 	}
 
 	@Test(dataProvider = "getDatas")
