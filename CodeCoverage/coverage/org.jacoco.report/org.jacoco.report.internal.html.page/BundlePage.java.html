@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>BundlePage.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">org.jacoco.report</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.report.internal.html.page</a> &gt; <span class="el_source">BundlePage.java</span></div><h1>BundlePage.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Marc R. Hoffmann - initial API and implementation
+ *    
+ *******************************************************************************/
+package org.jacoco.report.internal.html.page;
+
+import java.io.IOException;
+
+import org.jacoco.core.analysis.IBundleCoverage;
+import org.jacoco.core.analysis.ICoverageNode;
+import org.jacoco.core.analysis.IPackageCoverage;
+import org.jacoco.report.ISourceFileLocator;
+import org.jacoco.report.internal.ReportOutputFolder;
+import org.jacoco.report.internal.html.IHTMLReportContext;
+
+/**
+ * Page showing coverage information for a bundle. The page contains a table
+ * with all packages of the bundle.
+ */
+public class BundlePage extends TablePage&lt;ICoverageNode&gt; {
+
+	private final ISourceFileLocator locator;
+
+	private IBundleCoverage bundle;
+
+	/**
+	 * Creates a new visitor in the given context.
+	 * 
+	 * @param bundle
+	 *            coverage date for the bundle
+	 * @param parent
+	 *            optional hierarchical parent
+	 * @param locator
+	 *            source locator
+	 * @param folder
+	 *            base folder for this bundle
+	 * @param context
+	 *            settings context
+	 */
+	public BundlePage(final IBundleCoverage bundle, final ReportPage parent,
+			final ISourceFileLocator locator, final ReportOutputFolder folder,
+			final IHTMLReportContext context) {
+<span class="fc" id="L50">		super(bundle.getPlainCopy(), parent, folder, context);</span>
+<span class="fc" id="L51">		this.bundle = bundle;</span>
+<span class="fc" id="L52">		this.locator = locator;</span>
+<span class="fc" id="L53">	}</span>
+
+	@Override
+	public void render() throws IOException {
+<span class="fc" id="L57">		renderPackages();</span>
+<span class="fc" id="L58">		super.render();</span>
+		// Don't keep the bundle structure in memory
+<span class="fc" id="L60">		bundle = null;</span>
+<span class="fc" id="L61">	}</span>
+
+	private void renderPackages() throws IOException {
+<span class="fc bfc" id="L64" title="All 2 branches covered.">		for (final IPackageCoverage p : bundle.getPackages()) {</span>
+<span class="fc" id="L65">			final String packagename = p.getName();</span>
+<span class="pc bpc" id="L66" title="1 of 2 branches missed.">			final String foldername = packagename.length() == 0 ? &quot;default&quot;</span>
+					: packagename.replace('/', '.');
+<span class="fc" id="L68">			final PackagePage page = new PackagePage(p, this, locator,</span>
+					folder.subFolder(foldername), context);
+<span class="fc" id="L70">			page.render();</span>
+<span class="fc" id="L71">			addItem(page);</span>
+<span class="fc" id="L72">		}</span>
+<span class="fc" id="L73">	}</span>
+
+	@Override
+	protected String getOnload() {
+<span class="fc" id="L77">		return &quot;initialSort(['breadcrumb', 'coveragetable'])&quot;;</span>
+	}
+
+	@Override
+	protected String getFileName() {
+<span class="fc" id="L82">		return &quot;index.html&quot;;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

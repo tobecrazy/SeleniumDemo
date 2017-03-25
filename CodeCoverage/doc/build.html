@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="resources/doc.css" charset="UTF-8" type="text/css" />
+  <link rel="stylesheet" href="../coverage/jacoco-resources/prettify.css" charset="UTF-8" type="text/css" />
+  <link rel="shortcut icon" href="resources/report.gif" type="image/gif" />
+  <script type="text/javascript" src="../coverage/jacoco-resources/prettify.js"></script>
+  <title>JaCoCo - Build</title>
+</head>
+<body onload="prettyPrint()">
+
+<div class="breadcrumb">
+  <a href="../index.html" class="el_report">JaCoCo</a> &gt;
+  <a href="index.html" class="el_group">Documentation</a> &gt;
+  <span class="el_source">Build</span>
+</div>
+<div id="content"> 
+
+<h1>Build</h1>
+
+<p>
+  The JaCoCo build is based on <a href="http://maven.apache.org/">Maven</a> and
+  can be locally executed on every machine with a proper
+  <a href="environment.html">environment setup</a>. In particular you need a
+  <a href="http://maven.apache.org/">Maven 3</a> installation.  Developers are
+  encouraged to run the build before every commit to ensure consistency of the
+  source tree.
+</p>
+
+
+<h2>Running the Build</h2>
+
+<p>
+  The build can be started by executing the following command with
+  <code>./org.jacoco.build/</code> as the working directory:
+</p>
+
+<pre>
+  mvn clean install
+</pre>
+
+<p>
+  Total build time is typically around 3 minutes, however first build might take
+  more time, because Maven should download plugins and dependencies. The
+  download ZIP will be created at the following location:
+</p>
+
+<pre>
+  ./jacoco/target/jacoco-<i>x.y.z.qualifier</i>.zip
+</pre>
+
+
+<h2>Running Quick Build without Tests</h2>
+
+<p>
+  It is not recommended, however possible to the run build without any tests:
+</p>
+
+<pre>
+  mvn clean install -DskipTests
+</pre>
+
+
+<h2>Testing with different JDKs</h2>
+
+<p>
+  Target Java version for JaCoCo builds is 1.5, however for verification
+  purposes you can execute tests using other versions. In order to do so, first
+  you should create file <code>toolchains.xml</code> in <code>~/.m2/</code>
+  directory. Here is an example of such file. For more information see
+  <a href="http://maven.apache.org/guides/mini/guide-using-toolchains.html">Maven
+  Guide to Using Toolchains</a>. 
+</p>
+
+<pre class="source lang-xml linenums">
+&lt;?xml version="1.0" encoding="UTF8"?&gt;
+&lt;toolchains&gt;
+  &lt;toolchain&gt;
+    &lt;type&gt;jdk&lt;/type&gt;
+    &lt;provides&gt;
+      &lt;id&gt;java15&lt;/id&gt;
+      &lt;version&gt;1.5&lt;/version&gt;
+      &lt;vendor&gt;sun&lt;/vendor&gt;
+    &lt;/provides&gt;
+    &lt;configuration&gt;
+      &lt;jdkHome&gt;/usr/lib/jvm/sun-jdk-1.5&lt;/jdkHome&gt;
+    &lt;/configuration&gt;
+  &lt;/toolchain&gt;
+  &lt;toolchain&gt;
+    &lt;type&gt;jdk&lt;/type&gt;
+    &lt;provides&gt;
+      &lt;id&gt;java16&lt;/id&gt;
+      &lt;version&gt;1.6&lt;/version&gt;
+      &lt;vendor&gt;sun&lt;/vendor&gt;
+    &lt;/provides&gt;
+    &lt;configuration&gt;
+      &lt;jdkHome&gt;/usr/lib/jvm/sun-jdk-1.6&lt;/jdkHome&gt;
+    &lt;/configuration&gt;
+  &lt;/toolchain&gt;
+  &lt;toolchain&gt;
+    &lt;type&gt;jdk&lt;/type&gt;
+    &lt;provides&gt;
+      &lt;id&gt;java17&lt;/id&gt;
+      &lt;version&gt;1.7&lt;/version&gt;
+      &lt;vendor&gt;sun&lt;/vendor&gt;
+    &lt;/provides&gt;
+    &lt;configuration&gt;
+      &lt;jdkHome&gt;/usr/lib/jvm/sun-jdk-1.7&lt;/jdkHome&gt;
+    &lt;/configuration&gt;
+  &lt;/toolchain&gt;
+  &lt;toolchain&gt;
+    &lt;type&gt;jdk&lt;/type&gt;
+    &lt;provides&gt;
+      &lt;id&gt;java18&lt;/id&gt;
+      &lt;version&gt;1.8&lt;/version&gt;
+      &lt;vendor&gt;sun&lt;/vendor&gt;
+    &lt;/provides&gt;
+    &lt;configuration&gt;
+      &lt;jdkHome&gt;/usr/lib/jvm/sun-jdk-1.8&lt;/jdkHome&gt;
+    &lt;/configuration&gt;
+  &lt;/toolchain&gt;
+  &lt;toolchain&gt;
+    &lt;type&gt;jdk&lt;/type&gt;
+    &lt;provides&gt;
+      &lt;id&gt;java19&lt;/id&gt;
+      &lt;version&gt;1.9&lt;/version&gt;
+      &lt;vendor&gt;sun&lt;/vendor&gt;
+    &lt;/provides&gt;
+    &lt;configuration&gt;
+      &lt;jdkHome&gt;/usr/lib/jvm/sun-jdk-1.9&lt;/jdkHome&gt;
+    &lt;/configuration&gt;
+  &lt;/toolchain&gt;
+&lt;/toolchains&gt;
+</pre>
+
+<p>
+  Now you should be able to execute maven build with specified version of JDK:
+</p>
+
+<pre>
+  mvn clean install -Djdk.version=<i>version</i>
+</pre>
+
+<p>
+  Location of <code>toolchains.xml</code> can be set via an option:
+</p>
+
+<pre>
+  mvn --toolchains <i>path</i> clean install -Djdk.version=<i>version</i>
+</pre>
+
+<p>
+  In addition JaCoCo can be compiled for higher class file versions than 1.5
+  specifying the property <code>bytecode.version</code>. Note that in this case
+  the version of the JVM running Maven must be at least the version of the
+  specified bytecode version as this JVM is also running the tests. Combining
+  these options JaCoCo is regularly tested with the following setups:
+</p>
+
+<ul>
+  <li>Maven with 1.5 JDK: <code>mvn clean install -Djdk.version=1.5 -Dbytecode.version=1.5</code></li>
+  <li>Maven with 1.6 JDK: <code>mvn clean install -Djdk.version=1.6 -Dbytecode.version=1.6</code></li>
+  <li>Maven with 1.7 JDK: <code>mvn clean install -Djdk.version=1.7 -Dbytecode.version=1.7</code></li>
+  <li>Maven with 1.8 JDK: <code>mvn clean install -Djdk.version=1.8 -Dbytecode.version=1.8</code></li>
+  <li>Maven with 1.9 JDK: <code>mvn clean install -Djdk.version=1.9 -Dbytecode.version=1.9</code></li>
+</ul>
+
+
+</div>
+<div class="footer">
+  <span class="right"><a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>
+  <a href="license.html">Copyright</a> &copy; 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+</div>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>MergeMojo.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">jacoco-maven-plugin</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.maven</a> &gt; <span class="el_source">MergeMojo.java</span></div><h1>MergeMojo.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Mads Mohr Christensen - implementation of MergeMojo
+ *
+ *******************************************************************************/
+package org.jacoco.maven;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugin.MojoFailureException;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
+import org.apache.maven.shared.model.fileset.FileSet;
+import org.apache.maven.shared.model.fileset.util.FileSetManager;
+import org.jacoco.core.tools.ExecFileLoader;
+
+/**
+ * Mojo for merging a set of execution data files (*.exec) into a single file
+ * 
+ * @since 0.6.4
+ */
+@Mojo(name = &quot;merge&quot;, defaultPhase = LifecyclePhase.GENERATE_RESOURCES, threadSafe = true)
+<span class="fc" id="L33">public class MergeMojo extends AbstractJacocoMojo {</span>
+
+	private static final String MSG_SKIPPING = &quot;Skipping JaCoCo merge execution due to missing execution data files&quot;;
+
+	/**
+	 * Path to the output file for execution data.
+	 */
+	@Parameter(property = &quot;jacoco.destFile&quot;, defaultValue = &quot;${project.build.directory}/jacoco.exec&quot;)
+	private File destFile;
+
+	/**
+	 * This mojo accepts any number of execution data file sets.
+	 * 
+	 * Note that you need an &lt;tt&gt;implementation&lt;/tt&gt; hint on &lt;tt&gt;fileset&lt;/tt&gt;
+	 * with Maven 2 (not needed with Maven 3):
+	 * 
+	 * &lt;pre&gt;
+	 * &lt;code&gt;
+	 * &amp;lt;fileSets&amp;gt;
+	 *   &amp;lt;fileSet implementation=&quot;org.apache.maven.shared.model.fileset.FileSet&quot;&amp;gt;
+	 *     &amp;lt;directory&amp;gt;${project.build.directory}&amp;lt;/directory&amp;gt;
+	 *     &amp;lt;includes&amp;gt;
+	 *       &amp;lt;include&amp;gt;*.exec&amp;lt;/include&amp;gt;
+	 *     &amp;lt;/includes&amp;gt;
+	 *   &amp;lt;/fileSet&amp;gt;
+	 * &amp;lt;/fileSets&amp;gt;
+	 * &lt;/code&gt;
+	 * &lt;/pre&gt;
+	 */
+	@Parameter(property = &quot;jacoco.fileSets&quot;, required = true)
+	private List&lt;FileSet&gt; fileSets;
+
+	@Override
+	protected void executeMojo() throws MojoExecutionException,
+			MojoFailureException {
+<span class="pc bpc" id="L68" title="1 of 2 branches missed.">		if (!canMergeReports()) {</span>
+<span class="nc" id="L69">			return;</span>
+		}
+<span class="fc" id="L71">		executeMerge();</span>
+<span class="fc" id="L72">	}</span>
+
+	private boolean canMergeReports() {
+<span class="pc bpc" id="L75" title="2 of 4 branches missed.">		if (fileSets == null || fileSets.isEmpty()) {</span>
+<span class="nc" id="L76">			getLog().info(MSG_SKIPPING);</span>
+<span class="nc" id="L77">			return false;</span>
+		}
+<span class="fc" id="L79">		return true;</span>
+	}
+
+	private void executeMerge() throws MojoExecutionException {
+<span class="fc" id="L83">		final ExecFileLoader loader = new ExecFileLoader();</span>
+
+<span class="fc" id="L85">		load(loader);</span>
+<span class="fc" id="L86">		save(loader);</span>
+<span class="fc" id="L87">	}</span>
+
+	private void load(final ExecFileLoader loader)
+			throws MojoExecutionException {
+<span class="fc" id="L91">		final FileSetManager fileSetManager = new FileSetManager(getLog());</span>
+<span class="fc bfc" id="L92" title="All 2 branches covered.">		for (final FileSet fileSet : fileSets) {</span>
+			for (final String includedFilename : fileSetManager
+<span class="fc bfc" id="L94" title="All 2 branches covered.">					.getIncludedFiles(fileSet)) {</span>
+<span class="fc" id="L95">				final File inputFile = new File(fileSet.getDirectory(),</span>
+						includedFilename);
+<span class="pc bpc" id="L97" title="1 of 2 branches missed.">				if (inputFile.isDirectory()) {</span>
+<span class="nc" id="L98">					continue;</span>
+				}
+				try {
+<span class="fc" id="L101">					getLog().info(</span>
+							&quot;Loading execution data file &quot;
+									+ inputFile.getAbsolutePath());
+<span class="fc" id="L104">					loader.load(inputFile);</span>
+<span class="nc" id="L105">				} catch (final IOException e) {</span>
+<span class="nc" id="L106">					throw new MojoExecutionException(&quot;Unable to read &quot;</span>
+							+ inputFile.getAbsolutePath(), e);
+<span class="fc" id="L108">				}</span>
+			}
+		}
+<span class="fc" id="L111">	}</span>
+
+	private void save(final ExecFileLoader loader)
+			throws MojoExecutionException {
+<span class="pc bpc" id="L115" title="1 of 2 branches missed.">		if (loader.getExecutionDataStore().getContents().isEmpty()) {</span>
+<span class="nc" id="L116">			getLog().info(MSG_SKIPPING);</span>
+<span class="nc" id="L117">			return;</span>
+		}
+<span class="fc" id="L119">		getLog().info(</span>
+				&quot;Writing merged execution data to &quot;
+						+ destFile.getAbsolutePath());
+		try {
+<span class="fc" id="L123">			loader.save(destFile, false);</span>
+<span class="nc" id="L124">		} catch (final IOException e) {</span>
+<span class="nc" id="L125">			throw new MojoExecutionException(&quot;Unable to write merged file &quot;</span>
+					+ destFile.getAbsolutePath(), e);
+<span class="fc" id="L127">		}</span>
+<span class="fc" id="L128">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

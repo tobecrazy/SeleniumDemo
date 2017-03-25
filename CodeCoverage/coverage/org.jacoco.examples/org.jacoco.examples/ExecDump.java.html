@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>ExecDump.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">org.jacoco.examples</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.examples</a> &gt; <span class="el_source">ExecDump.java</span></div><h1>ExecDump.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Marc R. Hoffmann - initial API and implementation
+ *    
+ *******************************************************************************/
+package org.jacoco.examples;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.Date;
+
+import org.jacoco.core.data.ExecutionData;
+import org.jacoco.core.data.ExecutionDataReader;
+import org.jacoco.core.data.IExecutionDataVisitor;
+import org.jacoco.core.data.ISessionInfoVisitor;
+import org.jacoco.core.data.SessionInfo;
+
+/**
+ * This example reads execution data files given as program arguments and dumps
+ * their content.
+ */
+public final class ExecDump {
+
+	private final PrintStream out;
+
+	/**
+	 * Creates a new example instance printing to the given stream.
+	 * 
+	 * @param out
+	 *            stream for outputs
+	 */
+<span class="fc" id="L39">	public ExecDump(final PrintStream out) {</span>
+<span class="fc" id="L40">		this.out = out;</span>
+<span class="fc" id="L41">	}</span>
+
+	/**
+	 * Run this example with the given parameters.
+	 * 
+	 * @param args
+	 *            command line parameters
+	 * @throws IOException
+	 *             in case of error reading a input file
+	 */
+	public void execute(final String[] args) throws IOException {
+<span class="fc bfc" id="L52" title="All 2 branches covered.">		for (final String file : args) {</span>
+<span class="fc" id="L53">			dump(file);</span>
+		}
+<span class="fc" id="L55">	}</span>
+
+	private void dump(final String file) throws IOException {
+<span class="fc" id="L58">		out.printf(&quot;exec file: %s%n&quot;, file);</span>
+<span class="fc" id="L59">		out.println(&quot;CLASS ID         HITS/PROBES   CLASS NAME&quot;);</span>
+
+<span class="fc" id="L61">		final FileInputStream in = new FileInputStream(file);</span>
+<span class="fc" id="L62">		final ExecutionDataReader reader = new ExecutionDataReader(in);</span>
+<span class="fc" id="L63">		reader.setSessionInfoVisitor(new ISessionInfoVisitor() {</span>
+<span class="fc" id="L64">			public void visitSessionInfo(final SessionInfo info) {</span>
+<span class="fc" id="L65">				out.printf(&quot;Session \&quot;%s\&quot;: %s - %s%n&quot;, info.getId(), new Date(</span>
+						info.getStartTimeStamp()),
+						new Date(info.getDumpTimeStamp()));
+<span class="fc" id="L68">			}</span>
+		});
+<span class="fc" id="L70">		reader.setExecutionDataVisitor(new IExecutionDataVisitor() {</span>
+<span class="fc" id="L71">			public void visitClassExecution(final ExecutionData data) {</span>
+<span class="fc" id="L72">				out.printf(&quot;%016x  %3d of %3d   %s%n&quot;,</span>
+						Long.valueOf(data.getId()),
+						Integer.valueOf(getHitCount(data.getProbes())),
+						Integer.valueOf(data.getProbes().length),
+						data.getName());
+<span class="fc" id="L77">			}</span>
+		});
+<span class="fc" id="L79">		reader.read();</span>
+<span class="fc" id="L80">		in.close();</span>
+<span class="fc" id="L81">		out.println();</span>
+<span class="fc" id="L82">	}</span>
+
+	private int getHitCount(final boolean[] data) {
+<span class="fc" id="L85">		int count = 0;</span>
+<span class="fc bfc" id="L86" title="All 2 branches covered.">		for (final boolean hit : data) {</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">			if (hit) {</span>
+<span class="fc" id="L88">				count++;</span>
+			}
+		}
+<span class="fc" id="L91">		return count;</span>
+	}
+
+	/**
+	 * Entry point to run this examples as a Java application.
+	 * 
+	 * @param args
+	 *            list of program arguments
+	 * @throws IOException
+	 *             in case of errors executing the example
+	 */
+	public static void main(final String[] args) throws IOException {
+<span class="nc" id="L103">		new ExecDump(System.out).execute(args);</span>
+<span class="nc" id="L104">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

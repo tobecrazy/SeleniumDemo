@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>OfflineInstrumentationAccessGenerator.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">org.jacoco.core</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.core.runtime</a> &gt; <span class="el_source">OfflineInstrumentationAccessGenerator.java</span></div><h1>OfflineInstrumentationAccessGenerator.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Marc R. Hoffmann - initial API and implementation
+ *    
+ *******************************************************************************/
+package org.jacoco.core.runtime;
+
+import org.jacoco.core.JaCoCo;
+import org.jacoco.core.internal.instr.InstrSupport;
+import org.objectweb.asm.MethodVisitor;
+import org.objectweb.asm.Opcodes;
+
+/**
+ * This implementation of {@link IExecutionDataAccessorGenerator} generate a
+ * direct dependency to the JaCoCo runtime agent to initialize the runtime and
+ * obtain probe arrays. This generator is designed for offline instrumentation
+ * only.
+ */
+public class OfflineInstrumentationAccessGenerator implements
+		IExecutionDataAccessorGenerator {
+
+	private final String runtimeClassName;
+
+	/**
+	 * Creates a new instance for offline instrumentation.
+	 */
+	public OfflineInstrumentationAccessGenerator() {
+<span class="fc" id="L34">		this(JaCoCo.RUNTIMEPACKAGE.replace('.', '/') + &quot;/Offline&quot;);</span>
+<span class="fc" id="L35">	}</span>
+
+	/**
+	 * Creates a new instance with the given runtime class name for testing
+	 * purposes
+	 * 
+	 * @param runtimeClassName
+	 *            VM name of the runtime class
+	 */
+<span class="fc" id="L44">	OfflineInstrumentationAccessGenerator(final String runtimeClassName) {</span>
+<span class="fc" id="L45">		this.runtimeClassName = runtimeClassName;</span>
+<span class="fc" id="L46">	}</span>
+
+	public int generateDataAccessor(final long classid, final String classname,
+			final int probecount, final MethodVisitor mv) {
+<span class="fc" id="L50">		mv.visitLdcInsn(Long.valueOf(classid));</span>
+<span class="fc" id="L51">		mv.visitLdcInsn(classname);</span>
+<span class="fc" id="L52">		InstrSupport.push(mv, probecount);</span>
+<span class="fc" id="L53">		mv.visitMethodInsn(Opcodes.INVOKESTATIC, runtimeClassName, &quot;getProbes&quot;,</span>
+				&quot;(JLjava/lang/String;I)[Z&quot;, false);
+<span class="fc" id="L55">		return 4;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

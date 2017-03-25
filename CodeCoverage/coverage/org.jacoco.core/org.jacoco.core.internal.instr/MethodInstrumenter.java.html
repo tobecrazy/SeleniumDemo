@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>MethodInstrumenter.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">org.jacoco.core</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.core.internal.instr</a> &gt; <span class="el_source">MethodInstrumenter.java</span></div><h1>MethodInstrumenter.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Marc R. Hoffmann - initial API and implementation
+ *    
+ *******************************************************************************/
+package org.jacoco.core.internal.instr;
+
+import org.jacoco.core.internal.flow.IFrame;
+import org.jacoco.core.internal.flow.LabelInfo;
+import org.jacoco.core.internal.flow.MethodProbesVisitor;
+import org.objectweb.asm.Label;
+import org.objectweb.asm.MethodVisitor;
+import org.objectweb.asm.Opcodes;
+
+/**
+ * This method adapter inserts probes as requested by the
+ * {@link MethodProbesVisitor} events.
+ */
+class MethodInstrumenter extends MethodProbesVisitor {
+
+	private final IProbeInserter probeInserter;
+
+	/**
+	 * Create a new instrumenter instance for the given method.
+	 * 
+	 * @param mv
+	 *            next method visitor in the chain
+	 * @param probeInserter
+	 *            call-back to insert probes where required
+	 */
+	public MethodInstrumenter(final MethodVisitor mv,
+			final IProbeInserter probeInserter) {
+<span class="fc" id="L39">		super(mv);</span>
+<span class="fc" id="L40">		this.probeInserter = probeInserter;</span>
+<span class="fc" id="L41">	}</span>
+
+	// === IMethodProbesVisitor ===
+
+	@Override
+	public void visitProbe(final int probeId) {
+<span class="fc" id="L47">		probeInserter.insertProbe(probeId);</span>
+<span class="fc" id="L48">	}</span>
+
+	@Override
+	public void visitInsnWithProbe(final int opcode, final int probeId) {
+<span class="fc" id="L52">		probeInserter.insertProbe(probeId);</span>
+<span class="fc" id="L53">		mv.visitInsn(opcode);</span>
+<span class="fc" id="L54">	}</span>
+
+	@Override
+	public void visitJumpInsnWithProbe(final int opcode, final Label label,
+			final int probeId, final IFrame frame) {
+<span class="fc bfc" id="L59" title="All 2 branches covered.">		if (opcode == Opcodes.GOTO) {</span>
+<span class="fc" id="L60">			probeInserter.insertProbe(probeId);</span>
+<span class="fc" id="L61">			mv.visitJumpInsn(Opcodes.GOTO, label);</span>
+		} else {
+<span class="fc" id="L63">			final Label intermediate = new Label();</span>
+<span class="fc" id="L64">			mv.visitJumpInsn(getInverted(opcode), intermediate);</span>
+<span class="fc" id="L65">			probeInserter.insertProbe(probeId);</span>
+<span class="fc" id="L66">			mv.visitJumpInsn(Opcodes.GOTO, label);</span>
+<span class="fc" id="L67">			mv.visitLabel(intermediate);</span>
+<span class="fc" id="L68">			frame.accept(mv);</span>
+		}
+<span class="fc" id="L70">	}</span>
+
+	private int getInverted(final int opcode) {
+<span class="fc bfc" id="L73" title="All 17 branches covered.">		switch (opcode) {</span>
+		case Opcodes.IFEQ:
+<span class="fc" id="L75">			return Opcodes.IFNE;</span>
+		case Opcodes.IFNE:
+<span class="fc" id="L77">			return Opcodes.IFEQ;</span>
+		case Opcodes.IFLT:
+<span class="fc" id="L79">			return Opcodes.IFGE;</span>
+		case Opcodes.IFGE:
+<span class="fc" id="L81">			return Opcodes.IFLT;</span>
+		case Opcodes.IFGT:
+<span class="fc" id="L83">			return Opcodes.IFLE;</span>
+		case Opcodes.IFLE:
+<span class="fc" id="L85">			return Opcodes.IFGT;</span>
+		case Opcodes.IF_ICMPEQ:
+<span class="fc" id="L87">			return Opcodes.IF_ICMPNE;</span>
+		case Opcodes.IF_ICMPNE:
+<span class="fc" id="L89">			return Opcodes.IF_ICMPEQ;</span>
+		case Opcodes.IF_ICMPLT:
+<span class="fc" id="L91">			return Opcodes.IF_ICMPGE;</span>
+		case Opcodes.IF_ICMPGE:
+<span class="fc" id="L93">			return Opcodes.IF_ICMPLT;</span>
+		case Opcodes.IF_ICMPGT:
+<span class="fc" id="L95">			return Opcodes.IF_ICMPLE;</span>
+		case Opcodes.IF_ICMPLE:
+<span class="fc" id="L97">			return Opcodes.IF_ICMPGT;</span>
+		case Opcodes.IF_ACMPEQ:
+<span class="fc" id="L99">			return Opcodes.IF_ACMPNE;</span>
+		case Opcodes.IF_ACMPNE:
+<span class="fc" id="L101">			return Opcodes.IF_ACMPEQ;</span>
+		case Opcodes.IFNULL:
+<span class="fc" id="L103">			return Opcodes.IFNONNULL;</span>
+		case Opcodes.IFNONNULL:
+<span class="fc" id="L105">			return Opcodes.IFNULL;</span>
+		}
+<span class="fc" id="L107">		throw new IllegalArgumentException();</span>
+	}
+
+	@Override
+	public void visitTableSwitchInsnWithProbes(final int min, final int max,
+			final Label dflt, final Label[] labels, final IFrame frame) {
+		// 1. Calculate intermediate labels:
+<span class="fc" id="L114">		LabelInfo.resetDone(dflt);</span>
+<span class="fc" id="L115">		LabelInfo.resetDone(labels);</span>
+<span class="fc" id="L116">		final Label newDflt = createIntermediate(dflt);</span>
+<span class="fc" id="L117">		final Label[] newLabels = createIntermediates(labels);</span>
+<span class="fc" id="L118">		mv.visitTableSwitchInsn(min, max, newDflt, newLabels);</span>
+
+		// 2. Insert probes:
+<span class="fc" id="L121">		insertIntermediateProbes(dflt, labels, frame);</span>
+<span class="fc" id="L122">	}</span>
+
+	@Override
+	public void visitLookupSwitchInsnWithProbes(final Label dflt,
+			final int[] keys, final Label[] labels, final IFrame frame) {
+		// 1. Calculate intermediate labels:
+<span class="fc" id="L128">		LabelInfo.resetDone(dflt);</span>
+<span class="fc" id="L129">		LabelInfo.resetDone(labels);</span>
+<span class="fc" id="L130">		final Label newDflt = createIntermediate(dflt);</span>
+<span class="fc" id="L131">		final Label[] newLabels = createIntermediates(labels);</span>
+<span class="fc" id="L132">		mv.visitLookupSwitchInsn(newDflt, keys, newLabels);</span>
+
+		// 2. Insert probes:
+<span class="fc" id="L135">		insertIntermediateProbes(dflt, labels, frame);</span>
+<span class="fc" id="L136">	}</span>
+
+	private Label[] createIntermediates(final Label[] labels) {
+<span class="fc" id="L139">		final Label[] intermediates = new Label[labels.length];</span>
+<span class="fc bfc" id="L140" title="All 2 branches covered.">		for (int i = 0; i &lt; labels.length; i++) {</span>
+<span class="fc" id="L141">			intermediates[i] = createIntermediate(labels[i]);</span>
+		}
+<span class="fc" id="L143">		return intermediates;</span>
+	}
+
+	private Label createIntermediate(final Label label) {
+		final Label intermediate;
+<span class="fc bfc" id="L148" title="All 2 branches covered.">		if (LabelInfo.getProbeId(label) == LabelInfo.NO_PROBE) {</span>
+<span class="fc" id="L149">			intermediate = label;</span>
+		} else {
+<span class="fc bfc" id="L151" title="All 2 branches covered.">			if (LabelInfo.isDone(label)) {</span>
+<span class="fc" id="L152">				intermediate = LabelInfo.getIntermediateLabel(label);</span>
+			} else {
+<span class="fc" id="L154">				intermediate = new Label();</span>
+<span class="fc" id="L155">				LabelInfo.setIntermediateLabel(label, intermediate);</span>
+<span class="fc" id="L156">				LabelInfo.setDone(label);</span>
+			}
+		}
+<span class="fc" id="L159">		return intermediate;</span>
+	}
+
+	private void insertIntermediateProbe(final Label label, final IFrame frame) {
+<span class="fc" id="L163">		final int probeId = LabelInfo.getProbeId(label);</span>
+<span class="fc bfc" id="L164" title="All 4 branches covered.">		if (probeId != LabelInfo.NO_PROBE &amp;&amp; !LabelInfo.isDone(label)) {</span>
+<span class="fc" id="L165">			mv.visitLabel(LabelInfo.getIntermediateLabel(label));</span>
+<span class="fc" id="L166">			frame.accept(mv);</span>
+<span class="fc" id="L167">			probeInserter.insertProbe(probeId);</span>
+<span class="fc" id="L168">			mv.visitJumpInsn(Opcodes.GOTO, label);</span>
+<span class="fc" id="L169">			LabelInfo.setDone(label);</span>
+		}
+<span class="fc" id="L171">	}</span>
+
+	private void insertIntermediateProbes(final Label dflt,
+			final Label[] labels, final IFrame frame) {
+<span class="fc" id="L175">		LabelInfo.resetDone(dflt);</span>
+<span class="fc" id="L176">		LabelInfo.resetDone(labels);</span>
+<span class="fc" id="L177">		insertIntermediateProbe(dflt, frame);</span>
+<span class="fc bfc" id="L178" title="All 2 branches covered.">		for (final Label l : labels) {</span>
+<span class="fc" id="L179">			insertIntermediateProbe(l, frame);</span>
+		}
+<span class="fc" id="L181">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

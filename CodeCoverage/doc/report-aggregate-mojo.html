@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" href="resources/doc.css" charset="UTF-8" type="text/css"/>
+<link rel="shortcut icon" href="resources/report.gif" type="image/gif"/>
+<title>
+					JaCoCo -
+					jacoco:report-aggregate</title>
+</head>
+<body>
+<div class="breadcrumb">
+<a href="../index.html" class="el_report">JaCoCo</a>
+					&gt;
+					<a href="index.html" class="el_group">Documentation</a>
+					&gt;
+					<a href="maven.html" class="el_group">Maven</a>
+					&gt;
+					<span class="el_source">jacoco:report-aggregate</span>
+</div>
+<div id="content">
+    <h1>jacoco:report-aggregate</h1>
+      <p>
+<b>Note</b>:This goal should be used as a Maven report.</p>
+      <p>
+<b>Full name</b>:</p>
+      <p>org.jacoco:jacoco-maven-plugin:0.7.9:report-aggregate</p>
+      <p>
+<b>Description</b>:</p>
+      <div>
+<p>Creates a structured code coverage report (HTML, XML, and CSV)
+from multiple projects within reactor. The report is created from
+all modules this project depends on. From those projects class and
+source files as well as JaCoCo execution data files will be
+collected. In addition execution data is collected from the project
+itself. This also allows to create coverage reports when tests are
+in separate projects than the code under test, for example in case
+of integration tests.</p>
+<p>Using the dependency scope allows to distinguish projects which
+contribute execution data but should not become part of the
+report:</p>
+<ul>
+<li>
+<code>compile</code>: Project source and execution data is
+included in the report.</li>
+<li>
+<code>test</code>: Only execution data is considered for the
+report.</li>
+</ul>
+</div>
+      <p>
+<b>Attributes</b>:</p>
+      <ul>
+        <li>Requires a Maven project to be executed.</li>
+        <li>The goal is thread-safe and supports parallel builds.</li>
+        <li>Since version: <code>0.7.7</code>.</li>
+      </ul>
+      <h2>Optional Parameters</h2>
+        <table class="coverage">
+<thead>
+<tr>
+<td>Name</td>
+<td>Type</td>
+<td>Since</td>
+<td>Description</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<b>
+<a href="#dataFileExcludes">dataFileExcludes</a>
+</b>
+</td>
+<td>
+<code>List</code>
+</td>
+<td>
+<code>0.7.7</code>
+</td>
+<td>A list of execution data files to exclude from the report. May use
+wildcard characters (* and ?). When not specified nothing will be
+excluded.<br/>
+</td>
+</tr>
+<tr>
+<td>
+<b>
+<a href="#dataFileIncludes">dataFileIncludes</a>
+</b>
+</td>
+<td>
+<code>List</code>
+</td>
+<td>
+<code>0.7.7</code>
+</td>
+<td>A list of execution data files to include in the report from each
+project. May use wildcard characters (* and ?). When not specified
+all *.exec files from the target folder will be included.<br/>
+</td>
+</tr>
+<tr>
+<td>
+<b>
+<a href="#excludes">excludes</a>
+</b>
+</td>
+<td>
+<code>List</code>
+</td>
+<td>
+<code>0.7.7</code>
+</td>
+<td>A list of class files to exclude from the report. May use wildcard
+characters (* and ?). When not specified nothing will be excluded.<br/>
+</td>
+</tr>
+<tr>
+<td>
+<b>
+<a href="#footer">footer</a>
+</b>
+</td>
+<td>
+<code>String</code>
+</td>
+<td>
+<code>0.7.7</code>
+</td>
+<td>Footer text used in HTML report pages.<br/>
+</td>
+</tr>
+<tr>
+<td>
+<b>
+<a href="#includes">includes</a>
+</b>
+</td>
+<td>
+<code>List</code>
+</td>
+<td>
+<code>0.7.7</code>
+</td>
+<td>A list of class files to include in the report. May use wildcard
+characters (* and ?). When not specified everything will be
+included.<br/>
+</td>
+</tr>
+<tr>
+<td>
+<b>
+<a href="#outputDirectory">outputDirectory</a>
+</b>
+</td>
+<td>
+<code>File</code>
+</td>
+<td>
+<code>0.7.7</code>
+</td>
+<td>Output directory for the reports. Note that this parameter is only
+relevant if the goal is run from the command line or from the
+default build lifecycle. If the goal is run indirectly as part of a
+site generation, the output directory configured in the Maven Site
+Plugin is used instead.<br/>
+<b>Default value is</b>: <code>${project.reporting.outputDirectory}/jacoco-aggregate</code>.<br/>
+</td>
+</tr>
+<tr>
+<td>
+<b>
+<a href="#outputEncoding">outputEncoding</a>
+</b>
+</td>
+<td>
+<code>String</code>
+</td>
+<td>
+<code>0.7.7</code>
+</td>
+<td>Encoding of the generated reports.<br/>
+<b>Default value is</b>: <code>UTF-8</code>.<br/>
+<b>User property is</b>: <code>project.reporting.outputEncoding</code>.</td>
+</tr>
+<tr>
+<td>
+<b>
+<a href="#skip">skip</a>
+</b>
+</td>
+<td>
+<code>boolean</code>
+</td>
+<td>
+<code>0.7.7</code>
+</td>
+<td>Flag used to suppress execution.<br/>
+<b>Default value is</b>: <code>false</code>.<br/>
+<b>User property is</b>: <code>jacoco.skip</code>.</td>
+</tr>
+<tr>
+<td>
+<b>
+<a href="#sourceEncoding">sourceEncoding</a>
+</b>
+</td>
+<td>
+<code>String</code>
+</td>
+<td>
+<code>0.7.7</code>
+</td>
+<td>Encoding of the source files.<br/>
+<b>Default value is</b>: <code>UTF-8</code>.<br/>
+<b>User property is</b>: <code>project.build.sourceEncoding</code>.</td>
+</tr>
+<tr>
+<td>
+<b>
+<a href="#title">title</a>
+</b>
+</td>
+<td>
+<code>String</code>
+</td>
+<td>
+<code>0.7.7</code>
+</td>
+<td>Name of the root node HTML report pages.<br/>
+<b>Default value is</b>: <code>${project.name}</code>.<br/>
+</td>
+</tr>
+</tbody>
+</table>
+      
+      <h2>Parameter Details</h2>
+        <p>
+<b>
+<a name="dataFileExcludes">dataFileExcludes</a>:</b>
+</p>
+        <div>A list of execution data files to exclude from the report. May use
+wildcard characters (* and ?). When not specified nothing will be
+excluded.</div>
+        <ul>
+          <li>
+<b>Type</b>: <code>java.util.List</code>
+</li>
+          <li>
+<b>Since</b>: <code>0.7.7</code>
+</li>
+          <li>
+<b>Required</b>: <code>No</code>
+</li>
+        </ul>
+<p>
+<b>
+<a name="dataFileIncludes">dataFileIncludes</a>:</b>
+</p>
+        <div>A list of execution data files to include in the report from each
+project. May use wildcard characters (* and ?). When not specified
+all *.exec files from the target folder will be included.</div>
+        <ul>
+          <li>
+<b>Type</b>: <code>java.util.List</code>
+</li>
+          <li>
+<b>Since</b>: <code>0.7.7</code>
+</li>
+          <li>
+<b>Required</b>: <code>No</code>
+</li>
+        </ul>
+<p>
+<b>
+<a name="excludes">excludes</a>:</b>
+</p>
+        <div>A list of class files to exclude from the report. May use wildcard
+characters (* and ?). When not specified nothing will be excluded.</div>
+        <ul>
+          <li>
+<b>Type</b>: <code>java.util.List</code>
+</li>
+          <li>
+<b>Since</b>: <code>0.7.7</code>
+</li>
+          <li>
+<b>Required</b>: <code>No</code>
+</li>
+        </ul>
+<p>
+<b>
+<a name="footer">footer</a>:</b>
+</p>
+        <div>Footer text used in HTML report pages.</div>
+        <ul>
+          <li>
+<b>Type</b>: <code>java.lang.String</code>
+</li>
+          <li>
+<b>Since</b>: <code>0.7.7</code>
+</li>
+          <li>
+<b>Required</b>: <code>No</code>
+</li>
+        </ul>
+<p>
+<b>
+<a name="includes">includes</a>:</b>
+</p>
+        <div>A list of class files to include in the report. May use wildcard
+characters (* and ?). When not specified everything will be
+included.</div>
+        <ul>
+          <li>
+<b>Type</b>: <code>java.util.List</code>
+</li>
+          <li>
+<b>Since</b>: <code>0.7.7</code>
+</li>
+          <li>
+<b>Required</b>: <code>No</code>
+</li>
+        </ul>
+<p>
+<b>
+<a name="outputDirectory">outputDirectory</a>:</b>
+</p>
+        <div>Output directory for the reports. Note that this parameter is only
+relevant if the goal is run from the command line or from the
+default build lifecycle. If the goal is run indirectly as part of a
+site generation, the output directory configured in the Maven Site
+Plugin is used instead.</div>
+        <ul>
+          <li>
+<b>Type</b>: <code>java.io.File</code>
+</li>
+          <li>
+<b>Since</b>: <code>0.7.7</code>
+</li>
+          <li>
+<b>Required</b>: <code>No</code>
+</li>
+          <li>
+<b>Default</b>: <code>${project.reporting.outputDirectory}/jacoco-aggregate</code>
+</li>
+        </ul>
+<p>
+<b>
+<a name="outputEncoding">outputEncoding</a>:</b>
+</p>
+        <div>Encoding of the generated reports.</div>
+        <ul>
+          <li>
+<b>Type</b>: <code>java.lang.String</code>
+</li>
+          <li>
+<b>Since</b>: <code>0.7.7</code>
+</li>
+          <li>
+<b>Required</b>: <code>No</code>
+</li>
+          <li>
+<b>User Property</b>: <code>project.reporting.outputEncoding</code>
+</li>
+          <li>
+<b>Default</b>: <code>UTF-8</code>
+</li>
+        </ul>
+<p>
+<b>
+<a name="skip">skip</a>:</b>
+</p>
+        <div>Flag used to suppress execution.</div>
+        <ul>
+          <li>
+<b>Type</b>: <code>boolean</code>
+</li>
+          <li>
+<b>Since</b>: <code>0.7.7</code>
+</li>
+          <li>
+<b>Required</b>: <code>No</code>
+</li>
+          <li>
+<b>User Property</b>: <code>jacoco.skip</code>
+</li>
+          <li>
+<b>Default</b>: <code>false</code>
+</li>
+        </ul>
+<p>
+<b>
+<a name="sourceEncoding">sourceEncoding</a>:</b>
+</p>
+        <div>Encoding of the source files.</div>
+        <ul>
+          <li>
+<b>Type</b>: <code>java.lang.String</code>
+</li>
+          <li>
+<b>Since</b>: <code>0.7.7</code>
+</li>
+          <li>
+<b>Required</b>: <code>No</code>
+</li>
+          <li>
+<b>User Property</b>: <code>project.build.sourceEncoding</code>
+</li>
+          <li>
+<b>Default</b>: <code>UTF-8</code>
+</li>
+        </ul>
+<p>
+<b>
+<a name="title">title</a>:</b>
+</p>
+        <div>Name of the root node HTML report pages.</div>
+        <ul>
+          <li>
+<b>Type</b>: <code>java.lang.String</code>
+</li>
+          <li>
+<b>Since</b>: <code>0.7.7</code>
+</li>
+          <li>
+<b>Required</b>: <code>No</code>
+</li>
+          <li>
+<b>Default</b>: <code>${project.name}</code>
+</li>
+        </ul>
+      
+    
+  </div>
+<div class="footer">
+<span class="right">
+<a href="http://www.jacoco.org/jacoco">JaCoCo</a>
+						 
+						0.7.9.201702052155</span>
+<a href="../doc/license.html">Copyright</a>
+					©
+					2009, 2017
+					Mountainminds GmbH &amp; Co. KG and Contributors
+				</div>
+</body>
+</html>

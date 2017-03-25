@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>CommandLineSupport.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">org.jacoco.core</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.core.runtime</a> &gt; <span class="el_source">CommandLineSupport.java</span></div><h1>CommandLineSupport.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Marc R. Hoffmann - initial API and implementation
+ *    
+ *******************************************************************************/
+package org.jacoco.core.runtime;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Internal utility to parse and create command lines arguments.
+ */
+final class CommandLineSupport {
+
+	private static final char BLANK = ' ';
+	private static final char QUOTE = '&quot;';
+	private static final char SLASH = '\\';
+
+	/**
+	 * Quotes a single command line argument if necessary.
+	 * 
+	 * @param arg
+	 *            command line argument
+	 * @return quoted argument
+	 */
+	static String quote(final String arg) {
+<span class="fc" id="L34">		final StringBuilder escaped = new StringBuilder();</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">		for (final char c : arg.toCharArray()) {</span>
+<span class="fc bfc" id="L36" title="All 4 branches covered.">			if (c == QUOTE || c == SLASH) {</span>
+<span class="fc" id="L37">				escaped.append(SLASH);</span>
+			}
+<span class="fc" id="L39">			escaped.append(c);</span>
+		}
+<span class="fc bfc" id="L41" title="All 4 branches covered.">		if (arg.indexOf(BLANK) != -1 || arg.indexOf(QUOTE) != -1) {</span>
+<span class="fc" id="L42">			escaped.insert(0, QUOTE).append(QUOTE);</span>
+		}
+<span class="fc" id="L44">		return escaped.toString();</span>
+	}
+
+	/**
+	 * Builds a single command line string from the given argument list.
+	 * Arguments are quoted when necessary.
+	 * 
+	 * @param args
+	 *            command line arguments
+	 * @return combined command line
+	 */
+	static String quote(final List&lt;String&gt; args) {
+<span class="fc" id="L56">		final StringBuilder result = new StringBuilder();</span>
+<span class="fc" id="L57">		boolean seperate = false;</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">		for (final String arg : args) {</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">			if (seperate) {</span>
+<span class="fc" id="L60">				result.append(BLANK);</span>
+			}
+<span class="fc" id="L62">			result.append(quote(arg));</span>
+<span class="fc" id="L63">			seperate = true;</span>
+		}
+<span class="fc" id="L65">		return result.toString();</span>
+	}
+
+	/**
+	 * Splits a command line into single arguments and removes quotes if
+	 * present.
+	 * 
+	 * @param commandline
+	 *            combinded command line
+	 * @return list of arguments
+	 */
+	static List&lt;String&gt; split(final String commandline) {
+<span class="fc bfc" id="L77" title="All 4 branches covered.">		if (commandline == null || commandline.length() == 0) {</span>
+<span class="fc" id="L78">			return new ArrayList&lt;String&gt;();</span>
+		}
+<span class="fc" id="L80">		final List&lt;String&gt; args = new ArrayList&lt;String&gt;();</span>
+<span class="fc" id="L81">		final StringBuilder current = new StringBuilder();</span>
+<span class="fc" id="L82">		int mode = M_STRIPWHITESPACE;</span>
+<span class="fc" id="L83">		int endChar = BLANK;</span>
+<span class="fc bfc" id="L84" title="All 2 branches covered.">		for (final char c : commandline.toCharArray()) {</span>
+<span class="pc bpc" id="L85" title="1 of 4 branches missed.">			switch (mode) {</span>
+			case M_STRIPWHITESPACE:
+<span class="fc bfc" id="L87" title="All 2 branches covered.">				if (!Character.isWhitespace(c)) {</span>
+<span class="fc bfc" id="L88" title="All 2 branches covered.">					if (c == QUOTE) {</span>
+<span class="fc" id="L89">						endChar = QUOTE;</span>
+					} else {
+<span class="fc" id="L91">						current.append(c);</span>
+<span class="fc" id="L92">						endChar = BLANK;</span>
+					}
+<span class="fc" id="L94">					mode = M_PARSEARGUMENT;</span>
+				}
+				break;
+			case M_PARSEARGUMENT:
+<span class="fc bfc" id="L98" title="All 2 branches covered.">				if (c == endChar) {</span>
+<span class="fc" id="L99">					addArgument(args, current);</span>
+<span class="fc" id="L100">					mode = M_STRIPWHITESPACE;</span>
+<span class="fc bfc" id="L101" title="All 2 branches covered.">				} else if (c == SLASH) {</span>
+<span class="fc" id="L102">					current.append(SLASH);</span>
+<span class="fc" id="L103">					mode = M_ESCAPED;</span>
+				} else {
+<span class="fc" id="L105">					current.append(c);</span>
+				}
+<span class="fc" id="L107">				break;</span>
+			case M_ESCAPED:
+<span class="fc bfc" id="L109" title="All 4 branches covered.">				if (c == QUOTE || c == SLASH) {</span>
+<span class="fc" id="L110">					current.setCharAt(current.length() - 1, c);</span>
+<span class="fc bfc" id="L111" title="All 2 branches covered.">				} else if (c == endChar) {</span>
+<span class="fc" id="L112">					addArgument(args, current);</span>
+<span class="fc" id="L113">					mode = M_STRIPWHITESPACE;</span>
+				} else {
+<span class="fc" id="L115">					current.append(c);</span>
+				}
+<span class="fc" id="L117">				mode = M_PARSEARGUMENT;</span>
+				break;
+			}
+		}
+<span class="fc" id="L121">		addArgument(args, current);</span>
+<span class="fc" id="L122">		return args;</span>
+	}
+
+	private static void addArgument(final List&lt;String&gt; args,
+			final StringBuilder current) {
+<span class="fc bfc" id="L127" title="All 2 branches covered.">		if (current.length() &gt; 0) {</span>
+<span class="fc" id="L128">			args.add(current.toString());</span>
+<span class="fc" id="L129">			current.setLength(0);</span>
+		}
+<span class="fc" id="L131">	}</span>
+
+	private static final int M_STRIPWHITESPACE = 0;
+	private static final int M_PARSEARGUMENT = 1;
+	private static final int M_ESCAPED = 2;
+
+<span class="nc" id="L137">	private CommandLineSupport() {</span>
+		// no instances
+<span class="nc" id="L139">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

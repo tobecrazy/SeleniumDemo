@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>PackageSourcePage.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">org.jacoco.report</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.report.internal.html.page</a> &gt; <span class="el_source">PackageSourcePage.java</span></div><h1>PackageSourcePage.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Marc R. Hoffmann - initial API and implementation
+ *    
+ *******************************************************************************/
+package org.jacoco.report.internal.html.page;
+
+import java.io.IOException;
+import java.io.Reader;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.jacoco.core.analysis.IPackageCoverage;
+import org.jacoco.core.analysis.ISourceFileCoverage;
+import org.jacoco.report.ISourceFileLocator;
+import org.jacoco.report.internal.ReportOutputFolder;
+import org.jacoco.report.internal.html.HTMLElement;
+import org.jacoco.report.internal.html.IHTMLReportContext;
+import org.jacoco.report.internal.html.ILinkable;
+import org.jacoco.report.internal.html.resources.Styles;
+
+/**
+ * Page showing coverage information for a Java package. The page contains a
+ * table with all classes of the package.
+ */
+public class PackageSourcePage extends TablePage&lt;IPackageCoverage&gt; {
+
+	private final ISourceFileLocator locator;
+	private final Map&lt;String, ILinkable&gt; sourceFilePages;
+	private final ILinkable packagePage;
+
+	/**
+	 * Creates a new visitor in the given context.
+	 * 
+	 * @param node
+	 *            coverage data for this package
+	 * @param parent
+	 *            optional hierarchical parent
+	 * @param locator
+	 *            source locator
+	 * @param folder
+	 *            base folder to create this page in
+	 * @param context
+	 *            settings context
+	 * @param packagePage
+	 *            page listing the classes of this package
+	 */
+	public PackageSourcePage(final IPackageCoverage node,
+			final ReportPage parent, final ISourceFileLocator locator,
+			final ReportOutputFolder folder, final IHTMLReportContext context,
+			final ILinkable packagePage) {
+<span class="fc" id="L58">		super(node, parent, folder, context);</span>
+<span class="fc" id="L59">		this.locator = locator;</span>
+<span class="fc" id="L60">		this.packagePage = packagePage;</span>
+<span class="fc" id="L61">		this.sourceFilePages = new HashMap&lt;String, ILinkable&gt;();</span>
+<span class="fc" id="L62">	}</span>
+
+	@Override
+	public void render() throws IOException {
+<span class="fc" id="L66">		renderSourceFilePages();</span>
+<span class="fc" id="L67">		super.render();</span>
+<span class="fc" id="L68">	}</span>
+
+	/**
+	 * Returns the link to the source file page of the source file with the
+	 * given name. If no source file was located, &lt;code&gt;null&lt;/code&gt; is
+	 * returned..
+	 */
+	ILinkable getSourceFilePage(final String name) {
+<span class="fc" id="L76">		return sourceFilePages.get(name);</span>
+	}
+
+	private final void renderSourceFilePages() throws IOException {
+<span class="fc" id="L80">		final String packagename = getNode().getName();</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">		for (final ISourceFileCoverage s : getNode().getSourceFiles()) {</span>
+<span class="fc" id="L82">			final String sourcename = s.getName();</span>
+<span class="fc" id="L83">			final Reader reader = locator</span>
+					.getSourceFile(packagename, sourcename);
+<span class="fc bfc" id="L85" title="All 2 branches covered.">			if (reader == null) {</span>
+<span class="fc" id="L86">				addItem(new SourceFileItem(s));</span>
+			} else {
+<span class="fc" id="L88">				final SourceFilePage sourcePage = new SourceFilePage(s, reader,</span>
+						locator.getTabWidth(), this, folder, context);
+<span class="fc" id="L90">				sourcePage.render();</span>
+<span class="fc" id="L91">				sourceFilePages.put(sourcename, sourcePage);</span>
+<span class="fc" id="L92">				addItem(sourcePage);</span>
+			}
+
+<span class="fc" id="L95">		}</span>
+<span class="fc" id="L96">	}</span>
+
+	@Override
+	protected String getOnload() {
+<span class="fc" id="L100">		return &quot;initialSort(['breadcrumb', 'coveragetable'])&quot;;</span>
+	}
+
+	@Override
+	protected String getFileName() {
+<span class="fc" id="L105">		return &quot;index.source.html&quot;;</span>
+	}
+
+	@Override
+	public String getLinkLabel() {
+<span class="fc" id="L110">		return context.getLanguageNames().getPackageName(getNode().getName());</span>
+	}
+
+	@Override
+	protected void infoLinks(final HTMLElement span) throws IOException {
+<span class="fc" id="L115">		final String link = packagePage.getLink(folder);</span>
+<span class="fc" id="L116">		span.a(link, Styles.EL_CLASS).text(&quot;Classes&quot;);</span>
+<span class="fc" id="L117">		super.infoLinks(span);</span>
+<span class="fc" id="L118">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

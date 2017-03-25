@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>ClassRowWriter.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">org.jacoco.report</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.report.csv</a> &gt; <span class="el_source">ClassRowWriter.java</span></div><h1>ClassRowWriter.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *    Brock Janiczak - initial API and implementation
+ * 
+ *******************************************************************************/
+package org.jacoco.report.csv;
+
+import java.io.IOException;
+
+import org.jacoco.core.analysis.IClassCoverage;
+import org.jacoco.core.analysis.ICounter;
+import org.jacoco.core.analysis.ICoverageNode.CounterEntity;
+import org.jacoco.report.ILanguageNames;
+
+/**
+ * Writer for rows in the CVS report representing the summary data of a single
+ * class.
+ */
+class ClassRowWriter {
+
+<span class="fc" id="L27">	private static final CounterEntity[] COUNTERS = { CounterEntity.INSTRUCTION,</span>
+			CounterEntity.BRANCH, CounterEntity.LINE,
+			CounterEntity.COMPLEXITY, CounterEntity.METHOD };
+
+	private final DelimitedWriter writer;
+
+	private final ILanguageNames languageNames;
+
+	/**
+	 * Creates a new row writer that writes class information to the given CSV
+	 * writer.
+	 * 
+	 * @param writer
+	 *            writer for csv output
+	 * @param languageNames
+	 *            converter for Java identifiers
+	 * @throws IOException
+	 *             in case of problems with the writer
+	 */
+	public ClassRowWriter(final DelimitedWriter writer,
+<span class="fc" id="L47">			final ILanguageNames languageNames) throws IOException {</span>
+<span class="fc" id="L48">		this.writer = writer;</span>
+<span class="fc" id="L49">		this.languageNames = languageNames;</span>
+<span class="fc" id="L50">		writeHeader();</span>
+<span class="fc" id="L51">	}</span>
+
+	private void writeHeader() throws IOException {
+<span class="fc" id="L54">		writer.write(&quot;GROUP&quot;, &quot;PACKAGE&quot;, &quot;CLASS&quot;);</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">		for (final CounterEntity entity : COUNTERS) {</span>
+<span class="fc" id="L56">			writer.write(entity.name() + &quot;_MISSED&quot;);</span>
+<span class="fc" id="L57">			writer.write(entity.name() + &quot;_COVERED&quot;);</span>
+		}
+<span class="fc" id="L59">		writer.nextLine();</span>
+<span class="fc" id="L60">	}</span>
+
+	/**
+	 * Writes the class summary information as a row.
+	 * 
+	 * @param groupName
+	 *            name of the group
+	 * @param packageName
+	 *            vm name of the package
+	 * @param node
+	 *            class coverage data
+	 * @throws IOException
+	 *             in case of problems with the writer
+	 */
+	public void writeRow(final String groupName, final String packageName,
+			final IClassCoverage node) throws IOException {
+<span class="fc" id="L76">		writer.write(groupName);</span>
+<span class="fc" id="L77">		writer.write(languageNames.getPackageName(packageName));</span>
+<span class="fc" id="L78">		final String className = languageNames.getClassName(node.getName(),</span>
+				node.getSignature(), node.getSuperName(),
+				node.getInterfaceNames());
+<span class="fc" id="L81">		writer.write(className);</span>
+
+<span class="fc bfc" id="L83" title="All 2 branches covered.">		for (final CounterEntity entity : COUNTERS) {</span>
+<span class="fc" id="L84">			final ICounter counter = node.getCounter(entity);</span>
+<span class="fc" id="L85">			writer.write(counter.getMissedCount());</span>
+<span class="fc" id="L86">			writer.write(counter.getCoveredCount());</span>
+		}
+
+<span class="fc" id="L89">		writer.nextLine();</span>
+<span class="fc" id="L90">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

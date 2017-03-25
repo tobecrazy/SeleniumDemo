@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>ClassFieldProbeArrayStrategy.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">org.jacoco.core</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.core.internal.instr</a> &gt; <span class="el_source">ClassFieldProbeArrayStrategy.java</span></div><h1>ClassFieldProbeArrayStrategy.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Marc R. Hoffmann - initial API and implementation
+ *    
+ *******************************************************************************/
+package org.jacoco.core.internal.instr;
+
+import org.jacoco.core.runtime.IExecutionDataAccessorGenerator;
+import org.objectweb.asm.ClassVisitor;
+import org.objectweb.asm.Label;
+import org.objectweb.asm.MethodVisitor;
+import org.objectweb.asm.Opcodes;
+
+/**
+ * The strategy for regular classes adds a static field to hold the probe array
+ * and a static initialization method requesting the probe array from the
+ * runtime.
+ */
+class ClassFieldProbeArrayStrategy implements IProbeArrayStrategy {
+
+	/**
+	 * Frame stack with a single boolean array.
+	 */
+<span class="fc" id="L30">	private static final Object[] FRAME_STACK_ARRZ = new Object[] { InstrSupport.DATAFIELD_DESC };</span>
+
+	/**
+	 * Empty frame locals.
+	 */
+<span class="fc" id="L35">	private static final Object[] FRAME_LOCALS_EMPTY = new Object[0];</span>
+
+	private final String className;
+	private final long classId;
+	private final boolean withFrames;
+	private final IExecutionDataAccessorGenerator accessorGenerator;
+
+	ClassFieldProbeArrayStrategy(final String className, final long classId,
+			final boolean withFrames,
+<span class="fc" id="L44">			final IExecutionDataAccessorGenerator accessorGenerator) {</span>
+<span class="fc" id="L45">		this.className = className;</span>
+<span class="fc" id="L46">		this.classId = classId;</span>
+<span class="fc" id="L47">		this.withFrames = withFrames;</span>
+<span class="fc" id="L48">		this.accessorGenerator = accessorGenerator;</span>
+<span class="fc" id="L49">	}</span>
+
+	public int storeInstance(final MethodVisitor mv, final boolean clinit,
+			final int variable) {
+<span class="fc" id="L53">		mv.visitMethodInsn(Opcodes.INVOKESTATIC, className,</span>
+				InstrSupport.INITMETHOD_NAME, InstrSupport.INITMETHOD_DESC,
+				false);
+<span class="fc" id="L56">		mv.visitVarInsn(Opcodes.ASTORE, variable);</span>
+<span class="fc" id="L57">		return 1;</span>
+	}
+
+	public void addMembers(final ClassVisitor cv, final int probeCount) {
+<span class="fc" id="L61">		createDataField(cv);</span>
+<span class="fc" id="L62">		createInitMethod(cv, probeCount);</span>
+<span class="fc" id="L63">	}</span>
+
+	private void createDataField(final ClassVisitor cv) {
+<span class="fc" id="L66">		cv.visitField(InstrSupport.DATAFIELD_ACC, InstrSupport.DATAFIELD_NAME,</span>
+				InstrSupport.DATAFIELD_DESC, null, null);
+<span class="fc" id="L68">	}</span>
+
+	private void createInitMethod(final ClassVisitor cv, final int probeCount) {
+<span class="fc" id="L71">		final MethodVisitor mv = cv.visitMethod(InstrSupport.INITMETHOD_ACC,</span>
+				InstrSupport.INITMETHOD_NAME, InstrSupport.INITMETHOD_DESC,
+				null, null);
+<span class="fc" id="L74">		mv.visitCode();</span>
+
+		// Load the value of the static data field:
+<span class="fc" id="L77">		mv.visitFieldInsn(Opcodes.GETSTATIC, className,</span>
+				InstrSupport.DATAFIELD_NAME, InstrSupport.DATAFIELD_DESC);
+<span class="fc" id="L79">		mv.visitInsn(Opcodes.DUP);</span>
+
+		// Stack[1]: [Z
+		// Stack[0]: [Z
+
+		// Skip initialization when we already have a data array:
+<span class="fc" id="L85">		final Label alreadyInitialized = new Label();</span>
+<span class="fc" id="L86">		mv.visitJumpInsn(Opcodes.IFNONNULL, alreadyInitialized);</span>
+
+		// Stack[0]: [Z
+
+<span class="fc" id="L90">		mv.visitInsn(Opcodes.POP);</span>
+<span class="fc" id="L91">		final int size = genInitializeDataField(mv, probeCount);</span>
+
+		// Stack[0]: [Z
+
+		// Return the class' probe array:
+<span class="fc bfc" id="L96" title="All 2 branches covered.">		if (withFrames) {</span>
+<span class="fc" id="L97">			mv.visitFrame(Opcodes.F_NEW, 0, FRAME_LOCALS_EMPTY, 1,</span>
+					FRAME_STACK_ARRZ);
+		}
+<span class="fc" id="L100">		mv.visitLabel(alreadyInitialized);</span>
+<span class="fc" id="L101">		mv.visitInsn(Opcodes.ARETURN);</span>
+
+<span class="fc" id="L103">		mv.visitMaxs(Math.max(size, 2), 0); // Maximum local stack size is 2</span>
+<span class="fc" id="L104">		mv.visitEnd();</span>
+<span class="fc" id="L105">	}</span>
+
+	/**
+	 * Generates the byte code to initialize the static coverage data field
+	 * within this class.
+	 * 
+	 * The code will push the [Z data array on the operand stack.
+	 * 
+	 * @param mv
+	 *            generator to emit code to
+	 */
+	private int genInitializeDataField(final MethodVisitor mv,
+			final int probeCount) {
+<span class="fc" id="L118">		final int size = accessorGenerator.generateDataAccessor(classId,</span>
+				className, probeCount, mv);
+
+		// Stack[0]: [Z
+
+<span class="fc" id="L123">		mv.visitInsn(Opcodes.DUP);</span>
+
+		// Stack[1]: [Z
+		// Stack[0]: [Z
+
+<span class="fc" id="L128">		mv.visitFieldInsn(Opcodes.PUTSTATIC, className,</span>
+				InstrSupport.DATAFIELD_NAME, InstrSupport.DATAFIELD_DESC);
+
+		// Stack[0]: [Z
+
+<span class="fc" id="L133">		return Math.max(size, 2); // Maximum local stack size is 2</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

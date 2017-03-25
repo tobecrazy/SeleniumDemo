@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>ReportAggregateMojo.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">jacoco-maven-plugin</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.maven</a> &gt; <span class="el_source">ReportAggregateMojo.java</span></div><h1>ReportAggregateMojo.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    John Oliver, Marc R. Hoffmann, Jan Wloka - initial API and implementation
+ *
+ *******************************************************************************/
+package org.jacoco.maven;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
+
+import org.apache.maven.artifact.Artifact;
+import org.apache.maven.model.Dependency;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
+import org.apache.maven.project.MavenProject;
+import org.jacoco.report.IReportGroupVisitor;
+
+/**
+ * &lt;p&gt;
+ * Creates a structured code coverage report (HTML, XML, and CSV) from multiple
+ * projects within reactor. The report is created from all modules this project
+ * depends on. From those projects class and source files as well as JaCoCo
+ * execution data files will be collected. In addition execution data is
+ * collected from the project itself. This also allows to create coverage
+ * reports when tests are in separate projects than the code under test, for
+ * example in case of integration tests.
+ * &lt;/p&gt;
+ * 
+ * &lt;p&gt;
+ * Using the dependency scope allows to distinguish projects which contribute
+ * execution data but should not become part of the report:
+ * &lt;/p&gt;
+ * 
+ * &lt;ul&gt;
+ * &lt;li&gt;&lt;code&gt;compile&lt;/code&gt;: Project source and execution data is included in
+ * the report.&lt;/li&gt;
+ * &lt;li&gt;&lt;code&gt;test&lt;/code&gt;: Only execution data is considered for the report.&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * @since 0.7.7
+ */
+@Mojo(name = &quot;report-aggregate&quot;, threadSafe = true)
+<span class="fc" id="L53">public class ReportAggregateMojo extends AbstractReportMojo {</span>
+
+	/**
+	 * A list of execution data files to include in the report from each
+	 * project. May use wildcard characters (* and ?). When not specified all
+	 * *.exec files from the target folder will be included.
+	 */
+	@Parameter
+	List&lt;String&gt; dataFileIncludes;
+
+	/**
+	 * A list of execution data files to exclude from the report. May use
+	 * wildcard characters (* and ?). When not specified nothing will be
+	 * excluded.
+	 */
+	@Parameter
+	List&lt;String&gt; dataFileExcludes;
+
+	/**
+	 * Output directory for the reports. Note that this parameter is only
+	 * relevant if the goal is run from the command line or from the default
+	 * build lifecycle. If the goal is run indirectly as part of a site
+	 * generation, the output directory configured in the Maven Site Plugin is
+	 * used instead.
+	 */
+	@Parameter(defaultValue = &quot;${project.reporting.outputDirectory}/jacoco-aggregate&quot;)
+	private File outputDirectory;
+
+	/**
+	 * The projects in the reactor.
+	 */
+	@Parameter(property = &quot;reactorProjects&quot;, readonly = true)
+	private List&lt;MavenProject&gt; reactorProjects;
+
+	@Override
+	boolean canGenerateReportRegardingDataFiles() {
+<span class="fc" id="L89">		return true;</span>
+	}
+
+	@Override
+	boolean canGenerateReportRegardingClassesDirectory() {
+<span class="fc" id="L94">		return true;</span>
+	}
+
+	@Override
+	void loadExecutionData(final ReportSupport support) throws IOException {
+		// https://issues.apache.org/jira/browse/MNG-5440
+<span class="fc bfc" id="L100" title="All 2 branches covered.">		if (dataFileIncludes == null) {</span>
+<span class="fc" id="L101">			dataFileIncludes = Arrays.asList(&quot;target/*.exec&quot;);</span>
+		}
+
+<span class="fc" id="L104">		final FileFilter filter = new FileFilter(dataFileIncludes,</span>
+				dataFileExcludes);
+<span class="fc" id="L106">		loadExecutionData(support, filter, getProject().getBasedir());</span>
+<span class="fc bfc" id="L107" title="All 2 branches covered.">		for (final MavenProject dependency : findDependencies(</span>
+				Artifact.SCOPE_COMPILE, Artifact.SCOPE_TEST)) {
+<span class="fc" id="L109">			loadExecutionData(support, filter, dependency.getBasedir());</span>
+		}
+<span class="fc" id="L111">	}</span>
+
+	private void loadExecutionData(final ReportSupport support,
+			final FileFilter filter, final File basedir) throws IOException {
+<span class="fc bfc" id="L115" title="All 2 branches covered.">		for (final File execFile : filter.getFiles(basedir)) {</span>
+<span class="fc" id="L116">			support.loadExecutionData(execFile);</span>
+		}
+<span class="fc" id="L118">	}</span>
+
+	@Override
+	void addFormatters(final ReportSupport support, final Locale locale)
+			throws IOException {
+<span class="fc" id="L123">		support.addAllFormatters(outputDirectory, outputEncoding, footer,</span>
+				locale);
+<span class="fc" id="L125">	}</span>
+
+	@Override
+	void createReport(final IReportGroupVisitor visitor,
+			final ReportSupport support) throws IOException {
+<span class="fc" id="L130">		final IReportGroupVisitor group = visitor.visitGroup(title);</span>
+<span class="fc bfc" id="L131" title="All 2 branches covered.">		for (final MavenProject dependency : findDependencies(Artifact.SCOPE_COMPILE)) {</span>
+<span class="fc" id="L132">			support.processProject(group, dependency.getArtifactId(),</span>
+					dependency, getIncludes(), getExcludes(), sourceEncoding);
+		}
+<span class="fc" id="L135">	}</span>
+
+	@Override
+	protected String getOutputDirectory() {
+<span class="nc" id="L139">		return outputDirectory.getAbsolutePath();</span>
+	}
+
+	@Override
+	public void setReportOutputDirectory(final File reportOutputDirectory) {
+<span class="pc bpc" id="L144" title="2 of 4 branches missed.">		if (reportOutputDirectory != null</span>
+				&amp;&amp; !reportOutputDirectory.getAbsolutePath().endsWith(
+						&quot;jacoco-aggregate&quot;)) {
+<span class="fc" id="L147">			outputDirectory = new File(reportOutputDirectory,</span>
+					&quot;jacoco-aggregate&quot;);
+		} else {
+<span class="nc" id="L150">			outputDirectory = reportOutputDirectory;</span>
+		}
+<span class="fc" id="L152">	}</span>
+
+	public String getOutputName() {
+<span class="fc" id="L155">		return &quot;jacoco-aggregate/index&quot;;</span>
+	}
+
+	public String getName(final Locale locale) {
+<span class="fc" id="L159">		return &quot;JaCoCo Aggregate&quot;;</span>
+	}
+
+	private List&lt;MavenProject&gt; findDependencies(final String... scopes) {
+<span class="fc" id="L163">		final List&lt;MavenProject&gt; result = new ArrayList&lt;MavenProject&gt;();</span>
+<span class="fc" id="L164">		final List&lt;String&gt; scopeList = Arrays.asList(scopes);</span>
+<span class="fc bfc" id="L165" title="All 2 branches covered.">		for (final Object dependencyObject : getProject().getDependencies()) {</span>
+<span class="fc" id="L166">			final Dependency dependency = (Dependency) dependencyObject;</span>
+<span class="fc bfc" id="L167" title="All 2 branches covered.">			if (scopeList.contains(dependency.getScope())) {</span>
+<span class="fc" id="L168">				final MavenProject project = findProjectFromReactor(dependency);</span>
+<span class="fc bfc" id="L169" title="All 2 branches covered.">				if (project != null) {</span>
+<span class="fc" id="L170">					result.add(project);</span>
+				}
+			}
+<span class="fc" id="L173">		}</span>
+<span class="fc" id="L174">		return result;</span>
+	}
+
+	private MavenProject findProjectFromReactor(final Dependency d) {
+<span class="fc bfc" id="L178" title="All 2 branches covered.">		for (final MavenProject p : reactorProjects) {</span>
+<span class="pc bpc" id="L179" title="1 of 6 branches missed.">			if (p.getGroupId().equals(d.getGroupId())</span>
+					&amp;&amp; p.getArtifactId().equals(d.getArtifactId())
+					&amp;&amp; p.getVersion().equals(d.getVersion())) {
+<span class="fc" id="L182">				return p;</span>
+			}
+		}
+<span class="fc" id="L185">		return null;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

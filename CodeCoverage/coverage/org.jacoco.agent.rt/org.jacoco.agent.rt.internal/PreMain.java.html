@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>PreMain.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">org.jacoco.agent.rt</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.agent.rt.internal</a> &gt; <span class="el_source">PreMain.java</span></div><h1>PreMain.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Marc R. Hoffmann - initial API and implementation
+ *    
+ *******************************************************************************/
+package org.jacoco.agent.rt.internal;
+
+import java.lang.instrument.Instrumentation;
+
+import org.jacoco.core.runtime.AgentOptions;
+import org.jacoco.core.runtime.IRuntime;
+import org.jacoco.core.runtime.ModifiedSystemClassRuntime;
+
+/**
+ * The agent which is referred as the &lt;code&gt;Premain-Class&lt;/code&gt;. The agent
+ * configuration is provided with the agent parameters in the command line.
+ */
+public final class PreMain {
+
+<span class="nc" id="L26">	private PreMain() {</span>
+		// no instances
+<span class="nc" id="L28">	}</span>
+
+	/**
+	 * This method is called by the JVM to initialize Java agents.
+	 * 
+	 * @param options
+	 *            agent options
+	 * @param inst
+	 *            instrumentation callback provided by the JVM
+	 * @throws Exception
+	 *             in case initialization fails
+	 */
+	public static void premain(final String options, final Instrumentation inst)
+			throws Exception {
+
+<span class="nc" id="L43">		final AgentOptions agentOptions = new AgentOptions(options);</span>
+
+<span class="nc" id="L45">		final Agent agent = Agent.getInstance(agentOptions);</span>
+
+<span class="nc" id="L47">		final IRuntime runtime = createRuntime(inst);</span>
+<span class="nc" id="L48">		runtime.startup(agent.getData());</span>
+<span class="nc" id="L49">		inst.addTransformer(new CoverageTransformer(runtime, agentOptions,</span>
+				IExceptionLogger.SYSTEM_ERR));
+<span class="nc" id="L51">	}</span>
+
+	private static IRuntime createRuntime(final Instrumentation inst)
+			throws Exception {
+<span class="nc" id="L55">		return ModifiedSystemClassRuntime.createFor(inst, &quot;java/util/UUID&quot;);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

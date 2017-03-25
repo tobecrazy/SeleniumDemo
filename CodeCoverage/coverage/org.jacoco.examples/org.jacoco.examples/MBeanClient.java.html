@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>MBeanClient.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">org.jacoco.examples</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.examples</a> &gt; <span class="el_source">MBeanClient.java</span></div><h1>MBeanClient.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Evgeny Mandrikov - initial API and implementation
+ *
+ *******************************************************************************/
+package org.jacoco.examples;
+
+import java.io.FileOutputStream;
+
+import javax.management.MBeanServerConnection;
+import javax.management.MBeanServerInvocationHandler;
+import javax.management.ObjectName;
+import javax.management.remote.JMXConnector;
+import javax.management.remote.JMXConnectorFactory;
+import javax.management.remote.JMXServiceURL;
+
+/**
+ * This example connects to a coverage agent that run in output mode
+ * &lt;code&gt;mbean&lt;/code&gt; and requests execution data. The collected data is dumped
+ * to a local file.
+ */
+public final class MBeanClient {
+
+	private static final String DESTFILE = &quot;jacoco-client.exec&quot;;
+
+	private static final String SERVICE_URL = &quot;service:jmx:rmi:///jndi/rmi://localhost:9999/jmxrmi&quot;;
+
+	/**
+	 * Execute the example.
+	 * 
+	 * @param args
+	 * @throws Exception
+	 */
+	public static void main(final String[] args) throws Exception {
+		// Open connection to the coverage agent:
+<span class="nc" id="L42">		final JMXServiceURL url = new JMXServiceURL(SERVICE_URL);</span>
+<span class="nc" id="L43">		final JMXConnector jmxc = JMXConnectorFactory.connect(url, null);</span>
+<span class="nc" id="L44">		final MBeanServerConnection connection = jmxc</span>
+				.getMBeanServerConnection();
+
+<span class="nc" id="L47">		final IProxy proxy = (IProxy) MBeanServerInvocationHandler</span>
+				.newProxyInstance(connection, new ObjectName(
+						&quot;org.jacoco:type=Runtime&quot;), IProxy.class, false);
+
+		// Retrieve JaCoCo version and session id:
+<span class="nc" id="L52">		System.out.println(&quot;Version: &quot; + proxy.getVersion());</span>
+<span class="nc" id="L53">		System.out.println(&quot;Session: &quot; + proxy.getSessionId());</span>
+
+		// Retrieve dump and write to file:
+<span class="nc" id="L56">		final byte[] data = proxy.getExecutionData(false);</span>
+<span class="nc" id="L57">		final FileOutputStream localFile = new FileOutputStream(DESTFILE);</span>
+<span class="nc" id="L58">		localFile.write(data);</span>
+<span class="nc" id="L59">		localFile.close();</span>
+
+		// Close connection:
+<span class="nc" id="L62">		jmxc.close();</span>
+<span class="nc" id="L63">	}</span>
+
+	interface IProxy {
+		String getVersion();
+
+		String getSessionId();
+
+		void setSessionId(String id);
+
+		byte[] getExecutionData(boolean reset);
+
+		void dump(boolean reset);
+
+		void reset();
+	}
+
+<span class="nc" id="L79">	private MBeanClient() {</span>
+<span class="nc" id="L80">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

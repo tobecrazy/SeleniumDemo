@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>InstrumentMojo.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">jacoco-maven-plugin</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.maven</a> &gt; <span class="el_source">InstrumentMojo.java</span></div><h1>InstrumentMojo.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Evgeny Mandrikov - initial API and implementation
+ *
+ *******************************************************************************/
+package org.jacoco.maven;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.List;
+
+import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugin.MojoFailureException;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.codehaus.plexus.util.FileUtils;
+import org.codehaus.plexus.util.IOUtil;
+import org.jacoco.core.instr.Instrumenter;
+import org.jacoco.core.runtime.OfflineInstrumentationAccessGenerator;
+
+/**
+ * Performs offline instrumentation. Note that after execution of test you must
+ * restore original classes with help of &quot;restore-instrumented-classes&quot; goal.
+ * &lt;p&gt;
+ * &lt;strong&gt;Warning:&lt;/strong&gt; The preferred way for code coverage analysis with
+ * JaCoCo is on-the-fly instrumentation. Offline instrumentation has several
+ * drawbacks and should only be used if a specific scenario explicitly requires
+ * this mode. Please consult &lt;a href=&quot;offline.html&quot;&gt;documentation&lt;/a&gt; about
+ * offline instrumentation before using this mode.
+ * &lt;/p&gt;
+ * 
+ * @since 0.6.2
+ */
+@Mojo(name = &quot;instrument&quot;, defaultPhase = LifecyclePhase.PROCESS_CLASSES, threadSafe = true)
+<span class="fc" id="L45">public class InstrumentMojo extends AbstractJacocoMojo {</span>
+
+	@Override
+	public void executeMojo() throws MojoExecutionException,
+			MojoFailureException {
+<span class="fc" id="L50">		final File originalClassesDir = new File(getProject().getBuild()</span>
+				.getDirectory(), &quot;generated-classes/jacoco&quot;);
+<span class="fc" id="L52">		originalClassesDir.mkdirs();</span>
+<span class="fc" id="L53">		final File classesDir = new File(</span>
+				getProject().getBuild().getOutputDirectory());
+<span class="fc bfc" id="L55" title="All 2 branches covered.">		if (!classesDir.exists()) {</span>
+<span class="fc" id="L56">			getLog().info(</span>
+					&quot;Skipping JaCoCo execution due to missing classes directory:&quot; +
+					classesDir);
+<span class="fc" id="L59">			return;</span>
+		}
+
+		final List&lt;String&gt; fileNames;
+		try {
+<span class="fc" id="L64">			fileNames = new FileFilter(this.getIncludes(), this.getExcludes())</span>
+					.getFileNames(classesDir);
+<span class="nc" id="L66">		} catch (final IOException e1) {</span>
+<span class="nc" id="L67">			throw new MojoExecutionException(</span>
+					&quot;Unable to get list of files to instrument.&quot;, e1);
+<span class="fc" id="L69">		}</span>
+
+<span class="fc" id="L71">		final Instrumenter instrumenter = new Instrumenter(</span>
+				new OfflineInstrumentationAccessGenerator());
+<span class="fc bfc" id="L73" title="All 2 branches covered.">		for (final String fileName : fileNames) {</span>
+<span class="pc bpc" id="L74" title="1 of 2 branches missed.">			if (fileName.endsWith(&quot;.class&quot;)) {</span>
+<span class="fc" id="L75">				final File source = new File(classesDir, fileName);</span>
+<span class="fc" id="L76">				final File backup = new File(originalClassesDir, fileName);</span>
+<span class="fc" id="L77">				InputStream input = null;</span>
+<span class="fc" id="L78">				OutputStream output = null;</span>
+				try {
+<span class="fc" id="L80">					FileUtils.copyFile(source, backup);</span>
+<span class="fc" id="L81">					input = new FileInputStream(backup);</span>
+<span class="fc" id="L82">					output = new FileOutputStream(source);</span>
+<span class="fc" id="L83">					instrumenter.instrument(input, output, source.getPath());</span>
+<span class="nc" id="L84">				} catch (final IOException e2) {</span>
+<span class="nc" id="L85">					throw new MojoExecutionException(</span>
+							&quot;Unable to instrument file.&quot;, e2);
+				} finally {
+<span class="pc" id="L88">					IOUtil.close(input);</span>
+<span class="pc" id="L89">					IOUtil.close(output);</span>
+<span class="fc" id="L90">				}</span>
+<span class="fc" id="L91">			}</span>
+		}
+<span class="fc" id="L93">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

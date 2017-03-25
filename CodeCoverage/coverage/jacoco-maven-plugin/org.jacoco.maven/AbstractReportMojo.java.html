@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>AbstractReportMojo.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">jacoco-maven-plugin</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.maven</a> &gt; <span class="el_source">AbstractReportMojo.java</span></div><h1>AbstractReportMojo.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Evgeny Mandrikov - initial API and implementation
+ *
+ *******************************************************************************/
+package org.jacoco.maven;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
+import org.apache.maven.doxia.siterenderer.Renderer;
+import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugins.annotations.Component;
+import org.apache.maven.plugins.annotations.Parameter;
+import org.apache.maven.project.MavenProject;
+import org.apache.maven.reporting.AbstractMavenReport;
+import org.apache.maven.reporting.MavenReportException;
+import org.jacoco.report.IReportGroupVisitor;
+import org.jacoco.report.IReportVisitor;
+
+/**
+ * Base class for creating a code coverage report for tests of a single project
+ * in multiple formats (HTML, XML, and CSV).
+ */
+<span class="fc" id="L32">public abstract class AbstractReportMojo extends AbstractMavenReport {</span>
+
+	/**
+	 * Encoding of the generated reports.
+	 */
+	@Parameter(property = &quot;project.reporting.outputEncoding&quot;, defaultValue = &quot;UTF-8&quot;)
+	String outputEncoding;
+
+	/**
+	 * Name of the root node HTML report pages.
+	 *
+	 * @since 0.7.7
+	 */
+	@Parameter(defaultValue = &quot;${project.name}&quot;)
+	String title;
+
+	/**
+	 * Footer text used in HTML report pages.
+	 *
+	 * @since 0.7.7
+	 */
+	@Parameter
+	String footer;
+
+	/**
+	 * Encoding of the source files.
+	 */
+	@Parameter(property = &quot;project.build.sourceEncoding&quot;, defaultValue = &quot;UTF-8&quot;)
+	String sourceEncoding;
+
+	/**
+	 * A list of class files to include in the report. May use wildcard
+	 * characters (* and ?). When not specified everything will be included.
+	 */
+	@Parameter
+	List&lt;String&gt; includes;
+
+	/**
+	 * A list of class files to exclude from the report. May use wildcard
+	 * characters (* and ?). When not specified nothing will be excluded.
+	 */
+	@Parameter
+	List&lt;String&gt; excludes;
+
+	/**
+	 * Flag used to suppress execution.
+	 */
+	@Parameter(property = &quot;jacoco.skip&quot;, defaultValue = &quot;false&quot;)
+	boolean skip;
+
+	/**
+	 * Maven project.
+	 */
+	@Parameter(property = &quot;project&quot;, readonly = true)
+	MavenProject project;
+
+	/**
+	 * Doxia Site Renderer.
+	 */
+	@Component
+	Renderer siteRenderer;
+
+	public String getDescription(final Locale locale) {
+<span class="fc" id="L95">		return getName(locale) + &quot; Coverage Report.&quot;;</span>
+	}
+
+	@Override
+	public boolean isExternalReport() {
+<span class="fc" id="L100">		return true;</span>
+	}
+
+	@Override
+	protected MavenProject getProject() {
+<span class="fc" id="L105">		return project;</span>
+	}
+
+	@Override
+	protected Renderer getSiteRenderer() {
+<span class="nc" id="L110">		return siteRenderer;</span>
+	}
+
+	/**
+	 * Returns the list of class files to include in the report.
+	 * 
+	 * @return class files to include, may contain wildcard characters
+	 */
+	List&lt;String&gt; getIncludes() {
+<span class="fc" id="L119">		return includes;</span>
+	}
+
+	/**
+	 * Returns the list of class files to exclude from the report.
+	 * 
+	 * @return class files to exclude, may contain wildcard characters
+	 */
+	List&lt;String&gt; getExcludes() {
+<span class="fc" id="L128">		return excludes;</span>
+	}
+
+	@Override
+	public boolean canGenerateReport() {
+<span class="fc bfc" id="L133" title="All 2 branches covered.">		if (skip) {</span>
+<span class="fc" id="L134">			getLog().info(</span>
+					&quot;Skipping JaCoCo execution because property jacoco.skip is set.&quot;);
+<span class="fc" id="L136">			return false;</span>
+		}
+<span class="fc bfc" id="L138" title="All 2 branches covered.">		if (!canGenerateReportRegardingDataFiles()) {</span>
+<span class="fc" id="L139">			getLog().info(</span>
+					&quot;Skipping JaCoCo execution due to missing execution data file.&quot;);
+<span class="fc" id="L141">			return false;</span>
+		}
+<span class="fc bfc" id="L143" title="All 2 branches covered.">		if (!canGenerateReportRegardingClassesDirectory()) {</span>
+<span class="fc" id="L144">			getLog().info(</span>
+					&quot;Skipping JaCoCo execution due to missing classes directory.&quot;);
+<span class="fc" id="L146">			return false;</span>
+		}
+<span class="fc" id="L148">		return true;</span>
+	}
+
+	abstract boolean canGenerateReportRegardingDataFiles();
+
+	abstract boolean canGenerateReportRegardingClassesDirectory();
+
+	/**
+	 * This method is called when the report generation is invoked directly as a
+	 * standalone Mojo.
+	 */
+	@Override
+	public void execute() throws MojoExecutionException {
+<span class="fc bfc" id="L161" title="All 2 branches covered.">		if (!canGenerateReport()) {</span>
+<span class="fc" id="L162">			return;</span>
+		}
+		try {
+<span class="fc" id="L165">			executeReport(Locale.getDefault());</span>
+<span class="fc" id="L166">		} catch (final MavenReportException e) {</span>
+<span class="fc" id="L167">			throw new MojoExecutionException(&quot;An error has occurred in &quot;</span>
+					+ getName(Locale.ENGLISH) + &quot; report generation.&quot;, e);
+<span class="fc" id="L169">		}</span>
+<span class="fc" id="L170">	}</span>
+
+	@Override
+	protected void executeReport(final Locale locale)
+			throws MavenReportException {
+		try {
+<span class="fc" id="L176">			final ReportSupport support = new ReportSupport(getLog());</span>
+<span class="fc" id="L177">			loadExecutionData(support);</span>
+<span class="fc" id="L178">			addFormatters(support, locale);</span>
+<span class="fc" id="L179">			final IReportVisitor visitor = support.initRootVisitor();</span>
+<span class="fc" id="L180">			createReport(visitor, support);</span>
+<span class="fc" id="L181">			visitor.visitEnd();</span>
+<span class="fc" id="L182">		} catch (final IOException e) {</span>
+<span class="fc" id="L183">			throw new MavenReportException(&quot;Error while creating report: &quot;</span>
+					+ e.getMessage(), e);
+<span class="fc" id="L185">		}</span>
+<span class="fc" id="L186">	}</span>
+
+	abstract void loadExecutionData(final ReportSupport support)
+			throws IOException;
+
+	abstract void addFormatters(final ReportSupport support, final Locale locale)
+			throws IOException;
+
+	abstract void createReport(final IReportGroupVisitor visitor,
+			final ReportSupport support) throws IOException;
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>AbstractJacocoMojo.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">jacoco-maven-plugin</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.maven</a> &gt; <span class="el_source">AbstractJacocoMojo.java</span></div><h1>AbstractJacocoMojo.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Evgeny Mandrikov - initial API and implementation
+ *
+ *******************************************************************************/
+package org.jacoco.maven;
+
+import java.util.List;
+
+import org.apache.maven.plugin.AbstractMojo;
+import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugin.MojoFailureException;
+import org.apache.maven.plugins.annotations.Parameter;
+import org.apache.maven.project.MavenProject;
+
+/**
+ * Base class for JaCoCo Mojos.
+ */
+<span class="fc" id="L25">public abstract class AbstractJacocoMojo extends AbstractMojo {</span>
+
+	/**
+	 * Maven project.
+	 */
+	@Parameter(property = &quot;project&quot;, readonly = true)
+	private MavenProject project;
+
+	/**
+	 * A list of class files to include in instrumentation/analysis/reports. May
+	 * use wildcard characters (* and ?). When not specified everything will be
+	 * included.
+	 */
+	@Parameter
+	private List&lt;String&gt; includes;
+
+	/**
+	 * A list of class files to exclude from instrumentation/analysis/reports.
+	 * May use wildcard characters (* and ?). When not specified nothing will be
+	 * excluded.
+	 */
+	@Parameter
+	private List&lt;String&gt; excludes;
+
+	/**
+	 * Flag used to suppress execution.
+	 */
+	@Parameter(property = &quot;jacoco.skip&quot;, defaultValue = &quot;false&quot;)
+	private boolean skip;
+
+	public final void execute() throws MojoExecutionException,
+			MojoFailureException {
+<span class="fc bfc" id="L57" title="All 2 branches covered.">		if (skip) {</span>
+<span class="fc" id="L58">			getLog().info(</span>
+					&quot;Skipping JaCoCo execution because property jacoco.skip is set.&quot;);
+<span class="fc" id="L60">			skipMojo();</span>
+<span class="fc" id="L61">			return;</span>
+		}
+<span class="fc" id="L63">		executeMojo();</span>
+<span class="fc" id="L64">	}</span>
+
+	/**
+	 * Executes Mojo.
+	 * 
+	 * @throws MojoExecutionException
+	 *             if an unexpected problem occurs. Throwing this exception
+	 *             causes a &quot;BUILD ERROR&quot; message to be displayed.
+	 * @throws MojoFailureException
+	 *             if an expected problem (such as a compilation failure)
+	 *             occurs. Throwing this exception causes a &quot;BUILD FAILURE&quot;
+	 *             message to be displayed.
+	 */
+	protected abstract void executeMojo() throws MojoExecutionException,
+			MojoFailureException;
+
+	/**
+	 * Skips Mojo.
+	 */
+	protected void skipMojo() {
+<span class="nc" id="L84">	}</span>
+
+	/**
+	 * @return Maven project
+	 */
+	protected final MavenProject getProject() {
+<span class="fc" id="L90">		return project;</span>
+	}
+
+	/**
+	 * Returns the list of class files to include.
+	 * 
+	 * @return class files to include, may contain wildcard characters
+	 */
+	protected List&lt;String&gt; getIncludes() {
+<span class="fc" id="L99">		return includes;</span>
+	}
+
+	/**
+	 * Returns the list of class files to exclude.
+	 * 
+	 * @return class files to exclude, may contain wildcard characters
+	 */
+	protected List&lt;String&gt; getExcludes() {
+<span class="fc" id="L108">		return excludes;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

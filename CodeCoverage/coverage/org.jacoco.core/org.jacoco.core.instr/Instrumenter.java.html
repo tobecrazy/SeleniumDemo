@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>Instrumenter.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">org.jacoco.core</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.core.instr</a> &gt; <span class="el_source">Instrumenter.java</span></div><h1>Instrumenter.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Marc R. Hoffmann - initial API and implementation
+ *    
+ *******************************************************************************/
+package org.jacoco.core.instr;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+import java.util.zip.ZipOutputStream;
+
+import org.jacoco.core.internal.ContentTypeDetector;
+import org.jacoco.core.internal.Java9Support;
+import org.jacoco.core.internal.Pack200Streams;
+import org.jacoco.core.internal.flow.ClassProbesAdapter;
+import org.jacoco.core.internal.instr.ClassInstrumenter;
+import org.jacoco.core.internal.instr.IProbeArrayStrategy;
+import org.jacoco.core.internal.instr.ProbeArrayStrategyFactory;
+import org.jacoco.core.internal.instr.SignatureRemover;
+import org.jacoco.core.runtime.IExecutionDataAccessorGenerator;
+import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.ClassVisitor;
+import org.objectweb.asm.ClassWriter;
+
+/**
+ * Several APIs to instrument Java class definitions for coverage tracing.
+ */
+public class Instrumenter {
+
+	private final IExecutionDataAccessorGenerator accessorGenerator;
+
+	private final SignatureRemover signatureRemover;
+
+	/**
+	 * Creates a new instance based on the given runtime.
+	 * 
+	 * @param runtime
+	 *            runtime used by the instrumented classes
+	 */
+<span class="fc" id="L52">	public Instrumenter(final IExecutionDataAccessorGenerator runtime) {</span>
+<span class="fc" id="L53">		this.accessorGenerator = runtime;</span>
+<span class="fc" id="L54">		this.signatureRemover = new SignatureRemover();</span>
+<span class="fc" id="L55">	}</span>
+
+	/**
+	 * Determines whether signatures should be removed from JAR files. This is
+	 * typically necessary as instrumentation modifies the class files and
+	 * therefore invalidates existing JAR signatures. Default is
+	 * &lt;code&gt;true&lt;/code&gt;.
+	 * 
+	 * @param flag
+	 *            &lt;code&gt;true&lt;/code&gt; if signatures should be removed
+	 */
+	public void setRemoveSignatures(final boolean flag) {
+<span class="fc" id="L67">		signatureRemover.setActive(flag);</span>
+<span class="fc" id="L68">	}</span>
+
+	/**
+	 * Creates a instrumented version of the given class if possible.
+	 * 
+	 * @param reader
+	 *            definition of the class as ASM reader
+	 * @return instrumented definition
+	 * 
+	 */
+	public byte[] instrument(final ClassReader reader) {
+<span class="fc" id="L79">		final ClassWriter writer = new ClassWriter(reader, 0) {</span>
+			@Override
+<span class="fc" id="L81">			protected String getCommonSuperClass(final String type1,</span>
+					final String type2) {
+<span class="nc" id="L83">				throw new IllegalStateException();</span>
+			}
+		};
+<span class="fc" id="L86">		final IProbeArrayStrategy strategy = ProbeArrayStrategyFactory</span>
+				.createFor(reader, accessorGenerator);
+<span class="fc" id="L88">		final ClassVisitor visitor = new ClassProbesAdapter(</span>
+				new ClassInstrumenter(strategy, writer), true);
+<span class="fc" id="L90">		reader.accept(visitor, ClassReader.EXPAND_FRAMES);</span>
+<span class="fc" id="L91">		return writer.toByteArray();</span>
+	}
+
+	/**
+	 * Creates a instrumented version of the given class if possible.
+	 * 
+	 * @param buffer
+	 *            definition of the class
+	 * @param name
+	 *            a name used for exception messages
+	 * @return instrumented definition
+	 * @throws IOException
+	 *             if the class can't be analyzed
+	 */
+	public byte[] instrument(final byte[] buffer, final String name)
+			throws IOException {
+		try {
+<span class="fc bfc" id="L108" title="All 2 branches covered.">			if (Java9Support.isPatchRequired(buffer)) {</span>
+<span class="fc" id="L109">				final byte[] result = instrument(</span>
+						new ClassReader(Java9Support.downgrade(buffer)));
+<span class="fc" id="L111">				Java9Support.upgrade(result);</span>
+<span class="fc" id="L112">				return result;</span>
+			} else {
+<span class="fc" id="L114">				return instrument(new ClassReader(buffer));</span>
+			}
+<span class="fc" id="L116">		} catch (final RuntimeException e) {</span>
+<span class="fc" id="L117">			throw instrumentError(name, e);</span>
+		}
+	}
+
+	/**
+	 * Creates a instrumented version of the given class if possible.
+	 * 
+	 * @param input
+	 *            stream to read class definition from
+	 * @param name
+	 *            a name used for exception messages
+	 * @return instrumented definition
+	 * @throws IOException
+	 *             if reading data from the stream fails or the class can't be
+	 *             instrumented
+	 */
+	public byte[] instrument(final InputStream input, final String name)
+			throws IOException {
+		try {
+<span class="fc" id="L136">			return instrument(Java9Support.readFully(input), name);</span>
+<span class="nc" id="L137">		} catch (final RuntimeException e) {</span>
+<span class="nc" id="L138">			throw instrumentError(name, e);</span>
+		}
+	}
+
+	/**
+	 * Creates a instrumented version of the given class file.
+	 * 
+	 * @param input
+	 *            stream to read class definition from
+	 * @param output
+	 *            stream to write the instrumented version of the class to
+	 * @param name
+	 *            a name used for exception messages
+	 * @throws IOException
+	 *             if reading data from the stream fails or the class can't be
+	 *             instrumented
+	 */
+	public void instrument(final InputStream input, final OutputStream output,
+			final String name) throws IOException {
+		try {
+<span class="fc" id="L158">			output.write(instrument(Java9Support.readFully(input), name));</span>
+<span class="nc" id="L159">		} catch (final RuntimeException e) {</span>
+<span class="nc" id="L160">			throw instrumentError(name, e);</span>
+<span class="fc" id="L161">		}</span>
+<span class="fc" id="L162">	}</span>
+
+	private IOException instrumentError(final String name,
+			final RuntimeException cause) {
+<span class="fc" id="L166">		final IOException ex = new IOException(String.format(</span>
+				&quot;Error while instrumenting class %s.&quot;, name));
+<span class="fc" id="L168">		ex.initCause(cause);</span>
+<span class="fc" id="L169">		return ex;</span>
+	}
+
+	/**
+	 * Creates a instrumented version of the given resource depending on its
+	 * type. Class files and the content of archive files are instrumented. All
+	 * other files are copied without modification.
+	 * 
+	 * @param input
+	 *            stream to contents from
+	 * @param output
+	 *            stream to write the instrumented version of the contents
+	 * @param name
+	 *            a name used for exception messages
+	 * @return number of instrumented classes
+	 * @throws IOException
+	 *             if reading data from the stream fails or a class can't be
+	 *             instrumented
+	 */
+	public int instrumentAll(final InputStream input,
+			final OutputStream output, final String name) throws IOException {
+<span class="fc" id="L190">		final ContentTypeDetector detector = new ContentTypeDetector(input);</span>
+<span class="fc bfc" id="L191" title="All 5 branches covered.">		switch (detector.getType()) {</span>
+		case ContentTypeDetector.CLASSFILE:
+<span class="fc" id="L193">			instrument(detector.getInputStream(), output, name);</span>
+<span class="fc" id="L194">			return 1;</span>
+		case ContentTypeDetector.ZIPFILE:
+<span class="fc" id="L196">			return instrumentZip(detector.getInputStream(), output, name);</span>
+		case ContentTypeDetector.GZFILE:
+<span class="fc" id="L198">			return instrumentGzip(detector.getInputStream(), output, name);</span>
+		case ContentTypeDetector.PACK200FILE:
+<span class="fc" id="L200">			return instrumentPack200(detector.getInputStream(), output, name);</span>
+		default:
+<span class="fc" id="L202">			copy(detector.getInputStream(), output);</span>
+<span class="fc" id="L203">			return 0;</span>
+		}
+	}
+
+	private int instrumentZip(final InputStream input,
+			final OutputStream output, final String name) throws IOException {
+<span class="fc" id="L209">		final ZipInputStream zipin = new ZipInputStream(input);</span>
+<span class="fc" id="L210">		final ZipOutputStream zipout = new ZipOutputStream(output);</span>
+		ZipEntry entry;
+<span class="fc" id="L212">		int count = 0;</span>
+<span class="fc bfc" id="L213" title="All 2 branches covered.">		while ((entry = zipin.getNextEntry()) != null) {</span>
+<span class="fc" id="L214">			final String entryName = entry.getName();</span>
+<span class="fc bfc" id="L215" title="All 2 branches covered.">			if (signatureRemover.removeEntry(entryName)) {</span>
+<span class="fc" id="L216">				continue;</span>
+			}
+
+<span class="fc" id="L219">			zipout.putNextEntry(new ZipEntry(entryName));</span>
+<span class="fc bfc" id="L220" title="All 2 branches covered.">			if (!signatureRemover.filterEntry(entryName, zipin, zipout)) {</span>
+<span class="fc" id="L221">				count += instrumentAll(zipin, zipout, name + &quot;@&quot; + entryName);</span>
+			}
+<span class="fc" id="L223">			zipout.closeEntry();</span>
+<span class="fc" id="L224">		}</span>
+<span class="fc" id="L225">		zipout.finish();</span>
+<span class="fc" id="L226">		return count;</span>
+	}
+
+	private int instrumentGzip(final InputStream input,
+			final OutputStream output, final String name) throws IOException {
+<span class="fc" id="L231">		final GZIPOutputStream gzout = new GZIPOutputStream(output);</span>
+<span class="fc" id="L232">		final int count = instrumentAll(new GZIPInputStream(input), gzout, name);</span>
+<span class="fc" id="L233">		gzout.finish();</span>
+<span class="fc" id="L234">		return count;</span>
+	}
+
+	private int instrumentPack200(final InputStream input,
+			final OutputStream output, final String name) throws IOException {
+<span class="fc" id="L239">		final ByteArrayOutputStream buffer = new ByteArrayOutputStream();</span>
+<span class="fc" id="L240">		final int count = instrumentAll(Pack200Streams.unpack(input), buffer,</span>
+				name);
+<span class="fc" id="L242">		Pack200Streams.pack(buffer.toByteArray(), output);</span>
+<span class="fc" id="L243">		return count;</span>
+	}
+
+	private void copy(final InputStream input, final OutputStream output)
+			throws IOException {
+<span class="fc" id="L248">		final byte[] buffer = new byte[1024];</span>
+		int len;
+<span class="fc bfc" id="L250" title="All 2 branches covered.">		while ((len = input.read(buffer)) != -1) {</span>
+<span class="fc" id="L251">			output.write(buffer, 0, len);</span>
+		}
+<span class="fc" id="L253">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

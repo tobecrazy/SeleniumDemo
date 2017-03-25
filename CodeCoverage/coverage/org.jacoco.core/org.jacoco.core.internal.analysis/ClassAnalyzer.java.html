@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>ClassAnalyzer.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">JaCoCo</a> &gt; <a href="../index.html" class="el_bundle">org.jacoco.core</a> &gt; <a href="index.source.html" class="el_package">org.jacoco.core.internal.analysis</a> &gt; <span class="el_source">ClassAnalyzer.java</span></div><h1>ClassAnalyzer.java</h1><pre class="source lang-java linenums">/*******************************************************************************
+ * Copyright (c) 2009, 2017 Mountainminds GmbH &amp; Co. KG and Contributors
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Marc R. Hoffmann - initial API and implementation
+ *    
+ *******************************************************************************/
+package org.jacoco.core.internal.analysis;
+
+import org.jacoco.core.analysis.IMethodCoverage;
+import org.jacoco.core.internal.flow.ClassProbesVisitor;
+import org.jacoco.core.internal.flow.MethodProbesVisitor;
+import org.jacoco.core.internal.instr.InstrSupport;
+import org.objectweb.asm.FieldVisitor;
+import org.objectweb.asm.Opcodes;
+
+/**
+ * Analyzes the structure of a class.
+ */
+public class ClassAnalyzer extends ClassProbesVisitor {
+
+	private final ClassCoverageImpl coverage;
+	private final boolean[] probes;
+	private final StringPool stringPool;
+
+	/**
+	 * Creates a new analyzer that builds coverage data for a class.
+	 * 
+	 * @param coverage
+	 *            coverage node for the analyzed class data
+	 * @param probes
+	 *            execution data for this class or &lt;code&gt;null&lt;/code&gt;
+	 * @param stringPool
+	 *            shared pool to minimize the number of {@link String} instances
+	 */
+	public ClassAnalyzer(final ClassCoverageImpl coverage,
+<span class="fc" id="L41">			final boolean[] probes, final StringPool stringPool) {</span>
+<span class="fc" id="L42">		this.coverage = coverage;</span>
+<span class="fc" id="L43">		this.probes = probes;</span>
+<span class="fc" id="L44">		this.stringPool = stringPool;</span>
+<span class="fc" id="L45">	}</span>
+
+	@Override
+	public void visit(final int version, final int access, final String name,
+			final String signature, final String superName,
+			final String[] interfaces) {
+<span class="fc" id="L51">		coverage.setSignature(stringPool.get(signature));</span>
+<span class="fc" id="L52">		coverage.setSuperName(stringPool.get(superName));</span>
+<span class="fc" id="L53">		coverage.setInterfaces(stringPool.get(interfaces));</span>
+<span class="fc" id="L54">	}</span>
+
+	@Override
+	public void visitSource(final String source, final String debug) {
+<span class="fc" id="L58">		coverage.setSourceFileName(stringPool.get(source));</span>
+<span class="fc" id="L59">	}</span>
+
+	@Override
+	public MethodProbesVisitor visitMethod(final int access, final String name,
+			final String desc, final String signature, final String[] exceptions) {
+
+<span class="fc" id="L65">		InstrSupport.assertNotInstrumented(name, coverage.getName());</span>
+
+<span class="fc bfc" id="L67" title="All 2 branches covered.">		if (isMethodFiltered(access, name)) {</span>
+<span class="fc" id="L68">			return null;</span>
+		}
+
+<span class="fc" id="L71">		return new MethodAnalyzer(stringPool.get(name), stringPool.get(desc),</span>
+				stringPool.get(signature), probes) {
+			@Override
+<span class="fc" id="L74">			public void visitEnd() {</span>
+<span class="fc" id="L75">				super.visitEnd();</span>
+<span class="fc" id="L76">				final IMethodCoverage methodCoverage = getCoverage();</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">				if (methodCoverage.getInstructionCounter().getTotalCount() &gt; 0) {</span>
+					// Only consider methods that actually contain code
+<span class="fc" id="L79">					coverage.addMethod(methodCoverage);</span>
+				}
+<span class="fc" id="L81">			}</span>
+		};
+	}
+
+	// TODO: Use filter hook in future
+	private boolean isMethodFiltered(final int access, final String name) {
+<span class="fc bfc" id="L87" title="All 4 branches covered.">		return (access &amp; Opcodes.ACC_SYNTHETIC) != 0</span>
+				&amp;&amp; !name.startsWith(&quot;lambda$&quot;);
+	}
+
+	@Override
+	public FieldVisitor visitField(final int access, final String name,
+			final String desc, final String signature, final Object value) {
+<span class="fc" id="L94">		InstrSupport.assertNotInstrumented(name, coverage.getName());</span>
+<span class="fc" id="L95">		return super.visitField(access, name, desc, signature, value);</span>
+	}
+
+	@Override
+	public void visitTotalProbeCount(final int count) {
+		// nothing to do
+<span class="fc" id="L101">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Code Coverage Report for JaCoCo 0.7.9</div></body></html>

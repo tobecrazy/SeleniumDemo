@@ -2,25 +2,25 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="50050" started-at="2017-03-23T14:13:44Z" finished-at="2017-03-23T14:14:35Z">
+  <suite name="Default suite" duration-ms="39608" started-at="2017-03-25T07:17:21Z" finished-at="2017-03-25T07:18:00Z">
     <groups>
       <group name="loginTest">
-        <method signature="loginTest.loginByUerName()[pri:0, instance:main.java.com.dbyl.tests.loginTest@3c01cfa1]" name="loginByUerName" class="main.java.com.dbyl.tests.loginTest"/>
+        <method signature="loginTest.loginByUerName()[pri:0, instance:main.java.com.dbyl.tests.loginTest@2f262474]" name="loginByUerName" class="main.java.com.dbyl.tests.loginTest"/>
       </group> <!-- loginTest -->
     </groups>
-    <test name="Default test" duration-ms="50050" started-at="2017-03-23T14:13:44Z" finished-at="2017-03-23T14:14:35Z">
+    <test name="Default test" duration-ms="39608" started-at="2017-03-25T07:17:21Z" finished-at="2017-03-25T07:18:00Z">
       <class name="main.java.com.dbyl.tests.loginTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:main.java.com.dbyl.tests.loginTest@3c01cfa1]" name="init" is-config="true" duration-ms="12315" started-at="2017-03-23T22:13:45Z" finished-at="2017-03-23T22:13:57Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:main.java.com.dbyl.tests.loginTest@2f262474]" name="init" is-config="true" duration-ms="22787" started-at="2017-03-25T15:17:21Z" finished-at="2017-03-25T15:17:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="FAIL" signature="loginByUerName()[pri:0, instance:main.java.com.dbyl.tests.loginTest@3c01cfa1]" name="loginByUerName" duration-ms="36328" started-at="2017-03-23T22:13:57Z" finished-at="2017-03-23T22:14:33Z">
+        <test-method status="FAIL" signature="loginByUerName()[pri:0, instance:main.java.com.dbyl.tests.loginTest@2f262474]" name="loginByUerName" duration-ms="15216" started-at="2017-03-25T15:17:43Z" finished-at="2017-03-25T15:17:59Z">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Expected condition failed: waiting for main.java.com.dbyl.libarary.utils.BasePage$2@bd1111a (tried for 3 second(s) with 500 MILLISECONDS interval)]]>
+              <![CDATA[Expected condition failed: waiting for main.java.com.dbyl.libarary.utils.BasePage$2@1205d422 (tried for 3 second(s) with 500 MILLISECONDS interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for main.java.com.dbyl.libarary.utils.BasePage$2@bd1111a (tried for 3 second(s) with 500 MILLISECONDS interval)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for main.java.com.dbyl.libarary.utils.BasePage$2@1205d422 (tried for 3 second(s) with 500 MILLISECONDS interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
 	at main.java.com.dbyl.libarary.utils.BasePage.findElement(BasePage.java:271)
@@ -61,8 +61,8 @@ For documentation on this error, please visit: http://seleniumhq.org/exceptions/
 Build info: version: 'unknown', revision: '5234b32', time: '2017-03-10 09:02:31 -0800'
 System info: host: 'Youngs-MacBook-Pro.local', ip: 'fe80:0:0:0:10f9:2b36:9f70:16c6%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.3', java.version: '1.8.0_92'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=/var/folders/1l/ltc3srb95111q7lgg9qz2yd40000gn/T/rust_mozprofile.Mc7sIcX3fwQj, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.1, platformVersion=16.4.0, moz:processID=5631, browserName=firefox, platformName=darwin}]
-Session ID: 6aed89e3-691c-a845-8250-8b61bebcd2d7
+Capabilities [{moz:profile=/var/folders/1l/ltc3srb95111q7lgg9qz2yd40000gn/T/rust_mozprofile.mjli7fNHB3wd, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.1, platformVersion=16.4.0, moz:processID=11121, browserName=firefox, platformName=darwin}]
+Session ID: 075a5844-ed78-4349-836e-103daee926b4
 *** Element info: {Using=xpath, value=clickToLoginButton}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -89,7 +89,7 @@ Session ID: 6aed89e3-691c-a845-8250-8b61bebcd2d7
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginByUerName -->
-        <test-method status="PASS" signature="stop()[pri:0, instance:main.java.com.dbyl.tests.loginTest@3c01cfa1]" name="stop" is-config="true" duration-ms="497" started-at="2017-03-23T22:14:34Z" finished-at="2017-03-23T22:14:35Z">
+        <test-method status="PASS" signature="stop()[pri:0, instance:main.java.com.dbyl.tests.loginTest@2f262474]" name="stop" is-config="true" duration-ms="423" started-at="2017-03-25T15:18:00Z" finished-at="2017-03-25T15:18:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stop -->
