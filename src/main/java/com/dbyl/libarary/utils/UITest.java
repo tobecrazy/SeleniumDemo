@@ -17,7 +17,7 @@ import org.openqa.selenium.WebDriver;
  * @author Young
  *
  */
-public class UITest {
+public abstract class UITest {
 	WebDriver driver;
 	Log log = new Log(this.getClass());
 

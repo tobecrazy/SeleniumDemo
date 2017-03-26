@@ -1,13 +1,18 @@
 package main.java.com.dbyl.libarary.listeners;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestNGMethod;
@@ -16,7 +21,6 @@ import org.testng.TestListenerAdapter;
 
 import main.java.com.dbyl.libarary.utils.DriverFactory;
 import main.java.com.dbyl.libarary.utils.Log;
-import main.java.com.dbyl.libarary.utils.UITest;
 
 /**
  * 
@@ -48,11 +52,10 @@ public class TestNGListener extends TestListenerAdapter {
 
 	private void takeScreenShot(ITestResult tr) {
 
-		UITest b = (UITest) tr.getInstance();
 		WebDriver currentDirver = DriverFactory.getInstance().getDriver();
 		log.info(currentDirver.getTitle() + "\n");
 
-		b.takeScreenShot();
+		takeScreenShot();
 
 	}
 
@@ -147,5 +150,42 @@ public class TestNGListener extends TestListenerAdapter {
 		id = id + result.getMethod().getMethodName().hashCode();
 		id = id + (result.getParameters() != null ? Arrays.hashCode(result.getParameters()) : 0);
 		return id;
+	}
+
+	/**
+	 * @author Young
+	 */
+	public void takeScreenShot() {
+		SimpleDateFormat sf = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+		Calendar cal = Calendar.getInstance();
+		Date date = cal.getTime();
+		String dateStr = sf.format(date);
+		WebDriver currentDriver = DriverFactory.getInstance().getDriver();
+		log.info(currentDriver.getTitle() + "\n");
+		String path = this.getClass().getSimpleName() + "_" + dateStr + ".png";
+		takeScreenShot((TakesScreenshot) currentDriver, path);
+	}
+
+	/**
+	 * @author Young
+	 * @param drivername
+	 * @param path
+	 */
+	public void takeScreenShot(TakesScreenshot drivername, String path) {
+		// this method will take screen shot ,require two parameters ,one is
+		// driver name, another is file name
+		String currentPath = System.getProperty("user.dir"); // get current work
+		log.info(currentPath);
+		File scrFile = drivername.getScreenshotAs(OutputType.FILE);
+		// Now you can do whatever you need to do with it, for example copy
+		try {
+			log.info("save snapshot path is:" + currentPath + path);
+			FileUtils.copyFile(scrFile, new File(currentPath + "\\" + path));
+		} catch (Exception e) {
+			log.error("Can't save screenshot");
+			e.printStackTrace();
+		} finally {
+			log.info("screen shot finished");
+		}
 	}
 }

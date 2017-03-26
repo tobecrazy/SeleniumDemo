@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Mar 25 21:01:11 CST 2017</td>
+<td>Started on:</td><td>Sun Mar 26 15:01:12 CST 2017</td>
 </tr>
-<tr><td>Total time:</td><td>22 seconds (22310 ms)</td>
+<tr><td>Total time:</td><td>94 seconds (94342 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,18 +75,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='main.java.com.dbyl.tests.loginTest.loginByUerName()'><b>loginByUerName</b><br>Test class: main.java.com.dbyl.tests.loginTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for main.java.com.dbyl.libarary.utils.BasePage$2@7a8136b3 (tried for 3 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at main.java.com.dbyl.libarary.utils.BasePage.findElement(BasePage.java:280)
-	at main.java.com.dbyl.libarary.utils.BasePage.click(BasePage.java:107)
-	at main.java.com.dbyl.libarary.pageAction.LoginPage.switchToLogin(LoginPage.java:42)
-	at main.java.com.dbyl.libarary.pageAction.LoginPage.typeUserName(LoginPage.java:48)
-	at main.java.com.dbyl.libarary.action.CommonLogin.login(CommonLogin.java:24)
-	at main.java.com.dbyl.libarary.action.CommonLogin.login(CommonLogin.java:33)
-	at main.java.com.dbyl.libarary.action.ViewHomePage.viewMyProfile(ViewHomePage.java:26)
-	at main.java.com.dbyl.tests.loginTest.loginByUerName(loginTest.java:29)
+<td title='main.java.com.dbyl.tests.Test.myTest()'><b>myTest</b><br>Test class: main.java.com.dbyl.tests.Test</td>
+<td><div><pre>java.lang.NullPointerException: while trying to invoke the method main.java.com.dbyl.libarary.utils.Locator.getElement() of a null object loaded from local variable &apos;locator&apos;
+	at main.java.com.dbyl.libarary.utils.BasePage.findElement(BasePage.java:281)
+	at main.java.com.dbyl.libarary.utils.BasePage$1.apply(BasePage.java:245)
+	at main.java.com.dbyl.libarary.utils.BasePage$1.apply(BasePage.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	at main.java.com.dbyl.libarary.utils.BasePage.isElementPresent(BasePage.java:241)
+	at main.java.com.dbyl.libarary.utils.BasePage.isElementPresent(BasePage.java:267)
+	at main.java.com.dbyl.tests.Test.myTest(Test.java:31)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -112,45 +109,15 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: clickToLoginButton
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;unknown&apos;, revision: &apos;5234b32&apos;, time: &apos;2017-03-10 09:02:31 -0800&apos;
-System info: host: &apos;Youngs-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:10f9:2b36:9f70:16c6%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.3&apos;, java.version: &apos;1.8.0_92&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=/var/folders/1l/ltc3srb95111q7lgg9qz2yd40000gn/T/rust_mozprofile.Z7FzIidFrzax, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.1, platformVersion=16.4.0, moz:processID=16799, browserName=firefox, platformName=darwin}]
-Session ID: 2c655601-8bf3-2d4a-9700-a619015cbbb4
-*** Element info: {Using=xpath, value=clickToLoginButton}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:99)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:43)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:604)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:476)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at main.java.com.dbyl.libarary.utils.BasePage.getElement(BasePage.java:189)
-	at main.java.com.dbyl.libarary.utils.BasePage$2.apply(BasePage.java:285)
-	at main.java.com.dbyl.libarary.utils.BasePage$2.apply(BasePage.java:1)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1773336805", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1773336805'><pre>java.lang.NullPointerException: while trying to invoke the method main.java.com.dbyl.libarary.utils.Locator.getElement() of a null object loaded from local variable &apos;locator&apos;
+	at main.java.com.dbyl.libarary.utils.BasePage.findElement(BasePage.java:281)
+	at main.java.com.dbyl.libarary.utils.BasePage$1.apply(BasePage.java:245)
+	at main.java.com.dbyl.libarary.utils.BasePage$1.apply(BasePage.java:1)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 33 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace1668376627", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1668376627'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for main.java.com.dbyl.libarary.utils.BasePage$2@7a8136b3 (tried for 3 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
-	at main.java.com.dbyl.libarary.utils.BasePage.findElement(BasePage.java:280)
-	at main.java.com.dbyl.libarary.utils.BasePage.click(BasePage.java:107)
-	at main.java.com.dbyl.libarary.pageAction.LoginPage.switchToLogin(LoginPage.java:42)
-	at main.java.com.dbyl.libarary.pageAction.LoginPage.typeUserName(LoginPage.java:48)
-	at main.java.com.dbyl.libarary.action.CommonLogin.login(CommonLogin.java:24)
-	at main.java.com.dbyl.libarary.action.CommonLogin.login(CommonLogin.java:33)
-	at main.java.com.dbyl.libarary.action.ViewHomePage.viewMyProfile(ViewHomePage.java:26)
-	at main.java.com.dbyl.tests.loginTest.loginByUerName(loginTest.java:29)
+	at main.java.com.dbyl.libarary.utils.BasePage.isElementPresent(BasePage.java:241)
+	at main.java.com.dbyl.libarary.utils.BasePage.isElementPresent(BasePage.java:267)
+	at main.java.com.dbyl.tests.Test.myTest(Test.java:31)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -176,36 +143,9 @@ Session ID: 2c655601-8bf3-2d4a-9700-a619015cbbb4
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: clickToLoginButton
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;unknown&apos;, revision: &apos;5234b32&apos;, time: &apos;2017-03-10 09:02:31 -0800&apos;
-System info: host: &apos;Youngs-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:10f9:2b36:9f70:16c6%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.12.3&apos;, java.version: &apos;1.8.0_92&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{moz:profile=/var/folders/1l/ltc3srb95111q7lgg9qz2yd40000gn/T/rust_mozprofile.Z7FzIidFrzax, rotatable=false, timeouts={implicit=0, page load=300000, script=30000}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0, moz:accessibilityChecks=false, acceptInsecureCerts=false, browserVersion=52.0.1, platformVersion=16.4.0, moz:processID=16799, browserName=firefox, platformName=darwin}]
-Session ID: 2c655601-8bf3-2d4a-9700-a619015cbbb4
-*** Element info: {Using=xpath, value=clickToLoginButton}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:99)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:43)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:604)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:476)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at main.java.com.dbyl.libarary.utils.BasePage.getElement(BasePage.java:189)
-	at main.java.com.dbyl.libarary.utils.BasePage$2.apply(BasePage.java:285)
-	at main.java.com.dbyl.libarary.utils.BasePage$2.apply(BasePage.java:1)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	... 33 more
 </pre></div></td>
-<td>12</td>
-<td>main.java.com.dbyl.tests.loginTest@3c01cfa1</td></tr>
+<td>64</td>
+<td>main.java.com.dbyl.tests.Test@5a63f509</td></tr>
 </table><p>
 </body>
 </html>
