@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="94342" started-at="2017-03-26T07:01:12Z" finished-at="2017-03-26T07:02:46Z">
+  <suite name="Default suite" duration-ms="41179" started-at="2017-03-27T14:17:41Z" finished-at="2017-03-27T14:18:22Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="94342" started-at="2017-03-26T07:01:12Z" finished-at="2017-03-26T07:02:46Z">
+    <test name="Default test" duration-ms="41179" started-at="2017-03-27T14:17:41Z" finished-at="2017-03-27T14:18:22Z">
       <class name="main.java.com.dbyl.tests.Test">
-        <test-method status="FAIL" signature="myTest()[pri:0, instance:main.java.com.dbyl.tests.Test@5a63f509]" name="myTest" duration-ms="64154" started-at="2017-03-26T15:01:12Z" finished-at="2017-03-26T15:02:16Z">
+        <test-method status="FAIL" signature="myTest()[pri:0, instance:main.java.com.dbyl.tests.Test@52e6fdee]" name="myTest" duration-ms="40615" started-at="2017-03-27T22:17:41Z" finished-at="2017-03-27T22:18:22Z">
           <exception class="java.lang.NullPointerException">
             <message>
               <![CDATA[while trying to invoke the method main.java.com.dbyl.libarary.utils.Locator.getElement() of a null object loaded from local variable 'locator']]>

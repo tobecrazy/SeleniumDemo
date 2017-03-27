@@ -21,6 +21,9 @@ import org.openqa.selenium.os.WindowsUtils;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariDriver;
+
+import main.java.com.dbyl.libarary.utils.Context.BrowserType;
 
 /***
  * 
@@ -258,5 +261,29 @@ public class DriverFactory {
 
 	public WebDriver getDriver() {
 		return driver;
+	}
+
+	/**
+	 * This method will get BrowserType
+	 * 
+	 * @author young
+	 * @return
+	 */
+	public BrowserType getBrowserType() {
+
+		if (driver instanceof FirefoxDriver) {
+			return BrowserType.firefox;
+		} else if (driver instanceof ChromeDriver) {
+			return BrowserType.chrome;
+		} else if (driver instanceof InternetExplorerDriver) {
+			return BrowserType.ie;
+		} else if (driver instanceof EdgeDriver) {
+			return BrowserType.edge;
+		} else if (driver instanceof SafariDriver) {
+			return BrowserType.safari;
+		} else {
+			return null;
+		}
+
 	}
 }

@@ -26,7 +26,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * @author young
  *
  */
-public abstract class BasePage {
+public class BasePage {
 
 	protected WebDriver driver;
 	// protected String[][] locatorMap;
