@@ -21,6 +21,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 /**
  * 
  * @author young
@@ -235,6 +236,7 @@ public class BasePage {
 	 * @throws IOException
 	 */
 	public boolean isElementPresent(WebDriver driver, Locator myLocator, int timeOut) throws IOException {
+
 		final Locator locator = getLocator(myLocator.getElement());
 		boolean isPresent = false;
 		WebDriverWait wait = new WebDriverWait(driver, 60);
@@ -275,27 +277,32 @@ public class BasePage {
 	 */
 	public WebElement findElement(WebDriver driver, final Locator locator) {
 		int timeOut = 60;
-		try {
-			timeOut = locator.getWaitSec();
-		} catch (NullPointerException e) {
-			log.error("can't get Default time out " + locator.getElement());
-		}
-
-		WebElement element = (new WebDriverWait(driver, timeOut)).until(new ExpectedCondition<WebElement>() {
-
-			@Override
-			public WebElement apply(WebDriver driver) {
-				try {
-					return getElement(driver, locator);
-				} catch (IOException e) {
-					log.error("can't find element " + locator.getElement());
-					return null;
-				}
-
+		if (locator != null) {
+			try {
+				timeOut = locator.getWaitSec();
+			} catch (NullPointerException e) {
+				log.error("can't get Default time out " + locator.getElement());
 			}
 
-		});
-		return element;
+			WebElement element = (new WebDriverWait(driver, timeOut)).until(new ExpectedCondition<WebElement>() {
+
+				@Override
+				public WebElement apply(WebDriver driver) {
+					try {
+						return getElement(driver, locator);
+					} catch (IOException e) {
+						log.error("can't find element " + locator.getElement());
+						return null;
+					}
+
+				}
+
+			});
+			return element;
+
+		} else {
+			return null;
+		}
 
 	}
 
@@ -316,11 +323,10 @@ public class BasePage {
 		// return locator = new Locator(locatorName);
 		if (locatorMap != null) {
 			locator = locatorMap.get(locatorName);
-			return locator;
 		} else {
-			return null;
+			locator = new Locator(locatorName);
 		}
-
+		return locator;
 	}
 
 	public int open(String URL) {

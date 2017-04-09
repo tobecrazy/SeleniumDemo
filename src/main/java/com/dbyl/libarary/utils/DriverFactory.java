@@ -26,12 +26,11 @@ import org.openqa.selenium.safari.SafariDriver;
 import main.java.com.dbyl.libarary.utils.Context.BrowserType;
 
 /***
- * 
+ * @version 1.2
  * @author Young
  *
  */
 public class DriverFactory {
-
 	private static String chromedriver;
 	private static String fireBug;
 	private static String firefoxdriver;
@@ -55,7 +54,7 @@ public class DriverFactory {
 	 * @author young
 	 * @return
 	 */
-	public synchronized WebDriver getChromeDriver() {
+	public WebDriver getChromeDriver() {
 
 		try {
 			p = ConfigUtils.getProperties(config);
@@ -99,7 +98,7 @@ public class DriverFactory {
 	 * @author young
 	 * @return
 	 */
-	public synchronized WebDriver getFirefoxDriver() {
+	public WebDriver getFirefoxDriver() {
 		try {
 			p = ConfigUtils.getProperties(config);
 			WindowsUtils.killByName("firefox");
@@ -193,7 +192,7 @@ public class DriverFactory {
 	 * @param remoteBrowserBean
 	 * @return WebDriver
 	 */
-	public synchronized WebDriver getRemoteDriver(RemoteBrowserBean remoteBrowserBean) {
+	public WebDriver getRemoteDriver(RemoteBrowserBean remoteBrowserBean) {
 		DesiredCapabilities capability = null;
 		if (remoteBrowserBean.getBrowserName().contains("firefox")) {
 			capability = DesiredCapabilities.firefox();
@@ -220,7 +219,7 @@ public class DriverFactory {
 	 * @author young
 	 * @return
 	 */
-	public synchronized WebDriver getEDGEDriver() {
+	public WebDriver getEDGEDriver() {
 		try {
 			p = ConfigUtils.getProperties(config);
 		} catch (IOException e) {
@@ -257,6 +256,15 @@ public class DriverFactory {
 
 	public DriverFactory() {
 
+	}
+
+	/**
+	 * @author young Call GC
+	 */
+	public static void close() {
+		if (driverfactory != null) {
+			driverfactory = null;
+		}
 	}
 
 	public WebDriver getDriver() {
