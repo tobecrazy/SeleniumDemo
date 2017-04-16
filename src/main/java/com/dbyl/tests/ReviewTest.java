@@ -1,6 +1,17 @@
 package main.java.com.dbyl.tests;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
 public class ReviewTest {
+	static String ecoding = "utf8";
 
 	/**
 	 * n!
@@ -63,17 +74,65 @@ public class ReviewTest {
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		System.out.println("====>" + factorial(6));
 		numbersSort();
 		System.out.println("====>" + C(6, 4));
+		String text = readTXT("/Volumes/Transcend/xiazai/love.txt");
+		System.out.println("====>" + text);
+		writeTXT("/Volumes/Transcend/xiazai/lesson1.txt", text);
 	}
 
-	public static String readTXT(String path) {
-		return null;
+	/**
+	 * @author young
+	 * @param path
+	 * @return
+	 * @throws IOException
+	 */
+	public static String readTXT(String path) throws IOException {
+		File file = new File(path);
+		File file1 = new File(path+"_bak");
+		FileInputStream stream;
+		InputStreamReader reader = null;
+		StringBuffer sb = new StringBuffer();
+		BufferedReader bf = null;
+		try {
+			stream = new FileInputStream(file);
+			reader = new InputStreamReader(stream, ecoding);
+			bf = new BufferedReader(reader);
+			String textLine = null;
+			while ((textLine = bf.readLine()) != null) {
+				sb.append(textLine + "\n");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			bf.close();
+			reader.close();
+		}
+
+		FileReader fr=new FileReader(file);
+		FileWriter fw=new FileWriter(file1);
+		while(fr.read()!=-1)
+		{
+			int ch = fr.read(); 
+			char c=(char) ch;
+			System.out.println("%%%%%----+++>>>>"+c);
+			fw.write(c);
+		}
+		fr.close();
+		fw.close();
+		return sb.toString();
 	}
 
-	public static void writeTXT(String path) {
+	public static void writeTXT(String path, String message) throws IOException {
+		File file = new File(path);
+		FileOutputStream stream = new FileOutputStream(file);
+		OutputStreamWriter writer = new OutputStreamWriter(stream, ecoding);
+		writer.append(message);
+		// writer.write(message);
+		writer.close();
+		stream.close();
 
 	}
 }
