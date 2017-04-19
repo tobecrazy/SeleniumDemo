@@ -75,12 +75,16 @@ public class ReviewTest {
 	}
 
 	public static void main(String[] args) throws IOException {
-		System.out.println("====>" + factorial(6));
-		numbersSort();
-		System.out.println("====>" + C(6, 4));
-		String text = readTXT("/Volumes/Transcend/xiazai/love.txt");
-		System.out.println("====>" + text);
-		writeTXT("/Volumes/Transcend/xiazai/lesson1.txt", text);
+		// System.out.println("====>" + GetIndex("abCDfYxzzxc", "CD"));
+		int[] array = new int[] { 1, 3, 4, 2, 0 };
+		BubbleSort(array);
+
+		// System.out.println("====>" + factorial(6));
+		// numbersSort();
+		// System.out.println("====>" + C(6, 4));
+		// String text = readTXT("/Volumes/Transcend/xiazai/love.txt");
+		// System.out.println("====>" + text);
+		// writeTXT("/Volumes/Transcend/xiazai/lesson1.txt", text);
 	}
 
 	/**
@@ -91,7 +95,7 @@ public class ReviewTest {
 	 */
 	public static String readTXT(String path) throws IOException {
 		File file = new File(path);
-		File file1 = new File(path+"_bak");
+		File file1 = new File(path + "_bak");
 		FileInputStream stream;
 		InputStreamReader reader = null;
 		StringBuffer sb = new StringBuffer();
@@ -111,13 +115,12 @@ public class ReviewTest {
 			reader.close();
 		}
 
-		FileReader fr=new FileReader(file);
-		FileWriter fw=new FileWriter(file1);
-		while(fr.read()!=-1)
-		{
-			int ch = fr.read(); 
-			char c=(char) ch;
-			System.out.println("%%%%%----+++>>>>"+c);
+		FileReader fr = new FileReader(file);
+		FileWriter fw = new FileWriter(file1);
+		while (fr.read() != -1) {
+			int ch = fr.read();
+			char c = (char) ch;
+			System.out.println("%%%%%----+++>>>>" + c);
 			fw.write(c);
 		}
 		fr.close();
@@ -125,6 +128,42 @@ public class ReviewTest {
 		return sb.toString();
 	}
 
+	/**
+	 * 
+	 * @param source
+	 * @param key
+	 * @return
+	 */
+	public static int KMP(String source, String key) {
+
+		char[] sourceTemp = source.toCharArray();
+		char[] keyTemp = key.toCharArray();
+		for (int i = 0; i < sourceTemp.length - keyTemp.length + 1; i++) {
+			int count = 0;
+			for (int j = 0; j < keyTemp.length; j++) {
+				if (sourceTemp[i + j] == keyTemp[j]) {
+					count++;
+					continue;
+				}
+			}
+			if (count == keyTemp.length) {
+				return i;
+			}
+		}
+
+		return -1;
+	}
+
+	public static int GetIndex(String source, String key) {
+		return source.indexOf(key);
+	}
+
+	/**
+	 * @author young
+	 * @param path
+	 * @param message
+	 * @throws IOException
+	 */
 	public static void writeTXT(String path, String message) throws IOException {
 		File file = new File(path);
 		FileOutputStream stream = new FileOutputStream(file);
@@ -133,6 +172,26 @@ public class ReviewTest {
 		// writer.write(message);
 		writer.close();
 		stream.close();
+	}
 
+	/**
+	 * @author young
+	 * @param source
+	 */
+	public static void BubbleSort(int[] source) {
+		int temp;
+		for (int i = 0; i < source.length - 1; i++) {
+
+			for (int j = 0; j < source.length - i - 1; j++) {
+				if (source[j] > source[j + 1]) {
+					temp = source[j];
+					source[j] = source[j + 1];
+					source[j + 1] = temp;
+				}
+			}
+		}
+		for (int target : source) {
+			System.out.println(">>>>" + target);
+		}
 	}
 }
