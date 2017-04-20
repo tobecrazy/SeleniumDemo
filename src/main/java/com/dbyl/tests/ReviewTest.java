@@ -77,7 +77,8 @@ public class ReviewTest {
 	public static void main(String[] args) throws IOException {
 		// System.out.println("====>" + GetIndex("abCDfYxzzxc", "CD"));
 		int[] array = new int[] { 1, 3, 4, 2, 0 };
-		BubbleSort(array);
+		SelectionSort(array);
+		// BubbleSort(array);
 
 		// System.out.println("====>" + factorial(6));
 		// numbersSort();
@@ -193,5 +194,39 @@ public class ReviewTest {
 		for (int target : source) {
 			System.out.println(">>>>" + target);
 		}
+	}
+
+	/**
+	 * @author young
+	 * @param source
+	 */
+	public static void SelectionSort(int[] source) {
+		int index = 0;
+		int temp;
+		for (int i = 0; i < source.length - 1; i++) {
+			index = i;
+			for (int j = i + 1; j < source.length; j++) {
+				if (source[index] > source[j]) {
+					index = j;
+				}
+			}
+			if (i != index) {
+				temp = source[i];
+				source[i] = source[index];
+				source[index] = temp;
+			}
+
+		}
+
+		for (int target : source) {
+			System.out.println(">>>>" + target);
+		}
+	}
+
+	public static void InsertionSort(int[] source) {
+	}
+
+	public static void QuickSort(int[] source) {
+
 	}
 }
