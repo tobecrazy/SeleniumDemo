@@ -76,7 +76,23 @@ public class ReviewTest {
 
 	public static void main(String[] args) throws IOException {
 		// System.out.println("====>" + GetIndex("abCDfYxzzxc", "CD"));
+
+		MyComputer pc = new MyComputer();
+		Screen a = new Screen() {
+
+
+			@Override
+			public void display(int height, int weight) {
+				System.out.println("I'm a interface with two paramters");
+				
+			}
+		};
+		pc.setOnScreen(a);
+		a.display(1,2);
+		pc.dowork();
+		pc.dowork("Printing");
 		int[] array = new int[] { 1, 3, 4, 2, 0 };
+
 		SelectionSort(array);
 		// BubbleSort(array);
 
@@ -224,6 +240,10 @@ public class ReviewTest {
 	}
 
 	public static void InsertionSort(int[] source) {
+
+		for (int i = 0; i < source.length; i++) {
+
+		}
 	}
 
 	public static void QuickSort(int[] source) {
