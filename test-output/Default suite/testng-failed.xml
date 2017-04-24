@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="main.java.com.dbyl.tests.Test">
+      <class name="main.java.com.dbyl.tests.loginTest">
         <methods>
-          <include name="myTest"/>
+          <include name="init"/>
+          <include name="loginByUerName"/>
+          <include name="stop"/>
         </methods>
-      </class> <!-- main.java.com.dbyl.tests.Test -->
+      </class> <!-- main.java.com.dbyl.tests.loginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

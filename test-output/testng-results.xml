@@ -2,25 +2,35 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17963" started-at="2017-04-08T10:04:04Z" finished-at="2017-04-08T10:04:22Z">
+  <suite name="Default suite" duration-ms="18179" started-at="2017-04-23T10:31:15Z" finished-at="2017-04-23T10:31:33Z">
     <groups>
+      <group name="loginTest">
+        <method signature="loginTest.loginByUerName()[pri:0, instance:main.java.com.dbyl.tests.loginTest@4d5d943d]" name="loginByUerName" class="main.java.com.dbyl.tests.loginTest"/>
+      </group> <!-- loginTest -->
     </groups>
-    <test name="Default test" duration-ms="17963" started-at="2017-04-08T10:04:04Z" finished-at="2017-04-08T10:04:22Z">
-      <class name="main.java.com.dbyl.tests.Test">
-        <test-method status="FAIL" signature="myTest()[pri:0, instance:main.java.com.dbyl.tests.Test@52e6fdee]" name="myTest" duration-ms="17437" started-at="2017-04-08T18:04:04Z" finished-at="2017-04-08T18:04:22Z">
-          <exception class="java.lang.NullPointerException">
+    <test name="Default test" duration-ms="18179" started-at="2017-04-23T10:31:15Z" finished-at="2017-04-23T10:31:33Z">
+      <class name="main.java.com.dbyl.tests.loginTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:main.java.com.dbyl.tests.loginTest@4d5d943d]" name="init" is-config="true" duration-ms="9289" started-at="2017-04-23T18:31:15Z" finished-at="2017-04-23T18:31:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="FAIL" signature="loginByUerName()[pri:0, instance:main.java.com.dbyl.tests.loginTest@4d5d943d]" name="loginByUerName" duration-ms="7055" started-at="2017-04-23T18:31:24Z" finished-at="2017-04-23T18:31:31Z">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[while trying to invoke the method main.java.com.dbyl.libarary.utils.Locator.getElement() of a null object loaded from local variable 'locator']]>
+              <![CDATA[Expected condition failed: waiting for main.java.com.dbyl.libarary.utils.BasePage$2@4ef27d66 (tried for 3 second(s) with 500 MILLISECONDS interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: while trying to invoke the method main.java.com.dbyl.libarary.utils.Locator.getElement() of a null object loaded from local variable 'locator'
-	at main.java.com.dbyl.libarary.utils.BasePage.findElement(BasePage.java:281)
-	at main.java.com.dbyl.libarary.utils.BasePage$1.apply(BasePage.java:245)
-	at main.java.com.dbyl.libarary.utils.BasePage$1.apply(BasePage.java:1)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	at main.java.com.dbyl.libarary.utils.BasePage.isElementPresent(BasePage.java:241)
-	at main.java.com.dbyl.libarary.utils.BasePage.isElementPresent(BasePage.java:267)
-	at main.java.com.dbyl.tests.Test.myTest(Test.java:31)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for main.java.com.dbyl.libarary.utils.BasePage$2@4ef27d66 (tried for 3 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at main.java.com.dbyl.libarary.utils.BasePage.findElement(BasePage.java:284)
+	at main.java.com.dbyl.libarary.utils.BasePage.click(BasePage.java:111)
+	at main.java.com.dbyl.libarary.pageAction.LoginPage.switchToLogin(LoginPage.java:42)
+	at main.java.com.dbyl.libarary.pageAction.LoginPage.typeUserName(LoginPage.java:48)
+	at main.java.com.dbyl.libarary.action.CommonLogin.login(CommonLogin.java:24)
+	at main.java.com.dbyl.libarary.action.CommonLogin.login(CommonLogin.java:33)
+	at main.java.com.dbyl.libarary.action.ViewHomePage.viewMyProfile(ViewHomePage.java:26)
+	at main.java.com.dbyl.tests.loginTest.loginByUerName(loginTest.java:29)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -46,13 +56,44 @@
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: clickToLoginButton
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'localhost', ip: 'fe80:0:0:0:53:4206:283:3860%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.4', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=/var/folders/1l/ltc3srb95111q7lgg9qz2yd40000gn/T/rust_mozprofile.puiSeyUTLxQ5, rotatable=false, timeouts={implicit=0.0, page load=300000.0, script=30000.0}, pageLoadStrategy=normal, platform=ANY, specificationLevel=0.0, moz:accessibilityChecks=false, acceptInsecureCerts=true, browserVersion=52.0.2, platformVersion=16.5.0, moz:processID=3783.0, browserName=firefox, javascriptEnabled=true, platformName=darwin}]
+Session ID: f81eaec4-1aba-9f43-94ce-fa96255a6725
+*** Element info: {Using=xpath, value=clickToLoginButton}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:150)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:115)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:45)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:410)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:509)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:402)
+	at main.java.com.dbyl.libarary.utils.BasePage.getElement(BasePage.java:193)
+	at main.java.com.dbyl.libarary.utils.BasePage$2.apply(BasePage.java:289)
+	at main.java.com.dbyl.libarary.utils.BasePage$2.apply(BasePage.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 33 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- myTest -->
-      </class> <!-- main.java.com.dbyl.tests.Test -->
+        </test-method> <!-- loginByUerName -->
+        <test-method status="PASS" signature="stop()[pri:0, instance:main.java.com.dbyl.tests.loginTest@4d5d943d]" name="stop" is-config="true" duration-ms="689" started-at="2017-04-23T18:31:32Z" finished-at="2017-04-23T18:31:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stop -->
+      </class> <!-- main.java.com.dbyl.tests.loginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

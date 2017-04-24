@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import main.java.com.dbyl.libarary.action.ViewHomePage;
 import main.java.com.dbyl.libarary.listeners.TestNGListener;
 import main.java.com.dbyl.libarary.utils.DriverFactory;
+import main.java.com.dbyl.libarary.utils.RemoteBrowserBean;
 import main.java.com.dbyl.libarary.utils.UITest;
 
 @Listeners({ TestNGListener.class })
@@ -18,7 +19,8 @@ public class loginTest extends UITest {
 	@BeforeClass(alwaysRun=true)
 	public void start()
 	{
-		driver=DriverFactory.getInstance().getChromeDriver();
+		RemoteBrowserBean remoteBrowserBean=new RemoteBrowserBean();
+		driver=DriverFactory.getInstance().getRemoteDriver(remoteBrowserBean);
 	}
 
 	@BeforeMethod(alwaysRun = true)

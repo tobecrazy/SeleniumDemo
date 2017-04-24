@@ -76,24 +76,46 @@ public class ReviewTest {
 
 	public static void main(String[] args) throws IOException {
 		// System.out.println("====>" + GetIndex("abCDfYxzzxc", "CD"));
+		int[] array = new int[] { 1, 3, 4, 2, 0 };
+		InsertionSort(array);
+		Thread thread1 = new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				SelectionSort(array);
+
+			}
+		});
+		thread1.start();
+		MyThread thread2 = new MyThread(MyThread.class.getName());
+		thread2.start();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		try {
+			thread2.isRun = false;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		MyComputer pc = new MyComputer();
 		Screen a = new Screen() {
 
-
 			@Override
 			public void display(int height, int weight) {
 				System.out.println("I'm a interface with two paramters");
-				
+
 			}
 		};
 		pc.setOnScreen(a);
-		a.display(1,2);
+		a.display(1, 2);
 		pc.dowork();
 		pc.dowork("Printing");
-		int[] array = new int[] { 1, 3, 4, 2, 0 };
 
-		SelectionSort(array);
 		// BubbleSort(array);
 
 		// System.out.println("====>" + factorial(6));
@@ -240,9 +262,26 @@ public class ReviewTest {
 	}
 
 	public static void InsertionSort(int[] source) {
+		int temp;
 
 		for (int i = 0; i < source.length; i++) {
+			int j = i;
+			while (j > 0) {
+				if (source[j] < source[j - 1]) {
+					temp = source[j];
+					source[j] = source[j - 1];
+					source[j - 1] = temp;
+				} else {
+					break;
+				}
 
+				j--;
+			}
+
+		}
+
+		for (int target : source) {
+			System.out.println(">>>>" + target);
 		}
 	}
 
