@@ -16,7 +16,7 @@
 	<classpathentry kind="lib" path="lib/pdfbox-app-1.8.11.jar"/>
 	<classpathentry kind="lib" path="lib/email/commons-email-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/db/mysql-connector-java-5.1.41-bin.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-3.4.0/selenium-3.4.0-nodeps.jar"/>
+	<classpathentry kind="lib" path="lib/selenium-server-3.4.0/selenium-3.4.0-nodeps.jar" sourcepath="lib/selenium-server-3.4.0/selenium-3.4.0-nodeps.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-server-3.4.0/lib/bundle-jars.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-server-3.4.0/lib/cglib-nodep-3.2.4.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-server-3.4.0/lib/commons-codec-1.10.jar"/>

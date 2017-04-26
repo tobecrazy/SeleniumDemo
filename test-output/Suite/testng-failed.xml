@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
-  <parameter name="driverName" value="chrome"/>
   <test name="TestDebug(failed)" parallel="classes">
     <parameter name="driverName" value="chrome"/>
     <classes>
-      <class name="main.java.com.dbyl.tests.UseCookieLogin">
-        <methods>
-          <include name="beforeRun"/>
-          <include name="afterTearDown"/>
-        </methods>
-      </class> <!-- main.java.com.dbyl.tests.UseCookieLogin -->
-      <class name="main.java.com.dbyl.tests.loginTest">
-        <methods>
-          <include name="init"/>
-        </methods>
-      </class> <!-- main.java.com.dbyl.tests.loginTest -->
-      <class name="main.java.com.dbyl.tests.JDaddress">
-        <methods>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- main.java.com.dbyl.tests.JDaddress -->
       <class name="main.java.com.dbyl.tests.MapTest">
         <methods>
           <include name="afterTest"/>
@@ -28,6 +11,26 @@
           <include name="mapTest"/>
         </methods>
       </class> <!-- main.java.com.dbyl.tests.MapTest -->
+      <class name="main.java.com.dbyl.tests.UseCookieLogin">
+        <methods>
+          <include name="beforeRun"/>
+          <include name="useCookies"/>
+          <include name="afterTearDown"/>
+        </methods>
+      </class> <!-- main.java.com.dbyl.tests.UseCookieLogin -->
+      <class name="main.java.com.dbyl.tests.loginTest">
+        <methods>
+          <include name="init"/>
+          <include name="loginByUerName"/>
+          <include name="stop"/>
+        </methods>
+      </class> <!-- main.java.com.dbyl.tests.loginTest -->
+      <class name="main.java.com.dbyl.tests.JDaddress">
+        <methods>
+          <include name="tearDown"/>
+          <include name="testJD"/>
+        </methods>
+      </class> <!-- main.java.com.dbyl.tests.JDaddress -->
     </classes>
   </test> <!-- TestDebug(failed) -->
 </suite> <!-- Failed suite [Suite] -->

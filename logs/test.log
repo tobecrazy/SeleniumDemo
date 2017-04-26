@@ -1,26 +1,46 @@
-2017-04-23 18:31:15.096 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ----------------Test Group-------------
-2017-04-23 18:31:15.099 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.listeners.TestNGListener: loginTest
-2017-04-23 18:31:15.100 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------------------------------
-2017-04-23 18:31:15.100 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ----------------Test Start-------------
-2017-04-23 18:31:15.100 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------------------------------
-2017-04-23 18:31:15.100 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ----------------2017-04-23 18:31:15-------------
-2017-04-23 18:31:15.101 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------------------------------
-2017-04-23 18:31:15.128 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.ConfigUtils: Get the config file: /Volumes/Transcend/Document/workspace/Demo/config.properties
-2017-04-23 18:31:15.141 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.utils.DriverFactory: can not find firefox process
-2017-04-23 18:31:15.142 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: firefox geckodriver path is /Volumes/Transcend/Document/workspace/Demo/webDriver/geckodriver
-2017-04-23 18:31:24.401 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: Create FirefoxDriver 
-2017-04-23 18:31:24.403 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.tests.loginTest: Start WebDriver
-2017-04-23 18:31:24.408 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------On Test Start-------------
-2017-04-23 18:31:24.439 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: main.java.com.dbyl.libarary.pageAction.LoginPage
-2017-04-23 18:31:24.443 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: /Volumes/Transcend/Document/workspace/Demo
-2017-04-23 18:31:24.444 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: /Volumes/Transcend/Document/workspace/Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
-2017-04-23 18:31:24.448 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.XMLUtils: main.java.com.dbyl.libarary.pageAction.LoginPage
-2017-04-23 18:31:24.455 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.utils.XMLUtils: Can't find /Volumes/Transcend/Document/workspace/Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
-2017-04-23 18:31:27.416 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: executing request http://www.zhihu.com
-2017-04-23 18:31:28.157 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: --------------------------------------
-2017-04-23 18:31:28.158 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: HTTP/1.1 200 OK
-2017-04-23 18:31:28.159 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: Response content length: -1
-2017-04-23 18:31:28.179 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: Response content: <!DOCTYPE html>
+2017-04-24 21:41:55.421 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ----------------Test Group-------------
+2017-04-24 21:41:55.424 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.listeners.TestNGListener: JDaddress
+2017-04-24 21:41:55.425 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------------------------------
+2017-04-24 21:41:55.425 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ----------------Test Group-------------
+2017-04-24 21:41:55.425 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.listeners.TestNGListener: MapTest
+2017-04-24 21:41:55.425 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------------------------------
+2017-04-24 21:41:55.426 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ----------------Test Group-------------
+2017-04-24 21:41:55.426 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.listeners.TestNGListener: useCookies
+2017-04-24 21:41:55.426 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------------------------------
+2017-04-24 21:41:55.426 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ----------------Test Group-------------
+2017-04-24 21:41:55.426 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.listeners.TestNGListener: loginTest
+2017-04-24 21:41:55.426 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------------------------------
+2017-04-24 21:41:55.427 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ----------------Test Start-------------
+2017-04-24 21:41:55.427 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------------------------------
+2017-04-24 21:41:55.427 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ----------------2017-04-24 21:41:55-------------
+2017-04-24 21:41:55.428 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------------------------------
+2017-04-24 21:41:55.448 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------On Test Start-------------
+2017-04-24 21:41:55.455 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.ConfigUtils: Get the config file: /Volumes/Transcend/Document/workspace/Demo/config.properties
+2017-04-24 21:41:55.467 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.utils.DriverFactory: can not find firefox process
+2017-04-24 21:41:55.467 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: firefox geckodriver path is /Volumes/Transcend/Document/workspace/Demo/webDriver/geckodriver
+2017-04-24 21:42:03.726 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: Create FirefoxDriver 
+2017-04-24 21:42:03.727 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.ConfigUtils: Get the config file: /Volumes/Transcend/Document/workspace/Demo/config.properties
+2017-04-24 21:42:03.728 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: chrome driver path is webDriver/chromedriver
+2017-04-24 21:42:03.730 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.tests.loginTest: Start WebDriver
+2017-04-24 21:42:03.734 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------On Test Start-------------
+2017-04-24 21:42:03.934 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: main.java.com.dbyl.libarary.pageAction.LoginPage
+2017-04-24 21:42:03.935 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: /Volumes/Transcend/Document/workspace/Demo
+2017-04-24 21:42:03.936 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: /Volumes/Transcend/Document/workspace/Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
+2017-04-24 21:42:03.956 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.XMLUtils: main.java.com.dbyl.libarary.pageAction.LoginPage
+2017-04-24 21:42:03.957 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.utils.XMLUtils: Can't find /Volumes/Transcend/Document/workspace/Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
+2017-04-24 21:42:06.412 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
+2017-04-24 21:42:06.435 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.ConfigUtils: Get the config file: /Volumes/Transcend/Document/workspace/Demo/config.properties
+2017-04-24 21:42:06.436 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: chrome driver path is webDriver/chromedriver
+2017-04-24 21:42:06.446 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.listeners.TestNGListener: Test Skipped
+2017-04-24 21:42:10.424 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
+2017-04-24 21:42:10.429 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------On Test Start-------------
+2017-04-24 21:42:10.443 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.ConfigUtils: Get the config file: /Volumes/Transcend/Document/workspace/Demo/config.properties
+2017-04-24 21:42:10.445 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: chrome driver path is webDriver/chromedriver
+2017-04-24 21:42:10.901 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: executing request http://www.zhihu.com
+2017-04-24 21:42:13.091 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: --------------------------------------
+2017-04-24 21:42:13.092 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: HTTP/1.1 200 OK
+2017-04-24 21:42:13.106 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: Response content length: -1
+2017-04-24 21:42:13.192 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: Response content: <!DOCTYPE html>
 <html lang="zh-CN" class="">
 <head>
 <meta charset="utf-8">
@@ -50,7 +70,7 @@
 <meta name="baidu-site-verification" content="KPFppAFoYF4Kkdv9" />
 <meta property="qc:admins" content="00544670776201056375" />
 <link rel="canonical" href="http://www.zhihu.com" />
-<meta id="znonce" name="znonce" content="7f4b0228ec2f47e099962efb1285cb6f">
+<meta id="znonce" name="znonce" content="b4f82e99cd2b4ac6a07e330049a2470b">
 <!--[if lt IE 9]>
 <script src="https://static.zhihu.com/static/components/respond/dest/respond.min.js"></script>
 <link href="https://static.zhihu.com/static/components/respond/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
@@ -86,7 +106,7 @@
 
 <div class="view view-signin" data-za-module="SignInForm">
 <form method="POST">
-<input type="hidden" name="_xsrf" value="d182d9f93d49e6eb2c46b2b944f6ee44"/>
+<input type="hidden" name="_xsrf" value="a5ab1028ccf3b802520c113c923bc5fc"/>
 <div class="group-inputs">
 
 <div class="account input-wrapper">
@@ -146,7 +166,7 @@
 <div class="view view-signup selected" data-za-module="SignUpForm">
 <form class="zu-side-login-box" action="/register/email" id="sign-form-1" autocomplete="off" method="POST">
 <input type="password" hidden> 
-<input type="hidden" name="_xsrf" value="d182d9f93d49e6eb2c46b2b944f6ee44"/>
+<input type="hidden" name="_xsrf" value="a5ab1028ccf3b802520c113c923bc5fc"/>
 <div class="group-inputs">
 
 
@@ -155,7 +175,7 @@
 </div>
 <div class="email input-wrapper">
 
-<input required type="text" class="account" name="account" aria-label="手机号或邮箱" placeholder="手机号或邮箱">
+<input required type="text" class="account" name="phone_num" aria-label="手机号（仅支持中国大陆）" placeholder="手机号（仅支持中国大陆）">
 
 </div>
 
@@ -235,7 +255,7 @@
 <script type="text/json" class="json-inline" data-name="current_user">["","","","-1","",0,0]</script>
 <script type="text/json" class="json-inline" data-name="env">["zhihu.com","comet.zhihu.com",false,null,false,false]</script>
 
-<script type="text/json" class="json-inline" data-name="ga_vars">{"user_created":0,"now":1492943488000,"abtest_mask":"------------------------------","user_attr":[0,0,0,"-","-"],"user_hash":0}</script>
+<script type="text/json" class="json-inline" data-name="ga_vars">{"user_created":0,"now":1493041332000,"abtest_mask":"------------------------------","user_attr":[0,0,0,"-","-"],"user_hash":0}</script>
 
 <script src="https://static.zhihu.com/static/revved/-/js/vendor.cb14a042.js"></script>
 <script src="https://static.zhihu.com/static/revved/-/js/closure/base.4ed4c84b.js"></script>
@@ -245,30 +265,58 @@
 <meta name="entry" content="ZH.entrySignPage" data-module-id="page-index">
 
 
-<input type="hidden" name="_xsrf" value="d182d9f93d49e6eb2c46b2b944f6ee44"/>
+<input type="hidden" name="_xsrf" value="a5ab1028ccf3b802520c113c923bc5fc"/>
 </body>
 </html>
-2017-04-23 18:31:28.278 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: ------------------------------------
-2017-04-23 18:31:28.354 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2017-04-23 18:31:29.182 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2017-04-23 18:31:29.723 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2017-04-23 18:31:30.286 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2017-04-23 18:31:30.829 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2017-04-23 18:31:31.368 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2017-04-23 18:31:31.474 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.listeners.TestNGListener: Test Failure
-2017-04-23 18:31:31.476 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.listeners.TestNGListener: Expected condition failed: waiting for main.java.com.dbyl.libarary.utils.BasePage$2@4ef27d66 (tried for 3 second(s) with 500 MILLISECONDS interval)
-2017-04-23 18:31:31.496 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.listeners.TestNGListener: null 
+2017-04-24 21:42:13.211 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: ------------------------------------
+2017-04-24 21:42:13.260 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2017-04-24 21:42:14.096 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2017-04-24 21:42:14.661 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2017-04-24 21:42:15.220 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2017-04-24 21:42:15.808 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2017-04-24 21:42:15.974 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
+2017-04-24 21:42:16.384 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2017-04-24 21:42:16.469 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.listeners.TestNGListener: Test Failure
+2017-04-24 21:42:16.470 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.listeners.TestNGListener: Expected condition failed: waiting for main.java.com.dbyl.libarary.utils.BasePage$2@1a1aead5 (tried for 3 second(s) with 500 MILLISECONDS interval)
+2017-04-24 21:42:16.471 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.listeners.TestNGListener: null 
 2
-2017-04-23 18:31:31.684 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: 知乎 - 与世界分享你的知识、经验和见解
+2017-04-24 21:42:23.516 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: 知乎 - 与世界分享你的知识、经验和见解
 
-2017-04-23 18:31:31.702 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: 知乎 - 与世界分享你的知识、经验和见解
+2017-04-24 21:42:33.624 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: 知乎 - 与世界分享你的知识、经验和见解
 
-2017-04-23 18:31:31.703 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: /Volumes/Transcend/Document/workspace/Demo
-2017-04-23 18:31:32.380 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: save snapshot path is:/Volumes/Transcend/Document/workspace/DemoTestNGListener_2017_04_23_18_31_31.png
-2017-04-23 18:31:32.533 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: screen shot finished
-2017-04-23 18:31:33.267 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: failedTest = loginByUerName
-2017-04-23 18:31:33.268 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: Test Finish
-2017-04-23 18:31:33.268 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ----------------Test Finish-------------
-2017-04-23 18:31:33.268 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------------------------------
-2017-04-23 18:31:33.269 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ----------------2017-04-23 18:31:15-------------
-2017-04-23 18:31:33.269 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------------------------------
+2017-04-24 21:42:33.629 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: /Volumes/Transcend/Document/workspace/Demo
+2017-04-24 21:42:33.689 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.listeners.TestNGListener: Test Failure
+2017-04-24 21:42:33.693 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.listeners.TestNGListener: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='email']"}
+  (Session info: chrome=58.0.3029.81)
+  (Driver info: chromedriver=2.28.455517 (2c6d2707d8ea850c862f04ac066724273981e88f),platform=Mac OS X 10.12.4 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 10.12 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'Youngs-MacBook-Pro.local', ip: 'fe80:0:0:0:80e:d44b:aaa4:62ed%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.12.4', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.28.455517 (2c6d2707d8ea850c862f04ac066724273981e88f), userDataDir=/var/folders/1l/ltc3srb95111q7lgg9qz2yd40000gn/T/.org.chromium.Chromium.IXbtxr}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=58.0.3029.81, platform=MAC, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 95b296f76e78ae74192013efc6198a59
+*** Element info: {Using=xpath, value=//input[@name='email']}
+2017-04-24 21:42:33.694 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.listeners.TestNGListener: null 
+2
+2017-04-24 21:42:33.758 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: 知乎 - 与世界分享你的知识、经验和见解
+
+2017-04-24 21:42:34.475 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: 知乎 - 与世界分享你的知识、经验和见解
+
+2017-04-24 21:42:34.479 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: /Volumes/Transcend/Document/workspace/Demo
+2017-04-24 21:42:34.893 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: save snapshot path is:/Volumes/Transcend/Document/workspace/DemoTestNGListener_2017_04_24_21_42_23.png
+2017-04-24 21:42:35.127 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: screen shot finished
+2017-04-24 21:42:35.333 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: save snapshot path is:/Volumes/Transcend/Document/workspace/DemoTestNGListener_2017_04_24_21_42_33.png
+2017-04-24 21:42:35.340 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: screen shot finished
+2017-04-24 21:43:20.292 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.listeners.TestNGListener: Test Failure
+2017-04-24 21:43:20.299 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.listeners.TestNGListener: Expected condition failed: waiting for main.java.com.dbyl.tests.JDaddress$1@59fe72ab (tried for 60 second(s) with 500 MILLISECONDS interval)
+2017-04-24 21:43:20.302 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.listeners.TestNGListener: null 
+2
+2017-04-24 21:43:20.546 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: failedTest = loginByUerName
+2017-04-24 21:43:20.547 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: failedTest = testJD
+2017-04-24 21:43:20.548 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: failedTest = useCookies
+2017-04-24 21:43:20.549 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: Test Finish
+2017-04-24 21:43:20.549 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ----------------Test Finish-------------
+2017-04-24 21:43:20.550 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------------------------------
+2017-04-24 21:43:20.551 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ----------------2017-04-24 21:41:55-------------
+2017-04-24 21:43:20.552 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------------------------------
