@@ -26,5 +26,5 @@ Roadmap
 4. Refactor 页面元素加载功能
 5. 加入预判环境功能，通过http response code判断环境
 
-
+![Alt text](https://github.com/tobecrazy/Demo/blob/master/jenkins.png  "Snapshot")
 
