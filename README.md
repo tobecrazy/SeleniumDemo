@@ -1,16 +1,24 @@
 # Demo
 Selenium automation test framework
 
-Use Selenium 3.x  + testng + Ant + Jenkins + Maven 
+Use Selenium 3.x  + testng + Jenkins + Maven 
 
 Use Page object model
 
 Use log4j
 
+如何使用：
+1. 安装maven配置环境变量
+2. git clone  https://github.com/tobecrazy/Demo.git 
+3. mvn test
+也可以直接使用jenkins，触发mvn test
+
 使用interface 处理不同版本的页面，
 使用java反射机制实现页面跳转
 使用java 注解实现不同类反射初始化
 使用单例模式实现初始化唯一driver对象
+已废弃Ant
+
 Roadmap
 1. 使用Builder设计模式
 2. 优化测试报告
