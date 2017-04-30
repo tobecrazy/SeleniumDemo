@@ -1,12 +1,12 @@
 package main.java.com.dbyl.tests;
 
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.os.WindowsUtils;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -38,7 +38,7 @@ public class baiduEditor {
 
 		boolean isPresent = false;
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-		isPresent = wait.until(new ExpectedCondition<WebElement>() {
+		isPresent = wait.until( new Function<WebDriver, WebElement>() {
 			@Override
 			public WebElement apply(WebDriver d) {
 				return d.findElement(By.xpath(xpath));

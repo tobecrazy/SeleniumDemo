@@ -2,6 +2,7 @@ package main.java.com.dbyl.libarary.utils;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.function.Function;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.ParseException;
@@ -240,7 +241,7 @@ public class BasePage {
 		final Locator locator = getLocator(myLocator.getElement());
 		boolean isPresent = false;
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-		WebElement e = wait.until(new ExpectedCondition<WebElement>() {
+		WebElement e = wait.until(new Function<WebDriver, WebElement>(){
 			@Override
 			public WebElement apply(WebDriver d) {
 				try {
@@ -284,7 +285,7 @@ public class BasePage {
 				log.error("can't get Default time out " + locator.getElement());
 			}
 
-			WebElement element = (new WebDriverWait(driver, timeOut)).until(new ExpectedCondition<WebElement>() {
+			WebElement element = (new WebDriverWait(driver, timeOut)).until(new Function<WebDriver, WebElement>() {
 
 				@Override
 				public WebElement apply(WebDriver driver) {

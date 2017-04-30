@@ -2,6 +2,7 @@ package main.java.com.dbyl.tests;
 
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -67,7 +68,7 @@ public class getAlert {
 
 		boolean isPresent = false;
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-		isPresent = wait.until(new ExpectedCondition<WebElement>() {
+		isPresent = wait.until(new Function<WebDriver, WebElement>() {
 			@Override
 			public WebElement apply(WebDriver d) {
 				return d.findElement(by);

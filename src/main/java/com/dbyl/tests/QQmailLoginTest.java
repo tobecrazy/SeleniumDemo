@@ -1,12 +1,12 @@
 package main.java.com.dbyl.tests;
 
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -57,7 +57,7 @@ public class QQmailLoginTest {
 		// actions.click(loginButton).perform();
 
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-		WebElement logoutButton = wait.until(new ExpectedCondition<WebElement>() {
+		WebElement logoutButton = wait.until( new Function<WebDriver, WebElement>() {
 			@Override
 			public WebElement apply(WebDriver d) {
 				return driver.findElement(By.xpath("//a[@class='toptitle' and text()='退出']"));
