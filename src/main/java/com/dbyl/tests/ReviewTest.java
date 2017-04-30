@@ -10,6 +10,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+import com.gargoylesoftware.htmlunit.javascript.host.Map;
+import com.gargoylesoftware.htmlunit.javascript.host.Set;
+
 public class ReviewTest {
 	static String ecoding = "utf8";
 
@@ -76,6 +79,17 @@ public class ReviewTest {
 
 	public static void main(String[] args) throws IOException {
 		// System.out.println("====>" + GetIndex("abCDfYxzzxc", "CD"));
+		StringBuffer sb=new StringBuffer();
+		sb.append("11111");
+		StringBuilder sbu=new StringBuilder();
+		sbu.append("22222");
+		String str=new String("433333");
+		
+		Map map=new Map();
+		Set set=new Set();
+		set.add("111112");
+		set.add("111112");
+	 
 		int[] array = new int[] { 1, 3, 4, 2, 0 };
 		InsertionSort(array);
 		Thread thread1 = new Thread(new Runnable() {
