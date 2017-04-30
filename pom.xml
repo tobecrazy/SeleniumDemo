@@ -154,7 +154,7 @@
 				<version>2.20</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
+						<suiteXmlFile>${basedir}/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<properties>
 						<!-- Setting ReportNG listeners -->
@@ -164,6 +164,7 @@
 								org.uncommons.reportng.JUnitXMLReporter</value>
 						</property>
 					</properties>
+					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
 			</plugin>
 		</plugins>
