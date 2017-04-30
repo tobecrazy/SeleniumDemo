@@ -3,12 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="main.java.com.dbyl.tests.CCBSoftPadDemo">
+      <class name="main.java.com.dbyl.tests.MailTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="edgeDriver"/>
+          <include name="TestSendEmail"/>
         </methods>
-      </class> <!-- main.java.com.dbyl.tests.CCBSoftPadDemo -->
+      </class> <!-- main.java.com.dbyl.tests.MailTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

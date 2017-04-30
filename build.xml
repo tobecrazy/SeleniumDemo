@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!-- 已废弃，采用maven，请勿使用-->
 <project name="Demo" default="run" basedir=".">
 	<property name="bin" value="bin"/>
 	<property name="src" value="src" />
@@ -30,31 +31,31 @@
 			<classpath refid="run.classpath"/>
 		</javac>
 	</target>
-	<path id="runpath"> 
-		 <path refid="run.classpath"/> 
-		 <pathelement location="build/classes"/> 
-	   </path> 
+	<path id="runpath">
+		<path refid="run.classpath"/>
+		<pathelement location="build/classes"/>
+	</path>
 	<target name="run" depends="compile">
 		<testng  classpathref="runpath"  outputDir="test-output" 
 			haltonfailure="true"
 			useDefaultListeners="false"   
-			listeners="org.uncommons.reportng.HTMLReporter,org.testng.reporters.FailedReporter" >  
+			listeners="org.uncommons.reportng.HTMLReporter,org.testng.reporters.FailedReporter" >
 			<xmlfileset dir="${basedir}" includes="testng.xml"/>
 			<jvmarg value="-Dfile.encoding=UTF-8" />
-			<sysproperty key="org.uncommons.reportng.title" value="AutoMation TestReport" /> 
+			<sysproperty key="org.uncommons.reportng.title" value="AutoMation TestReport" />
 		</testng>
-		</target>
-		<target name="runTestng" depends="compile">
+	</target>
+	<target name="runTestng" depends="compile">
 		<testng  classpathref="runpath"  outputDir="test-output" 
 			haltonfailure="true"
 			useDefaultListeners="false"   
-			listeners="org.uncommons.reportng.HTMLReporter,org.testng.reporters.FailedReporter" >  
+			listeners="org.uncommons.reportng.HTMLReporter,org.testng.reporters.FailedReporter" >
 			<xmlfileset dir="${basedir}" includes="Parametertestng.xml"/>
 			<jvmarg value="-Dfile.encoding=UTF-8" />
-			<sysproperty key="org.uncommons.reportng.title" value="AutoMation TestReport" /> 
+			<sysproperty key="org.uncommons.reportng.title" value="AutoMation TestReport" />
 		</testng>
 	</target>
-	
+
 	<target name="jar" depends="compile">
 		<jar basedir="${bin}" destfile="${jar-file-name}">
 			<zipfileset excludes="META-INF/*.SF"  />
