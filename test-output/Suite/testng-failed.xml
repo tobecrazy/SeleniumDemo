@@ -4,33 +4,18 @@
   <test name="TestDebug(failed)" parallel="classes">
     <parameter name="driverName" value="chrome"/>
     <classes>
-      <class name="main.java.com.dbyl.tests.MapTest">
+      <class name="main.java.com.dbyl.tests.TestngExample">
         <methods>
-          <include name="afterTest"/>
-          <include name="beforeTest"/>
-          <include name="mapTest"/>
+          <include name="afterMethod"/>
+          <include name="testExample1"/>
+          <include name="afterSuite"/>
+          <include name="beforeSuite"/>
+          <include name="afterClass"/>
+          <include name="skipTest"/>
+          <include name="beforeMethod"/>
+          <include name="beforeClass"/>
         </methods>
-      </class> <!-- main.java.com.dbyl.tests.MapTest -->
-      <class name="main.java.com.dbyl.tests.UseCookieLogin">
-        <methods>
-          <include name="beforeRun"/>
-          <include name="useCookies"/>
-          <include name="afterTearDown"/>
-        </methods>
-      </class> <!-- main.java.com.dbyl.tests.UseCookieLogin -->
-      <class name="main.java.com.dbyl.tests.loginTest">
-        <methods>
-          <include name="init"/>
-          <include name="loginByUerName"/>
-          <include name="stop"/>
-        </methods>
-      </class> <!-- main.java.com.dbyl.tests.loginTest -->
-      <class name="main.java.com.dbyl.tests.JDaddress">
-        <methods>
-          <include name="tearDown"/>
-          <include name="testJD"/>
-        </methods>
-      </class> <!-- main.java.com.dbyl.tests.JDaddress -->
+      </class> <!-- main.java.com.dbyl.tests.TestngExample -->
     </classes>
   </test> <!-- TestDebug(failed) -->
 </suite> <!-- Failed suite [Suite] -->

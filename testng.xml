@@ -4,10 +4,7 @@
 	<test verbose="2" preserve-order="true" name="TestDebug">  
 		<parameter name="driverName" value="chrome" />
 		<classes>
-			<class name="main.java.com.dbyl.tests.JDaddress" />
-			<class name="main.java.com.dbyl.tests.UseCookieLogin" />
-			<class name="main.java.com.dbyl.tests.MapTest" />
-			<class name="main.java.com.dbyl.tests.loginTest" />
+			<class name="main.java.com.dbyl.tests.TestngExample" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
