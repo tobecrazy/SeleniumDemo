@@ -1,14 +1,4 @@
-2017-04-29 16:47:07.828 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ----------------Test Start-------------
-2017-04-29 16:47:07.831 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------------------------------
-2017-04-29 16:47:07.831 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ----------------2017-04-29 16:47:07-------------
-2017-04-29 16:47:07.831 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------------------------------
-2017-04-29 16:47:07.849 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.listeners.TestNGListener: ---------------On Test Start-------------
-2017-04-29 16:47:07.873 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.ConfigUtils: Get the config file: /Volumes/Transcend/Document/workspace/Demo/config.properties
-2017-04-29 16:47:07.875 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: chrome driver path is webDriver/chromedriver
-2017-04-29 16:47:10.421 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
-2017-04-29 16:47:10.426 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.PageFactory: page name is main.java.com.dbyl.libarary.pageAction.NewLoginPage
-2017-04-29 16:47:10.466 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.NewLoginPage: main.java.com.dbyl.libarary.pageAction.NewLoginPage
-2017-04-29 16:47:10.467 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.NewLoginPage: /Volumes/Transcend/Document/workspace/Demo
-2017-04-29 16:47:10.470 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.NewLoginPage: /Volumes/Transcend/Document/workspace/Demo/src/com/dbyl/libarary/pageAction/NewLoginPage.xml
-2017-04-29 16:47:10.478 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.XMLUtils: main.java.com.dbyl.libarary.pageAction.NewLoginPage
-2017-04-29 16:47:10.482 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.utils.XMLUtils: Can't find /Volumes/Transcend/Document/workspace/Demo/src/com/dbyl/libarary/pageAction/NewLoginPage.xml
+2017-04-30 21:20:32.359 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.ConfigUtils: Get the config file: /Volumes/Transcend/Document/workspace/Demo/config.properties
+2017-04-30 21:20:32.364 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.utils.DriverFactory: can not find firefox process
+2017-04-30 21:20:32.364 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: firefox geckodriver path is /Volumes/Transcend/Document/workspace/Demo/webDriver/geckodriver
+2017-04-30 21:20:38.735 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: Create FirefoxDriver 

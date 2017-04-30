@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
-  <test name="TestDebug(failed)" parallel="classes">
-    <parameter name="driverName" value="chrome"/>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="main.java.com.dbyl.tests.TestngExample">
+      <class name="main.java.com.dbyl.tests.CCBSoftPadDemo">
         <methods>
-          <include name="afterMethod"/>
-          <include name="testExample1"/>
-          <include name="afterSuite"/>
-          <include name="beforeSuite"/>
-          <include name="afterClass"/>
-          <include name="skipTest"/>
-          <include name="beforeMethod"/>
-          <include name="beforeClass"/>
+          <include name="tearDown"/>
+          <include name="edgeDriver"/>
         </methods>
-      </class> <!-- main.java.com.dbyl.tests.TestngExample -->
+      </class> <!-- main.java.com.dbyl.tests.CCBSoftPadDemo -->
     </classes>
-  </test> <!-- TestDebug(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
