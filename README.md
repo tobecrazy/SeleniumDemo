@@ -28,3 +28,6 @@ Roadmap
 
 ![Alt text](https://github.com/tobecrazy/Demo/blob/master/jenkins.png  "Snapshot")
 
+微信公共账号：
+
+![Alt text](https://github.com/tobecrazy/Demo/blob/master/weixin.gif  "weixin")
