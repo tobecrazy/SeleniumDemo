@@ -1,4 +1,4 @@
-2017-04-30 21:41:40.663 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.ConfigUtils: Get the config file: /Volumes/Transcend/Document/workspace/Demo/config.properties
-2017-04-30 21:41:40.678 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.utils.DriverFactory: can not find firefox process
-2017-04-30 21:41:40.678 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: firefox geckodriver path is /Volumes/Transcend/Document/workspace/Demo/webDriver/geckodriver
-2017-04-30 21:41:47.438 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: Create FirefoxDriver 
+2017-05-02 22:33:55.356 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.ConfigUtils: Get the config file: /Volumes/Transcend/Document/workspace/Demo/config.properties
+2017-05-02 22:33:55.373 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.utils.DriverFactory: can not find firefox process
+2017-05-02 22:33:55.374 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: firefox geckodriver path is /Volumes/Transcend/Document/workspace/Demo/webDriver/geckodriver
+2017-05-02 22:34:02.182 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: Create FirefoxDriver 
