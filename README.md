@@ -18,6 +18,8 @@ Use log4j
 使用java 注解实现不同类反射初始化
 使用单例模式实现初始化唯一driver对象
 已废弃Ant
+引入Spring
+
 
 Roadmap
 1. 使用Builder设计模式
