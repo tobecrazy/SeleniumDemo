@@ -9,6 +9,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.TreeMap;
 
 import com.gargoylesoftware.htmlunit.javascript.host.Map;
 import com.gargoylesoftware.htmlunit.javascript.host.Set;
@@ -79,18 +81,21 @@ public class ReviewTest {
 
 	public static void main(String[] args) throws IOException {
 		// System.out.println("====>" + GetIndex("abCDfYxzzxc", "CD"));
-		StringBuffer sb=new StringBuffer();
+
+		StringBuffer sb = new StringBuffer();
 		sb.append("11111");
-		StringBuilder sbu=new StringBuilder();
+		StringBuilder sbu = new StringBuilder();
 		sbu.append("22222");
-		String str=new String("433333");
-		
-		Map map=new Map();
-		Set set=new Set();
+		String str = new String("433333");
+
+		Map map = new Map();
+		Set set = new Set();
 		set.add("111112");
 		set.add("111112");
-	 
-		int[] array = new int[] { 1, 3, 4, 2, 0 };
+
+		int[] array = new int[] { 1, 3, 4, 2, 1, 0, 5 };
+
+		removeDuplicatedValue(array);
 		InsertionSort(array);
 		Thread thread1 = new Thread(new Runnable() {
 
@@ -302,4 +307,19 @@ public class ReviewTest {
 	public static void QuickSort(int[] source) {
 
 	}
+
+	public static void removeDuplicatedValue(int[] source) {
+		int length = source.length;
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		for (int i = 0; i < length; i++) {
+			int temp = source[i];
+			if (!list.contains(temp)) {
+				list.add(temp);
+			}
+		}
+		for (int i : list) {
+			System.out.println("xxx" + i);
+		}
+	}
+
 }
