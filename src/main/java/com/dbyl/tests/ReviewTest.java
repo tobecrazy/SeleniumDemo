@@ -10,7 +10,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
-import java.util.TreeMap;
+import java.util.Arrays;
+import java.util.TreeSet;
 
 import com.gargoylesoftware.htmlunit.javascript.host.Map;
 import com.gargoylesoftware.htmlunit.javascript.host.Set;
@@ -94,8 +95,9 @@ public class ReviewTest {
 		set.add("111112");
 
 		int[] array = new int[] { 1, 3, 4, 2, 1, 0, 5 };
-
 		removeDuplicatedValue(array);
+		Object[] object = new Object[] { 1, 3, 4, 2, 1, 0, 5 };
+		// removeDuplicatedValue(object);
 		InsertionSort(array);
 		Thread thread1 = new Thread(new Runnable() {
 
@@ -308,8 +310,13 @@ public class ReviewTest {
 
 	}
 
+	/**
+	 * @author young
+	 * @param source
+	 */
 	public static void removeDuplicatedValue(int[] source) {
 		int length = source.length;
+
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		for (int i = 0; i < length; i++) {
 			int temp = source[i];
@@ -322,4 +329,35 @@ public class ReviewTest {
 		}
 	}
 
+	/**
+	 * 
+	 * @param source
+	 */
+	public static void removeDuplicatedValue(Object[] source) {
+		int length = source.length;
+		int index = 0;
+
+		ArrayList<Object> list = new ArrayList<Object>();
+		for (Object obj : source) {
+			list.add(obj);
+		}
+
+		for (int i = 0; i < length - 1; i++) {
+			boolean isPresent = false;
+			for (int j = i + 1; j < length; j++) {
+				if (source[i] == source[j]) {
+					isPresent = true;
+					index = j;
+					break;
+				}
+
+			}
+			if (!isPresent) {
+				list.remove(index);
+			}
+		}
+		for (Object obj : list) {
+			System.out.println("xxx" + obj.toString());
+		}
+	}
 }
