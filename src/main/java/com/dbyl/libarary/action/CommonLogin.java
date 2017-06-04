@@ -17,7 +17,7 @@ public class CommonLogin {
 
 	static LoginPage loginPage;
 
-	public static HomePage login(String email, String password)
+	public static HomePage login(String email, String password, boolean isLoginSuccessful)
 			throws Exception {
 		loginPage = new LoginPage(getDriver());
 		loginPage.waitForPageLoad();
@@ -30,7 +30,7 @@ public class CommonLogin {
 	}
 
 	public static HomePage login() throws Exception {
-		return CommonLogin.login("13282774643", "appium123");
+		return CommonLogin.login("13282774643", "appium123",false);
 	}
 
 	public static void setDriver(WebDriver driver) {

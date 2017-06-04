@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests;
+package main.java.com.dbyl.tests.Login;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -13,14 +13,13 @@ import main.java.com.dbyl.libarary.utils.DriverFactory;
 import main.java.com.dbyl.libarary.utils.RemoteBrowserBean;
 import main.java.com.dbyl.libarary.utils.UITest;
 
-@Listeners({ TestNGListener.class })
-public class loginTest extends UITest {
+//@Listeners({ TestNGListener.class })
+public class LoginTest extends UITest {
 	WebDriver driver;
 	@BeforeClass(alwaysRun=true)
 	public void start()
 	{
-		RemoteBrowserBean remoteBrowserBean=new RemoteBrowserBean();
-		driver=DriverFactory.getInstance().getRemoteDriver(remoteBrowserBean);
+		driver=DriverFactory.getInstance().getChromeDriver();
 	}
 
 	@BeforeMethod(alwaysRun = true)
