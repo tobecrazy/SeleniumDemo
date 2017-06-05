@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map>
+	<!--locator of page map info -->
+	<page pageName="Test.day5.NuomiPage2">
+		<!--Locator lists -->
+		<locator type="id" timeOut="3" value="j-barLoginBtn">login</locator>
+		<locator type="cssSelector" timeOut="3" value="a[name='tj_trnuomi']">nuomi</locator>
+		<locator type="xpath" timeOut="3" value="//input[@id='su']">searchButton</locator>
+		
+	</page>
+</map>
