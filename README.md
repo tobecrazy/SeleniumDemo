@@ -22,11 +22,15 @@ Use log4j
 
 
 Roadmap
-1. 使用Builder设计模式
-2. 优化测试报告
+1. 使用Builder设计模式(Done)
+2. 优化测试报告 (in-progress)
 3. 使用容器，抽象出单独的截图服务
 4. Refactor 页面元素加载功能
 5. 加入预判环境功能，通过http response code判断环境
+6. Selenium UI自动化优化测试脚本心得整理
+7. 加入图像对比，实现处理拖拽验证码
+
+
 
 ![Alt text](https://github.com/tobecrazy/Demo/blob/master/jenkins.png  "Snapshot")
 
