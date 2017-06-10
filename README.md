@@ -29,8 +29,8 @@ Roadmap
 5. 加入预判环境功能，通过http response code判断环境
 6. Selenium UI自动化优化测试脚本心得整理
 7. 加入图像对比，实现处理拖拽验证码
-
-
+8. 使用Jacoco 做code coverage
+![Alt text](https://github.com/tobecrazy/Demo/blob/master/code coverage.png  "Snapshot")
 
 ![Alt text](https://github.com/tobecrazy/Demo/blob/master/jenkins.png  "Snapshot")
 
