@@ -11,7 +11,9 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.TreeSet;
 
 import com.gargoylesoftware.htmlunit.javascript.host.Map;
@@ -84,59 +86,59 @@ public class ReviewTest {
 	public static void main(String[] args) throws IOException {
 		// System.out.println("====>" + GetIndex("abCDfYxzzxc", "CD"));
 
-		StringBuffer sb = new StringBuffer();
-		sb.append("11111");
-		StringBuilder sbu = new StringBuilder();
-		sbu.append("22222");
-		String str = new String("433333");
-
-		Map map = new Map();
-		Set set = new Set();
-		set.add("111112");
-		set.add("111112");
-
-		int[] array = new int[] { 1, 3, 4, 2, 1, 0, 5 };
-		removeDuplicatedValue(array);
-		Object[] object = new Object[] { 1, 3, 4, 2, 1, 0, 5 };
-		removeDuplicatedValue(object);
-		InsertionSort(array);
-		Thread thread1 = new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				SelectionSort(array);
-
-			}
-		});
-		thread1.start();
-		MyThread thread2 = new MyThread(MyThread.class.getName());
-		thread2.start();
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		try {
-			thread2.isRun = false;
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		MyComputer pc = new MyComputer();
-		Screen a = new Screen() {
-
-			@Override
-			public void display(int height, int weight) {
-				System.out.println("I'm a interface with two paramters");
-
-			}
-		};
-		pc.setOnScreen(a);
-		a.display(1, 2);
-		pc.dowork();
-		pc.dowork("Printing");
+		// StringBuffer sb = new StringBuffer();
+		// sb.append("11111");
+		// StringBuilder sbu = new StringBuilder();
+		// sbu.append("22222");
+		// String str = new String("433333");
+		//
+		// Map map = new Map();
+		// Set set = new Set();
+		// set.add("111112");
+		// set.add("111112");
+		//
+		// int[] array = new int[] { 1, 3, 4, 2, 1, 0, 5 };
+		// removeDuplicatedValue(array);
+		// Object[] object = new Object[] { 1, 3, 4, 2, 1, 0, 5 };
+		// removeDuplicatedValue(object);
+		// InsertionSort(array);
+		// Thread thread1 = new Thread(new Runnable() {
+		//
+		// @Override
+		// public void run() {
+		// SelectionSort(array);
+		//
+		// }
+		// });
+		// thread1.start();
+		// MyThread thread2 = new MyThread(MyThread.class.getName());
+		// thread2.start();
+		// try {
+		// Thread.sleep(1000);
+		// } catch (InterruptedException e1) {
+		// // TODO Auto-generated catch block
+		// e1.printStackTrace();
+		// }
+		// try {
+		// thread2.isRun = false;
+		// } catch (Exception e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
+		//
+		// MyComputer pc = new MyComputer();
+		// Screen a = new Screen() {
+		//
+		// @Override
+		// public void display(int height, int weight) {
+		// System.out.println("I'm a interface with two paramters");
+		//
+		// }
+		// };
+		// pc.setOnScreen(a);
+		// a.display(1, 2);
+		// pc.dowork();
+		// pc.dowork("Printing");
 
 		// BubbleSort(array);
 
@@ -146,6 +148,21 @@ public class ReviewTest {
 		// String text = readTXT("/Volumes/Transcend/xiazai/love.txt");
 		// System.out.println("====>" + text);
 		// writeTXT("/Volumes/Transcend/xiazai/lesson1.txt", text);
+
+		LinkedList<String> linkedList = new LinkedList<String>();
+		linkedList.add("11111");
+		linkedList.add("1233");
+		linkedList.add("1222");
+		linkedList.add("last");
+		linkedList.add(0, "first");
+		linkedList.addLast("last");
+		linkedList.removeLast();
+		Iterator<String> iterator = linkedList.iterator();
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
+		ArrayList<String> arrayList = new ArrayList<String>();
+
 	}
 
 	/**
@@ -345,7 +362,7 @@ public class ReviewTest {
 
 		source = set.toArray();
 		for (Object temp : source) {
-			System.out.println("=====>"+temp.toString());
+			System.out.println("=====>" + temp.toString());
 		}
 	}
 
