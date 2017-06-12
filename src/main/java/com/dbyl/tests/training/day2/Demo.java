@@ -13,11 +13,11 @@ public class Demo {
 
 	@Test
 	public void clickUpload() {
-		System.setProperty("webdriver.gecko.driver", "/Users/young/Downloads/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "webDriver/geckodriver");
 		FirefoxDriver driver = new FirefoxDriver();
 		driver.get("http://localhost:8081/");
 		WebElement upload = driver.findElement(By.cssSelector("input[type='file']"));
-		upload.sendKeys("/Users/young/Downloads/geckodriver");
+		upload.sendKeys("webDriver/geckodriver");
 
 		System.out.println(getCell(driver, row, column));
 	}

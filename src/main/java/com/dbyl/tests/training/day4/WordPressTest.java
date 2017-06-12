@@ -27,7 +27,7 @@ public class WordPressTest {
 
 	@BeforeClass(alwaysRun = true)
 	public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "/Users/young/Downloads/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "webDriver/chromedriver");
 		driver = new ChromeDriver();
 		driver.get("http://192.168.1.129/wordpress/wp-login.php");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

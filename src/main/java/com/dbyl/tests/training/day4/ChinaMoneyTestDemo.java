@@ -23,9 +23,9 @@ public class ChinaMoneyTestDemo {
 	@BeforeClass
 	public void initDriver() {
 		// System.setProperty("webdriver.gecko.driver",
-		// "/Users/young/Downloads/selenium/geckodriver");
+		// "webDriver/geckodriver");
 		// driver = new FirefoxDriver();
-		System.setProperty("webdriver.chrome.driver", "/Users/young/Downloads/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "webDriver/chromedriver");
 		driver = new ChromeDriver();
 	}
 

@@ -15,6 +15,7 @@ public class DriverFlags {
 	private int port;
 	private String proxy;
 
+
 	public static class Builder {
 
 		private BrowserType browserTyp;

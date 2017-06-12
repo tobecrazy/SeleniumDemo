@@ -22,7 +22,7 @@ public class RichTextDemo {
 
 	@BeforeMethod
 	public void beforeInitDriver() {
-		System.setProperty("webdriver.gecko.driver", "/Users/young/Downloads/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "webDriver/geckodriver");
 		driver = new FirefoxDriver();
 	}
 

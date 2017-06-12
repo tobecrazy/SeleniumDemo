@@ -24,10 +24,10 @@ public class DouBanLoginTest {
 
 	@BeforeClass
 	public void initDriver() {
-		System.setProperty("webdriver.gecko.driver", "/Users/young/Downloads/selenium/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "webDriver/geckodriver");
 		driver = new FirefoxDriver();
 		// System.setProperty("webdriver.chrome.driver",
-		// "/Users/young/Downloads/chromedriver");
+		// "webDriver/chromedriver");
 		// WebDriver driver= new ChromeDriver();
 	}
 

@@ -14,7 +14,7 @@ public class FindElementTest {
 
 	@Test
 	public void test() throws InterruptedException {
-		System.setProperty("webdriver.gecko.driver", "/Users/young/Downloads/selenium/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "webDriver/geckodriver");
 		WebDriver driver = new FirefoxDriver();
 		// WebDriver driver= new ChromeDriver();
 		driver.get("http://www.baidu.com");

@@ -15,19 +15,19 @@ import org.testng.annotations.Test;
 
 public class EventDemo {
 	public WebDriver driver;
-
+	String path=System.getProperty("user.dir");
 	@BeforeClass
 	public void initDriver() {
-		System.setProperty("webdriver.gecko.driver", "/Users/young/Downloads/selenium/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "webDriver/geckodriver");
 		driver = new FirefoxDriver();
 		// System.setProperty("webdriver.chrome.driver",
-		// "/Users/young/Downloads/chromedriver");
+		// "webDriver/chromedriver");
 		// driver = new ChromeDriver();
 	}
 
 	@Test()
 	public void LoginTest() throws InterruptedException {
-		driver.get("file:///Users/young/Downloads/html/index.html");
+		driver.get("file://"+path+"/data/WebElement.html");
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		driver.manage().window().maximize();

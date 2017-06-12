@@ -21,7 +21,7 @@ public class PageObjectTest {
 
 	@BeforeClass
 	public void initDriver() {
-		System.setProperty("webdriver.gecko.driver", "/Users/young/Downloads/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "webDriver/geckodriver");
 		driver = new FirefoxDriver();
 		// DesiredCapabilities capability =
 		// DesiredCapabilities.internetExplorer();
@@ -36,7 +36,7 @@ public class PageObjectTest {
 		// e.printStackTrace();
 		// }
 		// System.setProperty("webdriver.chrome.driver",
-		// "/Users/young/Downloads/chromedriver");
+		// "webDriver/chromedriver");
 		// driver = new ChromeDriver();
 	}
 

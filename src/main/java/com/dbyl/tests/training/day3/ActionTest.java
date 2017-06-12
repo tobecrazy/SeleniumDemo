@@ -24,11 +24,11 @@ public class ActionTest {
 
 	@BeforeClass
 	public void initDriver() {
-		System.setProperty("webdriver.gecko.driver", "/Users/young/Downloads/selenium/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "webDriver/geckodriver");
 		driver = new FirefoxDriver();
 		// driver=new SafariDriver();
 		// System.setProperty("webdriver.chrome.driver",
-		// "/Users/young/Downloads/chromedriver");
+		// "webDriver/chromedriver");
 		// driver = new ChromeDriver();
 
 	}
