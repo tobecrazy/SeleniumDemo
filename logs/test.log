@@ -1,19 +1,19 @@
-2017-06-10 16:11:37.242 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.ConfigUtils: Get the config file: /Volumes/Transcend/Document/workspace/Demo/config.properties
-2017-06-10 16:11:37.282 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: chrome driver path is webDriver/chromedriver
-2017-06-10 16:11:40.317 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
-2017-06-10 16:11:40.320 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.tests.Login.LoginTest: Start WebDriver
-2017-06-10 16:11:40.347 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.tests.Login.LoginTest: Driver Type is: chrome
-2017-06-10 16:11:40.453 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.tests.Login.LoginTest: Driver Type is: data:,
-2017-06-10 16:11:40.477 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: main.java.com.dbyl.libarary.pageAction.LoginPage
-2017-06-10 16:11:40.479 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: /Volumes/Transcend/Document/workspace/Demo
-2017-06-10 16:11:40.480 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: /Volumes/Transcend/Document/workspace/Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
-2017-06-10 16:11:40.494 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.XMLUtils: main.java.com.dbyl.libarary.pageAction.LoginPage
-2017-06-10 16:11:40.496 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.utils.XMLUtils: Can't find /Volumes/Transcend/Document/workspace/Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
-2017-06-10 16:11:42.470 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: executing request http://www.zhihu.com
-2017-06-10 16:11:43.205 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: --------------------------------------
-2017-06-10 16:11:43.206 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: HTTP/1.1 200 OK
-2017-06-10 16:11:43.207 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: Response content length: -1
-2017-06-10 16:11:43.223 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: Response content: <!DOCTYPE html>
+2017-06-13 21:19:52.716 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.ConfigUtils: Get the config file: /Volumes/Transcend/Document/workspace/Demo/config.properties
+2017-06-13 21:19:52.737 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: chrome driver path is webDriver/chromedriver
+2017-06-13 21:19:56.574 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.DriverFactory: Create ChromeDrive 
+2017-06-13 21:19:56.594 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.tests.Login.LoginTest: Start WebDriver
+2017-06-13 21:19:56.634 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.tests.Login.LoginTest: Driver Type is: chrome
+2017-06-13 21:19:56.635 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.tests.Login.LoginTest: Driver Type is: data:,
+2017-06-13 21:19:56.648 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: main.java.com.dbyl.libarary.pageAction.LoginPage
+2017-06-13 21:19:56.648 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: /Volumes/Transcend/Document/workspace/Demo
+2017-06-13 21:19:56.650 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: /Volumes/Transcend/Document/workspace/Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
+2017-06-13 21:19:56.654 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.utils.XMLUtils: main.java.com.dbyl.libarary.pageAction.LoginPage
+2017-06-13 21:19:56.655 ERROR main.java.com.dbyl.libarary.utils.Log 46 error - main.java.com.dbyl.libarary.utils.XMLUtils: Can't find /Volumes/Transcend/Document/workspace/Demo/src/com/dbyl/libarary/pageAction/LoginPage.xml
+2017-06-13 21:19:59.481 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: executing request http://www.zhihu.com
+2017-06-13 21:20:00.091 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: --------------------------------------
+2017-06-13 21:20:00.092 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: HTTP/1.1 200 OK
+2017-06-13 21:20:00.095 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: Response content length: -1
+2017-06-13 21:20:00.114 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: Response content: <!DOCTYPE html>
 <html lang="zh-CN" class="">
 <head>
 <meta charset="utf-8">
@@ -43,7 +43,7 @@
 <meta name="baidu-site-verification" content="KPFppAFoYF4Kkdv9" />
 <meta property="qc:admins" content="00544670776201056375" />
 <link rel="canonical" href="http://www.zhihu.com" />
-<meta id="znonce" name="znonce" content="f78175b9677f4b85b0f91b246cf8938a">
+<meta id="znonce" name="znonce" content="775e89d620464109b903af368b056a4d">
 <!--[if lt IE 9]>
 <script src="https://static.zhihu.com/static/components/respond/dest/respond.min.js"></script>
 <link href="https://static.zhihu.com/static/components/respond/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
@@ -79,7 +79,7 @@
 
 <div class="view view-signin" data-za-module="SignInForm">
 <form method="POST">
-<input type="hidden" name="_xsrf" value="a5a99f4e76640795097a8561c3d6ba6f"/>
+<input type="hidden" name="_xsrf" value="cf42719dcfcf204013298a46c15abec5"/>
 <div class="group-inputs">
 
 <div class="account input-wrapper">
@@ -143,7 +143,7 @@
 <div class="view view-signup selected" data-za-module="SignUpForm">
 <form class="zu-side-login-box" action="/register/email" id="sign-form-1" autocomplete="off" method="POST">
 <input type="password" hidden> 
-<input type="hidden" name="_xsrf" value="a5a99f4e76640795097a8561c3d6ba6f"/>
+<input type="hidden" name="_xsrf" value="cf42719dcfcf204013298a46c15abec5"/>
 <div class="group-inputs">
 
 
@@ -225,6 +225,10 @@
 <span>京公网安备 11010802010035 号</span>
 <span class="dot">·</span>
 <a href="http://zhstatic.zhihu.com/assets/zhihu/publish-license.jpg" target="_blank">出版物经营许可证</a>
+<span class="dot">·</span>
+<a target="_blank" href="/jubao">侵权投诉</a>
+<span class="dot">·</span>
+<span>违法和不良信息举报：010-82716601</span>
 
 <div class="chengxing">
 <a id='___szfw_logo___' href='https://credit.szfw.org/CX20170607038331320388.html' target='_blank'>
@@ -240,7 +244,7 @@
 <script type="text/json" class="json-inline" data-name="current_user">["","","","-1","",0,0]</script>
 <script type="text/json" class="json-inline" data-name="env">["zhihu.com","comet.zhihu.com",false,null,false,false]</script>
 
-<script type="text/json" class="json-inline" data-name="ga_vars">{"user_created":0,"now":1497082294000,"abtest_mask":"------------------------------","user_attr":[0,0,0,"-","-"],"user_hash":0}</script>
+<script type="text/json" class="json-inline" data-name="ga_vars">{"user_created":0,"now":1497359995000,"abtest_mask":"------------------------------","user_attr":[0,0,0,"-","-"],"user_hash":0}</script>
 
 <script src="https://static.zhihu.com/static/revved/-/js/vendor.cb14a042.js"></script>
 <script src="https://static.zhihu.com/static/revved/-/js/closure/base.be5705f4.js"></script>
@@ -250,14 +254,14 @@
 <meta name="entry" content="ZH.entrySignPage" data-module-id="page-index">
 
 
-<input type="hidden" name="_xsrf" value="a5a99f4e76640795097a8561c3d6ba6f"/>
+<input type="hidden" name="_xsrf" value="cf42719dcfcf204013298a46c15abec5"/>
 </body>
 </html>
-2017-06-10 16:11:43.237 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: ------------------------------------
-2017-06-10 16:11:43.271 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2017-06-10 16:11:43.875 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2017-06-10 16:11:44.408 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2017-06-10 16:11:44.937 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2017-06-10 16:11:45.459 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2017-06-10 16:11:45.989 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
-2017-06-10 16:11:46.509 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2017-06-13 21:20:00.122 INFO  main.java.com.dbyl.libarary.utils.Log 30 info - main.java.com.dbyl.libarary.pageAction.LoginPage: ------------------------------------
+2017-06-13 21:20:00.171 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2017-06-13 21:20:00.907 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2017-06-13 21:20:01.439 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2017-06-13 21:20:01.959 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2017-06-13 21:20:02.485 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2017-06-13 21:20:03.009 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
+2017-06-13 21:20:03.529 DEBUG main.java.com.dbyl.libarary.utils.Log 38 debug - main.java.com.dbyl.libarary.pageAction.LoginPage: find element By xpath
