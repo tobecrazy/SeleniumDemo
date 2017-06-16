@@ -1,5 +1,12 @@
 package main.java.com.dbyl.tests.crawler;
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import main.java.com.dbyl.libarary.utils.DriverFactory;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
@@ -7,7 +14,7 @@ import us.codecraft.webmagic.pipeline.JsonFilePipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 
 public class JobCrawler implements PageProcessor {
-
+	static WebDriver driver = DriverFactory.getInstance().getChromeDriver();
 	private Site site = Site.me().setRetryTimes(3).setSleepTime(100);
 
 	@Override
@@ -24,7 +31,7 @@ public class JobCrawler implements PageProcessor {
 		}
 		page.getRawText();
 		page.putField("nextPage", page.getHtml().xpath("//a[@id='PageNavigator1_LnkBtnNext']"));
-	
+
 		System.out.println(page.getResultItems());
 
 		System.out.println(page.getHtml().toString());
@@ -39,8 +46,25 @@ public class JobCrawler implements PageProcessor {
 	}
 
 	public static void main(String[] args) {
+
+		driver.get("http://www.lhfdc.gov.cn/templets/lh/aspx/HPMS/ProjectList.aspx");
 		Spider.create(new JobCrawler()).addUrl("http://www.lhfdc.gov.cn/templets/lh/aspx/hpms/ProjectList.aspx")
-				.thread(1) .addPipeline(new JsonFilePipeline("/Volumes/Transcend/Document/workspace/Demo/logs")).run();
+				.thread(1).addPipeline(new JsonFilePipeline("/Volumes/Transcend/Document/workspace/Demo/logs")).run();
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		while (true) {
+			WebElement nextPage = driver
+					.findElement(By.xpath("//a[@id='PageNavigator1_LnkBtnNext' and not(@disabled)]"));
+			nextPage.click();
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+			String content = driver.getPageSource();
+			Page page = new Page();
+			page.setRawText(content);
+			Spider.create(new JobCrawler()).addUrl("http://www.lhfdc.gov.cn/templets/lh/aspx/hpms/ProjectList.aspx")
+					.thread(1).addPipeline(new JsonFilePipeline("/Volumes/Transcend/Document/workspace/Demo/logs"))
+					.run();
+
+		}
 	}
 
 }
