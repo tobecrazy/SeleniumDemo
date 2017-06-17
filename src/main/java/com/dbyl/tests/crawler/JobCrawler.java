@@ -53,7 +53,8 @@ public class JobCrawler implements PageProcessor {
 	public static void main(String[] args) throws IOException {
 
 		for (String code : getAllLinks()) {
-			String url = "http://www.lhfdc.gov.cn/templets/lh/aspx/hpms/ProjectInfo.aspx\\?code=" + code;
+			String url = "http://www.lhfdc.gov.cn/templets/lh/aspx/hpms/ProjectInfo.aspx?code=" + code;
+			System.out.println("=====>"+url);
 			Spider.create(new JobCrawler()).addUrl(url).thread(5)
 					.addPipeline(new JsonFilePipeline("/Volumes/Transcend/Document/workspace/Demo/logs")).run();
 
@@ -108,7 +109,9 @@ public class JobCrawler implements PageProcessor {
 	 */
 	public static String getCode(String source) {
 		if (null != source) {
-			return StringTools.getMatch(source, "\\d+");
+			String temp= StringTools.getMatch(source, "(\\d+)");
+			System.out.println(temp);
+			return temp;
 		} else {
 			return null;
 		}
