@@ -20,7 +20,7 @@ public class ReadExcelUtil {
 	 * @throws IOException
 	 */
 	public static String[][] getLocatorMap() throws IOException {
-		path = "C:/Users/Young/workspace/Demo/src/com/dbyl/libarary/pageAction/UILibrary.xls";
+		path = "/src/com/dbyl/libarary/pageAction/UILibrary.xls";
 		File f1 = new File(path);
 		FileInputStream in = new FileInputStream(f1);
 		HSSFWorkbook wb = new HSSFWorkbook(new POIFSFileSystem(in));

@@ -1,6 +1,9 @@
 package main.java.com.dbyl.tests.crawler;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -47,23 +50,24 @@ public class JobCrawler implements PageProcessor {
 			page.setSkip(true);
 		}
 
-		System.out.println(page.getResultItems());
-
 		String name = page.getResultItems().get("name");
 		float price = Float.parseFloat(page.getResultItems().get("price"));
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-
+		try {
+			name = new String(name.getBytes(), "utf-8");
+		} catch (UnsupportedEncodingException e2) {
+			e2.printStackTrace();
+		}
 		String tempDate = page.getResultItems().get("cdate");
-
+		System.out.println("name: " + name + "===>" + price + "=====>" + tempDate+"\n");
 		Date cdate = null;
 		try {
-			if (null != tempDate) {
+			if (!StringTools.isNullOrEmpty(tempDate.trim())) {
 				cdate = new Date(sdf.parse(tempDate.trim()).getTime());
 			} else {
 				cdate = new Date(System.currentTimeMillis());
 			}
 		} catch (ParseException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		try {
@@ -71,14 +75,18 @@ public class JobCrawler implements PageProcessor {
 			System.out.println("                    Insert To Database                        ");
 			System.out.println("==============================================================");
 			insertToDatabase(conn, name.trim(), price, cdate);
+			writeToTXT(name.trim()+","+price+","+tempDate.trim()+"\n");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		System.out.println(page.getHtml().toString());
+
 		System.out.println("==============================================================");
 		System.out.println("                             The End                          ");
 		System.out.println("==============================================================");
@@ -178,6 +186,23 @@ public class JobCrawler implements PageProcessor {
 		ps.setDate(3, date);
 		ps.executeUpdate();
 		System.out.println("INSERT into luohe(name,price,cdate) values " + name + price + cdate);
+
+	}
+	public void writeToTXT(String message) throws IOException {
+		BufferedWriter bf = null;
+		try {
+			// set true ,avoid
+			bf = new BufferedWriter(new FileWriter("report1.csv", true));
+			bf.write(message);
+			bf.flush();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			bf.close();
+		}
+
 
 	}
 }

@@ -1,5 +1,6 @@
 package main.java.com.dbyl.tests;
 
+import java.io.UnsupportedEncodingException;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,8 +35,15 @@ public class DBTest {
 		}
 		Date date = new Date(System.currentTimeMillis());
 		PreparedStatement ps = conn.prepareStatement("INSERT into luohe(name,price,cdate) values (?, ?, ?)");
-		for (int n = 0; n < 1000; n++) {
-			ps.setString(1, "123wasads");
+		
+		for (int n = 0; n < 1; n++) {
+			String name="中文测试Test";
+			try {
+				name = new String(name.getBytes(), "utf-8");
+			} catch (UnsupportedEncodingException e2) {
+				e2.printStackTrace();
+			}
+			ps.setString(1,name);
 			ps.setFloat(2, 123.1f);
 
 			ps.setDate(3, date);

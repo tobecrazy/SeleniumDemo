@@ -99,7 +99,8 @@ public class DatabaseUtils {
 			setPassword("");
 		}
 
-		String url = "jdbc:mysql://" + getHost() + ":" + getPort() + "/" + getDbName();
+		String url = "jdbc:mysql://" + getHost() + ":" + getPort() + "/" + getDbName()+"?useUnicode=true&amp;characterEncoding=utf-8";
+		System.out.println(url);
 		connection = (Connection) DriverManager.getConnection(url, getUser(), getPassword());
 		return connection;
 	}
