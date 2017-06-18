@@ -74,7 +74,7 @@ public class JobCrawler implements PageProcessor {
 			System.out.println("==============================================================");
 			System.out.println("                    Insert To Database                        ");
 			System.out.println("==============================================================");
-			insertToDatabase(conn, name.trim(), price, cdate);
+			insertToDatabase(conn,StringTools.chineseToUnicode(name.trim()), price, cdate);
 			writeToTXT(name.trim()+","+price+","+tempDate.trim()+"\n");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

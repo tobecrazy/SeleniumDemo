@@ -91,7 +91,8 @@ public class StringTools {
 	}
 
 	/**
-	 * This method is for judge is match 
+	 * This method is for judge is match
+	 * 
 	 * @author Young
 	 * @param source
 	 * @param rex
@@ -101,5 +102,34 @@ public class StringTools {
 		Pattern pattern = Pattern.compile(rex);
 		Matcher matcher = pattern.matcher(source);
 		return matcher.matches();
+	}
+
+	/**
+	 * @author young
+	 * @param str
+	 * @return
+	 */
+	public static String chineseToUnicode(String str) {
+		char[] chars = str.toCharArray();
+		String result = "";
+		for (int i = 0; i < chars.length; i++) {
+			result += "\\u" + Integer.toString(chars[i], 16);
+		}
+		return result;
+	}
+
+	/**
+	 * @author young
+	 * @param unicode
+	 * @return
+	 */
+	public static String unicodeToChinese(String unicode) {
+		// unicode start with \\u
+		String[] strs = unicode.split("\\\\u");
+		String result = "";
+		for (int i = 1; i < strs.length; i++) {
+			result += (char) Integer.valueOf(strs[i], 16).intValue();
+		}
+		return result;
 	}
 }
