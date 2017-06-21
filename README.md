@@ -20,6 +20,13 @@ Use log4j
 已废弃Ant
 引入Spring
 
+2017/6/21
+添加python版selenium Demo
+说明：最近在搞爬虫，采用python scrappy框架，因此顺便搞一下python版本的selenium
+并将原有方法重新使用python封装一遍。
+喜欢使用python的朋友也可以参考。
+目录为：PythonSelnium 
+将会添加爬虫相关内容。持续更新！！！！
 
 Roadmap
 1. 使用Builder设计模式(Done)

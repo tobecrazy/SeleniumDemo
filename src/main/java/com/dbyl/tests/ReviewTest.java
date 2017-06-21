@@ -331,20 +331,22 @@ public class ReviewTest {
 	/**
 	 * @author young
 	 * @param source
+	 * @return
 	 */
-	public static void removeDuplicatedValue(int[] source) {
+	public static ArrayList<Object> removeDuplicatedObject(Object[] source) {
 		int length = source.length;
 
-		ArrayList<Integer> list = new ArrayList<Integer>();
+		ArrayList<Object> list = new ArrayList<Object>();
 		for (int i = 0; i < length; i++) {
-			int temp = source[i];
+			Object temp = source[i];
 			if (!list.contains(temp)) {
 				list.add(temp);
 			}
 		}
-		for (int i : list) {
+		for (Object i : list) {
 			System.out.println("xxx" + i);
 		}
+		return list;
 	}
 
 	/**
@@ -353,7 +355,7 @@ public class ReviewTest {
 	 * @author young
 	 * @param source
 	 */
-	public static void removeDuplicatedValue(Object[] source) {
+	public static LinkedHashSet<Object> removeDuplicatedValue(Object[] source) {
 
 		LinkedHashSet<Object> set = new LinkedHashSet<Object>();
 		for (Object obj : source) {
@@ -364,6 +366,10 @@ public class ReviewTest {
 		for (Object temp : source) {
 			System.out.println("=====>" + temp.toString());
 		}
+		return set;
 	}
+	
+
+			
 
 }
