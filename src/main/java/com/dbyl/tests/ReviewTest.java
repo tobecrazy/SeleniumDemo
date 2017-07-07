@@ -369,6 +369,21 @@ public class ReviewTest {
 		return set;
 	}
 	
+	
+	public static LinkedHashSet<Object> removeDuplicatedRaw(Object[] source) {
+
+		LinkedHashSet<Object> set = new LinkedHashSet<Object>();
+		for (Object obj : source) {
+			set.add(obj);
+		}
+
+		source = set.toArray();
+		for (Object temp : source) {
+			System.out.println("=====>" + temp.toString());
+		}
+		return set;
+	}
+	
 
 			
 
