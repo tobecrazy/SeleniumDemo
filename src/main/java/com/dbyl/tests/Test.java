@@ -19,6 +19,8 @@ public class Test {
 	@org.testng.annotations.Test
 	public void myTest() throws Exception {
 		DriverFactory.close();
+		Long currentTime=System.currentTimeMillis();
+		String cString=Long.toString(currentTime);
 		WebDriver driver = DriverFactory.getInstance().getFirefoxDriver();
 		NewLoginPage h = null;
 		try {
