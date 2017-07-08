@@ -1,4 +1,4 @@
-# Demo
+# SeleniumDemo
 Selenium automation test framework
 
 Use Selenium 3.x  + testng + Jenkins + Maven 
