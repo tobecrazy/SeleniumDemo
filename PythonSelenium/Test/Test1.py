@@ -3,8 +3,11 @@
 from selenium import webdriver
 import os,sys
 current_folder=os.getcwd()
+print(os.name)
 print(current_folder)
-driver=webdriver.Chrome(executable_path=current_folder+"/../../webDriver/chromedriver.exe")
+
+if "nt" in os.name:driver=webdriver.Chrome(executable_path=current_folder+"/../../webDriver/chromedriver.exe")
+else:driver=webdriver.Chrome(executable_path=current_folder+"/../../webDriver/chromedriver")
 driver.get("http://www.baidu.com")
 inputbox=driver.find_element_by_id("kw")
 inputbox.send_keys("python")
