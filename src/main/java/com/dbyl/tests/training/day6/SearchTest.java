@@ -36,7 +36,7 @@ public class SearchTest {
 		password.sendKeys("RLpassword123");
 		
 		WebElement submit=driver.findElement(By.id("submit"));
-		submit.submit();
+		submit.click();
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		Assert.assertTrue(driver.getCurrentUrl().contains("dashboard"));
 		driver.get("https://www.shopkeepapp.com/ipad-layout");

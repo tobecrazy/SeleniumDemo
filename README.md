@@ -1,6 +1,11 @@
 # SeleniumDemo
 Selenium automation test framework
 
+最近有打算用python重写一下，感兴趣的朋友可以fork
+首先需要安装python，之后安装selenium lib
+pip install -U selenium
+
+
 Use Selenium 3.x  + testng + Jenkins + Maven 
 
 Use Page object model

@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="classes" thread-count="5">
-	<test verbose="2" preserve-order="true" name="TestDebug">
+	<test verbose="1" preserve-order="true" name="TestDebug">
 		<parameter name="driverName" value="chrome" />
+		<groups>
+			<run>
+				<include name="TestngExample" />
+				<exclude name="The Test Group 2" />
+			</run>
+		</groups>
+
 		<classes>
 			<class name="main.java.com.dbyl.tests.TestngExample" />
-			<class name="main.java.com.dbyl.tests.DBTest" />
-			<class name="main.java.com.dbyl.tests.Login.LoginTest" />
+			<!-- <class name="main.java.com.dbyl.tests.DBTest" /> <class name="main.java.com.dbyl.tests.Login.LoginTest" 
+				/> -->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

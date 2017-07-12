@@ -1,5 +1,6 @@
 package main.java.com.dbyl.tests;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
@@ -37,6 +38,7 @@ public class passParameter {
 	@Test(groups="parameter")
 	public void parameter(String parameter1,int parameter2 )
 	{
+		By by=By.xpath("//p[.='"+parameter1+"']/ancestor::div[contains(@class,'si-button color-')][1]");
 		System.out.println("parameter1 is "+parameter1 );
 		System.out.println("parameter2 is "+parameter2 );
 	}

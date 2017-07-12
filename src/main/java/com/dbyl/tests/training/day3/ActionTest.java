@@ -43,6 +43,7 @@ public class ActionTest {
 		inputBox.sendKeys("SELENIUM");
 		WebElement search=driver.findElement(By.id("su"));
 		search.click();
+		actions.clickAndHold(driver.findElement(By.xpath(""))).click(driver.findElement(By.xpath("")));
 //		actions.sendKeys(Keys.SHIFT).sendKeys(inputBox, "selenium").build().perform();
 //		actions.contextClick(inputBox).build().perform();
 		// actions.doubleClick();
