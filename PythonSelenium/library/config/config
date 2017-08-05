@@ -1,0 +1,8 @@
+#配置数据库
+[database]
+dbhost=127.0.0.1
+dbport=3366
+dbname=test
+dbuser=test
+dbpassword=test
+dbcharset=utf8
