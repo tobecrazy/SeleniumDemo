@@ -27,13 +27,13 @@
 		<dependency>
 			<groupId>us.codecraft</groupId>
 			<artifactId>webmagic-core</artifactId>
-			<version>0.7.1</version>
+			<version>0.7.3</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/us.codecraft/webmagic-extension -->
 		<dependency>
 			<groupId>us.codecraft</groupId>
 			<artifactId>webmagic-extension</artifactId>
-			<version>0.7.1</version>
+			<version>0.7.3</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.slf4j</groupId>
@@ -59,7 +59,7 @@
 		<dependency>
 			<groupId>us.codecraft</groupId>
 			<artifactId>webmagic-extension</artifactId>
-			<version>0.7.1</version>
+			<version>0.7.3</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
@@ -137,7 +137,7 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.5.0</version>
+			<version>3.4.0</version>
 			<!-- <exclusions> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-beans</artifactId> 
 				</exclusion> </exclusions> -->
 		</dependency>
