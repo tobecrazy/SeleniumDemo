@@ -50,6 +50,12 @@ public class TestngExample {
 		System.out.println("This is Test  method2 .The Value of a is: " + a);
 	}
 
+	@Test(enabled = true, threadPoolSize = 5, invocationCount = 10)
+	public void parallelTest() throws InterruptedException {
+		System.out.println("Current Thread Id: " + Thread.currentThread().getId());
+		Thread.sleep(5000);
+	}
+
 	/**
 	 * This test will skip
 	 */
