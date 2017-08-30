@@ -137,10 +137,9 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.4.0</version>
-			<!-- <exclusions> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-beans</artifactId> 
-				</exclusion> </exclusions> -->
+			<version>3.5.2</version>
 		</dependency>
+
 
 		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
 		<dependency>
