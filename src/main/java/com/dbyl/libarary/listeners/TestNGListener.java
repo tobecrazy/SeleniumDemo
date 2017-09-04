@@ -20,7 +20,7 @@ import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
 
 import main.java.com.dbyl.libarary.utils.DriverFactory;
-import main.java.com.dbyl.libarary.utils.Log;
+import main.java.com.dbyl.libarary.utils.LogUtils;
 
 /**
  * 
@@ -29,7 +29,7 @@ import main.java.com.dbyl.libarary.utils.Log;
  */
 public class TestNGListener extends TestListenerAdapter {
 	SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	Log log = new Log(this.getClass());
+	LogUtils log = new LogUtils(this.getClass());
 
 	@Override
 	public void onTestSuccess(ITestResult tr) {

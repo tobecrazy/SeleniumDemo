@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
  *
  */
 public class UITest {
-	Log log = new Log(this.getClass());
+	LogUtils log = new LogUtils(this.getClass());
 
 	public void init(WebDriver driver) {
 		log.info("Start WebDriver");

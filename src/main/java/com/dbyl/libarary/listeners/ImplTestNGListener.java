@@ -11,7 +11,7 @@ import org.testng.ITestListener;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 
-import main.java.com.dbyl.libarary.utils.Log;
+import main.java.com.dbyl.libarary.utils.LogUtils;
 
 /**
  * 
@@ -20,7 +20,7 @@ import main.java.com.dbyl.libarary.utils.Log;
  */
 public class ImplTestNGListener implements IExecutionListener, ITestListener, IInvokedMethodListener {
 	SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	Log log = new Log(this.getClass());
+	LogUtils log = new LogUtils(this.getClass());
 
 	@Override
 	public void onExecutionStart() {

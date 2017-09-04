@@ -11,7 +11,7 @@ import java.util.Properties;
  */
 public class ConfigUtils {
 
-	private static Log log = new Log(ConfigUtils.class);
+	private static LogUtils log = new LogUtils(ConfigUtils.class);
 
 	public static Properties getProperties(String config) throws IOException {
 		Properties properties = new Properties();

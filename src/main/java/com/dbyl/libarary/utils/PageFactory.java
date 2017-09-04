@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
  *
  */
 public class PageFactory {
-	static Log log = new Log(PageFactory.class);
+	static LogUtils log = new LogUtils(PageFactory.class);
 
 	public synchronized static Object getPage(Class<?> key, WebDriver d)
 			throws ClassNotFoundException, NoSuchMethodException,

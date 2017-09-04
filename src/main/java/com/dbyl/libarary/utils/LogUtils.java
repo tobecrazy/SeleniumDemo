@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
  * @author young
  *
  */
-public class Log {
+public class LogUtils {
 	private final Class<?> clazz;
 	private Logger logger;
 
@@ -16,7 +16,7 @@ public class Log {
 	 * 
 	 * @param clazz
 	 */
-	public Log(Class<?> clazz) {
+	public LogUtils(Class<?> clazz) {
 		this.clazz = clazz;
 		this.logger = LogManager.getLogger(this.clazz);
 	}

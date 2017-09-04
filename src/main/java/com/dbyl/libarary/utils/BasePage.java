@@ -19,7 +19,6 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -34,7 +33,7 @@ public class BasePage {
 	// protected String[][] locatorMap;
 	HashMap<String, Locator> locatorMap;
 	String path;
-	protected Log log = new Log(this.getClass());
+	protected LogUtils log = new LogUtils(this.getClass());
 
 	protected BasePage(WebDriver driver) throws Exception {
 		this.driver = driver;

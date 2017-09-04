@@ -4,10 +4,10 @@ import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-import main.java.com.dbyl.libarary.utils.Log;
+import main.java.com.dbyl.libarary.utils.LogUtils;
 
 public class TestngRetryManager implements IRetryAnalyzer {
-	Log log = new Log(TestngRetryManager.class);
+	LogUtils log = new LogUtils(TestngRetryManager.class);
 	int defaultCount = 1;
 	int maxTryCount=3;
 

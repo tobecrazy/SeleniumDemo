@@ -38,7 +38,7 @@ public class DriverFactory {
 	private static String IEDriverServer;
 	private static String EDGEDriver;
 	private static String config = System.getProperty("user.dir") + "/config.properties";
-	static Log log = new Log(DriverFactory.class);
+	static LogUtils log = new LogUtils(DriverFactory.class);
 	private static String OSType = System.getProperty("os.name");
 	private static String currentDir = System.getProperty("user.dir");
 	static WebDriver driver = null;

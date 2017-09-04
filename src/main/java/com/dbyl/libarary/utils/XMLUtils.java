@@ -28,7 +28,7 @@ public class XMLUtils {
 	public static HashMap<String, Locator> readXMLDocument(String path,
 			String pageName) throws Exception {
 
-		Log log = new Log(XMLUtils.class);
+		LogUtils log = new LogUtils(XMLUtils.class);
 		log.info(pageName);
 		HashMap<String, Locator> locatorMap = new HashMap<String, Locator>();
 		locatorMap.clear();
