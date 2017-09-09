@@ -46,12 +46,30 @@ public class Days {
 		if (x < java.lang.Integer.MIN_VALUE / 2) {
 			return x;
 		}
-		String temp = Math.abs(x) + "";
+		String temp = String.valueOf(Math.abs(x));
 		for (int i = temp.length(); i > 0; i--) {
 			y += (x % 10) * Math.pow(10, i - 1);
 			x = x / 10;
 		}
 		return y;
+
+	}
+
+	/**
+	 * @author I321533
+	 * @param x
+	 * @return
+	 */
+	public boolean isPalindrome(int x) {
+		String temp = String.valueOf(x);
+		for (int i = 0; i < temp.length() / 2; i++) {
+			if (temp.charAt(i) != temp.charAt(temp.length() - 1 - i)) {
+				return false;
+			}
+		}
+		return true;
+		// return new
+		// StringBuffer(temp).reverse().toString().equalsIgnoreCase(temp);
 
 	}
 
