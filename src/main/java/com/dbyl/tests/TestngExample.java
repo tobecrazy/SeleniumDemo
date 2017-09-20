@@ -10,6 +10,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
+import main.java.com.dbyl.libarary.utils.ReadExcelUtil;
+
 /**
  * This is to verify testng annotation execute
  * 
@@ -20,7 +22,13 @@ public class TestngExample {
 	private int a;
 
 	@BeforeSuite(alwaysRun = true)
-	public void beforeSuite() {
+	public void beforeSuite() throws Exception {
+		String[][] array = ReadExcelUtil.getLocatorMap();
+		for (String[] temp : array) {
+			for (String str : temp) {
+				System.out.println(str);
+			}
+		}
 		System.out.println("This Before Suite Method, will run one time");
 	}
 

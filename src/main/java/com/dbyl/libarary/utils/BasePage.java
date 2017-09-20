@@ -40,7 +40,7 @@ public class BasePage {
 		log.debug(this.getClass().getCanonicalName());
 		log.info(System.getProperty("user.dir"));
 		// locatorMap = ReadExcelUtil.getLocatorMap();
-		path = System.getProperty("user.dir") + "/src/com/dbyl/libarary/pageAction/" + this.getClass().getSimpleName()
+		path = System.getProperty("user.dir") + "/src/main/java/com/dbyl/libarary/pageAction/" + this.getClass().getSimpleName()
 				+ ".xml";
 		log.info(path);
 		locatorMap = XMLUtils.readXMLDocument(path, this.getClass().getCanonicalName());
