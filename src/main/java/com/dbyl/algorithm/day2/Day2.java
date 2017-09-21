@@ -30,6 +30,10 @@ public class Day2 {
 		ListNode(int x) {
 			val = x;
 		}
+
+		public void display() {
+			System.out.println(val);
+		}
 	}
 
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -56,6 +60,13 @@ public class Day2 {
 			}
 
 		}
+		while (head != null) {
+			node=head.next;
+			head.display();
+			head=node;
+			
+		}
+
 		ListNode l1_head = new ListNode(2);
 		ListNode l1_node1 = new ListNode(4);
 		ListNode l1_node2 = new ListNode(3);
