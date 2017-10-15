@@ -45,7 +45,11 @@ Roadmap
 ![Alt text](https://github.com/tobecrazy/SeleniumDemo/blob/master/code%20coverage.png "Snapshot")
 
 ![Alt text](https://github.com/tobecrazy/Demo/blob/master/jenkins.png  "Snapshot")
+9.使用Sonar 扫描代码code
+
+![Alt text](https://github.com/tobecrazy/SeleniumDemo/blob/master/sonar.png  "Snapshot")
 
 微信公共账号：
 
 ![Alt text](https://github.com/tobecrazy/Demo/blob/master/weixin.gif  "weixin")
+
