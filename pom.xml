@@ -223,6 +223,22 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+
+			<!-- https://mvnrepository.com/artifact/com.google.code.findbugs/findbugs -->
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>3.0.1</version>
+				<configuration>
+					<threshold>High</threshold>
+					<effort>Default</effort>
+					<findbugsXmlOutput>true</findbugsXmlOutput>
+					<findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+					<xmlOutput>true</xmlOutput>
+					<findbugsXmlOutputDirectory>target/site</findbugsXmlOutputDirectory>
+				</configuration>
+			</plugin>
 			<!-- jacoco plugin -->
 			<plugin>
 				<groupId>org.jacoco</groupId>
