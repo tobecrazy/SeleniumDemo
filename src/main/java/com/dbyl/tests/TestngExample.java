@@ -45,7 +45,7 @@ public class TestngExample {
 		System.out.println("This is beforeClass method .The Value of a is: " + a);
 	}
 
-	@Test(groups = { "TestngExample", "The Test Group 1" }, priority = 3)
+	@Test(enabled = false,groups = { "TestngExample", "The Test Group 1" }, priority = 3)
 	public void testExample1() {
 		a = 3;
 		System.out.println("This is Test  method1 .The Value of a is: " + a);
