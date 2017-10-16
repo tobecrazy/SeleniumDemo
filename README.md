@@ -48,6 +48,8 @@ Roadmap
 9.使用Sonar 扫描代码code
 
 ![Alt text](https://github.com/tobecrazy/SeleniumDemo/blob/master/sonar.png  "Snapshot")
+10.使用findbugs
+![Alt text](https://github.com/tobecrazy/Demo/blob/master/findbugs.png  "Snapshot") 
 
 微信公共账号：
 
