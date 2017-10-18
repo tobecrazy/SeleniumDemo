@@ -12,6 +12,7 @@
 
 		<classes>
 			<class name="main.java.com.dbyl.tests.TestngExample" />
+			<class name="main.java.com.dbyl.tests.BuilderTest" />
 			<!-- <class name="main.java.com.dbyl.tests.DBTest" /> <class name="main.java.com.dbyl.tests.Login.LoginTest" 
 				/> -->
 		</classes>
