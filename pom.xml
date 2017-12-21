@@ -133,8 +133,9 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.6.0</version>
+			<version>3.8.1</version>
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
@@ -143,18 +144,19 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
-			<artifactId>json-path</artifactId>
-			<version>3.0.3</version>
+			<artifactId>rest-assured</artifactId>
+			<version>3.0.6</version>
+			<scope>test</scope>
 		</dependency>
+
 
 		<!-- https://mvnrepository.com/artifact/io.rest-assured/xml-path -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>xml-path</artifactId>
-			<version>3.0.3</version>
+			<version>3.0.6</version>
 		</dependency>
 
 
