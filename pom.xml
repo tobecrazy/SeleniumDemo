@@ -14,6 +14,28 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<selenium.version>3.8.1</selenium.version>
+		<webmagic.version>0.7.3</webmagic.version>
+		<commonio.version>2.6</commonio.version>
+		<testng.version>6.13.1</testng.version>
+		<htmlunit.version>2.29</htmlunit.version>
+		<dom4j.version>2.1.0</dom4j.version>
+		<mysql.version>5.1.45</mysql.version>
+		<jsoup.version>1.11.2</jsoup.version>
+		<poi.version>3.17</poi.version>
+		<guice.version>4.1.0</guice.version>
+		<commonlang3.version>3.7</commonlang3.version>
+		<mail.version>1.4.7</mail.version>
+		<log4j.version>2.10.0</log4j.version>
+		<restassured.version>3.0.6</restassured.version>
+		<commoncsv.version>1.5</commoncsv.version>
+		<jacoco.version>0.8.0</jacoco.version>
+		<pdfbox.version>2.0.8</pdfbox.version>
+		<reportng.version>1.1.4</reportng.version>
+		<velocity.version>1.7</velocity.version>
+		<guava.version>23.0</guava.version>
+		<mail-api.version>1.6.0</mail-api.version>
+
 	</properties>
 
 	<developers>
@@ -27,13 +49,13 @@
 		<dependency>
 			<groupId>us.codecraft</groupId>
 			<artifactId>webmagic-core</artifactId>
-			<version>0.7.3</version>
+			<version>${webmagic.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/us.codecraft/webmagic-extension -->
 		<dependency>
 			<groupId>us.codecraft</groupId>
 			<artifactId>webmagic-extension</artifactId>
-			<version>0.7.3</version>
+			<version>${webmagic.version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.slf4j</groupId>
@@ -46,21 +68,21 @@
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.5</version>
+			<version>${commonio.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/net.sourceforge.htmlunit/htmlunit -->
 		<dependency>
 			<groupId>net.sourceforge.htmlunit</groupId>
 			<artifactId>htmlunit</artifactId>
-			<version>2.27</version>
+			<version>${htmlunit.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>6.11</version>
+			<version>${testng.version}</version>
 			<scope>compile</scope>
 		</dependency>
 
@@ -70,7 +92,7 @@
 		<dependency>
 			<groupId>org.dom4j</groupId>
 			<artifactId>dom4j</artifactId>
-			<version>2.0.1</version>
+			<version>${dom4j.version}</version>
 		</dependency>
 
 
@@ -78,76 +100,74 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.44</version>
+			<version>${mysql.version}</version>
 		</dependency>
-
-
 
 		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
 		<dependency>
 			<groupId>org.jsoup</groupId>
 			<artifactId>jsoup</artifactId>
-			<version>1.10.3</version>
+			<version>${jsoup.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>3.17</version>
+			<version>${poi.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
-			<version>4.1.0</version>
+			<version>${guice.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.5</version>
+			<version>${commonlang3.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>javax.mail-api</artifactId>
-			<version>1.5.6</version>
+			<version>${mail-api.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.8.2</version>
+			<version>${log4j.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
-			<version>2.8.2</version>
+			<version>${log4j.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.8.1</version>
+			<version>${selenium.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
-			<version>3.0.3</version>
+			<version>${restassured.version}</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
-			<version>3.0.6</version>
+			<version>${restassured.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -156,7 +176,7 @@
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>xml-path</artifactId>
-			<version>3.0.6</version>
+			<version>${restassured.version}</version>
 		</dependency>
 
 
@@ -164,53 +184,48 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>23.0</version>
+			<version>${guava.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity -->
 		<dependency>
 			<groupId>org.apache.velocity</groupId>
 			<artifactId>velocity</artifactId>
-			<version>1.7</version>
+			<version>${velocity.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
 		<dependency>
 			<groupId>org.uncommons</groupId>
 			<artifactId>reportng</artifactId>
-			<version>1.1.4</version>
+			<version>${reportng.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
 		<dependency>
 			<groupId>org.jacoco</groupId>
 			<artifactId>jacoco-maven-plugin</artifactId>
-			<version>0.7.9</version>
+			<version>${jacoco.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
 		<dependency>
 			<groupId>org.apache.pdfbox</groupId>
 			<artifactId>pdfbox</artifactId>
-			<version>2.0.7</version>
+			<version>${pdfbox.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
-			<version>1.4.7</version>
+			<version>${mail.version}</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
-		<dependency>
-			<groupId>com.sun.mail</groupId>
-			<artifactId>javax.mail</artifactId>
-			<version>1.5.6</version>
-		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-csv -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-csv</artifactId>
-			<version>1.5</version>
+			<version>${commoncsv.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -245,7 +260,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.7.9</version>
+				<version>${jacoco.version}</version>
 				<executions>
 					<execution>
 						<!-- 在maven的initialize阶段，将Jacoco的runtime agent作为VM的一个参数 传给被测程序，用于监控JVM中的调用。 -->
@@ -280,8 +295,8 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.20</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 					<argLine>${surefireArgLine}</argLine>
 					<suiteXmlFiles>
 						<suiteXmlFile>${basedir}/testng.xml</suiteXmlFile>
