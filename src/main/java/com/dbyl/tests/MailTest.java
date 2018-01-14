@@ -11,9 +11,24 @@ import javax.mail.internet.MimeMessage;
 
 import org.testng.annotations.Test;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MailTest.
+ */
 public class MailTest {
 
  
+	/**
+	 * Send mail.
+	 *
+	 * @param fromMail the from mail
+	 * @param user the user
+	 * @param password the password
+	 * @param toMail the to mail
+	 * @param mailTitle the mail title
+	 * @param mailContent the mail content
+	 * @throws Exception the exception
+	 */
 	public void sendMail(String fromMail, String user, String password, String toMail, String mailTitle,
 			String mailContent) throws Exception {
 		Properties props = new Properties(); // 可以加载一个配置文件
@@ -43,6 +58,11 @@ public class MailTest {
 		transport.close();
 	}
 
+	/**
+	 * Test send email.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Test(groups = "email")
 	public void TestSendEmail() throws Exception {
 		sendMail("13282774643@163.com", "13282774643", "password", "dbyl@dbyl.cn", "zhihu master", "Test email");

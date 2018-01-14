@@ -15,14 +15,25 @@ import org.testng.annotations.Test;
 
 import main.java.com.dbyl.libarary.utils.DriverFactory;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class JDaddress.
+ */
 public class JDaddress {
+	
+	/** The driver. */
 	private WebDriver driver;
 
+	/**
+	 * Test JD.
+	 *
+	 * @throws InterruptedException the interrupted exception
+	 */
 	@Test(groups = { "JDaddress" })
 	public void testJD() throws InterruptedException {
 		WindowsUtils.getProgramFilesPath();
 		driver =DriverFactory.getInstance().getChromeDriver();  // DriverFactory.getRemoteDriver(new RemoteBrowserBean("chrome"));
-		driver.get("https://item.jd.com/3335215.html");
+		driver.get("https://item.jd.com/4357281.html");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
@@ -45,6 +56,13 @@ public class JDaddress {
 
 	}
 
+	/**
+	 * Checks if is element present.
+	 *
+	 * @param driver the driver
+	 * @param xpath the xpath
+	 * @return true, if is element present
+	 */
 	public static boolean isElementPresent(WebDriver driver, final String xpath) {
 
 		boolean isPresent = false;
@@ -58,6 +76,9 @@ public class JDaddress {
 		return isPresent;
 	}
 
+	/**
+	 * Tear down.
+	 */
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		driver.quit();
