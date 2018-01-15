@@ -14,7 +14,7 @@ Use log4j
 
 如何使用：
 1. 安装maven配置环境变量
-2. git clone  https://github.com/tobecrazy/Demo.git 
+2. git clone  https://github.com/tobecrazy/SeleniumDemo.git
 3. mvn test
 也可以直接使用jenkins，触发mvn test
 
