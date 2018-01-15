@@ -41,7 +41,7 @@ public class DriverFactory {
 	static LogUtils log = new LogUtils(DriverFactory.class);
 	private String OSType = System.getProperty("os.name");
 	private String currentDir = System.getProperty("user.dir");
-	static WebDriver driver = null;
+	public WebDriver driver = null;
 	public static DriverFactory driverfactory;
 
 	// public static WebDriver getHtmlUnit() {
@@ -152,7 +152,6 @@ public class DriverFactory {
 		// profile.setPreference("browser.download.dir", "C:\\selenium");
 		profile.setPreference("browser.helperApps.neverAsk.saveToDisk",
 				"application/octet-stream, application/vnd.ms-excel, text/csv, application/zip,application/exe");
-		@SuppressWarnings("deprecation")
 		DesiredCapabilities caps = new FirefoxOptions().setProfile(profile).addTo(DesiredCapabilities.firefox());
 		driver = new FirefoxDriver(caps);
 

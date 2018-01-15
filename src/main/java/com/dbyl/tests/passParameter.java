@@ -1,45 +1,30 @@
 package main.java.com.dbyl.tests;
 
-import org.openqa.selenium.By;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 /**
  * This Test for verify Parameter annotation
+ * 
  * @author Young
  *
  */
 public class passParameter {
 
-	/**
-	 * This test before suite
-	 * @param suite
-	 */
-	@Parameters({"suite"})
-	@BeforeSuite
-	public void beforeSuite(String suite)
-	{
-		System.out.println("before suite is "+suite);
+	@DataProvider(name = "data1")
+	public Object[][] data() {
+		return new Object[][] { { "parameter1", new Integer(316) } };
+
 	}
-	
-	@Parameters({"suite"})
-	@BeforeClass
-	public void beforeClass(String suite)
-	{
-		System.out.println("before Class can use before suite's parameter is "+suite);
-	}
+
 	/**
 	 * 
 	 * @param parameter1
 	 * @param parameter2
 	 */
-	@Parameters({"parameter1","parameter2"})
-	@Test(groups="parameter")
-	public void parameter(String parameter1,int parameter2 )
-	{
-		By by=By.xpath("//p[.='"+parameter1+"']/ancestor::div[contains(@class,'si-button color-')][1]");
-		System.out.println("parameter1 is "+parameter1 );
-		System.out.println("parameter2 is "+parameter2 );
+	@Test(groups = "parameter", dataProvider = "data1")
+	public void parameter(String parameter1, int parameter2) {
+		System.out.println("parameter1 is " + parameter1);
+		System.out.println("parameter2 is " + parameter2);
 	}
 }
