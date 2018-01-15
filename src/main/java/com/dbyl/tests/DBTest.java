@@ -1,6 +1,5 @@
 package main.java.com.dbyl.tests;
 
-import java.io.UnsupportedEncodingException;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
