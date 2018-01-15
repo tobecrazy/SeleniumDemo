@@ -38,10 +38,10 @@ public class JDaddress {
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		// 打开
-		isElementPresent(driver, "//div[@id='store-selector']//div");
+		isElementPresent(driver, "//div[@id='store-selector' or @id='stock-address']//div");
 
 		Actions actions = new Actions(driver);
-		actions.clickAndHold(driver.findElement(By.xpath("//div[@id='store-selector']//div"))).perform();
+		actions.clickAndHold(driver.findElement(By.xpath("//div[@id='store-selector' or contains(@class,'address-select')]//div"))).perform();
 		// 选择
 		driver.findElement(By.xpath("//div[@id=\"JD-stock\"]/div[@class=\"mt\"]//li[1]/a")).click();
 		driver.findElement(By.linkText("上海")).click();
