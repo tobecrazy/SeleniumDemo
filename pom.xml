@@ -14,7 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<selenium.version>3.8.1</selenium.version>
+		<selenium.version>3.9.1</selenium.version>
 		<webmagic.version>0.7.3</webmagic.version>
 		<commonio.version>2.6</commonio.version>
 		<testng.version>6.13.1</testng.version>
