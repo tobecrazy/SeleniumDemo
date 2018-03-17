@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.dbyl</groupId>
 	<artifactId>framework</artifactId>
-	<version>1.12</version>
+	<version>1.3.0</version>
 	<packaging>jar</packaging>
 	<name>framework</name>
 	<description>This is web test framework base on Selenium webdriver</description>
@@ -14,7 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<selenium.version>3.9.1</selenium.version>
+		<selenium.version>3.11.0</selenium.version>
 		<webmagic.version>0.7.3</webmagic.version>
 		<commonio.version>2.6</commonio.version>
 		<testng.version>6.13.1</testng.version>
@@ -35,7 +35,8 @@
 		<velocity.version>1.7</velocity.version>
 		<guava.version>23.0</guava.version>
 		<mail-api.version>1.6.0</mail-api.version>
-
+		<findbugs.version>3.0.1</findbugs.version>
+		<mavencompiler.version>3.6.1</mavencompiler.version>
 	</properties>
 
 	<developers>
@@ -227,10 +228,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.1</version>
+				<version>${mavencompiler.version}</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 				</configuration>
 			</plugin>
 
@@ -239,7 +240,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>findbugs-maven-plugin</artifactId>
-				<version>3.0.1</version>
+				<version>${findbugs.version}</version>
 				<configuration>
 					<threshold>High</threshold>
 					<effort>Default</effort>

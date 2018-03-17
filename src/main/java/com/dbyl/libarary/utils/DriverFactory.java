@@ -17,6 +17,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.os.WindowsUtils;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -25,23 +26,48 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import main.java.com.dbyl.libarary.utils.Context.BrowserType;
 
-/***
- * @version 1.2
- * @author Young
+/**
+ * *.
  *
+ * @author Young
+ * @version V1.2
  */
 public class DriverFactory {
+	
+	/** The chromedriver. */
 	private String chromedriver;
+	
+	/** The fire bug. */
 	private String fireBug;
+	
+	/** The firefoxdriver. */
 	private String firefoxdriver;
+	
+	/** The p. */
 	private Properties p = null;
+	
+	/** The IE driver server. */
 	private String IEDriverServer;
+	
+	/** The EDGE driver. */
 	private String EDGEDriver;
+	
+	/** The config. */
 	private String config = System.getProperty("user.dir") + "/config.properties";
+	
+	/** The log. */
 	static LogUtils log = new LogUtils(DriverFactory.class);
+	
+	/** The OS type. */
 	private String OSType = System.getProperty("os.name");
+	
+	/** The current dir. */
 	private String currentDir = System.getProperty("user.dir");
+	
+	/** The driver. */
 	public WebDriver driver = null;
+	
+	/** The driverfactory. */
 	public static DriverFactory driverfactory;
 
 	// public static WebDriver getHtmlUnit() {
@@ -51,8 +77,10 @@ public class DriverFactory {
 	// }
 
 	/**
+	 * Gets the chrome driver.
+	 *
 	 * @author young
-	 * @return
+	 * @return the chrome driver
 	 */
 	public WebDriver getChromeDriver() {
 
@@ -81,7 +109,6 @@ public class DriverFactory {
 		// try {
 		// service.start();
 		// } catch (IOException e) {
-		// // TODO Auto-generated catch block
 		// e.printStackTrace();
 		// }
 		ChromeOptions options = new ChromeOptions();
@@ -95,10 +122,11 @@ public class DriverFactory {
 	}
 
 	/**
+	 * Gets the firefox driver.
+	 *
 	 * @author young
-	 * @return
+	 * @return the firefox driver
 	 */
-	@SuppressWarnings("deprecation")
 	public WebDriver getFirefoxDriver() {
 		try {
 			p = ConfigUtils.getProperties(config);
@@ -152,17 +180,19 @@ public class DriverFactory {
 		// profile.setPreference("browser.download.dir", "C:\\selenium");
 		profile.setPreference("browser.helperApps.neverAsk.saveToDisk",
 				"application/octet-stream, application/vnd.ms-excel, text/csv, application/zip,application/exe");
-		DesiredCapabilities caps = new FirefoxOptions().setProfile(profile).addTo(DesiredCapabilities.firefox());
-		driver = new FirefoxDriver(caps);
-
+		// Upgrade in Selenium 3.11.0
+		FirefoxOptions option = new FirefoxOptions().setProfile(profile);
+		driver = new FirefoxDriver(option);
 		log.info("Create FirefoxDriver ");
 		return driver;
 
 	}
 
 	/**
+	 * Gets the IE driver.
+	 *
 	 * @author young
-	 * @return
+	 * @return the IE driver
 	 */
 	@SuppressWarnings("deprecation")
 	public synchronized WebDriver getIEDriver() {
@@ -178,20 +208,20 @@ public class DriverFactory {
 		String PROXY = "http://proxy:8083";
 		org.openqa.selenium.Proxy proxy = new org.openqa.selenium.Proxy();
 		proxy.setHttpProxy(PROXY).setFtpProxy(PROXY).setSslProxy(PROXY);
-
-		DesiredCapabilities ds = DesiredCapabilities.internetExplorer();
-		ds.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-		ds.setCapability("ignoreProtectedModeSettings", true);
-		ds.setCapability(CapabilityType.PROXY, proxy);
-		driver = new InternetExplorerDriver(ds);
+		DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
+		caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+		caps.setCapability("ignoreProtectedModeSettings", true);
+		caps.setCapability(CapabilityType.PROXY, proxy);
+		InternetExplorerOptions option = new InternetExplorerOptions(caps);
+		driver = new InternetExplorerDriver(option);
 		return driver;
 	}
 
 	/**
-	 * This method will create RemoteWebdriver
-	 * 
+	 * This method will create RemoteWebdriver.
+	 *
 	 * @author Young
-	 * @param remoteBrowserBean
+	 * @param remoteBrowserBean the remote browser bean
 	 * @return WebDriver
 	 */
 	public WebDriver getRemoteDriver(RemoteBrowserBean remoteBrowserBean) {
@@ -218,10 +248,11 @@ public class DriverFactory {
 	}
 
 	/**
+	 * Gets the EDGE driver.
+	 *
 	 * @author young
-	 * @return
+	 * @return the EDGE driver
 	 */
-	@SuppressWarnings("deprecation")
 	public WebDriver getEDGEDriver() {
 		try {
 			p = ConfigUtils.getProperties(config);
@@ -235,18 +266,19 @@ public class DriverFactory {
 		String PROXY = "https://raw.githubusercontent.com/seveniruby/gfwlist2pac/master/test/proxy.pac";
 		Proxy proxy = new org.openqa.selenium.Proxy();
 		proxy.setHttpProxy(PROXY).setFtpProxy(PROXY).setSslProxy(PROXY);
-		DesiredCapabilities capabilities = DesiredCapabilities.edge();
-		EdgeOptions options = new EdgeOptions();
+		EdgeOptions options = new EdgeOptions().setProxy(proxy);
 		options.setPageLoadStrategy("normal");
-		capabilities.setCapability(EdgeOptions.CAPABILITY, options);
-		capabilities.setCapability(CapabilityType.PROXY, proxy);
-		driver = new EdgeDriver(capabilities);
+		
+	 
+		driver = new EdgeDriver(options);
 		return driver;
 	}
 
 	/**
+	 * Gets the single instance of DriverFactory.
+	 *
 	 * @author young
-	 * @return
+	 * @return single instance of DriverFactory
 	 */
 	public static DriverFactory getInstance() {
 		if (driverfactory == null) {
@@ -257,11 +289,16 @@ public class DriverFactory {
 		return driverfactory;
 	}
 
+	/**
+	 * Instantiates a new driver factory.
+	 */
 	public DriverFactory() {
 
 	}
 
 	/**
+	 * Close.
+	 *
 	 * @author young Call GC
 	 */
 	public static void close() {
@@ -270,15 +307,20 @@ public class DriverFactory {
 		}
 	}
 
+	/**
+	 * Gets the driver.
+	 *
+	 * @return the driver
+	 */
 	public WebDriver getDriver() {
 		return driver;
 	}
 
 	/**
-	 * This method will get BrowserType
-	 * 
+	 * This method will get BrowserType.
+	 *
 	 * @author young
-	 * @return
+	 * @return the browser type
 	 */
 	public BrowserType getBrowserType() {
 
