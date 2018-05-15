@@ -21,10 +21,10 @@ public class Day1 {
 		int index = lengthOfLongestSubstring(str);
 		System.out.println(">>>>>>>>>" + index);
 
-		int result = reverse(12345);
+		int result = reverse(1250);
 		System.out.println(">>>>>>>>>" + result);
 
-		String strReverse = reverse("-123");
+		String strReverse = reverse("-1230");
 		System.out.println(">>>>>>>>>" + strReverse);
 
 	}
