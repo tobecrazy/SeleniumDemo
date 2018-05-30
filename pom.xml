@@ -37,6 +37,7 @@
 		<mail-api.version>1.6.0</mail-api.version>
 		<findbugs.version>3.0.1</findbugs.version>
 		<mavencompiler.version>3.6.1</mavencompiler.version>
+		<jsoup.version>1.11.3</jsoup.version>
 	</properties>
 
 	<developers>
@@ -45,6 +46,14 @@
 		</developer>
 	</developers>
 	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>${jsoup.version}</version>
+		</dependency>
+
 		<!-- webmagic 爬虫 -->
 		<!-- https://mvnrepository.com/artifact/us.codecraft/webmagic-core -->
 		<dependency>
