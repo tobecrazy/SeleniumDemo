@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintStream;
 
 import org.jsoup.Jsoup;
@@ -18,8 +19,8 @@ public class HtmlUtils {
 	public void generateHtmlSummary() throws IOException {
 		File input = new File("logs/report.html");
 		Document doc = Jsoup.parse(input, "UTF-8");
-		System.out.println(doc.toString());
-		OutputStream htmlfile = new FileOutputStream(new File("logs/report.html"));
+		System.out.println(doc.html());
+		OutputStream htmlfile = new FileOutputStream(new File("logs/template.html"));
 		PrintStream printhtml = new PrintStream(htmlfile);
 		sb.append("<html>");
 		sb.append("<head>");
@@ -33,6 +34,11 @@ public class HtmlUtils {
 		sb.append("</html>");
 		printhtml.println(sb);
 		printhtml.close();
+
+		FileOutputStream fos = new FileOutputStream("logs/report.html", false);
+		OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8");
+		osw.write(doc.html());
+		osw.close();
 	}
 
 }
