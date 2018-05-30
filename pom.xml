@@ -14,11 +14,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<selenium.version>3.11.0</selenium.version>
+		<selenium.version>3.12.0</selenium.version>
 		<webmagic.version>0.7.3</webmagic.version>
 		<commonio.version>2.6</commonio.version>
-		<testng.version>6.13.1</testng.version>
-		<htmlunit.version>2.29</htmlunit.version>
+		<testng.version>6.14.3</testng.version>
+		<htmlunit.version>2.30</htmlunit.version>
 		<dom4j.version>2.1.0</dom4j.version>
 		<mysql.version>5.1.45</mysql.version>
 		<jsoup.version>1.11.2</jsoup.version>
@@ -27,7 +27,7 @@
 		<commonlang3.version>3.7</commonlang3.version>
 		<mail.version>1.4.7</mail.version>
 		<log4j.version>2.10.0</log4j.version>
-		<restassured.version>3.0.6</restassured.version>
+		<restassured.version>3.1.0</restassured.version>
 		<commoncsv.version>1.5</commoncsv.version>
 		<jacoco.version>0.8.0</jacoco.version>
 		<pdfbox.version>2.0.8</pdfbox.version>
@@ -37,6 +37,7 @@
 		<mail-api.version>1.6.0</mail-api.version>
 		<findbugs.version>3.0.1</findbugs.version>
 		<mavencompiler.version>3.6.1</mavencompiler.version>
+		<jsoup.version>1.11.3</jsoup.version>
 	</properties>
 
 	<developers>
@@ -45,6 +46,14 @@
 		</developer>
 	</developers>
 	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>${jsoup.version}</version>
+		</dependency>
+
 		<!-- webmagic 爬虫 -->
 		<!-- https://mvnrepository.com/artifact/us.codecraft/webmagic-core -->
 		<dependency>
@@ -78,17 +87,6 @@
 			<artifactId>htmlunit</artifactId>
 			<version>${htmlunit.version}</version>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>${testng.version}</version>
-			<scope>compile</scope>
-		</dependency>
-
-
-
 		<!-- https://mvnrepository.com/artifact/org.dom4j/dom4j -->
 		<dependency>
 			<groupId>org.dom4j</groupId>
@@ -193,6 +191,21 @@
 			<groupId>org.uncommons</groupId>
 			<artifactId>reportng</artifactId>
 			<version>${reportng.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.testng</groupId>
+					<artifactId>testng</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
