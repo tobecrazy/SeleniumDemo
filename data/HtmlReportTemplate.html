@@ -7689,21 +7689,24 @@ body.skin-3 {
         "description": "测试DEMO1",
         "spendTime": "12ms",
         "status": "PASS",
-        "exception": "null"
+        "exception": "null",
+        "log":"Log Test  12dwfrferfgergergrt"
     },{
         "caseId": "Test345",
         "testName": "testDemo2",
         "description": "测试DEMO2",
         "spendTime": "15ms",
         "status": "FAIL",
-        "exception": "bbbbb"
+        "exception": "bbbbb",
+        "log":"Log sssdsdfrfrfrgtrjutkikliolol.kumyjnytbrtgrtgfrf5"
     },{
         "caseId": "Test769",
         "testName": "testDemo",
         "description": "测试DEMO",
         "spendTime": "11ms",
         "status": "SKIP",
-        "exception": "aaaaa"
+        "exception": "aaaaa",
+        "log":"Log Test tttttyyhyuuuykuikuiksdsdigf]'ekfefkpoegk[pegke[gwttttfrferfgergergrt"
     }
     ],
     "total":3,
@@ -7717,13 +7720,61 @@ body.skin-3 {
       var bar_title="Test Summary BarChart";
       var totalNumberOfCases=Number(dataSource["failed"])+Number(dataSource["skip"])+Number(dataSource["pass"]);
 	  console.log( "total number of Cases"+ totalNumberOfCases);
-	  
-	  $("#total").text(totalNumberOfCases);
-	  $("#pass").text(dataSource["pass"]);
-	  $("#fail").text( dataSource["failed"]);
-	  $("#skip").text( dataSource["skip"]);
-	  $("#startTime").text(dataSource["startTime"]);
-	  $("#during").text(dataSource["totalTime"]);
+
+	  $(function () {
+	  	$("#total").text(totalNumberOfCases);
+	  	$("#pass").text(dataSource["pass"]);
+	  	$("#fail").text( dataSource["failed"]);
+	  	$("#skip").text( dataSource["skip"]);
+	  	$("#startTime").text(dataSource["startTime"]);
+	 	$("#during").text(dataSource["totalTime"]);
+
+        var testNames = [];
+        var results = [];
+        $.each(dataSource["testResult"], function (i, n) {
+        	console.log(testNames.indexOf(n["testName"]));
+            if (testNames.indexOf(n["testName"]) == -1) {
+                testNames.push(n["testName"]);
+            }
+            console.log(results.indexOf(n["status"]));
+            if (results.indexOf(n["status"]) == -1) {
+                results.push(n["status"]);
+            }
+        });
+
+
+        $.each(testNames, function (i, n) {
+        	console.log("filter class--->>>>> "+n);
+            $("#filterClass").append("<option value='" + n + "' hassubinfo='true'>" + n + "</option>");
+        });
+        $.each(results, function (i, n) {
+        	console.log("filter Result------>>>>>  "+n);
+            $("#filterResult").append("<option value='" + n + "' hassubinfo='true'>" + n + "</option>");
+        });
+
+        $("#filterClass").chosen({search_contains: true});
+        $("#filterResult").chosen({search_contains: true});
+
+  		generateResult("", "");
+
+        $("#filterClass").on('change', function () {
+            var className = $("#filterClass").val();
+            console.log("filterClass  <<<<<"+className);
+            var caseResult = $("#filterResult").val();
+            console.log("filterResult <<<<<<<<"+ caseResult);
+            generateResult(className, caseResult);
+          
+        });
+
+        $("#filterResult").on('change', function () {
+            var className = $("#filterClass").val();
+            console.log("filterClass <<<<-------"+className);
+            var caseResult = $("#filterResult").val();
+            console.log("filterResult <<<<<==== "+ caseResult);
+            generateResult(className, caseResult);
+        });
+
+	  });
 	  
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
@@ -7762,14 +7813,14 @@ body.skin-3 {
       }
 
 
-        function generateResult(className, caseResult) {
+     	function generateResult(className, caseResult) {
             $("#detailBody").children().remove();
             var filterAll = 0;
             var filterPass = 0;
             var filterFail = 0;
             var filterSkip = 0;
             $.each(dataSource["testResult"], function (i, n) {
-                if ((className == "" || n["className"] == className) && (caseResult == "" || n["status"] == caseResult)) {
+                if ((className == "" || n["testName"] == className) && (caseResult == "" || n["status"] == caseResult)) {
                     filterAll += 1;
                     var status = "";
                     if (n["status"] == 'PASS') {
@@ -7800,24 +7851,23 @@ body.skin-3 {
             $("#filterSkip").text(filterSkip);
         }
 
-        generateResult("", "");
 
-        
+
+
+
     function details(obj) {
-        if ($(obj).text() == '展开') {
+        if ($(obj).text() == 'Expand') {
             var len = $(obj).parent().parent().children().length;
             var detailLog = "";
-            var logs = resultData["testResult"][parseInt($(obj).attr("buttonIndex"))]["log"];
-            $(obj).text("收缩");
+            var logs = dataSource["testResult"][parseInt($(obj).attr("buttonIndex"))]["log"];
+            $(obj).text("Collapse");
             $(obj).removeClass("btn-primary");
             $(obj).addClass("btn-danger");
-            $.each(logs, function (i, n) {
-                detailLog = detailLog + "<p>" + n + "</p>";
-            });
+            detailLog =   "<p>" + logs + "</p>";
             $(obj).parent().parent().after("<tr><td colspan='" + len + "'><div style='font-family: Consolas;font-size:12px'>" + detailLog + "</div></td></tr>");
-        } else if ($(obj).text() == '收缩') {
+        } else if ($(obj).text() == 'Collapse') {
             $(obj).parent().parent().next().remove();
-            $(obj).text("展开");
+            $(obj).text("Expand");
             $(obj).removeClass("btn-danger");
             $(obj).addClass("btn-primary");
         }
