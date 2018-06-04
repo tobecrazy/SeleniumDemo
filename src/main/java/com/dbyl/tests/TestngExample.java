@@ -8,9 +8,10 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import main.java.com.dbyl.libarary.utils.ReadExcelUtil;
+import main.java.com.dbyl.libarary.listeners.ImplTestNGListener;
 
 /**
  * This is to verify testng annotation execute
@@ -18,17 +19,12 @@ import main.java.com.dbyl.libarary.utils.ReadExcelUtil;
  * @author Young
  *
  */
+@Listeners(ImplTestNGListener.class)
 public class TestngExample {
 	private int a;
 
 	@BeforeSuite(alwaysRun = true)
 	public void beforeSuite() throws Exception {
-		String[][] array = ReadExcelUtil.getLocatorMap();
-		for (String[] temp : array) {
-			for (String str : temp) {
-				System.out.println(str);
-			}
-		}
 		System.out.println("This Before Suite Method, will run one time");
 	}
 
@@ -45,13 +41,15 @@ public class TestngExample {
 		System.out.println("This is beforeClass method .The Value of a is: " + a);
 	}
 
-	@Test(enabled = false,groups = { "TestngExample", "The Test Group 1" }, priority = 3)
+	@Test(enabled = true, groups = { "TestngExample", "The Test Group 1" }, priority = 3)
 	public void testExample1() {
 		a = 3;
 		System.out.println("This is Test  method1 .The Value of a is: " + a);
 		Assert.fail();
 	}
 
+	
+	
 	@Test(groups = { "TestngExample", "The Test Group 2" }, priority = 2)
 	public void testExample2() {
 		a = 4;
@@ -61,7 +59,7 @@ public class TestngExample {
 	@Test(enabled = true, threadPoolSize = 5, invocationCount = 10)
 	public void parallelTest() throws InterruptedException {
 		System.out.println("Current Thread Id: " + Thread.currentThread().getId());
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 	}
 
 	/**

@@ -13,7 +13,7 @@ import main.java.com.dbyl.libarary.utils.DriverFactory;
 import main.java.com.dbyl.libarary.utils.RemoteBrowserBean;
 import main.java.com.dbyl.libarary.utils.UITest;
 
-//@Listeners({ TestNGListener.class })
+@Listeners({ TestNGListener.class })
 public class LoginTest extends UITest {
 	WebDriver driver;
 	@BeforeClass(alwaysRun=true)

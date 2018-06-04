@@ -152,4 +152,6 @@ public class TestResult {
 	public String getLog() {
 		return log;
 	}
+
+	
 }
