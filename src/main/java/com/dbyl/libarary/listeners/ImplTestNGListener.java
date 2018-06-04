@@ -34,11 +34,12 @@ public class ImplTestNGListener implements IExecutionListener, ITestListener, II
 	int skipNumber = 0;
 	List<TestResult> testResults = new ArrayList<TestResult>();
 	TestResultsBean resultBean = new TestResultsBean();
+	Date start = new Date();
 
 	@Override
 	public void onExecutionStart() {
 		log.info("================On Execute Start======================");
-		Date start = new Date();
+
 		startTime = System.currentTimeMillis();
 		log.info("================" + sf.format(start) + " ======================");
 
@@ -61,6 +62,8 @@ public class ImplTestNGListener implements IExecutionListener, ITestListener, II
 		resultBean.setFailed(failedNumber);
 		resultBean.setSkip(skipNumber);
 		resultBean.setTestResult(testResults);
+		resultBean.setStartTime(start);
+		resultBean.setTotal(failedNumber + failedNumber + skipNumber);
 		HtmlUtils html = new HtmlUtils();
 		try {
 			html.generateHtmlSummary(resultBean);
@@ -80,6 +83,13 @@ public class ImplTestNGListener implements IExecutionListener, ITestListener, II
 	public void onTestSuccess(ITestResult result) {
 		log.info("================On Test Success======================");
 		passNumber += 1;
+		TestResult testResult = new TestResult();
+		testResult.setCaseId(result.getTestClass().getTestName());
+		testResult.setDescription(result.getMethod().getDescription());
+		testResult.setStatus("PASS");
+		testResult.setTestName(result.getName());
+		testResult.setLog("XXXXXXX");
+		testResults.add(testResult);
 
 	}
 
@@ -90,8 +100,9 @@ public class ImplTestNGListener implements IExecutionListener, ITestListener, II
 		TestResult testResult = new TestResult();
 		testResult.setCaseId(result.getMethod().getId());
 		testResult.setDescription(result.getMethod().getDescription());
-		testResult.setStatus("PASS");
+		testResult.setStatus("FAIL");
 		testResult.setTestName(result.getName());
+		testResult.setException(result.getThrowable().getCause().getMessage());
 		testResult.setLog("XXXXXXX");
 		testResults.add(testResult);
 
@@ -101,6 +112,13 @@ public class ImplTestNGListener implements IExecutionListener, ITestListener, II
 	public void onTestSkipped(ITestResult result) {
 		log.info("================On test skip======================");
 		skipNumber += 1;
+		TestResult testResult = new TestResult();
+		testResult.setCaseId(result.getMethod().getId());
+		testResult.setDescription(result.getMethod().getDescription());
+		testResult.setStatus("SKIP");
+		testResult.setTestName(result.getName());
+		testResult.setLog("XXXXXXX");
+		testResults.add(testResult);
 
 	}
 
