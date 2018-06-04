@@ -1,5 +1,7 @@
 package main.java.com.dbyl.algorithm.day2;
 
+import java.util.ArrayList;
+
 import org.testng.annotations.Test;
 
 /**
@@ -28,7 +30,7 @@ public class Day2 {
 		ListNode next;
 
 		ListNode(int x) {
-			val = x;
+			this.val = x;
 		}
 
 		public void display() {
@@ -41,43 +43,18 @@ public class Day2 {
 
 	}
 
-	@SuppressWarnings("null")
+	public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+		
+		return null;
+	}
+
 	@Test
 	public void TestAddNumber() {
-		ListNode head = null;
-		ListNode node = null;
-		int values[] = new int[] { 1, 3, 5, 7, 2, 5, 3, 1, 6, 9, 2 };
-		for (int value : values) {
-
-			ListNode newNode = new ListNode(value);
-			if (head == null) {
-				node = newNode;
-				head = newNode;
-
-			} else {
-				node.next = newNode;
-				node = newNode;
-			}
-
+		for(int i=0;i<1;i++)
+		{
+			ListNode n=new ListNode(i);
+			n.next=new ListNode(i+1);
 		}
-		while (head != null) {
-			node=head.next;
-			head.display();
-			head=node;
-			
-		}
-
-		ListNode l1_head = new ListNode(2);
-		ListNode l1_node1 = new ListNode(4);
-		ListNode l1_node2 = new ListNode(3);
-		l1_head.next = l1_node1;
-		l1_node1.next = l1_node2;
-
-		ListNode l2_head = new ListNode(5);
-		ListNode l2_node1 = new ListNode(6);
-		ListNode l2_node2 = new ListNode(4);
-		l2_head.next = l2_node1;
-		l2_node1.next = l2_node2;
 
 	}
 

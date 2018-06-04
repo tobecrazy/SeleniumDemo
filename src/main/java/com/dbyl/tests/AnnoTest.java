@@ -2,16 +2,20 @@ package main.java.com.dbyl.tests;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
-
+import main.java.com.dbyl.libarary.listeners.TestNGListener;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 import main.java.com.dbyl.libarary.utils.AnnotationDemo;
 
+@Listeners({ TestNGListener.class })
 public class AnnoTest {
 	/**
 	 * @author young
 	 * @param args
 	 * @throws ClassNotFoundException
 	 */
-	public static void main(String[] args) throws ClassNotFoundException {
+	@Test
+	public void annoTestDemo(String[] args) throws ClassNotFoundException {
 		Class<?> clazz = Class.forName(AnnotationUsage.class.getName());
 		Annotation[] annos = clazz.getAnnotations();
 		for (Annotation anno : annos) {

@@ -27,6 +27,10 @@ import main.java.com.dbyl.libarary.utils.LogUtils;
  * @author Young
  *
  */
+/**
+ * @author young
+ *
+ */
 public class TestNGListener extends TestListenerAdapter {
 	SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	LogUtils log = new LogUtils(this.getClass());
@@ -50,12 +54,17 @@ public class TestNGListener extends TestListenerAdapter {
 		takeScreenShot(tr);
 	}
 
+	/**
+	 * @author young
+	 * @param tr
+	 */
 	private void takeScreenShot(ITestResult tr) {
 
 		WebDriver currentDirver = DriverFactory.getInstance().getDriver();
-		log.info(currentDirver.getTitle() + "\n");
-
-		takeScreenShot();
+		if (null != currentDirver) {
+			log.info(currentDirver.getTitle() + "\n");
+			takeScreenShot();
+		}
 
 	}
 
@@ -188,6 +197,5 @@ public class TestNGListener extends TestListenerAdapter {
 			log.info("screen shot finished");
 		}
 	}
-	
-	
+
 }
