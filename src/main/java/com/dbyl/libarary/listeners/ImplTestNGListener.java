@@ -35,6 +35,8 @@ public class ImplTestNGListener implements IExecutionListener, ITestListener, II
 	List<TestResult> testResults = new ArrayList<TestResult>();
 	TestResultsBean resultBean = new TestResultsBean();
 	Date start = new Date();
+	Long methodStartTime;
+	Long methodEndTime;
 
 	@Override
 	public void onExecutionStart() {
@@ -162,14 +164,17 @@ public class ImplTestNGListener implements IExecutionListener, ITestListener, II
 		Date date1 = context.getStartDate();
 		log.info("================" + sf.format(date1) + " ======================");
 		log.info("================On **** Start======================");
+		methodStartTime = System.currentTimeMillis();
 
 	}
 
 	@Override
 	public void onFinish(ITestContext context) {
-		Date date2 = context.getStartDate();
+		Date date2 = context.getEndDate();
 		log.info("================" + sf.format(date2) + " ======================");
 		log.info("================On ***Finish ======================");
+		methodEndTime = System.currentTimeMillis();
+		log.error("@@@@@@@@@@ " + String.valueOf(methodEndTime - methodStartTime));
 
 	}
 
