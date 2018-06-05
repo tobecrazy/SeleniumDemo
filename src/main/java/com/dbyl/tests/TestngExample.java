@@ -41,16 +41,15 @@ public class TestngExample {
 		System.out.println("This is beforeClass method .The Value of a is: " + a);
 	}
 
-	@Test(enabled = true, groups = { "TestngExample", "The Test Group 1" }, priority = 3)
+	@Test(enabled = true, groups = { "TestngExample",
+			"The Test Group 1" }, priority = 3, description = "This is Example for failed")
 	public void testExample1() {
 		a = 3;
 		System.out.println("This is Test  method1 .The Value of a is: " + a);
-		Assert.fail();
+		Assert.assertTrue(a == 1);
 	}
 
-	
-	
-	@Test(groups = { "TestngExample", "The Test Group 2" }, priority = 2)
+	@Test(groups = { "TestngExample", "The Test Group 2" }, description = "This is Example for PASS", priority = 2)
 	public void testExample2() {
 		a = 4;
 		System.out.println("This is Test  method2 .The Value of a is: " + a);
