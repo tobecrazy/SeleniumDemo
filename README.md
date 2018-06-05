@@ -31,6 +31,9 @@ Use log4j
 并将原有方法重新使用python封装一遍。
 喜欢使用python的朋友也可以参考。
 目录为：PythonSelnium 
+2018/6/4
+优化HTML Report
+![Alt text](https://github.com/tobecrazy/SeleniumDemo/blob/master/Report.gif  "HTML Report") 
 将会添加爬虫相关内容。持续更新！！！！
 
 Roadmap
