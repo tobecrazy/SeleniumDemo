@@ -52,6 +52,7 @@ public class TestngExample {
 	@Test(groups = { "TestngExample", "The Test Group 2" }, description = "This is Example for PASS", priority = 2)
 	public void testExample2() {
 		a = 4;
+		Assert.assertEquals(a/0, 0);
 		System.out.println("This is Test  method2 .The Value of a is: " + a);
 	}
 

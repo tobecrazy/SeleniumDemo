@@ -46,44 +46,7 @@ public class HtmlUtils {
 
 		Gson gson = new GsonBuilder().disableHtmlEscaping().create();
 		String data = gson.toJson(resultBean);
-		// String data = "{" +
-		// " \"pass\": 1," +
-		// " \"failed\": 1," +
-		// " \"skip\": 1," +
-		// " \"testResult\": [{" +
-		// " \"caseId\": \"Test123\"," +
-		// " \"testName\": \"testDemo1\"," +
-		// " \"description\": \"测试DEMO1\"," +
-		// " \"spendTime\": \"12ms\"," +
-		// " \"status\": \"PASS\"," +
-		// " \"exception\": \"null\"," +
-		// " \"log\": \"Log Test 12dwfrferfgergergrt\"" +
-		// " }, {" +
-		// " \"caseId\": \"Test345\"," +
-		// " \"testName\": \"testDemo2\"," +
-		// " \"description\": \"测试DEMO2\"," +
-		// " \"spendTime\": \"15ms\"," +
-		// " \"status\": \"FAIL\"," +
-		// " \"exception\": \"bbbbb\"," +
-		// " \"log\": \"Log sssdsdfrfrfrgtrjutkikliolol.kumyjnytbrtgrtgfrf5\"" +
-		// " }, {" +
-		// " \"caseId\": \"Test769\"," +
-		// " \"testName\": \"testDemo\"," +
-		// " \"description\": \"测试DEMO\"," +
-		// " \"spendTime\": \"11ms\"," +
-		// " \"status\": \"SKIP\"," +
-		// " \"exception\": \"aaaaa\"," +
-		// " \"log\": \"Log Test
-		// tttttyyhyuuuykuikuiksdsdigf]'ekfefkpoegk[pegke[gwttttfrferfgergergrt\"" +
-		// " }]," +
-		// " \"total\": 3," +
-		// " \"startTime\": \"2018-06-09 13:27:44.917\"," +
-		// " \"totalTime\": \"38ms\"" +
-		// "}";
-
-		System.out.println(data);
 		String html = sb.toString().replaceFirst("\\$\\{resultsJson\\}", data);
-		System.out.println(html);
 
 		FileWriter fileWritter = new FileWriter(new File("logs/template.html"), false);
 		BufferedWriter bufferWritter = new BufferedWriter(fileWritter);

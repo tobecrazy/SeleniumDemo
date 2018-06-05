@@ -84,11 +84,22 @@ public class ImplTestNGListener implements IExecutionListener, ITestListener, II
 		log.info("================On Test Success======================");
 		passNumber += 1;
 		TestResult testResult = new TestResult();
-		testResult.setCaseId(result.getTestClass().getTestName());
+		testResult.setCaseId(result.getName());
 		testResult.setDescription(result.getMethod().getDescription());
 		testResult.setStatus("PASS");
-		testResult.setTestName(result.getName());
-		testResult.setLog("XXXXXXX");
+		testResult.setTestName(result.getInstanceName());
+		StringBuffer sb = new StringBuffer();
+		try {
+			StackTraceElement[] ste = result.getThrowable().getStackTrace();
+			for (StackTraceElement st : ste) {
+				log.warn(st.toString());
+				sb.append(st.toString());
+				sb.append("<br>");
+			}
+		} catch (Exception e) {
+			sb.append("<br>");
+		}
+
 		testResults.add(testResult);
 
 	}
@@ -98,12 +109,24 @@ public class ImplTestNGListener implements IExecutionListener, ITestListener, II
 		log.info("================On Test failure======================");
 		failedNumber += 1;
 		TestResult testResult = new TestResult();
-		testResult.setCaseId(result.getMethod().getId());
+		testResult.setCaseId(result.getName());
 		testResult.setDescription(result.getMethod().getDescription());
 		testResult.setStatus("FAIL");
-		testResult.setTestName(result.getName());
-		testResult.setException(result.getThrowable().getCause().getMessage());
-		testResult.setLog("XXXXXXX");
+		testResult.setTestName(result.getInstanceName());
+		log.info("###################################################################");
+		// result.getThrowable().printStackTrace();
+		StringBuffer sb = new StringBuffer();
+		StackTraceElement[] ste = result.getThrowable().getStackTrace();
+		for (StackTraceElement st : ste) {
+			log.warn(st.toString());
+			sb.append(st.toString());
+			sb.append("<br>");
+		}
+		testResult.setLog(sb.toString());
+		log.warn(result.getThrowable().getMessage());
+		log.info("###################################################################");
+		log.info("=====>" + result.getInstanceName() + " ***** " + result.getName());
+		testResult.setException(result.getThrowable().getMessage());
 		testResults.add(testResult);
 
 	}
@@ -113,11 +136,18 @@ public class ImplTestNGListener implements IExecutionListener, ITestListener, II
 		log.info("================On test skip======================");
 		skipNumber += 1;
 		TestResult testResult = new TestResult();
-		testResult.setCaseId(result.getMethod().getId());
+		testResult.setCaseId(result.getName());
 		testResult.setDescription(result.getMethod().getDescription());
 		testResult.setStatus("SKIP");
-		testResult.setTestName(result.getName());
-		testResult.setLog("XXXXXXX");
+		testResult.setTestName(result.getInstanceName());
+		StringBuffer sb = new StringBuffer();
+		StackTraceElement[] ste = result.getThrowable().getStackTrace();
+		for (StackTraceElement st : ste) {
+			log.warn(st.toString());
+			sb.append(st.toString());
+			sb.append("<br>");
+		}
+		testResult.setLog(sb.toString());
 		testResults.add(testResult);
 
 	}
