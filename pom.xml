@@ -20,7 +20,7 @@
 		<testng.version>6.14.3</testng.version>
 		<htmlunit.version>2.30</htmlunit.version>
 		<dom4j.version>2.1.0</dom4j.version>
-		<mysql.version>5.1.45</mysql.version>
+		<mysql.version>8.0.11</mysql.version>
 		<jsoup.version>1.11.2</jsoup.version>
 		<poi.version>3.17</poi.version>
 		<guice.version>4.1.0</guice.version>
@@ -38,6 +38,7 @@
 		<findbugs.version>3.0.1</findbugs.version>
 		<mavencompiler.version>3.6.1</mavencompiler.version>
 		<jsoup.version>1.11.3</jsoup.version>
+		<hibernate.version>5.3.1.Final</hibernate.version>
 	</properties>
 
 	<developers>
@@ -47,6 +48,12 @@
 	</developers>
 	<dependencies>
 
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-agroal</artifactId>
+			<version>${hibernate.version}</version>
+			<type>pom</type>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
 		<dependency>
 			<groupId>org.jsoup</groupId>
