@@ -1,5 +1,6 @@
 package main.java.com.dbyl.tests;
 
+import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,18 +11,16 @@ import java.text.SimpleDateFormat;
 
 import org.testng.annotations.Test;
 
-import com.mysql.jdbc.Connection;
-
 import main.java.com.dbyl.libarary.utils.DatabaseUtils;
 
 public class DBTest {
 
 	@Test(groups = { "bdbTest" })
 	public void dbTest() throws ClassNotFoundException, SQLException {
-		Connection conn = (new DatabaseUtils.Builder().setHost("WWW.WP.COM").setDbName("study").setUser("study")
-				.setPassword("123456").builder()).getConection();
+		Connection conn = (new DatabaseUtils.Builder().setHost("localhost").setDbName("Mobile").setUser("root")
+				.setPassword("2018#tnPW@Mobile").builder()).getConection();
 		Statement state = conn.createStatement();
-		ResultSet result = state.executeQuery("select * from luohe");
+		ResultSet result = state.executeQuery("select * from EMPLOYEE");
 		while (result.next()) {
 			System.out.println(unicodeToChinese(result.getString(2)));
 		}
@@ -33,15 +32,16 @@ public class DBTest {
 			e2.printStackTrace();
 		}
 		Date date = new Date(System.currentTimeMillis());
-		PreparedStatement ps = conn.prepareStatement("INSERT into luohe(name,price,cdate) values (?, ?, ?)");
+		PreparedStatement ps = conn
+				.prepareStatement("INSERT into EMPLOYEE(id,first_name,last_name,salary) values ( null,?, ?,?)");
 
-		for (int n = 0; n < 1; n++) {
-			String name = "中文测试Test";
+		for (int n = 0; n < 20; n++) {
+			String name = "中"+n;
 			name = chineseToUnicode(name);
+//			ps.setInt(1, n);
 			ps.setString(1, name);
-			ps.setFloat(2, 123.1f);
-
-			ps.setDate(3, date);
+			ps.setString(2, name);
+			ps.setInt(3, n * n * n * n);
 			ps.addBatch();
 		}
 		ps.executeBatch();

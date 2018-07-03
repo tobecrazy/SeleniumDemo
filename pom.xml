@@ -4,13 +4,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.dbyl</groupId>
 	<artifactId>framework</artifactId>
-	<version>1.3.0</version>
+	<version>1.4.0</version>
 	<packaging>jar</packaging>
 	<name>framework</name>
 	<description>This is web test framework base on Selenium webdriver</description>
 	<url>http://www.cnblogs.com/tobecrazy/</url>
-
 	<properties>
+		<downloadSources>true</downloadSources>
+		<downloadJavadocs>true</downloadJavadocs>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
@@ -20,7 +21,7 @@
 		<testng.version>6.14.3</testng.version>
 		<htmlunit.version>2.30</htmlunit.version>
 		<dom4j.version>2.1.0</dom4j.version>
-		<mysql.version>5.1.45</mysql.version>
+		<mysql.version>8.0.11</mysql.version>
 		<jsoup.version>1.11.2</jsoup.version>
 		<poi.version>3.17</poi.version>
 		<guice.version>4.1.0</guice.version>
@@ -38,6 +39,9 @@
 		<findbugs.version>3.0.1</findbugs.version>
 		<mavencompiler.version>3.6.1</mavencompiler.version>
 		<jsoup.version>1.11.3</jsoup.version>
+		<hibernate.version>5.3.1.Final</hibernate.version>
+		<allure.version>2.6.0</allure.version>
+		<aspectj.version>1.9.1</aspectj.version>
 	</properties>
 
 	<developers>
@@ -46,7 +50,14 @@
 		</developer>
 	</developers>
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>${allure.version}</version>
+		</dependency>
 
+	
 		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
 		<dependency>
 			<groupId>org.jsoup</groupId>
@@ -304,7 +315,9 @@
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
-					<argLine>${surefireArgLine}</argLine>
+					<argLine>
+						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+					</argLine><!-- ${surefireArgLine} -->
 					<suiteXmlFiles>
 						<suiteXmlFile>${basedir}/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
@@ -318,6 +331,13 @@
 					</properties>
 					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjweaver</artifactId>
+						<version>${aspectj.version}</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 		<finalName>framework</finalName>
