@@ -13,5 +13,5 @@ services:
     networks:
     - default
     volumes:
-     - ./export:/opt/tomcat8/webapps/
+     - ./export:/opt/tomcat8/webapps/ROOT
     mem_limit: 2G
