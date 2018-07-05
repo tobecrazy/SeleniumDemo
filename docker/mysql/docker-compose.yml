@@ -1,0 +1,16 @@
+version: '2.1'
+services:
+  db:
+    image: mysql:8.0.11
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=mysql
+      - MYSQL_USER=study
+      - MYSQL_PASSWORD=3edc4rfv
+    volumes:
+      - ./config/docker/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+    ports:
+      - 3306:3306
+    healthcheck:
+      test: "/etc/init.d/mysql status"
+      interval: 1s

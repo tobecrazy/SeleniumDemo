@@ -1,0 +1,220 @@
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>selenium处理基本页面元素及元素定位</title>
+<style type="text/css">
+    table{font-size:26;text-align:center;width:80%;border-collapse:collapse;margin:auto}    
+    table th{background: #aff}
+    .display{color:red}
+    .widgetStyle{text-align:left;padding-left:100px}    
+</style>
+     <script language= "javascript" type="text/javascript">
+            function clickbutton(flag)
+            {
+                if (flag == 1) alert("测试alert对话框");
+                if (flag == 2) 
+        {
+            var name=prompt("测试prompt对话框","");
+                  if (name!=null && name!="")
+                    {
+                        //document.write(name);
+                    alert(name);
+                    }    
+        }
+                if (flag == 3)
+        {
+                var r=confirm('测试confirm对话框', '测试confirm对话框?',"测试结果：")
+                  if (r==true)
+                    {
+                        //document.write("You pressed OK!")
+                    alert("You pressed OK!");
+                    }
+                  else
+                    {
+                        //document.write("You pressed Cancel!")
+
+                    alert("You pressed Cancel!");
+                    }
+        }
+        if (flag == 4)
+             
+            alert(document.getElementById("edit").value);
+            
+
+                }
+
+        function upperCase()
+        {
+            var x=document.getElementById("edit").value
+            document.getElementById("edit").value=x.toUpperCase()
+        }
+
+ 
+        function getOptions()
+          {
+              var x=document.getElementById("Selector");
+              var y=x.options[x.selectedIndex].text
+              // document.write(y);
+              alert(y);
+          }
+        </script>
+    </head>
+    
+    <body>
+        <center>
+    </br>
+    <div>
+    <p>
+     
+    <div class="text" style="font-size:36;text-align:center"><b>seleniun处理基本元素</b></div>
+    </p>
+        <hr>
+        </div>
+    <p>
+        <table cellpadding="10" cellspacing="0" border="2">
+        <thead>
+            <tr>
+                <th width=20% class="widgetleft">测试内容</th>
+                <th width=80% class="widgetStyle">页面基本元素</th>                
+            </tr>
+        </thead>
+            
+        
+            <tr>
+                <td>文件上传</td>
+                <td><input type="file" name="attach[]"  /></td>
+            </tr>
+            
+            <tr>
+                <td>alter对话框</td>
+                <td> 
+                    <input type="button" name="alterbutton" value="测试alter对话框"  onclick = "clickbutton(1);" />
+                </td>
+            </tr>
+            
+            <tr>
+                <td>prompt对话框</td>
+                <td> 
+                    <input type="button" name="promptbutton" value="测试prompt对话框"  onclick = "clickbutton(2);" />
+                </td>
+            </tr>
+            
+            <tr>
+                <td>confirm对话框</td>
+                <td> 
+                    <input type="button" name="confirmbutton" value="测试confirm对话框"  onclick = "clickbutton(3);" />
+                </td>
+            </tr>
+            <tr>
+                <td>select菜单</td>
+                <td> 
+                <form>
+                <select id="Selector"  multiple="multiple" size="3" >
+                    <option value="apple" index="1" >苹果</option>
+                    <option value="peach"  index="2" >桃子</option>
+                    <option value="banana" index="3" >香蕉</option>
+                    <option value="orange"  index="4">桔子</option>
+                    <option value="grape"  index="5">葡萄</option>
+                    <option value="mango"  index="6">芒果</option>
+                    <option value="watermelon"  index="7">西瓜</option>
+                 </select>
+                 </form>
+            <br />
+            <br />
+            <input type="button" id="showSelectResult" name="showSelectResult" onclick="getOptions()" value="选择结果">
+                </td>
+            </tr>
+
+          <tr>
+                <td>文本框</td>
+                <td> 
+                    <input type="text" name="edit" id="edit" value=""  onblur="upperCase()"/>
+            <input type="button" name="submit" value="submit"  onclick = "clickbutton(4);"/>
+                </td>
+            </tr>
+
+      <tr>
+        <td>RadioBox</td>
+        <td class="widgetStyle">
+        <label>
+        Which is your favourite company? 
+        </label>
+        <div id='radio'  >
+        <input type='radio' name="company" class='Baidu'/>
+            <span class="pip"></span>
+            <label>百度</label>
+        </br>
+        <input type='radio' name="company" class='AliBaBa'/>
+            <span class="pip"></span>
+            <label>阿里巴巴</label></br>
+        <input type='radio' name="company" class='Tencent' checked/>
+            <span class="pip"></span>
+            <label>腾讯</label></br>
+        <input type='radio' name="company" class='Mi' disabled="true"/>
+            <span class="pip"></span>
+            <label>小米</label>
+         </td>                        
+         </tr>
+
+    <tr>
+         <td>CheckBox</td>
+        <td class="widgetStyle">
+        <label>
+        In which way do you know about Selenium
+        <label>
+        <div id='checkbox'>
+        <input type="checkbox" name="checkbox1" id="web"/><label>网络</label></br>
+        <input type="checkbox" name="checkbox2" id="training"/><label>培训</label></br>
+        <input type="checkbox" name="checkbox3" id="friend"/><label>朋友介绍</label></br>
+        <input type="checkbox" name="checkbox4" id="other" /><label>其他方式</label> 
+        </div>
+        </td>                        
+    </tr>
+    <tr>
+    <td>
+        iframe
+    </td>
+    <td>
+      <iframe src="http://www.baidu.com" width="100%" height="100%">
+       iframe Test
+</iframe> 
+    </td>
+    </tr>
+    <tr>
+    <td>Select Links</td>
+    <td>
+    <div class="links">
+               <select name="jumpMenu" id="jumpMenu" onchange="window.open(this.value)">
+                <option selected="selected">市县教育局</option>
+                <option value="http://www.zzjy.gov.cn/" >郑州市教育局</option>
+                <option value="http://www.kfedu.com.cn/" >开封教育网</option>
+                <option value="http://www.lyenet.org/" >洛阳市教育局</option>
+                <option value="http://www.pdsedu.gov.cn/" >平顶山教育网</option>
+                <option value="http://www.anyangedu.com/" >安阳教育信息网</option>
+                <option value="http://www.hnhbedu.net/" >鹤壁教育信息网</option>
+                <option value="http://www.xxjy.gov.cn/" >新乡市教育局</option>
+                <option value="http://www.jzedu.cn/" >焦作市教育局</option>
+                <option value="http://www.xcsjyw.com/" >许昌教育网</option>
+                <option value="http://www.lhjy.net/" >漯河教育网</option>
+                <option value="http://www.smxjy.cn/" >三门峡教育信息港</option>
+                <option value="http://www.sqedu.gov.cn/" >商丘市教育局</option>
+                <option value="http://www.zkedu.gov.cn/" >周口市教育局</option>
+                <option value="http://www.zmdedu.net/" >驻马店教育局 </option>
+                <option value="http://www.nyedu.net/" >南阳教育局</option>
+                <option value="http://www.xinyangedu.gov.cn/" >信阳市教育局</option>
+                <option value="http://www.jyedu.org/" >济源教育网</option>
+              </select>
+    </div>
+    </td>
+    </tr>
+            </table>
+       </p>
+    <p>
+        <label for="edit">转载请注明出处</label>
+        </br>
+        <a href="http://www.cnblogs.com/tobecrazy/" >Copyright 2016 to be crazy </a>
+    </p>
+    
+        </center>
+    </body>
+</html>
