@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
+org.testng.eclipse.maven.additionalClasspath=false
 org.testng.eclipse.maven.argline=false
 org.testng.eclipse.maven.environ=true
+org.testng.eclipse.maven.properties=true
 org.testng.eclipse.maven.sysproperties=true
 userprojectsettings=true

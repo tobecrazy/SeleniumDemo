@@ -57,7 +57,7 @@
 			<version>${allure.version}</version>
 		</dependency>
 
-	
+
 		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
 		<dependency>
 			<groupId>org.jsoup</groupId>
@@ -211,13 +211,13 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+ 	<!-- https://mvnrepository.com/artifact/org.testng/testng  -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>${testng.version}</version>
 			<scope>compile</scope>
-		</dependency>
+		</dependency> 
 
 		<!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
 		<dependency>

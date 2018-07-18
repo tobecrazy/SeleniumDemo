@@ -11,6 +11,8 @@
 		</groups>
 
 		<classes>
+		
+			<class name="main.java.com.dbyl.tests.EventTest" />
 			<class name="main.java.com.dbyl.tests.TestngExample" />
 			<class name="main.java.com.dbyl.tests.BuilderTest" />
 			<class name="main.java.com.dbyl.tests.passParameter"/>
