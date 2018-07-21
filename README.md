@@ -35,6 +35,9 @@ Use log4j
 优化HTML Report
 ![Alt text](https://github.com/tobecrazy/SeleniumDemo/blob/master/Report.gif  "HTML Report") 
 将会添加爬虫相关内容。持续更新！！！！
+2018/07/21
+推荐使用selenium docker， 可以直接使用docker image 构建Grid。
+配置的VNC端口5901 for chrome, 5902 for firefox.
 
 Roadmap
 1. 使用Builder设计模式(Done)

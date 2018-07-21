@@ -1,4 +1,4 @@
-FROM tobecrazy/ubuntu-young:latest
+FROM latest
 MAINTAINER Young <dbyl@dbyl.cn>
 
 # Configure the main working directory

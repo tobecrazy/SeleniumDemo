@@ -5,15 +5,15 @@
 		<parameter name="driverName" value="chrome" />
 		<groups>
 			<run>
-				<include name="TestngExample" />
-				<exclude name="The Test Group 2" />
+			<!-- 	<include name="TestngExample" />
+				<exclude name="The Test Group 2" /> -->
 			</run>
 		</groups>
-
 		<classes>
-			<class name="main.java.com.dbyl.tests.TestngExample" />
+			<class name="main.java.com.dbyl.tests.EventTest" />
+		<!-- 	<class name="main.java.com.dbyl.tests.TestngExample" />
 			<class name="main.java.com.dbyl.tests.BuilderTest" />
-			<class name="main.java.com.dbyl.tests.passParameter"/>
+			<class name="main.java.com.dbyl.tests.passParameter"/> -->
 			<!-- <class name="main.java.com.dbyl.tests.DBTest" /> <class name="main.java.com.dbyl.tests.Login.LoginTest" 
 				/> -->
 		</classes>
