@@ -8,14 +8,18 @@ services:
     ports:
       - "4444:4444"
   chrome:
-    image: selenium/node-chrome:latest
+    image: selenium/node-chrome-debug:latest
+    ports:
+      - "5901:5900"
     depends_on:
       - selenium-hub
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
   firefox:
-    image: selenium/node-firefox:latest
+    image: selenium/node-firefox-debug:latest
+    ports:
+      - "5902:5900"
     depends_on:
       - selenium-hub
     environment:
