@@ -3,19 +3,19 @@
 version: "3"
 services:
   selenium-hub:
-    image: selenium/hub:3.13.0-argon
+    image: selenium/hub:latest
     container_name: selenium-hub
     ports:
       - "4444:4444"
   chrome:
-    image: selenium/node-chrome:3.13.0-argon
+    image: selenium/node-chrome:latest
     depends_on:
       - selenium-hub
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
   firefox:
-    image: selenium/node-firefox:3.13.0-argon
+    image: selenium/node-firefox:latest
     depends_on:
       - selenium-hub
     environment:

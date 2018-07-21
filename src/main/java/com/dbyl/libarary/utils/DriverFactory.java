@@ -33,40 +33,40 @@ import main.java.com.dbyl.libarary.utils.Context.BrowserType;
  * @version V1.2
  */
 public class DriverFactory {
-	
+
 	/** The chromedriver. */
 	private String chromedriver;
-	
+
 	/** The fire bug. */
 	private String fireBug;
-	
+
 	/** The firefoxdriver. */
 	private String firefoxdriver;
-	
+
 	/** The p. */
 	private Properties p = null;
-	
+
 	/** The IE driver server. */
 	private String IEDriverServer;
-	
+
 	/** The EDGE driver. */
 	private String EDGEDriver;
-	
+
 	/** The config. */
 	private String config = System.getProperty("user.dir") + "/config.properties";
-	
+
 	/** The log. */
 	static LogUtils log = new LogUtils(DriverFactory.class);
-	
+
 	/** The OS type. */
 	private String OSType = System.getProperty("os.name");
-	
+
 	/** The current dir. */
 	private String currentDir = System.getProperty("user.dir");
-	
+
 	/** The driver. */
 	public WebDriver driver = null;
-	
+
 	/** The driverfactory. */
 	public static DriverFactory driverfactory;
 
@@ -221,7 +221,8 @@ public class DriverFactory {
 	 * This method will create RemoteWebdriver.
 	 *
 	 * @author Young
-	 * @param remoteBrowserBean the remote browser bean
+	 * @param remoteBrowserBean
+	 *            the remote browser bean
 	 * @return WebDriver
 	 */
 	public WebDriver getRemoteDriver(RemoteBrowserBean remoteBrowserBean) {
@@ -236,6 +237,8 @@ public class DriverFactory {
 
 		capability.setBrowserName(remoteBrowserBean.getBrowserName());
 		capability.setVersion(remoteBrowserBean.getVersion());
+		capability.setJavascriptEnabled(true);
+		capability.setAcceptInsecureCerts(true);
 		capability.setCapability(remoteBrowserBean.getPlatform()[0], remoteBrowserBean.getPlatform()[1]);
 
 		try {
@@ -268,8 +271,7 @@ public class DriverFactory {
 		proxy.setHttpProxy(PROXY).setFtpProxy(PROXY).setSslProxy(PROXY);
 		EdgeOptions options = new EdgeOptions().setProxy(proxy);
 		options.setPageLoadStrategy("normal");
-		
-	 
+
 		driver = new EdgeDriver(options);
 		return driver;
 	}

@@ -5,6 +5,7 @@ package main.java.com.dbyl.libarary.utils;
 
 /**
  * for remote browser bean
+ * 
  * @author Young
  *
  */
@@ -13,24 +14,23 @@ public class RemoteBrowserBean {
 	private String version;
 	private String[] platform;
 	private String hubURL;
+
 	public String getBrowserName() {
 		return browserName;
 	}
-	
-	public RemoteBrowserBean()
-	{
-		this.browserName="firefox";
-		this.version="61.0.1";
-		this.platform=new String[]{"VISTA", "windows 7"};
-		this.hubURL="http://localhost:4444/wd/hub";
-		
+
+	public RemoteBrowserBean() {
+		this.browserName = "firefox";
+		this.version = "61.0.1";
+		this.platform = new String[] { "platform", "ANY" };
+		this.hubURL = "http://localhost:4444/wd/hub";
+
 	}
-	
-	public RemoteBrowserBean(String browser)
-	{
-		this.browserName=browser;
-		this.version="42";
-		this.platform=new String[]{"VISTA", "windows 7"};
+
+	public RemoteBrowserBean(String browser) {
+		this.browserName = browser;
+		this.version = "61.0.1";
+		this.platform = new String[] { "platform", "LINUX" };
 		this.hubURL= "http://localhost:4444/wd/hub" ;
 		
 	}
@@ -38,7 +38,7 @@ public class RemoteBrowserBean {
 	public RemoteBrowserBean(String browser, String hubURL) {
 		this.browserName=browser;
 		this.version="42";
-		this.platform=new String[]{"VISTA", "windows 7"};
+		this.platform=new String[]{"platform", "ANY"};
 		this.hubURL=hubURL;
 	}
 
