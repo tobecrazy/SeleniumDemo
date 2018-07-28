@@ -9,9 +9,9 @@ services:
     image: tobecrazy/ubuntu-young:latest
     container_name: ubuntu
     ports:
-      - "8080:8080"
+     - "8080:8080"
     networks:
-    - default
+     - default
     volumes:
      - ./export:/opt/tomcat8/webapps/ROOT
     mem_limit: 2G
