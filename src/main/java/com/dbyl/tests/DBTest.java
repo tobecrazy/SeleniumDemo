@@ -17,8 +17,8 @@ public class DBTest {
 
 	@Test(groups = { "bdbTest" })
 	public void dbTest() throws ClassNotFoundException, SQLException {
-		Connection conn = (new DatabaseUtils.Builder().setHost("localhost").setDbName("Mobile").setUser("study")
-				.setPassword("3edc4rfv").builder()).getConection();
+		Connection conn = (new DatabaseUtils.Builder().setHost("localhost").setDbName("Selenium").setUser("study")
+				.setPassword("5tgb3edc1qaz").builder()).getConection();
 		Statement state = conn.createStatement();
 		ResultSet result = state.executeQuery("select * from EMPLOYEE");
 		while (result.next()) {
