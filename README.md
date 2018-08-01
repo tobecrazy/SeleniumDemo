@@ -1,6 +1,6 @@
 # SeleniumDemo
 Selenium automation test framework
-
+[![Build Status](https://www.travis-ci.org/tobecrazy/SeleniumDemo.svg?branch=master)](https://www.travis-ci.org/tobecrazy/SeleniumDemo)
 最近有打算用python重写一下，感兴趣的朋友可以fork
 首先需要安装python，之后安装selenium lib
 pip install -U selenium

@@ -37,6 +37,7 @@ public class RemoteSelenium {
 		driver.get("http://www.baidu.com");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//input[@id='kw']")).sendKeys("selenium tobecrazy");
 		driver.findElement(By.id("su")).submit();
 		takeScreenShot((TakesScreenshot) driver, "123.png");
