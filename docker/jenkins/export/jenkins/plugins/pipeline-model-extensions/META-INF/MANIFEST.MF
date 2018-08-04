@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: abayer
+Build-Jdk: 1.8.0_144
+Extension-Name: pipeline-model-extensions
+Specification-Title: APIs for extension points used in Declarative Pip
+ elines
+Implementation-Title: pipeline-model-extensions
+Implementation-Version: 1.2.7
+Group-Id: org.jenkinsci.plugins
+Short-Name: pipeline-model-extensions
+Long-Name: Pipeline: Declarative Extension Points API
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Model+Defini
+ tion+Plugin
+Compatible-Since-Version: 1.2-beta-4
+Plugin-Version: 1.2.7
+Hudson-Version: 2.7.3
+Jenkins-Version: 2.7.3
+Plugin-Dependencies: workflow-cps:2.41,workflow-job:2.11,pipeline-mode
+ l-api:1.2.7
+Plugin-Developers: Andrew Bayer:abayer:
+Support-Dynamic-Loading: true
+

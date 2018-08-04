@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: svanoort
+Build-Jdk: 1.8.0_151
+Extension-Name: workflow-basic-steps
+Specification-Title: The Jenkins Plugins Parent POM Project
+Implementation-Title: workflow-basic-steps
+Implementation-Version: 2.8
+Group-Id: org.jenkins-ci.plugins.workflow
+Short-Name: workflow-basic-steps
+Long-Name: Pipeline: Basic Steps
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Basic+Steps+
+ Plugin
+Plugin-Version: 2.8
+Hudson-Version: 2.7.3
+Jenkins-Version: 2.7.3
+Plugin-Dependencies: workflow-api:2.16,workflow-step-api:2.13,mailer:1
+ .18,structs:1.6
+Plugin-Developers: 
+

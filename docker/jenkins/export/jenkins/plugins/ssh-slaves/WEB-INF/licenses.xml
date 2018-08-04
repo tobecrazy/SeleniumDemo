@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l:dependencies xmlns:l='licenses' groupId='org.jenkins-ci.plugins' artifactId='ssh-slaves' version='1.26'><l:dependency name='Jenkins SSH Slaves plugin' groupId='org.jenkins-ci.plugins' artifactId='ssh-slaves' version='1.26' url='https://wiki.jenkins-ci.org/display/JENKINS/SSH+Slaves+plugin'><l:description>Allows to launch agents over SSH, using a Java implementation of the SSH protocol</l:description><l:license name='MIT License' url='https://opensource.org/licenses/MIT'/></l:dependency></l:dependencies>

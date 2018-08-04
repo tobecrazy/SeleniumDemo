@@ -1,0 +1,18 @@
+version: "2"
+networks:
+
+  default:
+    driver: bridge
+    
+services:
+  jenkins:
+    image: jenkins:latest
+    container_name: jenkins
+    ports:
+     - "8888:8080"
+     - "50000:50000"
+    networks:
+     - default
+    volumes:
+     - ./export/jenkins:/var/jenkins_home
+    mem_limit: 2G

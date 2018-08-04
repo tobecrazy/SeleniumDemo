@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l:dependencies xmlns:l='licenses' groupId='org.jenkins-ci.plugins' artifactId='ant' version='1.8'><l:dependency name='Ant Plugin' groupId='org.jenkins-ci.plugins' artifactId='ant' version='1.8' url='https://wiki.jenkins-ci.org/display/JENKINS/Ant+Plugin'><l:description>Adds Apache Ant support to Jenkins</l:description><l:license name='The MIT license' url='https://opensource.org/licenses/MIT'/></l:dependency></l:dependencies>

@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: danielbeck
+Build-Jdk: 1.8.0_121
+Extension-Name: resource-disposer
+Specification-Title: Dispose resources asynchronously. Utility plugin 
+ for resources that require more retries or take a long time to delete.
+Implementation-Title: resource-disposer
+Implementation-Version: 0.12
+Group-Id: org.jenkins-ci.plugins
+Short-Name: resource-disposer
+Long-Name: Resource Disposer Plugin
+Url: http://wiki.jenkins-ci.org/display/JENKINS/Resource+Disposer+Plugin
+Plugin-Version: 0.12
+Hudson-Version: 1.565
+Jenkins-Version: 1.565
+Plugin-Developers: Oliver Gondža:olivergondza:ogondza@gmail.com
+

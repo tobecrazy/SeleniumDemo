@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l:dependencies xmlns:l='licenses' groupId='org.jenkins-ci.plugins' artifactId='build-timeout' version='1.19'><l:dependency name='Build Timeout' groupId='org.jenkins-ci.plugins' artifactId='build-timeout' version='1.19' url='http://wiki.jenkins-ci.org/display/JENKINS/Build-timeout+Plugin'><l:description>Aborts a build if it's taking too long</l:description><l:license name='The MIT License (MIT)' url='http://opensource.org/licenses/MIT'/></l:dependency></l:dependencies>

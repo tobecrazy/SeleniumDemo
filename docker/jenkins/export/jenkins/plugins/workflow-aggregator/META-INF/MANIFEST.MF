@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: jglick
+Build-Jdk: 1.8.0_112
+Extension-Name: workflow-aggregator
+Specification-Title: A suite of plugins that lets you orchestrate auto
+ mation, simple or complex. See http://jenkins-ci.org/solutions/pipeli
+ ne/ for more details
+Implementation-Title: workflow-aggregator
+Implementation-Version: 2.5
+Group-Id: org.jenkins-ci.plugins.workflow
+Short-Name: workflow-aggregator
+Long-Name: Pipeline
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Plugin
+Plugin-Version: 2.5
+Hudson-Version: 2.7.3
+Jenkins-Version: 2.7.3
+Plugin-Dependencies: pipeline-input-step:2.5,workflow-job:2.9,workflow
+ -basic-steps:2.3,workflow-durable-task-step:2.8,workflow-api:2.8,work
+ flow-cps:2.24,workflow-support:2.12,workflow-cps-global-lib:2.5,workf
+ low-multibranch:2.9.2,pipeline-stage-view:2.4,workflow-scm-step:2.3,w
+ orkflow-step-api:2.7,pipeline-model-definition:1.0,pipeline-stage-ste
+ p:2.2,pipeline-build-step:2.4,pipeline-milestone-step:1.3
+Plugin-Developers: 
+Support-Dynamic-Loading: true
+

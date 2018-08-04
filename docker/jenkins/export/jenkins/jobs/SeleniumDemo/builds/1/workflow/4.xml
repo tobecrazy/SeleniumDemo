@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Tag plugin="workflow-support@2.18">
+  <node class="cps.n.StepStartNode" plugin="workflow-cps@2.45">
+    <parentIds>
+      <string>3</string>
+    </parentIds>
+    <id>4</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.support.steps.ExecutorStep</descriptorId>
+  </node>
+  <actions>
+    <wf.a.BodyInvocationAction plugin="workflow-api@2.27"/>
+    <wf.a.TimingAction plugin="workflow-api@2.27">
+      <startTime>1533392506366</startTime>
+    </wf.a.TimingAction>
+    <wf.a.TimingAction plugin="workflow-api@2.27">
+      <startTime>1533392506407</startTime>
+    </wf.a.TimingAction>
+  </actions>
+</Tag>

@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: recena
+Build-Jdk: 1.8.0_40
+Extension-Name: pam-auth
+Specification-Title: Adds Unix Pluggable Authentication Module (PAM) s
+ upport to Jenkins
+Implementation-Title: pam-auth
+Implementation-Version: 1.3
+Group-Id: org.jenkins-ci.plugins
+Short-Name: pam-auth
+Long-Name: PAM Authentication plugin
+Url: http://wiki.jenkins-ci.org/display/JENKINS/PAM+Authentication+Plu
+ gin
+Plugin-Version: 1.3
+Hudson-Version: 1.566
+Jenkins-Version: 1.566
+Plugin-Developers: 
+

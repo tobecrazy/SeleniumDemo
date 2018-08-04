@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: slide
+Build-Jdk: 1.7.0_80
+Extension-Name: emailext-template
+Specification-Title: The Jenkins Plugins Parent POM Project
+Implementation-Title: emailext-template
+Implementation-Version: 1.0
+Group-Id: org.jenkinsci.plugins
+Short-Name: emailext-template
+Long-Name: Email Extension Template Plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Email-ext+Template+Pl
+ ugin
+Plugin-Version: 1.0
+Hudson-Version: 1.609.2
+Jenkins-Version: 1.609.2
+Plugin-Dependencies: email-ext:2.43,configurationslicing:1.45;resoluti
+ on:=optional
+Plugin-Developers: 
+
