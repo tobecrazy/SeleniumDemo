@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.12.2">
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.2">
+      <projectUrl>https://github.com/tobecrazy/SeleniumDemo.git/</projectUrl>
+      <displayName></displayName>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition plugin="git-parameter@0.9.3">
+          <name>$branch</name>
+          <description></description>
+          <uuid>753464bd-7161-4165-8815-90edce8dc30b</uuid>
+          <type>PT_BRANCH</type>
+          <branch></branch>
+          <tagFilter>*</tagFilter>
+          <branchFilter>.*</branchFilter>
+          <sortMode>NONE</sortMode>
+          <defaultValue></defaultValue>
+          <selectedValue>NONE</selectedValue>
+          <quickFilterEnabled>false</quickFilterEnabled>
+          <listSize>5</listSize>
+        </net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      <triggers/>
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.45">
+    <script>node {
+   def mvnHome
+   stage(&apos;Preparation&apos;) { // for display purposes
+      // Get some code from a GitHub repository
+      git &apos;https://github.com/jglick/simple-maven-project-with-tests.git&apos;
+      // Get the Maven tool.
+      // ** NOTE: This &apos;M3&apos; Maven tool must be configured
+      // **       in the global configuration.           
+      mvnHome = tool &apos;M3&apos;
+   }
+   stage(&apos;Build&apos;) {
+      // Run the maven build
+      if (isUnix()) {
+         sh &quot;&apos;${mvnHome}/bin/mvn&apos; -Dmaven.test.failure.ignore clean package&quot;
+      } else {
+         bat(/&quot;${mvnHome}\bin\mvn&quot; -Dmaven.test.failure.ignore clean package/)
+      }
+   }
+   stage(&apos;Results&apos;) {
+      junit &apos;**/target/surefire-reports/TEST-*.xml&apos;
+      archive &apos;target/*.jar&apos;
+   }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

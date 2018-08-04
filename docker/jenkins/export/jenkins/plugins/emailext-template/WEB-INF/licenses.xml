@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l:dependencies xmlns:l='licenses' groupId='org.jenkinsci.plugins' artifactId='emailext-template' version='1.0'><l:dependency name='Email Extension Template Plugin' groupId='org.jenkinsci.plugins' artifactId='emailext-template' version='1.0' url='https://wiki.jenkins-ci.org/display/JENKINS/Email-ext+Template+Plugin'><l:description>The Jenkins Plugins Parent POM Project</l:description></l:dependency></l:dependencies>

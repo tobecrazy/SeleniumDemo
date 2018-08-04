@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: jglick
+Build-Jdk: 1.8.0_131
+Extension-Name: workflow-multibranch
+Specification-Title: Enhances Pipeline plugin to handle branches bette
+ r by automatically grouping builds from different branches
+Implementation-Title: workflow-multibranch
+Implementation-Version: 2.16
+Group-Id: org.jenkins-ci.plugins.workflow
+Short-Name: workflow-multibranch
+Long-Name: Pipeline: Multibranch
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Multibranch+
+ Plugin
+Plugin-Version: 2.16
+Hudson-Version: 1.642.3
+Jenkins-Version: 1.642.3
+Plugin-Dependencies: workflow-api:2.15,workflow-cps:2.32,workflow-job:
+ 2.10,workflow-scm-step:2.4,workflow-step-api:2.10,workflow-support:2.
+ 14,branch-api:2.0.7,cloudbees-folder:5.18,scm-api:2.0.7,script-securi
+ ty:1.26,structs:1.7
+Plugin-Developers: 
+

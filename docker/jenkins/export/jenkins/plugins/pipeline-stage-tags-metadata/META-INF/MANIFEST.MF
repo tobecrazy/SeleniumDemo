@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: abayer
+Build-Jdk: 1.8.0_144
+Extension-Name: pipeline-stage-tags-metadata
+Specification-Title: Library plugin for Pipeline stage tag metadata
+Implementation-Title: pipeline-stage-tags-metadata
+Implementation-Version: 1.2.7
+Group-Id: org.jenkinsci.plugins
+Short-Name: pipeline-stage-tags-metadata
+Long-Name: Pipeline: Stage Tags Metadata
+Url: https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Model+Defini
+ tion+Plugin
+Plugin-Version: 1.2.7
+Hudson-Version: 2.7.3
+Jenkins-Version: 2.7.3
+Plugin-Developers: Andrew Bayer:abayer:
+

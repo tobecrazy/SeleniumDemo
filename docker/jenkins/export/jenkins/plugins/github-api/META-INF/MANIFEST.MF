@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: integer
+Build-Jdk: 1.8.0_112
+Extension-Name: github-api
+Specification-Title: The Jenkins Plugins Parent POM Project
+Implementation-Title: github-api
+Implementation-Version: 1.92
+Group-Id: org.jenkins-ci.plugins
+Short-Name: github-api
+Long-Name: GitHub API Plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/GitHub+API+Plugin
+Plugin-Version: 1.92
+Hudson-Version: 1.615
+Jenkins-Version: 1.615
+Plugin-Dependencies: jackson2-api:2.7.3
+Plugin-Developers: 
+Support-Dynamic-Loading: true
+
