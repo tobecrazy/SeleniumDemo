@@ -3,3 +3,9 @@ language: java
 jdk:
   - oraclejdk8
 script: mvn test
+notifications:
+  email:
+    recipients:
+      - dbyl@dbyl.cn
+    on_success: always 
+    on_failure: always
