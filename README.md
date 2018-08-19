@@ -1,6 +1,7 @@
 # SeleniumDemo
 Selenium automation test framework
-[![Build Status](https://www.travis-ci.org/tobecrazy/SeleniumDemo.svg?branch=master)](https://www.travis-ci.org/tobecrazy/SeleniumDemo)
+[![Build Status](https://www.travis-ci.org/tobecrazy/SeleniumDemo.svg?branch=master)](https://www.travis-ci.org/tobecrazy/SeleniumDemo) 
+
 最近有打算用python重写一下，感兴趣的朋友可以fork
 首先需要安装python，之后安装selenium lib
 pip install -U selenium
@@ -24,6 +25,9 @@ Use log4j
 使用单例模式实现初始化唯一driver对象
 已废弃Ant
 引入Spring
+
+2018/8/19
+引入docker，使用Selenium docker
 
 2017/6/21
 添加python版selenium Demo
