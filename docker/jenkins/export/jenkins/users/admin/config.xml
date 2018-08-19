@@ -4,7 +4,7 @@
   <description></description>
   <properties>
     <jenkins.security.ApiTokenProperty>
-      <apiToken>{AQAAABAAAAAwFasxc6rBMuURKUfpRkNNGR4Uga40dw7OP0Hs8gntcDh5/9VJEsOaiB1Jfg0ASsu1oQjPLAgGi+2D015EAE0mew==}</apiToken>
+      <apiToken>{AQAAABAAAAAwp6pbTHbDpMPZaNnwSjr9WF4hjRAMs03BC3hcgaUX3rz39I1W+OdvPNGMJYqFInehB1eCEjgyzUFwnLGmD7yqLQ==}</apiToken>
     </jenkins.security.ApiTokenProperty>
     <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.21">
       <emailAddress></emailAddress>
@@ -13,7 +13,7 @@
       <roles>
         <string>authenticated</string>
       </roles>
-      <timestamp>1533391785068</timestamp>
+      <timestamp>1534638952489</timestamp>
     </jenkins.security.LastGrantedAuthoritiesProperty>
     <hudson.model.MyViewsProperty>
       <primaryViewName></primaryViewName>
@@ -34,7 +34,7 @@
       <collapsed/>
     </hudson.model.PaneStatusProperties>
     <hudson.security.HudsonPrivateSecurityRealm_-Details>
-      <passwordHash>#jbcrypt:$2a$10$mEFxOOnvbq6GReex4n/jQeh.7bv6UNRUfFmMnubj.g2B78c1djLJ2</passwordHash>
+      <passwordHash>#jbcrypt:$2a$10$uwKoJ5nWsxS7PrKcmvqcr.MlK1HAQZawZtsnMvhOl1i28u7oWGlgO</passwordHash>
     </hudson.security.HudsonPrivateSecurityRealm_-Details>
     <org.jenkinsci.main.modules.cli.auth.ssh.UserPropertyImpl>
       <authorizedKeys></authorizedKeys>
