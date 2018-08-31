@@ -5,13 +5,14 @@ networks:
     driver: bridge
     
 services:
-  ubuntu:
-    image: tobecrazy/ubuntu-young:latest
-    container_name: ubuntu
+  app:
+    build: .
+    #image: tobecrazy/ubuntu-young:latest
+    container_name: tomcat
     ports:
      - "8080:8080"
     networks:
      - default
     volumes:
-     - ./export:/opt/tomcat8/webapps/
+     - ./export/ROOT:/opt/tomcat8/webapps/ROOT
     mem_limit: 2G
