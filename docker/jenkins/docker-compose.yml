@@ -6,7 +6,7 @@ networks:
     
 services:
   jenkins:
-    image: jenkins:latest
+    image: tobecrazy/jenkins:latest
     container_name: jenkins
     ports:
      - "8888:8080"
