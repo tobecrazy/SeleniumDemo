@@ -1,6 +1,6 @@
 FROM jenkins/jenkins:latest
-# if we want to install via apt
+MAINTAINER Young <dbyl@dbyl.cn>
 USER root
 RUN apt-get update && apt-get install -y maven
-# drop back to the regular jenkins user - good practice
+RUN apt-get install -y vim
 USER jenkins

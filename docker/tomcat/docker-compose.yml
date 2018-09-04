@@ -6,13 +6,12 @@ networks:
     
 services:
   app:
-    build: .
-    #image: tobecrazy/ubuntu-young:latest
+    image: tobecrazy/ubuntu-young:latest
     container_name: tomcat
     ports:
-     - "8080:8080"
+     - "8000:8080"
     networks:
      - default
     volumes:
-     - ./export/ROOT:/opt/tomcat8/webapps/ROOT
+     - ./export/ROOT:/usr/local/tomcat/webapps/ROOT
     mem_limit: 2G
