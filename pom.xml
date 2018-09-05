@@ -15,11 +15,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<selenium.version>3.13.0</selenium.version>
+		<selenium.version>3.14.0</selenium.version>
 		<webmagic.version>0.7.3</webmagic.version>
 		<commonio.version>2.6</commonio.version>
 		<testng.version>6.14.3</testng.version>
-		<htmlunit.version>2.30</htmlunit.version>
+		<htmlunit.version>2.32</htmlunit.version>
 		<dom4j.version>2.1.0</dom4j.version>
 		<mysql.version>8.0.11</mysql.version>
 		<poi.version>3.17</poi.version>
@@ -27,7 +27,7 @@
 		<commonlang3.version>3.7</commonlang3.version>
 		<mail.version>1.4.7</mail.version>
 		<log4j.version>2.10.0</log4j.version>
-		<restassured.version>3.1.0</restassured.version>
+		<restassured.version>3.1.1</restassured.version>
 		<commoncsv.version>1.5</commoncsv.version>
 		<jacoco.version>0.8.2</jacoco.version>
 		<pdfbox.version>2.0.8</pdfbox.version>
