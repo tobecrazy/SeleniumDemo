@@ -1,0 +1,8 @@
+version: '2.1'
+services:
+  sonar:
+    image: sonarqube:latest
+    container_name: sonar
+    ports:
+      - 9000:9000
+      - 9092:9092
