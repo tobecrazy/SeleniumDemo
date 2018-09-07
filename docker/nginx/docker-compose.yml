@@ -3,15 +3,34 @@ networks:
 
   default:
     driver: bridge
-    
 services:
-  ubuntu:
+  tomcat1:
     image: tobecrazy/ubuntu-young:latest
-    container_name: ubuntu
+    container_name: tomcat1
     ports:
-      - "8080:8080"
+     - "8001:8080"
     networks:
-    - default
+     - default
     volumes:
-     - ./export:/opt/tomcat8/webapps/ROOT
+     - ./export/ROOT:/usr/local/tomcat/webapps/ROOT
     mem_limit: 2G
+  tomcat2:
+    image: tobecrazy/ubuntu-young:latest
+    container_name: tomcat2
+    ports:
+     - "8002:8080"
+    networks:
+     - default
+    volumes:
+     - ./export/ROOT:/usr/local/tomcat/webapps/ROOT
+    mem_limit: 2G
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    volumes:
+      - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - tomcat1
+      - tomcat2
+    ports:
+      - "80:80"
