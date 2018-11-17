@@ -21,9 +21,9 @@
 		<commonio.version>2.6</commonio.version>
 		<testng.version>6.14.3</testng.version>
 		<htmlunit.version>2.32</htmlunit.version>
-		<dom4j.version>2.1.0</dom4j.version>
+		<dom4j.version>2.1.1</dom4j.version>
 		<mysql.version>8.0.12</mysql.version>
-		<poi.version>3.17</poi.version>
+		<poi.version>4.0.0</poi.version>
 		<guice.version>4.1.0</guice.version>
 		<commonlang3.version>3.7</commonlang3.version>
 		<mail.version>1.4.7</mail.version>
@@ -31,7 +31,7 @@
 		<restassured.version>3.1.1</restassured.version>
 		<commoncsv.version>1.5</commoncsv.version>
 		<jacoco.version>0.8.2</jacoco.version>
-		<pdfbox.version>2.0.8</pdfbox.version>
+		<pdfbox.version>2.0.12</pdfbox.version>
 		<reportng.version>1.1.4</reportng.version>
 		<velocity.version>1.7</velocity.version>
 		<guava.version>23.0</guava.version>
