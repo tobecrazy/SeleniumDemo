@@ -6,7 +6,7 @@ networks:
     
 services:
   app:
-    image: tobecrazy/ubuntu-young:latest
+    image: tobecrazy/tomcat:v1.0
     container_name: tomcat
     ports:
      - "8000:8080"
