@@ -27,4 +27,16 @@ public class passParameter {
 		System.out.println("parameter1 is " + parameter1);
 		System.out.println("parameter2 is " + parameter2);
 	}
+
+	@Test
+	public void test1() {
+		int value = fun(1, 3);
+		System.out.println(value);
+
+	}
+
+	private int fun(int a, int b) {
+
+		return a == b ? a : b;
+	}
 }

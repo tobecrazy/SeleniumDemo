@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.dbyl</groupId>
 	<artifactId>framework</artifactId>
-	<version>1.4.0</version>
+	<version>1.4.2</version>
 	<packaging>jar</packaging>
 	<name>framework</name>
 	<description>This is web test framework base on Selenium webdriver</description>
@@ -23,7 +23,7 @@
 		<htmlunit.version>2.32</htmlunit.version>
 		<dom4j.version>2.1.1</dom4j.version>
 		<mysql.version>8.0.12</mysql.version>
-		<poi.version>4.0.0</poi.version>
+		<poi.version>4.0.1</poi.version>
 		<guice.version>4.1.0</guice.version>
 		<commonlang3.version>3.7</commonlang3.version>
 		<mail.version>1.4.7</mail.version>
