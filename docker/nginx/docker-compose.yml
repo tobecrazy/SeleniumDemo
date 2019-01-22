@@ -25,7 +25,7 @@ services:
      - ./export/ROOT:/usr/local/tomcat/webapps/ROOT
     mem_limit: 2G
   nginx:
-    image: nginx:latest
+    image: tobecrazy/nginx:latest
     container_name: nginx
     volumes:
       - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
@@ -33,4 +33,4 @@ services:
       - tomcat1
       - tomcat2
     ports:
-      - "80:80"
+      - "81:80"
