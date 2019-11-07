@@ -1,3 +1,5 @@
+/.idea/*
 /target/
 /test-output/
 /logs/
+/Demo.iml
