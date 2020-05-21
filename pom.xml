@@ -20,7 +20,7 @@
 		<webmagic.version>0.7.3</webmagic.version>
 		<commonio.version>2.6</commonio.version>
 		<testng.version>6.14.3</testng.version>
-		<htmlunit.version>2.32</htmlunit.version>
+		<htmlunit.version>2.37.0</htmlunit.version>
 		<dom4j.version>2.1.1</dom4j.version>
 		<mysql.version>8.0.12</mysql.version>
 		<poi.version>4.0.1</poi.version>
