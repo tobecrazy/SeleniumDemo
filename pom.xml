@@ -27,7 +27,7 @@
 		<guice.version>4.1.0</guice.version>
 		<commonlang3.version>3.7</commonlang3.version>
 		<mail.version>1.4.7</mail.version>
-		<log4j.version>2.10.0</log4j.version>
+		<log4j.version>2.13.3</log4j.version>
 		<restassured.version>3.1.1</restassured.version>
 		<commoncsv.version>1.5</commoncsv.version>
 		<jacoco.version>0.8.2</jacoco.version>
