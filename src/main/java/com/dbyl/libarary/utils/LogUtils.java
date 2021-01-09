@@ -1,4 +1,4 @@
-package main.java.com.dbyl.libarary.utils;
+package com.dbyl.libarary.utils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

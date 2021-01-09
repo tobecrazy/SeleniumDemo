@@ -1,10 +1,10 @@
-package main.java.com.dbyl.libarary.utils;
+package com.dbyl.libarary.utils;
 
 import java.io.Serializable;
 
 import org.openqa.selenium.WebDriver;
 
-import main.java.com.dbyl.libarary.utils.Context.BrowserType;
+import com.dbyl.libarary.utils.Context.BrowserType;
 
 public class DriverOptions implements Serializable {
 

@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests.training.day2;
+package com.dbyl.tests.training.day2;
 
 
 import org.openqa.selenium.By;

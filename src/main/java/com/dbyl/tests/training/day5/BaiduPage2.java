@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests.training.day5;
+package com.dbyl.tests.training.day5;
 
 
 import org.openqa.selenium.support.PageFactory;

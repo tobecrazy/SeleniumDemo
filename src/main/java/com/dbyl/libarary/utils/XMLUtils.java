@@ -1,4 +1,4 @@
-package main.java.com.dbyl.libarary.utils;
+package com.dbyl.libarary.utils;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -14,7 +14,7 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
-import main.java.com.dbyl.libarary.utils.Locator.ByType;
+import com.dbyl.libarary.utils.Locator.ByType;
 
 public class XMLUtils {
 

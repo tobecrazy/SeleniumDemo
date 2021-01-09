@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests.training.day1;
+package com.dbyl.tests.training.day1;
 
 
 import java.lang.reflect.Field;
@@ -14,7 +14,7 @@ public class TestPrivateMethodAndVariable {
 	public void TestPriavteMethodWithoutParameter()
 			throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException,
 			IllegalArgumentException, InvocationTargetException, ClassNotFoundException {
-		Class clazz = Class.forName("main.java.com.dbyl.tests.training.day1.Student");
+		Class clazz = Class.forName("com.dbyl.tests.training.day1.Student");
 		
 		Method showInfo = clazz.getDeclaredMethod("showInfo", null);
 		showInfo.setAccessible(true);

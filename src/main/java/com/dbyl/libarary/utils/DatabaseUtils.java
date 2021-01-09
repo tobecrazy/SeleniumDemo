@@ -1,4 +1,4 @@
-package main.java.com.dbyl.libarary.utils;
+package com.dbyl.libarary.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

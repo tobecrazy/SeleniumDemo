@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests;
+package com.dbyl.tests;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -6,12 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Listeners;
 
-import main.java.com.dbyl.libarary.listeners.TestNGListener;
-import main.java.com.dbyl.libarary.pageAction.NewLoginPage;
-import main.java.com.dbyl.libarary.utils.Context;
-import main.java.com.dbyl.libarary.utils.DriverFactory;
-import main.java.com.dbyl.libarary.utils.Locator;
-import main.java.com.dbyl.libarary.utils.PageFactory;
+import com.dbyl.libarary.listeners.TestNGListener;
+import com.dbyl.libarary.pageAction.NewLoginPage;
+import com.dbyl.libarary.utils.Context;
+import com.dbyl.libarary.utils.DriverFactory;
+import com.dbyl.libarary.utils.Locator;
+import com.dbyl.libarary.utils.PageFactory;
 
 @Listeners({ TestNGListener.class })
 public class Test {

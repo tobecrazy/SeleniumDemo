@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests;
+package com.dbyl.tests;
 
 public class MyThread extends Thread {
 	public String name;

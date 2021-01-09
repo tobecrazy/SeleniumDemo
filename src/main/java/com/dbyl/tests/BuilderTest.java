@@ -1,9 +1,9 @@
-package main.java.com.dbyl.tests;
+package com.dbyl.tests;
 
 import org.testng.annotations.Test;
 
-import main.java.com.dbyl.libarary.utils.DriverFlags;
-import main.java.com.dbyl.libarary.utils.Context.BrowserType;
+import com.dbyl.libarary.utils.DriverFlags;
+import com.dbyl.libarary.utils.Context.BrowserType;
 
 public class BuilderTest {
 	@Test(groups = { "BuilderTest" })

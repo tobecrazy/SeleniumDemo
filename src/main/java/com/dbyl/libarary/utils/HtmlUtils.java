@@ -1,4 +1,4 @@
-package main.java.com.dbyl.libarary.utils;
+package com.dbyl.libarary.utils;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -14,7 +14,7 @@ import java.io.PrintStream;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import main.java.com.dbyl.libarary.utils.beans.TestResultsBean;
+import com.dbyl.libarary.utils.beans.TestResultsBean;
 
 public class HtmlUtils {
 

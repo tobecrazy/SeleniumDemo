@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests;
+package com.dbyl.tests;
 
 import java.io.File;
 import java.net.MalformedURLException;

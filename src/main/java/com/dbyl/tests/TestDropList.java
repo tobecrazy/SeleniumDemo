@@ -1,9 +1,9 @@
 package com.dbyl.tests;
 
-import main.java.com.dbyl.libarary.listeners.TestNGListener;
-import main.java.com.dbyl.libarary.pageAction.NewLoginPage;
-import main.java.com.dbyl.libarary.utils.DriverFactory;
-import main.java.com.dbyl.libarary.utils.PageFactory;
+import com.dbyl.libarary.listeners.TestNGListener;
+import com.dbyl.libarary.pageAction.NewLoginPage;
+import com.dbyl.libarary.utils.DriverFactory;
+import com.dbyl.libarary.utils.PageFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

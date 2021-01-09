@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests.training.day5;
+package com.dbyl.tests.training.day5;
 
 
 import java.io.File;
@@ -15,7 +15,7 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
-import main.java.com.dbyl.tests.training.day5.Locator.ByType;
+import com.dbyl.tests.training.day5.Locator.ByType;
 
 
 
@@ -78,7 +78,7 @@ public class XMLUtils {
 	/**
 	 * @param type
 	 */
-	public static main.java.com.dbyl.tests.training.day5.Locator.ByType getByType(String type) {
+	public static com.dbyl.tests.training.day5.Locator.ByType getByType(String type) {
 		ByType byType = ByType.xpath;
 		if (type == null || type.equalsIgnoreCase("xpath")) {
 			byType = ByType.xpath;

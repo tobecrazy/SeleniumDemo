@@ -1,11 +1,11 @@
-package main.java.com.dbyl.tests;
+package com.dbyl.tests;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
-import main.java.com.dbyl.libarary.listeners.TestNGListener;
+import com.dbyl.libarary.listeners.TestNGListener;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import main.java.com.dbyl.libarary.utils.AnnotationDemo;
+import com.dbyl.libarary.utils.AnnotationDemo;
 
 @Listeners({ TestNGListener.class })
 public class AnnoTest {

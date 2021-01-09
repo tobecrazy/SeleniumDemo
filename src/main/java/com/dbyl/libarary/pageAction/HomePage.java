@@ -1,11 +1,11 @@
-package main.java.com.dbyl.libarary.pageAction;
+package com.dbyl.libarary.pageAction;
 
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 
-import main.java.com.dbyl.libarary.utils.BasePage;
-import main.java.com.dbyl.libarary.utils.Locator;
+import com.dbyl.libarary.utils.BasePage;
+import com.dbyl.libarary.utils.Locator;
 
 
 public class HomePage extends BasePage {

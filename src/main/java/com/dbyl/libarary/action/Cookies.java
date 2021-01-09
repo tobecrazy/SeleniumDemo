@@ -1,4 +1,4 @@
-package main.java.com.dbyl.libarary.action;
+package com.dbyl.libarary.action;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.Cookie;
 
-import main.java.com.dbyl.libarary.utils.DriverFactory;
+import com.dbyl.libarary.utils.DriverFactory;
 
 public class Cookies {
 	/**

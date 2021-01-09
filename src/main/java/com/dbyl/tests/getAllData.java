@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests;
+package com.dbyl.tests;
 
 import java.awt.AWTException;
 import java.io.BufferedWriter;
@@ -15,7 +15,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import main.java.com.dbyl.libarary.utils.DriverFactory;
+import com.dbyl.libarary.utils.DriverFactory;
 
 public class getAllData {
 	WebDriver driver;

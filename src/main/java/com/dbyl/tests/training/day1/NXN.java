@@ -1,6 +1,6 @@
-package main.java.com.dbyl.tests.training.day1;
+package com.dbyl.tests.training.day1;
 
-import main.java.com.dbyl.tests.training.day3.Rect;
+import com.dbyl.tests.training.day3.Rect;
 
 public class NXN {
 

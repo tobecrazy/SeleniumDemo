@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests.training.day1;
+package com.dbyl.tests.training.day1;
 
 
 public class TestPerson {

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package main.java.com.dbyl.libarary.utils;
+package com.dbyl.libarary.utils;
 
 import org.openqa.selenium.WebDriver;
 

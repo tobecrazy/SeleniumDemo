@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests;
+package com.dbyl.tests;
 
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
@@ -12,8 +12,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
-import main.java.com.dbyl.libarary.utils.DriverFactory;
-import main.java.com.dbyl.libarary.utils.RemoteBrowserBean;
+import com.dbyl.libarary.utils.DriverFactory;
+import com.dbyl.libarary.utils.RemoteBrowserBean;
 
 public class baiduEditor {
 	private WebDriver driver;

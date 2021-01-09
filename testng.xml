@@ -10,11 +10,11 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="main.java.com.dbyl.tests.EventTest" />
-		<!-- 	<class name="main.java.com.dbyl.tests.TestngExample" />
-			<class name="main.java.com.dbyl.tests.BuilderTest" />
-			<class name="main.java.com.dbyl.tests.passParameter"/> -->
-			<!-- <class name="main.java.com.dbyl.tests.DBTest" /> <class name="main.java.com.dbyl.tests.Login.LoginTest" 
+			<class name="com.dbyl.tests.EventTest" />
+		<!-- 	<class name="com.dbyl.tests.TestngExample" />
+			<class name="com.dbyl.tests.BuilderTest" />
+			<class name="com.dbyl.tests.passParameter"/> -->
+			<!-- <class name="com.dbyl.tests.DBTest" /> <class name="com.dbyl.tests.Login.LoginTest"
 				/> -->
 		</classes>
 	</test> <!-- Test -->

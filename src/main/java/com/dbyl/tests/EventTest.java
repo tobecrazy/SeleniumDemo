@@ -1,14 +1,14 @@
-package main.java.com.dbyl.tests;
+package com.dbyl.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import main.java.com.dbyl.libarary.listeners.ImplTestNGListener;
-import main.java.com.dbyl.libarary.utils.BasePage;
-import main.java.com.dbyl.libarary.utils.DriverFactory;
-import main.java.com.dbyl.libarary.utils.Locator;
-import main.java.com.dbyl.libarary.utils.RemoteBrowserBean;
+import com.dbyl.libarary.listeners.ImplTestNGListener;
+import com.dbyl.libarary.utils.BasePage;
+import com.dbyl.libarary.utils.DriverFactory;
+import com.dbyl.libarary.utils.Locator;
+import com.dbyl.libarary.utils.RemoteBrowserBean;
 
 /**
  * The Class EventTest.

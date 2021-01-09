@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests;
+package com.dbyl.tests;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -13,8 +13,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import main.java.com.dbyl.libarary.utils.DriverFactory;
-import main.java.com.dbyl.libarary.utils.RemoteBrowserBean;
+import com.dbyl.libarary.utils.DriverFactory;
+import com.dbyl.libarary.utils.RemoteBrowserBean;
 
 public class qunar {
 

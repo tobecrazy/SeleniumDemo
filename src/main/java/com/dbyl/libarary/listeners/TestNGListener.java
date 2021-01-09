@@ -1,4 +1,4 @@
-package main.java.com.dbyl.libarary.listeners;
+package com.dbyl.libarary.listeners;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -19,8 +19,8 @@ import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
 
-import main.java.com.dbyl.libarary.utils.DriverFactory;
-import main.java.com.dbyl.libarary.utils.LogUtils;
+import com.dbyl.libarary.utils.DriverFactory;
+import com.dbyl.libarary.utils.LogUtils;
 
 /**
  * 

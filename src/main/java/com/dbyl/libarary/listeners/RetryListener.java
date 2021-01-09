@@ -1,4 +1,4 @@
-package main.java.com.dbyl.libarary.listeners;
+package com.dbyl.libarary.listeners;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
