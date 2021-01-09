@@ -1,31 +1,31 @@
-#coding:utf-8
-import urllib2
-import ssl  
+# coding:utf-8
+# script for python3
+import urllib3
+import ssl
 import unittest
-import os,sys
+import os, sys
 import time
 
+
 class Test:
-  '''
-  @author Young
-  @version
-  Get page source
-  '''
-  def getPageSource(url):
-    try:
-      request = urllib2.Request(url)
-      response = urllib2.urlopen(request)
-      print "loading ...."
-      page = response.read()
-    except:
-      print "crul ",url
-      (status,page)=commands.getstatusoutput("curl "+url)
-    finally:
-      return page  
+    '''
+    @author Young
+    @verson
+    Get page source
+    '''
 
-  if __name__ == "__main__":
-    print "open www.baidu.com" 
-    page=getPageSource("https://www.baidu.com")
-    print page
-    
+    def getPageSource(url):
+        http = urllib3.PoolManager()
+        try:
+            response = http.request('GET', url)
+            print('loading ....')
+            print(response.status)
+            print(response.status)
+            return response.data
+        except:
+            print('crul' + url)
 
+    if __name__ == "__main__":
+        print('open www.baidu.com')
+        page = getPageSource("https://www.baidu.com")
+        print(page)

@@ -4,3 +4,5 @@
 /logs/
 /Demo.iml
 /bin/*
+PythonSelenium/.idea/*
+PythonSelenium/tests/geckodriver.log

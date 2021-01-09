@@ -30,7 +30,7 @@
 		<log4j.version>2.14.0</log4j.version>
 		<restassured.version>3.1.1</restassured.version>
 		<commoncsv.version>1.5</commoncsv.version>
-		<jacoco.version>0.8.2</jacoco.version>
+		<jacoco.version>0.8.6</jacoco.version>
 		<pdfbox.version>2.0.15</pdfbox.version>
 		<reportng.version>1.1.4</reportng.version>
 		<velocity.version>1.7</velocity.version>
