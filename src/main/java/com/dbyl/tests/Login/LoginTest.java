@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests.Login;
+package com.dbyl.tests.Login;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -7,11 +7,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import main.java.com.dbyl.libarary.action.ViewHomePage;
-import main.java.com.dbyl.libarary.listeners.TestNGListener;
-import main.java.com.dbyl.libarary.utils.DriverFactory;
-import main.java.com.dbyl.libarary.utils.RemoteBrowserBean;
-import main.java.com.dbyl.libarary.utils.UITest;
+import com.dbyl.libarary.action.ViewHomePage;
+import com.dbyl.libarary.listeners.TestNGListener;
+import com.dbyl.libarary.utils.DriverFactory;
+import com.dbyl.libarary.utils.RemoteBrowserBean;
+import com.dbyl.libarary.utils.UITest;
 
 @Listeners({ TestNGListener.class })
 public class LoginTest extends UITest {

@@ -1,11 +1,11 @@
-package main.java.com.dbyl.libarary.pageAction;
+package com.dbyl.libarary.pageAction;
 
 import org.openqa.selenium.WebDriver;
 
-import main.java.com.dbyl.libarary.pageAction.interfaces.ILoginPage;
-import main.java.com.dbyl.libarary.utils.BasePage;
-import main.java.com.dbyl.libarary.utils.Locator;
-import main.java.com.dbyl.libarary.utils.Locator.ByType;
+import com.dbyl.libarary.pageAction.interfaces.ILoginPage;
+import com.dbyl.libarary.utils.BasePage;
+import com.dbyl.libarary.utils.Locator;
+import com.dbyl.libarary.utils.Locator.ByType;
 
 /**
  * This Page is a different Login Page

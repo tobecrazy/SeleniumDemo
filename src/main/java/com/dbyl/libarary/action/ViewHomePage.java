@@ -1,11 +1,11 @@
 /**
  * 
  */
-package main.java.com.dbyl.libarary.action;
+package com.dbyl.libarary.action;
 
 import org.openqa.selenium.WebDriver;
 
-import main.java.com.dbyl.libarary.pageAction.HomePage;
+import com.dbyl.libarary.pageAction.HomePage;
 
 /**
  * @author Young

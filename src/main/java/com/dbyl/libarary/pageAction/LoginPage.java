@@ -1,13 +1,13 @@
-package main.java.com.dbyl.libarary.pageAction;
+package com.dbyl.libarary.pageAction;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 
-import main.java.com.dbyl.libarary.pageAction.interfaces.ILoginPage;
-import main.java.com.dbyl.libarary.utils.BasePage;
-import main.java.com.dbyl.libarary.utils.Locator;
+import com.dbyl.libarary.pageAction.interfaces.ILoginPage;
+import com.dbyl.libarary.utils.BasePage;
+import com.dbyl.libarary.utils.Locator;
 
 public class LoginPage extends BasePage implements ILoginPage {
 

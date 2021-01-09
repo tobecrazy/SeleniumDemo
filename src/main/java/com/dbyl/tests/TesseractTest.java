@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests;
+package com.dbyl.tests;
 
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -19,7 +19,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import main.java.com.dbyl.libarary.utils.DriverFactory;
+import com.dbyl.libarary.utils.DriverFactory;
 
 public class TesseractTest {
 

@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests.crawler;
+package com.dbyl.tests.crawler;
 
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;

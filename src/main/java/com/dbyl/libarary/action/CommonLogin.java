@@ -1,11 +1,11 @@
-package main.java.com.dbyl.libarary.action;
+package com.dbyl.libarary.action;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import main.java.com.dbyl.libarary.pageAction.HomePage;
-import main.java.com.dbyl.libarary.pageAction.LoginPage;
-import main.java.com.dbyl.libarary.utils.PageFactory;
+import com.dbyl.libarary.pageAction.HomePage;
+import com.dbyl.libarary.pageAction.LoginPage;
+import com.dbyl.libarary.utils.PageFactory;
 
 public class CommonLogin {
 

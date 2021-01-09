@@ -1,6 +1,6 @@
-package main.java.com.dbyl.libarary.utils;
+package com.dbyl.libarary.utils;
 
-import main.java.com.dbyl.libarary.utils.Context.BrowserType;
+import com.dbyl.libarary.utils.Context.BrowserType;
 
 /**
  * This is builder pattern

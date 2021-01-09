@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests.training.day4;
+package com.dbyl.tests.training.day4;
 
 
 import static org.testng.Assert.assertEquals;

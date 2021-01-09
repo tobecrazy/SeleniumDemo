@@ -1,4 +1,4 @@
-package main.java.com.dbyl.libarary.utils.beans;
+package com.dbyl.libarary.utils.beans;
 
 /**
  * The Class TestResult.

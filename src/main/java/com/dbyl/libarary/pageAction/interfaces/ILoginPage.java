@@ -1,4 +1,4 @@
-package main.java.com.dbyl.libarary.pageAction.interfaces;
+package com.dbyl.libarary.pageAction.interfaces;
 
 /**
  * This Method is for Login Page interface Resolve different version login Page

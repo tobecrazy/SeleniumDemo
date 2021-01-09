@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests;
+package com.dbyl.tests;
 
 import org.testng.Assert;
 import org.testng.SkipException;
@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import main.java.com.dbyl.libarary.listeners.ImplTestNGListener;
+import com.dbyl.libarary.listeners.ImplTestNGListener;
 
 /**
  * This is to verify testng annotation execute

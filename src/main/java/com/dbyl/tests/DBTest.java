@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests;
+package com.dbyl.tests;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 
 import org.testng.annotations.Test;
 
-import main.java.com.dbyl.libarary.utils.DatabaseUtils;
+import com.dbyl.libarary.utils.DatabaseUtils;
 
 public class DBTest {
 

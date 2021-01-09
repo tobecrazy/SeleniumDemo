@@ -1,4 +1,4 @@
-package main.java.com.dbyl.libarary.listeners;
+package com.dbyl.libarary.listeners;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -14,10 +14,10 @@ import org.testng.ITestListener;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 
-import main.java.com.dbyl.libarary.utils.HtmlUtils;
-import main.java.com.dbyl.libarary.utils.LogUtils;
-import main.java.com.dbyl.libarary.utils.beans.TestResult;
-import main.java.com.dbyl.libarary.utils.beans.TestResultsBean;
+import com.dbyl.libarary.utils.HtmlUtils;
+import com.dbyl.libarary.utils.LogUtils;
+import com.dbyl.libarary.utils.beans.TestResult;
+import com.dbyl.libarary.utils.beans.TestResultsBean;
 
 /**
  * 

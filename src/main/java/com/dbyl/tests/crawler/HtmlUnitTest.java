@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests.crawler;
+package com.dbyl.tests.crawler;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -11,7 +11,7 @@ import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.DomElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
-import main.java.com.dbyl.libarary.utils.StringTools;
+import com.dbyl.libarary.utils.StringTools;
 
 public class HtmlUnitTest {
 

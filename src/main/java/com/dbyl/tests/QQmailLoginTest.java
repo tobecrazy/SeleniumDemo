@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests;
+package com.dbyl.tests;
 
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
@@ -14,7 +14,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import main.java.com.dbyl.libarary.utils.DriverFactory;
+import com.dbyl.libarary.utils.DriverFactory;
 
 public class QQmailLoginTest {
 	public WebDriver driver;

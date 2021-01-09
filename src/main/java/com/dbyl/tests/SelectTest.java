@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests;
+package com.dbyl.tests;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -14,10 +14,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import main.java.com.dbyl.libarary.utils.BasePage;
-import main.java.com.dbyl.libarary.utils.DriverFactory;
-import main.java.com.dbyl.libarary.utils.Locator;
-import main.java.com.dbyl.libarary.utils.StringTools;
+import com.dbyl.libarary.utils.BasePage;
+import com.dbyl.libarary.utils.DriverFactory;
+import com.dbyl.libarary.utils.Locator;
+import com.dbyl.libarary.utils.StringTools;
 
 public class SelectTest {
 

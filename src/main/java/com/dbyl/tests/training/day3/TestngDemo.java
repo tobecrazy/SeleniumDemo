@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests.training.day3;
+package com.dbyl.tests.training.day3;
 
 
 import org.testng.annotations.AfterClass;

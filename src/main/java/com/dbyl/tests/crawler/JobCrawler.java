@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests.crawler;
+package com.dbyl.tests.crawler;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -18,8 +18,8 @@ import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.DomElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
-import main.java.com.dbyl.libarary.utils.DatabaseUtils;
-import main.java.com.dbyl.libarary.utils.StringTools;
+import com.dbyl.libarary.utils.DatabaseUtils;
+import com.dbyl.libarary.utils.StringTools;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;

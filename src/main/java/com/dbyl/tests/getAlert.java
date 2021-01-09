@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests;
+package com.dbyl.tests;
 
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
-import main.java.com.dbyl.libarary.utils.DriverFactory;
+import com.dbyl.libarary.utils.DriverFactory;
 
 public class getAlert {
 	private WebDriver driver;

@@ -1,4 +1,4 @@
-package main.java.com.dbyl.tests.training.day6;
+package com.dbyl.tests.training.day6;
 
 import java.util.concurrent.TimeUnit;
 

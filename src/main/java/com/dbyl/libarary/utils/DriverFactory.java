@@ -1,4 +1,4 @@
-package main.java.com.dbyl.libarary.utils;
+package com.dbyl.libarary.utils;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,7 +24,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import main.java.com.dbyl.libarary.utils.Context.BrowserType;
+import com.dbyl.libarary.utils.Context.BrowserType;
 
 /**
  * *.
