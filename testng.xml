@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="classes" thread-count="5">
-	<test verbose="1" preserve-order="true" name="TestDebug">
-		<parameter name="driverName" value="chrome" />
-		<groups>
-			<run>
-			<!-- 	<include name="TestngExample" />
-				<exclude name="The Test Group 2" /> -->
-			</run>
-		</groups>
-		<classes>
-			<class name="com.dbyl.tests.EventTest" />
-		<!-- 	<class name="com.dbyl.tests.TestngExample" />
-			<class name="com.dbyl.tests.BuilderTest" />
-			<class name="com.dbyl.tests.passParameter"/> -->
-			<!-- <class name="com.dbyl.tests.DBTest" /> <class name="com.dbyl.tests.Login.LoginTest"
-				/> -->
-		</classes>
-	</test> <!-- Test -->
+    <test verbose="1" preserve-order="true" name="TestDebug">
+        <parameter name="driverName" value="chrome"/>
+        <groups>
+            <run>
+                <!-- 	<include name="TestngExample" />
+                    <exclude name="The Test Group 2" /> -->
+            </run>
+        </groups>
+        <classes>
+            <class name="com.dbyl.tests.EventTest"/>
+            <class name="com.dbyl.tests.TestngExample"/>
+            <class name="com.dbyl.tests.BuilderTest"/>
+            <class name="com.dbyl.tests.passParameter"/>
+            <!-- <class name="com.dbyl.tests.DBTest" />
+            <class name="com.dbyl.tests.Login.LoginTest"
+                /> -->
+        </classes>
+    </test> <!-- Test -->
 </suite> <!-- Suite -->
