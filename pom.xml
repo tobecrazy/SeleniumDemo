@@ -18,7 +18,7 @@
 		<java.version>1.8</java.version>
 		<selenium.version>3.14.0</selenium.version>
 		<webmagic.version>0.7.3</webmagic.version>
-		<commonio.version>2.6</commonio.version>
+		<commonio.version>2.7</commonio.version>
 		<testng.version>6.14.3</testng.version>
 		<htmlunit.version>2.37.0</htmlunit.version>
 		<dom4j.version>2.1.3</dom4j.version>
