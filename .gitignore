@@ -1,3 +1,4 @@
+.gradle/*
 /.idea/*
 /target/
 /test-output/
@@ -6,3 +7,4 @@
 /bin/*
 PythonSelenium/.idea/*
 PythonSelenium/tests/geckodriver.log
+.gradle/file-system.probe
